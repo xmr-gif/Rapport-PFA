@@ -289,17 +289,56 @@
 	% ============================================================================
 	% LISTES AUTOMATIQUES (FIN DU DOCUMENT)
 	% ============================================================================
-	
+
 	\newpage
-	\addcontentsline{toc}{chapter}{\listfigurename}
+	\addcontentsline{toc}{chapter}{Table des figures}
+	\renewcommand{\listfigurename}{{\headingfont Table des figures}}
 	\listoffigures 
 	\vspace{1cm}
 	Add text here
 	
 	\newpage
-	\addcontentsline{toc}{chapter}{\listtablename}
+	\addcontentsline{toc}{chapter}{Liste des tableaux}
+	\renewcommand{\listtablename}{{\headingfont Liste des tableaux}}
 	\listoftables 
 	\vspace{1cm}
 	Add text here
+
+	\newpage
+	\addcontentsline{toc}{chapter}{Table des matières}
+	\chapter*{{\headingfont Table des matières}}
+	% ============================================================================
+	% INTRODUCTION
+	% ============================================================================
+	\newpage
+	\chapter*{{\headingfont Introduction}}
+	\addcontentsline{toc}{chapter}{Introduction}
+	
+	Le domaine de l'ingénierie informatique connaît une transformation profonde, portée par l'essor des technologies numériques, de l'intelligence artificielle et des architectures logicielles distribuées. Dans un contexte où les entreprises recherchent des profils polyvalents, capables de concevoir, développer et déployer des solutions complexes, les établissements de formation se doivent de préparer leurs étudiants à relever ces défis avec rigueur et créativité. L'École des Hautes Études d'Ingénierie d'Oujda, fidèle à sa vocation d'excellence, inscrit le projet de fin d'année comme un exercice fondamental permettant aux étudiants de mobiliser l'ensemble de leurs acquis académiques dans un cadre concret et professionnalisant.
+	
+	Cependant, au-delà des compétences purement techniques, le passage du monde académique au monde professionnel exige la maîtrise de dimensions souvent négligées dans les cursus traditionnels : la gestion efficace de projets collaboratifs, le perfectionnement des aptitudes en résolution de problèmes algorithmiques, la construction d'un profil professionnel attractif, ou encore la préparation méthodique aux processus de recrutement. Ces compétences transversales, bien qu'essentielles, sont rarement adressées de manière intégrée par les outils existants, laissant les étudiants face à un écosystème fragmenté de ressources dispersées et peu adaptées à leurs besoins spécifiques.
+	
+	C'est précisément à partir de ce constat, nourri par notre propre vécu en tant qu'étudiants en quatrième année de Génie Informatique, que l'idée de ce projet a émergé. Notre ambition est de concevoir et de développer une plateforme unifiée qui rassemble, au sein d'un même environnement, plusieurs outils complémentaires destinés à accompagner l'étudiant ingénieur tout au long de son parcours. Cette plateforme intégrée vise à répondre simultanément aux besoins de gestion de projets, de renforcement des compétences techniques par la pratique de la programmation, d'analyse et d'optimisation des curricula vitae grâce à l'intelligence artificielle, ainsi que de simulation d'entretiens techniques et comportementaux.
+	
+	Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bien ce projet ambitieux. Il débute par une analyse du contexte et des besoins identifiés, avant de présenter les choix architecturaux et technologiques retenus. Les phases de conception et de réalisation y sont détaillées de manière méthodique, suivies d'une présentation des résultats obtenus. Enfin, une réflexion sur les perspectives d'évolution de la solution clôture ce document, témoignant de notre volonté de pérenniser cet outil au service de la communauté étudiante.
+	
+	% ============================================================================
+	% CHAPITRE I : CONTEXTE DU PROJET
+	% ============================================================================
+	\newpage
+	\section*{I. Contexte du projet}
+	\addcontentsline{toc}{section}{I. Contexte du projet}
+	
+	\subsection*{i. Description des besoins}
+	\addcontentsline{toc}{subsection}{i. Description des besoins}
+	% Content to be written
+	
+	\subsection*{ii. Besoins fonctionnels}
+	\addcontentsline{toc}{subsection}{ii. Besoins fonctionnels}
+	% Content to be written
+	
+	\subsection*{iii. Les besoins non-fonctionnels}
+	\addcontentsline{toc}{subsection}{iii. Les besoins non-fonctionnels}
+	% Content to be written
 	
 \end{document}
