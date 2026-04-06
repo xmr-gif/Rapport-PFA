@@ -15,6 +15,9 @@
 \usepackage{hyperref}
 \usepackage{longtable}   
 \usepackage{array}       
+\usepackage{colortbl}    % For colored table cells
+\usepackage{booktabs}    % For professional table rules
+\usepackage{multirow}    % For spanning rows
 
 % ============================================================================
 % CONFIGURATION DES LANGUES
@@ -45,14 +48,36 @@
 % ============================================================================
 % DÉFINITION DES COULEURS
 % ============================================================================
-\definecolor{eheiRed}{RGB}{220,53,69}  
-\definecolor{eheiBlue}{RGB}{41,128,185} 
+\definecolor{eheiRed}{RGB}{220,53,69}
+\definecolor{eheiBlue}{RGB}{41,128,185}
+\definecolor{tableHeader}{RGB}{41,128,185}    % Same as eheiBlue
+\definecolor{tableRowLight}{RGB}{235,245,251}  % Very light blue
+\definecolor{tableRowWhite}{RGB}{255,255,255}  % White
+\definecolor{tableBorder}{RGB}{189,215,238}    % Light blue border
+\definecolor{sectionBg}{RGB}{41,128,185}       % Section header bg
+
+% ============================================================================
+% COMMANDES PERSONNALISÉES POUR LES TABLEAUX
+% ============================================================================
+% Alternating row colors
+\newcounter{rowcounter}
+\newcommand{\resetrows}{\setcounter{rowcounter}{0}}
+\newcommand{\altrow}{%
+  \stepcounter{rowcounter}%
+  \ifodd\value{rowcounter}\rowcolor{tableRowLight}\else\rowcolor{tableRowWhite}\fi%
+}
+
+% Section header in tables
+\newcommand{\tableSectionHeader}[1]{%
+  \rowcolor{sectionBg!15}%
+  \multicolumn{3}{|l|}{\textbf{\textcolor{eheiBlue}{#1}}} \\ \hline
+}
 
 % ============================================================================
 % CONFIGURATION DES EN-TÊTES ET PIEDS DE PAGE
 % ============================================================================
 \pagestyle{fancy}
-\fancyhf{} 
+\fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -61,7 +86,7 @@
 % ============================================================================
 \hypersetup{
 	colorlinks=true,
-	linkcolor=black, 
+	linkcolor=black,
 	filecolor=eheiRed,
 	urlcolor=eheiBlue,
 	citecolor=eheiRed,
@@ -69,13 +94,13 @@
 	pdftitle={Projet de Fin d'Année - EHEI},
 }
 
-\onehalfspacing 
+\onehalfspacing
 
 % ============================================================================
 % DÉBUT DU DOCUMENT
 % ============================================================================
 \begin{document}
-	
+
 	% ============================================================================
 	% PAGE DE GARDE
 	% ============================================================================
@@ -92,28 +117,28 @@
 				{\headingfont\Large EHEI}\\
 				\textcolor{eheiRed}{\small RECONNUE PAR L'ÉTAT}
 			\end{minipage}
-			
+
 			\vspace{1cm}
-			
+
 			{\headingfont\LARGE \textbf{ECOLE DES HAUTES ETUDES}}\\[0.2cm]
 			{\headingfont\LARGE \textbf{D'INGENIERIE -- OUJDA}}\\[0.8cm]
-			
+
 			{\headingfont\Large \textbf{Mémoire de Projet de synthèse}}\\[0.2cm]
 			{\large Présenté en vue de l'obtention du}\\[0.2cm]
 			{\headingfont\Large \textbf{DIPLÔME D'INGENIEUR D'ETAT}}\\[0.5cm]
-			
+
 			{\large FILIERE : GENIE INFORMATIQUE}\\[1cm]
-			
+
 			\begin{tikzpicture}
-				\node[rectangle, draw=eheiBlue, line width=2pt, 
+				\node[rectangle, draw=eheiBlue, line width=2pt,
 				minimum width=0.9\textwidth, minimum height=2.5cm,
 				align=center] (titre) {
 					{\headingfont\Huge \textbf{TITRE}}
 				};
 			\end{tikzpicture}
-			
+
 			\vspace{1cm}
-			
+
 			\begin{minipage}[t]{0.48\textwidth}
 				\flushleft
 				{\large \textbf{\textcolor{eheiBlue}{Réalisé par :}}}\\[0.2cm]
@@ -129,74 +154,74 @@
 				{\large \textbf{\textcolor{eheiBlue}{Encadré par :}}}\\[0.2cm]
 				M. MANI Mohammed Adil
 			\end{minipage}
-			
+
 			\vspace{0.8cm}
-			
+
 			{\large \textbf{\textcolor{eheiBlue}{\underline{Soutenance le ................ 2025 devant le Jury :}}}}\\[0.3cm]
 			M/MME \dotfill\\[0.15cm]
 			M/MME \dotfill\\[0.15cm]
 			M/MME \dotfill\\[0.5cm]
-			
+
 			\vfill
-			
+
 			{\large \textbf{Année universitaire : 2025 -- 2026}}
 		\end{center}
 	\end{titlepage}
-	
+
 	% ============================================================================
 	% DÉDICACE
 	% ============================================================================
 	\newpage
 	\chapter*{{\headingfont Dédicace}}
 	\addcontentsline{toc}{chapter}{Dédicace}
-	
+
 	Tout travail académique abouti est le fruit d'un parcours jalonné d'efforts, de remises en question et de soutiens précieux. Ce projet de fin d'année s'inscrit dans cette dynamique : il représente bien plus qu'une simple réalisation technique, mais l'aboutissement d'un chemin parcouru avec persévérance, entraide et détermination. C'est à ce titre que nous souhaitons consacrer ces quelques lignes à celles et ceux qui ont contribué, de manière essentielle, à sa concrétisation.
-	
+
 	Nous dédions ce travail avant tout à nos parents, dont le soutien indéfectible a constitué le socle de notre réussite. Par leur patience, leurs encouragements constants et les sacrifices consentis tout au long de notre parcours académique, ils ont su nous offrir un cadre propice à l'apprentissage et à l'épanouissement. Leur confiance et leur présence, tant dans les moments d'incertitude que dans les phases de réussite, ont été une source permanente de motivation et de stabilité.
-	
+
 	Nous tenons également à mettre à l'honneur les membres de notre équipe, \textbf{THE GANG OF FIVE}. Ce projet n'aurait pu aboutir sans leur sérieux, leur sens des responsabilités et leur engagement collectif. Chacun, par son investissement, sa rigueur et son esprit de collaboration, a contribué à faire de ce travail une réalisation cohérente et aboutie. Les échanges constructifs, la complémentarité des compétences et la capacité à faire face ensemble aux défis rencontrés ont été des éléments déterminants tout au long du projet.
-	
+
 	Enfin, nous adressons notre reconnaissance à toutes les personnes qui, de près ou de loin, ont cru en nous et nous ont encouragés à aller au-delà de nos limites. À travers leurs conseils, leur disponibilité et leurs orientations, nos enseignants ont contribué à structurer notre réflexion et à renforcer notre rigueur académique. Nous pensons également à nos camarades et collègues, dont le soutien moral et la présence ont accompagné notre parcours. L'ensemble de ces apports a joué un rôle essentiel dans notre progression, tant sur le plan académique que personnel, et a contribué à donner à ce projet toute sa valeur.
-	
+
 	% ============================================================================
 	% REMERCIEMENTS
 	% ============================================================================
 	\newpage
 	\chapter*{{\headingfont Remerciements}}
 	\addcontentsline{toc}{chapter}{Remerciements}
-	
+
 	Au terme de ce projet de fin d'année, il nous est particulièrement agréable d'exprimer notre profonde reconnaissance envers toutes les personnes qui ont contribué, de près ou de loin, à la réalisation de ce travail.
-	
+
 	Nous tenons tout d'abord à adresser nos remerciements les plus sincères à Monsieur BARBOUCHA Mohammed, Directeur de l'École des Hautes Études d'Ingénierie, pour la vision qu'il porte et qui fait de l'EHEI bien plus qu'un simple établissement d'enseignement : un véritable tremplin vers l'excellence et l'innovation. Le cadre académique stimulant qu'il a su instaurer nous a permis de nous épanouir et de développer notre esprit d'initiative, essence même de ce projet.
-	
+
 	Nous exprimons notre gratitude particulière à Monsieur MANI Mohammed Adil, notre encadrant technique, dont l'accompagnement a été un pilier fondamental dans la concrétisation de notre vision. Sa disponibilité constante, ses conseils avisés et sa capacité à nous guider tout en respectant notre autonomie créative ont été déterminants. Au-delà de l'expertise technique, il a su être un véritable mentor et un soutien psychologique précieux. Dans les moments de doute, face à la complexité de concilier documentation, apprentissage autonome de nouvelles technologies et charge académique, ses paroles encourageantes et sa bienveillance nous ont redonné confiance et motivation. Son attention particulière à notre bien-être physique et mental, ainsi que ses orientations méthodologiques, nous ont permis de persévérer et de transformer les obstacles en opportunités d'apprentissage. Sa confiance inébranlable en notre capacité à explorer des domaines non couverts par notre programme d'études nous a encouragés à repousser nos limites et à croire en notre potentiel.
-	
+
 	Nos remerciements s'adressent également à notre encadrant pédagogique, dont le suivi rigoureux et les recommandations méthodologiques ont contribué à structurer notre démarche et à maintenir la qualité académique de notre travail tout au long de ce projet d'envergure.
-	
+
 	Nous souhaitons remercier chaleureusement l'ensemble du corps professoral et administratif de l'EHEI. Leurs enseignements, qui allient théorie et pratique, nous ont fourni les fondations solides nécessaires pour concevoir et développer une application aussi ambitieuse. Les compétences techniques, mais aussi les valeurs de rigueur, de persévérance et de travail collaboratif qu'ils nous ont transmises, constituent aujourd'hui notre plus précieux bagage pour aborder notre future vie professionnelle.
-	
+
 	Enfin, nous tenons à exprimer notre reconnaissance envers l'EHEI dans son ensemble, qui nous a offert bien plus qu'une formation : une communauté d'apprentissage, un environnement propice à l'innovation et une expérience humaine enrichissante qui restera gravée dans nos mémoires.
-	
+
 	Ce projet représente pour nous l'aboutissement de quatre années d'efforts, de découvertes et de croissance personnelle. Il symbolise notre passage de l'apprentissage à la création, de l'étudiant à l'ingénieur. Pour cela, we be eternally grateful.
-	
+
 	% ============================================================================
 	% RÉSUMÉ (Français)
 	% ============================================================================
 	\newpage
 	\chapter*{{\headingfont Résumé}}
 	\addcontentsline{toc}{chapter}{Résumé}
-	
+
 	Ce rapport présente le projet de fin d'année mené au sein de la 4\textsuperscript{ème} année \textbf{Génie Informatique}. Il s'inscrit dans une démarche visant à mettre en pratique les \textbf{compétences} acquises tout au long de notre formation et à nous préparer aux exigences du monde professionnel. L'objectif principal de ce travail est la conception et le développement d'une application destinée à soutenir les étudiants en génie informatique dans leur organisation, leur \textbf{apprentissage} et leur préparation à l'\textbf{insertion professionnelle}.
-	
+
 	L'idée du projet est née de notre propre expérience étudiante et de l'identification de besoins réels liés à \textbf{la gestion des projets}, au \textbf{développement de compétences techniques}, à la \textbf{préparation aux entretiens} et à l'amélioration de \textbf{la présentation professionnelle}. Pour y répondre, nous avons imaginé une \textbf{plateforme intégrée} regroupant plusieurs outils complémentaires, chacun destiné à accompagner l'étudiant dans une dimension essentielle de son parcours.
-	
+
 	Notre démarche s'est articulée autour d'une analyse approfondie des besoins, puis d'une phase de conception structurée permettant de définir l'architecture générale de la solution. Ce rapport retrace l'ensemble du processus suivi, depuis la définition de l'idée initiale jusqu'à la formalisation du concept final, en passant par les choix méthodologiques qui ont guidé notre travail collectif.
-	
+
 	Ce projet représente une occasion d'appliquer nos connaissances, mais aussi une expérience collaborative enrichissante, renforçant nos compétences en organisation, communication et conception au sein d'un travail d'équipe.
-	
+
 	\vspace{1cm}
 	\noindent\textbf{Mots Clés :} génie informatique, compétences, apprentissage, insertion professionnelle, gestion des projets, développement de compétences techniques, préparation aux entretiens, présentation professionnelle, plateforme intégrée.
-	
+
 	% ============================================================================
 	% ABSTRACT (English)
 	% ============================================================================
@@ -204,19 +229,19 @@
 	\begin{english}
 		\chapter*{{\headingfont Abstract}}
 		\addcontentsline{toc}{chapter}{Abstract}
-		
+
 		This report presents the final year project conducted within the 4\textsuperscript{th} year of \textbf{Computer Engineering}. It is part of an approach aimed at applying the \textbf{skills} acquired throughout our training and preparing us for the demands of the professional world. The main objective of this work is the design and development of an application intended to support computer engineering students in their organization, \textbf{learning}, and preparation for \textbf{professional integration}.
-		
+
 		The project idea originated from our own student experience and the identification of real needs related to \textbf{project management}, \textbf{technical skills development}, \textbf{interview preparation}, and improvement of \textbf{professional presentation}. To address these needs, we envisioned an \textbf{integrated platform} bringing together several complementary tools, each designed to support students in an essential dimension of their academic journey.
-		
+
 		Our approach was structured around an in-depth needs analysis, followed by a structured design phase that defined the overall architecture of the solution. This report traces the entire process followed, from the definition of the initial idea to the formalization of the final concept, including the methodological choices that guided our collective work.
-		
+
 		This project represents an opportunity to apply our knowledge, but also an enriching collaborative experience, strengthening our skills in organization, communication, and design within teamwork.
-		
+
 		\vspace{1cm}
 		\noindent\textbf{Keywords:} computer engineering, skills, learning, professional integration, project management, technical skills development, interview preparation, professional presentation, integrated platform.
 	\end{english}
-	
+
 	% ============================================================================
 	% ملخص (Arabic)
 	% ============================================================================
@@ -224,39 +249,39 @@
 	\begin{Arabic}
 		\chapter*{ملخص}
 		\addcontentsline{toc}{chapter}{ملخص}
-		
-		\setRTL 
-		\setlength{\parindent}{2cm} 
-		
+
+		\setRTL
+		\setlength{\parindent}{2cm}
+
 		\indent يقدم هذا التقرير مشروع نهاية السنة الذي تم إنجازه في إطار السنة الرابعة من \textbf{هندسة المعلوميات}. يندرج هذا المشروع ضمن نهج يهدف إلى تطبيق \textbf{الكفاءات} المكتسبة طوال فترة تكويننا وإعدادنا لمتطلبات العالم المهني. الهدف الرئيسي من هذا العمل هو تصميم وتطوير تطبيق يهدف إلى دعم طلاب هندسة المعلوميات في تنظيمهم و\textbf{تعلمهم} وإعدادهم \textbf{للاندماج المهني}.
-		
+
 		\indent نشأت فكرة المشروع من تجربتنا الطلابية الخاصة ومن تحديد الاحتياجات الحقيقية المتعلقة \textbf{بإدارة المشاريع}، و\textbf{تطوير المهارات التقنية}، و\textbf{التحضير للمقابلات}، وتحسين \textbf{العرض المهني}. وللإجابة على هذه الاحتياجات، تصورنا \textbf{منصة متكاملة} تجمع بين عدة أدوات تكميلية، كل منها مصمم لمرافقة الطالب في بُعد أساسي من مساره الأكاديمي.
-		
+
 		\indent تمحور نهجنا حول تحليل معمق للاحتياجات، يليه مرحلة تصميم منظمة سمحت بتحديد الهندسة العامة للحل. يتتبع هذا التقرير العملية برمتها، من تحديد الفكرة الأولية إلى إضفاء الطابع الرسمي على المفهوم النهائي، مرورًا بالاختيارات المنهجية التي وجهت عملنا الجماعي.
-		
+
 		\indent يمثل هذا المشروع فرصة لتطبيق معارفنا، ولكنه أيضًا تجربة تعاونية مثرية، تعزز مهاراتنا في التنظيم والتواصل والتصميم ضمن العمل الجماعي.
-		
+
 		\vspace{1cm}
 		\noindent\textbf{الكلمات المفتاحية:} هندسة المعلوميات، الكفاءات، التعلم، الاندماج المهني، إدارة المشاريع، تطوير المهارات التقنية، التحضير للمقابلات، العرض المهني، منصة متكاملة.
 	\end{Arabic}
-	
+
 	% ============================================================================
 	% LISTE DES ABRÉVIATIONS
 	% ============================================================================
 	\newpage
 	\chapter*{{\headingfont Liste des abréviations}}
 	\addcontentsline{toc}{chapter}{Liste des abréviations}
-	
+
 	\begin{center}
 		\begin{longtable}{|l|p{11cm}|}
 			\hline
 			\textbf{\textcolor{eheiBlue}{Abréviation}} & \textbf{\textcolor{eheiBlue}{Désignation}} \\ \hline
 			\endfirsthead
-			
+
 			\hline
 			\textbf{\textcolor{eheiBlue}{Abréviation}} & \textbf{\textcolor{eheiBlue}{Désignation}} \\ \hline
 			\endhead
-			
+
 			HTML  & Hyper Text Markup Language \\ \hline
 			CSS   & Cascading Style Sheets \\ \hline
 			API   & Application Programming Interface \\ \hline
@@ -285,7 +310,7 @@
 			KISS  & Keep It Simple Stupid \\ \hline
 		\end{longtable}
 	\end{center}
-	
+
 	% ============================================================================
 	% LISTES AUTOMATIQUES (FIN DU DOCUMENT)
 	% ============================================================================
@@ -293,14 +318,14 @@
 	\newpage
 	\addcontentsline{toc}{chapter}{Table des figures}
 	\renewcommand{\listfigurename}{{\headingfont Table des figures}}
-	\listoffigures 
+	\listoffigures
 	\vspace{1cm}
 	Add text here
-	
+
 	\newpage
 	\addcontentsline{toc}{chapter}{Liste des tableaux}
 	\renewcommand{\listtablename}{{\headingfont Liste des tableaux}}
-	\listoftables 
+	\listoftables
 	\vspace{1cm}
 	Add text here
 
@@ -313,32 +338,382 @@
 	\newpage
 	\chapter*{{\headingfont Introduction}}
 	\addcontentsline{toc}{chapter}{Introduction}
-	
+
 	Le domaine de l'ingénierie informatique connaît une transformation profonde, portée par l'essor des technologies numériques, de l'intelligence artificielle et des architectures logicielles distribuées. Dans un contexte où les entreprises recherchent des profils polyvalents, capables de concevoir, développer et déployer des solutions complexes, les établissements de formation se doivent de préparer leurs étudiants à relever ces défis avec rigueur et créativité. L'École des Hautes Études d'Ingénierie d'Oujda, fidèle à sa vocation d'excellence, inscrit le projet de fin d'année comme un exercice fondamental permettant aux étudiants de mobiliser l'ensemble de leurs acquis académiques dans un cadre concret et professionnalisant.
-	
+
 	Cependant, au-delà des compétences purement techniques, le passage du monde académique au monde professionnel exige la maîtrise de dimensions souvent négligées dans les cursus traditionnels : la gestion efficace de projets collaboratifs, le perfectionnement des aptitudes en résolution de problèmes algorithmiques, la construction d'un profil professionnel attractif, ou encore la préparation méthodique aux processus de recrutement. Ces compétences transversales, bien qu'essentielles, sont rarement adressées de manière intégrée par les outils existants, laissant les étudiants face à un écosystème fragmenté de ressources dispersées et peu adaptées à leurs besoins spécifiques.
-	
+
 	C'est précisément à partir de ce constat, nourri par notre propre vécu en tant qu'étudiants en quatrième année de Génie Informatique, que l'idée de ce projet a émergé. Notre ambition est de concevoir et de développer une plateforme unifiée qui rassemble, au sein d'un même environnement, plusieurs outils complémentaires destinés à accompagner l'étudiant ingénieur tout au long de son parcours. Cette plateforme intégrée vise à répondre simultanément aux besoins de gestion de projets, de renforcement des compétences techniques par la pratique de la programmation, d'analyse et d'optimisation des curricula vitae grâce à l'intelligence artificielle, ainsi que de simulation d'entretiens techniques et comportementaux.
-	
+
 	Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bien ce projet ambitieux. Il débute par une analyse du contexte et des besoins identifiés, avant de présenter les choix architecturaux et technologiques retenus. Les phases de conception et de réalisation y sont détaillées de manière méthodique, suivies d'une présentation des résultats obtenus. Enfin, une réflexion sur les perspectives d'évolution de la solution clôture ce document, témoignant de notre volonté de pérenniser cet outil au service de la communauté étudiante.
-	
+
 	% ============================================================================
 	% CHAPITRE I : CONTEXTE DU PROJET
 	% ============================================================================
 	\newpage
 	\section*{I. Contexte du projet}
 	\addcontentsline{toc}{section}{I. Contexte du projet}
-	
+
 	\subsection*{i. Description des besoins}
 	\addcontentsline{toc}{subsection}{i. Description des besoins}
 	% Content to be written
-	
-	\subsection*{ii. Besoins fonctionnels}
+
+	% ============================================================================
+	% ii. LES BESOINS FONCTIONNELS
+	% ============================================================================
+	\subsection*{ii. Les Besoins fonctionnels}
 	\addcontentsline{toc}{subsection}{ii. Besoins fonctionnels}
-	% Content to be written
-	
+
+	Notre projet global se compose de quatre applications distinctes formant un écosystème complet pour l'étudiant ingénieur. La première application, qui fait l'objet exclusive de cette section, est dédiée à la productivité et au travail collaboratif : \textbf{La Plateforme de Gestion de Projets et de Collaboration}.
+
+	Cette plateforme repose sur une architecture microservices composée de sept services back-end indépendants et d'une application front-end Angular. Chaque service est responsable d'un domaine métier spécifique et communique avec les autres via des API REST et un bus de messages Apache Kafka. Les besoins fonctionnels de cette première application sont organisés ci-dessous par module.
+
+	% -------------------------------------------------------
+	% TABLE 1 : AUTHENTIFICATION
+	% -------------------------------------------------------
+	\vspace{0.5cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 1. Module d'Authentification (Auth-Service)}}
+	\vspace{0.2cm}
+
+	\noindent Ce module gère l'ensemble du cycle de vie de l'authentification des utilisateurs.
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+		\caption{Besoins fonctionnels -- Module d'Authentification} \label{tab:bf-auth} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BF-AUTH-01 & Inscription & Le système doit permettre à un utilisateur de créer un compte en fournissant son nom complet, son adresse e-mail et un mot de passe sécurisé. \\ \hline
+		\altrow BF-AUTH-02 & Vérification par e-mail & Après l'inscription, le système doit envoyer un e-mail de vérification contenant un lien unique. L'utilisateur ne peut se connecter qu'après avoir vérifié son adresse e-mail. \\ \hline
+		\altrow BF-AUTH-03 & Renvoi de vérification & Le système doit permettre à l'utilisateur de demander le renvoi de l'e-mail de vérification en cas de non-réception. \\ \hline
+		\altrow BF-AUTH-04 & Connexion & Le système doit permettre à un utilisateur vérifié de se connecter avec son e-mail et son mot de passe et de recevoir un jeton JWT d'accès ainsi qu'un \textit{refresh token}. \\ \hline
+		\altrow BF-AUTH-05 & Rafraîchissement de session & Le système doit permettre le renouvellement automatique du jeton d'accès via le \textit{refresh token}, sans reconnexion manuelle. \\ \hline
+		\altrow BF-AUTH-06 & Déconnexion & Le système doit permettre la déconnexion avec invalidation du jeton d'accès et du \textit{refresh token} côté serveur (via Redis). \\ \hline
+		\altrow BF-AUTH-07 & Mot de passe oublié & Le système doit permettre la demande de réinitialisation de mot de passe par e-mail avec un lien à durée limitée. \\ \hline
+		\altrow BF-AUTH-08 & Réinitialisation du mot de passe & Le système doit permettre la définition d'un nouveau mot de passe à l'aide du jeton reçu par e-mail. \\ \hline
+		\altrow BF-AUTH-09 & Authentification 2FA & Le système doit permettre l'activation de l'authentification à deux facteurs via numéro de téléphone avec code de vérification SMS. \\ \hline
+		\altrow BF-AUTH-10 & Connexion via Google & Le système doit permettre l'inscription et la connexion via un compte Google (OAuth 2.0). Le profil est récupéré automatiquement. \\ \hline
+		\altrow BF-AUTH-11 & Connexion via GitHub & Le système doit permettre l'inscription et la connexion via un compte GitHub (OAuth 2.0). Le profil est récupéré automatiquement. \\ \hline
+		\altrow BF-AUTH-12 & Profil connecté & Le système doit exposer un endpoint pour récupérer les informations de l'utilisateur authentifié à partir de son jeton JWT. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% TABLE 2 : UTILISATEURS
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 2. Module de Gestion des Utilisateurs (Users-Service)}}
+	\vspace{0.2cm}
+
+	\noindent Ce module gère les profils utilisateurs et leurs données personnelles.
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+		\caption{Besoins fonctionnels -- Module de Gestion des Utilisateurs} \label{tab:bf-user} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BF-USER-01 & Consultation du profil & Le système doit permettre la consultation du profil d'un utilisateur par son identifiant (nom, prénom, e-mail, photo de profil, statut). \\ \hline
+		\altrow BF-USER-02 & Modification du profil & L'utilisateur doit pouvoir modifier ses informations personnelles (nom, prénom, numéro de téléphone). \\ \hline
+		\altrow BF-USER-03 & Photo de profil & Le système doit permettre le téléversement et la mise à jour de la photo de profil, stockée dans un volume Docker dédié. \\ \hline
+		\altrow BF-USER-04 & Statut utilisateur & Le système doit gérer le statut de chaque utilisateur (Actif, Inactif). \\ \hline
+		\altrow BF-USER-05 & Suppression de compte & Le système doit permettre la suppression logique (\textit{soft delete}) d'un compte avec horodatage et jeton de suppression. \\ \hline
+		\altrow BF-USER-06 & Liste des utilisateurs & Le système doit permettre de récupérer la liste de tous les utilisateurs enregistrés. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% TABLE 3 : ENVIRONNEMENTS
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 3. Module de Gestion des Environnements (Environments-Service)}}
+	\vspace{0.2cm}
+
+	\noindent Ce module gère les espaces de travail collaboratifs dans lesquels les utilisateurs collaborent.
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+		\caption{Besoins fonctionnels -- Module de Gestion des Environnements} \label{tab:bf-env} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BF-ENV-01 & Création d'un environnement & Un utilisateur authentifié peut créer un environnement (nom, description). Le créateur obtient le rôle de \textbf{Chef de Projet}. \\ \hline
+		\altrow BF-ENV-02 & Consultation & Le système doit permettre la consultation des détails d'un environnement (nom, description, date de création, membres). \\ \hline
+		\altrow BF-ENV-03 & Modification & Le chef de projet peut modifier le nom et la description d'un environnement qu'il a créé. \\ \hline
+		\altrow BF-ENV-04 & Suppression & Le chef de projet peut supprimer un environnement. Seul le créateur est autorisé. \\ \hline
+		\altrow BF-ENV-05 & Ajout d'un membre & Le chef de projet peut ajouter un utilisateur avec un rôle (Membre par défaut ou Chef de Projet). \\ \hline
+		\altrow BF-ENV-06 & Suppression d'un membre & Le chef de projet peut retirer un membre. Le dernier chef de projet ne peut pas se retirer. \\ \hline
+		\altrow BF-ENV-07 & Liste des membres & Le système doit lister tous les membres d'un environnement avec leurs rôles. \\ \hline
+		\altrow BF-ENV-08 & Mes environnements & L'utilisateur peut récupérer la liste de tous les environnements auxquels il a accès. \\ \hline
+		\altrow BF-ENV-09 & Système d'invitations & Le système permet d'inviter un utilisateur, qui peut consulter et accepter ses invitations en attente. \\ \hline
+		\altrow BF-ENV-10 & Contrôle d'accès par rôle & Le système distingue deux rôles : \textbf{Chef de Projet} (administration) et \textbf{Membre} (contribution limitée). \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% TABLE 4 : ÉQUIPES
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 4. Module de Gestion des Équipes (Teams-Service)}}
+	\vspace{0.2cm}
+
+	\noindent Ce module permet d'organiser les membres d'un environnement en équipes de travail.
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+		\caption{Besoins fonctionnels -- Module de Gestion des Équipes} \label{tab:bf-team} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BF-TEAM-01 & Création d'une équipe & Création d'une équipe avec nom, description et membres initiaux. Le nom doit être unique dans l'environnement. \\ \hline
+		\altrow BF-TEAM-02 & Modification & Modification du nom, de la description et de la composition d'une équipe (ajout/suppression de membres). \\ \hline
+		\altrow BF-TEAM-03 & Suppression & Suppression d'une équipe avec notification des autres services via Kafka. \\ \hline
+		\altrow BF-TEAM-04 & Consultation & Consultation des détails d'une équipe (nom, description, liste des membres avec avatars). \\ \hline
+		\altrow BF-TEAM-05 & Liste des équipes & Liste de toutes les équipes d'un environnement donné. \\ \hline
+		\altrow BF-TEAM-06 & Recherche par nom & Recherche d'équipes par nom au sein d'un environnement. \\ \hline
+		\altrow BF-TEAM-07 & Limite de membres & Capacité maximale de 10 membres par équipe, avec contrôle à l'ajout. \\ \hline
+		\altrow BF-TEAM-08 & Événements Kafka & Publication d'événements Kafka lors de chaque opération (création, modification, suppression, ajout/retrait de membre). \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% TABLE 5 : TICKETS - Gestion
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 5. Module de Gestion des Tickets (Tickets-Service)}}
+	\vspace{0.2cm}
+
+	\noindent Ce module constitue le cœur de la gestion de projet. Il gère les tickets, les workflows et l'assignation.
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+		\caption{Besoins fonctionnels -- Gestion des Tickets} \label{tab:bf-tkt} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\tableSectionHeader{5.1 Gestion des Tickets}
+		\altrow BF-TKT-01 & Création d'un ticket & Création avec : libellé, priorité (High/Medium/Low), dates, type (SingleTask ou MultipleTasks), workflow, étape initiale, environnement et assigné (optionnel). \\ \hline
+		\altrow BF-TKT-02 & Consultation & Consultation des détails d'un ticket (libellé, priorité, étape actuelle, sous-tâches, dates). \\ \hline
+		\altrow BF-TKT-03 & Modification & Modification des propriétés d'un ticket existant (libellé, priorité, dates). \\ \hline
+		\altrow BF-TKT-04 & Suppression & Suppression d'un ticket par son identifiant. \\ \hline
+		\altrow BF-TKT-05 & Liste par environnement & Récupération de tous les tickets associés à un environnement donné. \\ \hline
+		\altrow BF-TKT-06 & Assignation & Un administrateur peut assigner à n'importe quel membre. Un membre ne peut assigner qu'à lui-même. Déclenche une notification. \\ \hline
+		\altrow BF-TKT-07 & Types de tickets & Support de deux types : \textbf{SingleTask} (tâche unique) et \textbf{MultipleTasks} (plusieurs sous-tâches). \\ \hline
+
+		\tableSectionHeader{5.2 Gestion des Sous-tâches}
+		\altrow BF-TKT-08 & Ajout de sous-tâches & Ajout de sous-tâches à un ticket de type MultipleTasks. \\ \hline
+		\altrow BF-TKT-09 & Statut sous-tâche & Marquer une sous-tâche comme terminée ou non terminée. Réservé aux administrateurs. \\ \hline
+		\altrow BF-TKT-10 & Complétion auto. & Marquer un ticket comme complété, mettant à jour son étape dans le workflow. \\ \hline
+
+		\tableSectionHeader{5.3 Gestion des Workflows}
+		\altrow BF-WF-01 & Workflow par env. & Chaque environnement dispose d'un workflow unique composé d'étapes ordonnées. \\ \hline
+		\altrow BF-WF-02 & Étapes personnalisables & Chaque étape a un nom, un ordre, une couleur et un indicateur d'étape finale. Modification réservée aux admins. \\ \hline
+		\altrow BF-WF-03 & Kanban drag-and-drop & Déplacement de tickets entre étapes par glisser-déposer. \textbf{Réservé aux Chefs de Projet.} \\ \hline
+
+		\tableSectionHeader{5.4 Contrôle d'Accès}
+		\altrow BF-ACL-01 & Restriction de modification & Seuls les Chefs de Projet peuvent modifier l'état d'un ticket (drag-and-drop ou sous-tâches). \\ \hline
+		\altrow BF-ACL-02 & Lecture seule & Les Membres peuvent consulter les tickets mais ne peuvent pas modifier leur état. \\ \hline
+		\altrow BF-ACL-03 & Restriction d'assignation & Un Membre ne peut créer un ticket que pour lui-même. Un Chef de Projet peut assigner à tout membre. \\ \hline
+		\altrow BF-ACL-04 & Masquage admin & Le bouton «~Modifier le workflow~» n'est pas visible pour les Membres. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% TABLE 6 : NOTIFICATIONS
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 6. Module de Notifications (Notifications-Service)}}
+	\vspace{0.2cm}
+
+	\noindent Ce module gère les notifications en temps réel à destination des utilisateurs.
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+		\caption{Besoins fonctionnels -- Module de Notifications} \label{tab:bf-notif} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BF-NOTIF-01 & Temps réel & Envoi de notifications en temps réel via WebSocket (SignalR). \\ \hline
+		\altrow BF-NOTIF-02 & Types & Support de 8 types : Réunion, Tâche, Mention, Commentaire, Événement, Statut, Reportée, Assignation. \\ \hline
+		\altrow BF-NOTIF-03 & Notification d'assignation & Notification automatique de type \textit{Assignment} lors de l'assignation d'un ticket. \\ \hline
+		\altrow BF-NOTIF-04 & Consultation & Consultation des notifications dans une page dédiée et via l'icône cloche de la barre de navigation. \\ \hline
+		\altrow BF-NOTIF-05 & Marquer comme lue & L'utilisateur peut marquer une notification individuelle comme lue. \\ \hline
+		\altrow BF-NOTIF-06 & Tout marquer comme lu & Marquer toutes les notifications comme lues en une seule action. \\ \hline
+		\altrow BF-NOTIF-07 & Suppression & L'utilisateur peut supprimer une notification. \\ \hline
+		\altrow BF-NOTIF-08 & Statistiques & Statistiques sur les notifications (total, répartition par type et statut). \\ \hline
+		\altrow BF-NOTIF-09 & Consommation Kafka & Consommation des événements Kafka émis par les autres services pour générer automatiquement les notifications. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% TABLE 7 : JOURNALISATION
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 7. Module de Journalisation (Logs-Service)}}
+	\vspace{0.2cm}
+
+	\noindent Ce module assure la traçabilité centralisée de toutes les actions effectuées dans la plateforme.
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+		\caption{Besoins fonctionnels -- Module de Journalisation} \label{tab:bf-log} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BF-LOG-01 & Enregistrement auto. & Enregistrement automatique des actions : CRUD équipes, CRUD tickets, entrées/sorties de membres. \\ \hline
+		\altrow BF-LOG-02 & Consommation Kafka & Consommation des événements : \texttt{team-created}, \texttt{team-updated}, \texttt{team-deleted}, \texttt{ticket-created}, \texttt{ticket-updated}, \texttt{ticket-deleted}, \texttt{chat-created}. \\ \hline
+		\altrow BF-LOG-03 & Consultation paginée & Consultation des logs avec pagination configurable (numéro de page, taille). \\ \hline
+		\altrow BF-LOG-04 & Filtrage avancé & Filtrage par date, niveau de sévérité, service source, utilisateur et environnement. \\ \hline
+		\altrow BF-LOG-05 & Logs par utilisateur & Consultation des logs associés à un utilisateur spécifique. \\ \hline
+		\altrow BF-LOG-06 & Logs par service & Consultation des logs associés à un service spécifique. \\ \hline
+		\altrow BF-LOG-07 & Logs par niveau & Filtrage par niveau de sévérité (Info, Warning, Error, Critical). \\ \hline
+		\altrow BF-LOG-08 & Statistiques & Statistiques globales : total, répartition par niveau/service/action, utilisateurs les plus actifs. \\ \hline
+		\altrow BF-LOG-09 & Nettoyage & Suppression des logs anciens (plus de 90 jours par défaut). \\ \hline
+		\altrow BF-LOG-10 & Exportation CSV & Exportation des logs au format CSV depuis l'interface utilisateur. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% TABLE 8 : APPLICATION FRONT-END
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 8. Application Front-End (Project-Management-App)}}
+	\vspace{0.2cm}
+
+	\noindent L'application Angular constitue l'interface utilisateur unifiée de la plateforme.
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+		\caption{Besoins fonctionnels -- Application Front-End} \label{tab:bf-ui} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BF-UI-01 & Tableau de bord & Affichage synthétique : tickets assignés, réunions à venir, discussions récentes. \\ \hline
+		\altrow BF-UI-02 & Tableau Kanban & Tableau Kanban avec colonnes du workflow et glisser-déposer (admins uniquement). \\ \hline
+		\altrow BF-UI-03 & Filtres tickets & Filtres par priorité, par assigné, recherche textuelle et tri par priorité. \\ \hline
+		\altrow BF-UI-04 & Détail ticket & Modale de détail avec titre, dates, priorité et liste des sous-tâches. \\ \hline
+		\altrow BF-UI-05 & Page des équipes & Page dédiée à la gestion des équipes (création, modification, suppression, membres). \\ \hline
+		\altrow BF-UI-06 & Page notifications & Page listant toutes les notifications avec options de lecture et suppression. \\ \hline
+		\altrow BF-UI-07 & Icône cloche & Badge dans la navbar indiquant le nombre de notifications non lues. \\ \hline
+		\altrow BF-UI-08 & Page des logs & Consultation des logs avec filtres par date, niveau, service et exportation CSV. \\ \hline
+		\altrow BF-UI-09 & Gestion des envs. & Sélection, visualisation des membres et navigation entre environnements. \\ \hline
+		\altrow BF-UI-10 & Profil utilisateur & Page de modification des informations personnelles et de la photo de profil. \\ \hline
+		\altrow BF-UI-11 & Sidebar & Barre latérale permanente : Dashboard, Tickets, Équipes, Notifications, Logs, Calendrier, Discussions. \\ \hline
+		\altrow BF-UI-12 & Discussions & Page de messagerie/chat entre les membres d'un environnement. \\ \hline
+		\altrow BF-UI-13 & Calendrier & Vue calendrier pour visualiser les tickets et les échéances. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% TABLEAU RÉCAPITULATIF
+	% -------------------------------------------------------
+	\vspace{0.5cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large Récapitulatif des Besoins Fonctionnels}}
+	\vspace{0.3cm}
+
+	\begin{center}
+	\begin{tabular}{|>{\small}m{8cm}|>{\centering\arraybackslash\small\bfseries}m{3cm}|}
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{Module}} & \textcolor{white}{\textbf{Nombre de BF}} \\
+		\hline
+		\rowcolor{tableRowLight} Authentification (Auth-Service) & 12 \\ \hline
+		\rowcolor{tableRowWhite} Utilisateurs (Users-Service) & 6 \\ \hline
+		\rowcolor{tableRowLight} Environnements (Environments-Service) & 10 \\ \hline
+		\rowcolor{tableRowWhite} Équipes (Teams-Service) & 8 \\ \hline
+		\rowcolor{tableRowLight} Tickets (Tickets-Service) & 14 \\ \hline
+		\rowcolor{tableRowWhite} Notifications (Notifications-Service) & 9 \\ \hline
+		\rowcolor{tableRowLight} Journalisation (Logs-Service) & 10 \\ \hline
+		\rowcolor{tableRowWhite} Front-End (Project-Management-App) & 13 \\ \hline
+		\rowcolor{sectionBg!20} \textbf{Total} & \textbf{82} \\ \hline
+	\end{tabular}
+	\end{center}
+
+	% ============================================================================
+	% iii. LES BESOINS NON-FONCTIONNELS
+	% ============================================================================
 	\subsection*{iii. Les besoins non-fonctionnels}
 	\addcontentsline{toc}{subsection}{iii. Les besoins non-fonctionnels}
 	% Content to be written
-	
+
 \end{document}
