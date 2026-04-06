@@ -1,0 +1,305 @@
+\documentclass[12pt,a4paper]{report}
+
+% ============================================================================
+% PACKAGES ESSENTIELS
+% ============================================================================
+\usepackage{fontspec}    
+\usepackage{polyglossia} 
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{longtable}   
+\usepackage{array}       
+
+% ============================================================================
+% CONFIGURATION DES LANGUES
+% ============================================================================
+\setmainlanguage{french}
+\setotherlanguages{english,arabic}
+
+% ============================================================================
+% CONFIGURATION DES POLICES
+% ============================================================================
+\setmainfont{Times New Roman}
+\newfontfamily\headingfont[Scale=1.1]{Arial}
+\newfontfamily\arabicfont[Script=Arabic,Scale=1.2]{Amiri}
+
+% ============================================================================
+% CONFIGURATION DE LA PAGE
+% ============================================================================
+\geometry{
+	a4paper,
+	top=2.5cm,
+	bottom=2.5cm,
+	left=2.5cm,
+	right=2.5cm,
+	headheight=20pt,
+	footskip=35pt
+}
+
+% ============================================================================
+% DÉFINITION DES COULEURS
+% ============================================================================
+\definecolor{eheiRed}{RGB}{220,53,69}  
+\definecolor{eheiBlue}{RGB}{41,128,185} 
+
+% ============================================================================
+% CONFIGURATION DES EN-TÊTES ET PIEDS DE PAGE
+% ============================================================================
+\pagestyle{fancy}
+\fancyhf{} 
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ============================================================================
+% CONFIGURATION DES HYPERLIENS
+% ============================================================================
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black, 
+	filecolor=eheiRed,
+	urlcolor=eheiBlue,
+	citecolor=eheiRed,
+	pdfauthor={Gang of Five},
+	pdftitle={Projet de Fin d'Année - EHEI},
+}
+
+\onehalfspacing 
+
+% ============================================================================
+% DÉBUT DU DOCUMENT
+% ============================================================================
+\begin{document}
+	
+	% ============================================================================
+	% PAGE DE GARDE
+	% ============================================================================
+	\begin{titlepage}
+		\begin{center}
+			\begin{minipage}[t]{0.45\textwidth}
+				\flushleft
+				{\headingfont\Large EHEI}\\
+				\textcolor{eheiRed}{\small RECONNUE PAR L'ÉTAT}
+			\end{minipage}%
+			\hfill
+			\begin{minipage}[t]{0.45\textwidth}
+				\flushright
+				{\headingfont\Large EHEI}\\
+				\textcolor{eheiRed}{\small RECONNUE PAR L'ÉTAT}
+			\end{minipage}
+			
+			\vspace{1cm}
+			
+			{\headingfont\LARGE \textbf{ECOLE DES HAUTES ETUDES}}\\[0.2cm]
+			{\headingfont\LARGE \textbf{D'INGENIERIE -- OUJDA}}\\[0.8cm]
+			
+			{\headingfont\Large \textbf{Mémoire de Projet de synthèse}}\\[0.2cm]
+			{\large Présenté en vue de l'obtention du}\\[0.2cm]
+			{\headingfont\Large \textbf{DIPLÔME D'INGENIEUR D'ETAT}}\\[0.5cm]
+			
+			{\large FILIERE : GENIE INFORMATIQUE}\\[1cm]
+			
+			\begin{tikzpicture}
+				\node[rectangle, draw=eheiBlue, line width=2pt, 
+				minimum width=0.9\textwidth, minimum height=2.5cm,
+				align=center] (titre) {
+					{\headingfont\Huge \textbf{TITRE}}
+				};
+			\end{tikzpicture}
+			
+			\vspace{1cm}
+			
+			\begin{minipage}[t]{0.48\textwidth}
+				\flushleft
+				{\large \textbf{\textcolor{eheiBlue}{Réalisé par :}}}\\[0.2cm]
+				M. ALWAN Charaf Eddine\\
+				M. KMIMECH Youssef\\
+				M. BOUAMAR Ayman\\
+				M. NIKEL Mohammed Taha\\
+				M. BEDLOU Oussama
+			\end{minipage}%
+			\hfill
+			\begin{minipage}[t]{0.48\textwidth}
+				\flushright
+				{\large \textbf{\textcolor{eheiBlue}{Encadré par :}}}\\[0.2cm]
+				M. MANI Mohammed Adil
+			\end{minipage}
+			
+			\vspace{0.8cm}
+			
+			{\large \textbf{\textcolor{eheiBlue}{\underline{Soutenance le ................ 2025 devant le Jury :}}}}\\[0.3cm]
+			M/MME \dotfill\\[0.15cm]
+			M/MME \dotfill\\[0.15cm]
+			M/MME \dotfill\\[0.5cm]
+			
+			\vfill
+			
+			{\large \textbf{Année universitaire : 2025 -- 2026}}
+		\end{center}
+	\end{titlepage}
+	
+	% ============================================================================
+	% DÉDICACE
+	% ============================================================================
+	\newpage
+	\chapter*{{\headingfont Dédicace}}
+	\addcontentsline{toc}{chapter}{Dédicace}
+	
+	Tout travail académique abouti est le fruit d'un parcours jalonné d'efforts, de remises en question et de soutiens précieux. Ce projet de fin d'année s'inscrit dans cette dynamique : il représente bien plus qu'une simple réalisation technique, mais l'aboutissement d'un chemin parcouru avec persévérance, entraide et détermination. C'est à ce titre que nous souhaitons consacrer ces quelques lignes à celles et ceux qui ont contribué, de manière essentielle, à sa concrétisation.
+	
+	Nous dédions ce travail avant tout à nos parents, dont le soutien indéfectible a constitué le socle de notre réussite. Par leur patience, leurs encouragements constants et les sacrifices consentis tout au long de notre parcours académique, ils ont su nous offrir un cadre propice à l'apprentissage et à l'épanouissement. Leur confiance et leur présence, tant dans les moments d'incertitude que dans les phases de réussite, ont été une source permanente de motivation et de stabilité.
+	
+	Nous tenons également à mettre à l'honneur les membres de notre équipe, \textbf{THE GANG OF FIVE}. Ce projet n'aurait pu aboutir sans leur sérieux, leur sens des responsabilités et leur engagement collectif. Chacun, par son investissement, sa rigueur et son esprit de collaboration, a contribué à faire de ce travail une réalisation cohérente et aboutie. Les échanges constructifs, la complémentarité des compétences et la capacité à faire face ensemble aux défis rencontrés ont été des éléments déterminants tout au long du projet.
+	
+	Enfin, nous adressons notre reconnaissance à toutes les personnes qui, de près ou de loin, ont cru en nous et nous ont encouragés à aller au-delà de nos limites. À travers leurs conseils, leur disponibilité et leurs orientations, nos enseignants ont contribué à structurer notre réflexion et à renforcer notre rigueur académique. Nous pensons également à nos camarades et collègues, dont le soutien moral et la présence ont accompagné notre parcours. L'ensemble de ces apports a joué un rôle essentiel dans notre progression, tant sur le plan académique que personnel, et a contribué à donner à ce projet toute sa valeur.
+	
+	% ============================================================================
+	% REMERCIEMENTS
+	% ============================================================================
+	\newpage
+	\chapter*{{\headingfont Remerciements}}
+	\addcontentsline{toc}{chapter}{Remerciements}
+	
+	Au terme de ce projet de fin d'année, il nous est particulièrement agréable d'exprimer notre profonde reconnaissance envers toutes les personnes qui ont contribué, de près ou de loin, à la réalisation de ce travail.
+	
+	Nous tenons tout d'abord à adresser nos remerciements les plus sincères à Monsieur BARBOUCHA Mohammed, Directeur de l'École des Hautes Études d'Ingénierie, pour la vision qu'il porte et qui fait de l'EHEI bien plus qu'un simple établissement d'enseignement : un véritable tremplin vers l'excellence et l'innovation. Le cadre académique stimulant qu'il a su instaurer nous a permis de nous épanouir et de développer notre esprit d'initiative, essence même de ce projet.
+	
+	Nous exprimons notre gratitude particulière à Monsieur MANI Mohammed Adil, notre encadrant technique, dont l'accompagnement a été un pilier fondamental dans la concrétisation de notre vision. Sa disponibilité constante, ses conseils avisés et sa capacité à nous guider tout en respectant notre autonomie créative ont été déterminants. Au-delà de l'expertise technique, il a su être un véritable mentor et un soutien psychologique précieux. Dans les moments de doute, face à la complexité de concilier documentation, apprentissage autonome de nouvelles technologies et charge académique, ses paroles encourageantes et sa bienveillance nous ont redonné confiance et motivation. Son attention particulière à notre bien-être physique et mental, ainsi que ses orientations méthodologiques, nous ont permis de persévérer et de transformer les obstacles en opportunités d'apprentissage. Sa confiance inébranlable en notre capacité à explorer des domaines non couverts par notre programme d'études nous a encouragés à repousser nos limites et à croire en notre potentiel.
+	
+	Nos remerciements s'adressent également à notre encadrant pédagogique, dont le suivi rigoureux et les recommandations méthodologiques ont contribué à structurer notre démarche et à maintenir la qualité académique de notre travail tout au long de ce projet d'envergure.
+	
+	Nous souhaitons remercier chaleureusement l'ensemble du corps professoral et administratif de l'EHEI. Leurs enseignements, qui allient théorie et pratique, nous ont fourni les fondations solides nécessaires pour concevoir et développer une application aussi ambitieuse. Les compétences techniques, mais aussi les valeurs de rigueur, de persévérance et de travail collaboratif qu'ils nous ont transmises, constituent aujourd'hui notre plus précieux bagage pour aborder notre future vie professionnelle.
+	
+	Enfin, nous tenons à exprimer notre reconnaissance envers l'EHEI dans son ensemble, qui nous a offert bien plus qu'une formation : une communauté d'apprentissage, un environnement propice à l'innovation et une expérience humaine enrichissante qui restera gravée dans nos mémoires.
+	
+	Ce projet représente pour nous l'aboutissement de quatre années d'efforts, de découvertes et de croissance personnelle. Il symbolise notre passage de l'apprentissage à la création, de l'étudiant à l'ingénieur. Pour cela, we be eternally grateful.
+	
+	% ============================================================================
+	% RÉSUMÉ (Français)
+	% ============================================================================
+	\newpage
+	\chapter*{{\headingfont Résumé}}
+	\addcontentsline{toc}{chapter}{Résumé}
+	
+	Ce rapport présente le projet de fin d'année mené au sein de la 4\textsuperscript{ème} année \textbf{Génie Informatique}. Il s'inscrit dans une démarche visant à mettre en pratique les \textbf{compétences} acquises tout au long de notre formation et à nous préparer aux exigences du monde professionnel. L'objectif principal de ce travail est la conception et le développement d'une application destinée à soutenir les étudiants en génie informatique dans leur organisation, leur \textbf{apprentissage} et leur préparation à l'\textbf{insertion professionnelle}.
+	
+	L'idée du projet est née de notre propre expérience étudiante et de l'identification de besoins réels liés à \textbf{la gestion des projets}, au \textbf{développement de compétences techniques}, à la \textbf{préparation aux entretiens} et à l'amélioration de \textbf{la présentation professionnelle}. Pour y répondre, nous avons imaginé une \textbf{plateforme intégrée} regroupant plusieurs outils complémentaires, chacun destiné à accompagner l'étudiant dans une dimension essentielle de son parcours.
+	
+	Notre démarche s'est articulée autour d'une analyse approfondie des besoins, puis d'une phase de conception structurée permettant de définir l'architecture générale de la solution. Ce rapport retrace l'ensemble du processus suivi, depuis la définition de l'idée initiale jusqu'à la formalisation du concept final, en passant par les choix méthodologiques qui ont guidé notre travail collectif.
+	
+	Ce projet représente une occasion d'appliquer nos connaissances, mais aussi une expérience collaborative enrichissante, renforçant nos compétences en organisation, communication et conception au sein d'un travail d'équipe.
+	
+	\vspace{1cm}
+	\noindent\textbf{Mots Clés :} génie informatique, compétences, apprentissage, insertion professionnelle, gestion des projets, développement de compétences techniques, préparation aux entretiens, présentation professionnelle, plateforme intégrée.
+	
+	% ============================================================================
+	% ABSTRACT (English)
+	% ============================================================================
+	\newpage
+	\begin{english}
+		\chapter*{{\headingfont Abstract}}
+		\addcontentsline{toc}{chapter}{Abstract}
+		
+		This report presents the final year project conducted within the 4\textsuperscript{th} year of \textbf{Computer Engineering}. It is part of an approach aimed at applying the \textbf{skills} acquired throughout our training and preparing us for the demands of the professional world. The main objective of this work is the design and development of an application intended to support computer engineering students in their organization, \textbf{learning}, and preparation for \textbf{professional integration}.
+		
+		The project idea originated from our own student experience and the identification of real needs related to \textbf{project management}, \textbf{technical skills development}, \textbf{interview preparation}, and improvement of \textbf{professional presentation}. To address these needs, we envisioned an \textbf{integrated platform} bringing together several complementary tools, each designed to support students in an essential dimension of their academic journey.
+		
+		Our approach was structured around an in-depth needs analysis, followed by a structured design phase that defined the overall architecture of the solution. This report traces the entire process followed, from the definition of the initial idea to the formalization of the final concept, including the methodological choices that guided our collective work.
+		
+		This project represents an opportunity to apply our knowledge, but also an enriching collaborative experience, strengthening our skills in organization, communication, and design within teamwork.
+		
+		\vspace{1cm}
+		\noindent\textbf{Keywords:} computer engineering, skills, learning, professional integration, project management, technical skills development, interview preparation, professional presentation, integrated platform.
+	\end{english}
+	
+	% ============================================================================
+	% ملخص (Arabic)
+	% ============================================================================
+	\newpage
+	\begin{Arabic}
+		\chapter*{ملخص}
+		\addcontentsline{toc}{chapter}{ملخص}
+		
+		\setRTL 
+		\setlength{\parindent}{2cm} 
+		
+		\indent يقدم هذا التقرير مشروع نهاية السنة الذي تم إنجازه في إطار السنة الرابعة من \textbf{هندسة المعلوميات}. يندرج هذا المشروع ضمن نهج يهدف إلى تطبيق \textbf{الكفاءات} المكتسبة طوال فترة تكويننا وإعدادنا لمتطلبات العالم المهني. الهدف الرئيسي من هذا العمل هو تصميم وتطوير تطبيق يهدف إلى دعم طلاب هندسة المعلوميات في تنظيمهم و\textbf{تعلمهم} وإعدادهم \textbf{للاندماج المهني}.
+		
+		\indent نشأت فكرة المشروع من تجربتنا الطلابية الخاصة ومن تحديد الاحتياجات الحقيقية المتعلقة \textbf{بإدارة المشاريع}، و\textbf{تطوير المهارات التقنية}، و\textbf{التحضير للمقابلات}، وتحسين \textbf{العرض المهني}. وللإجابة على هذه الاحتياجات، تصورنا \textbf{منصة متكاملة} تجمع بين عدة أدوات تكميلية، كل منها مصمم لمرافقة الطالب في بُعد أساسي من مساره الأكاديمي.
+		
+		\indent تمحور نهجنا حول تحليل معمق للاحتياجات، يليه مرحلة تصميم منظمة سمحت بتحديد الهندسة العامة للحل. يتتبع هذا التقرير العملية برمتها، من تحديد الفكرة الأولية إلى إضفاء الطابع الرسمي على المفهوم النهائي، مرورًا بالاختيارات المنهجية التي وجهت عملنا الجماعي.
+		
+		\indent يمثل هذا المشروع فرصة لتطبيق معارفنا، ولكنه أيضًا تجربة تعاونية مثرية، تعزز مهاراتنا في التنظيم والتواصل والتصميم ضمن العمل الجماعي.
+		
+		\vspace{1cm}
+		\noindent\textbf{الكلمات المفتاحية:} هندسة المعلوميات، الكفاءات، التعلم، الاندماج المهني، إدارة المشاريع، تطوير المهارات التقنية، التحضير للمقابلات، العرض المهني، منصة متكاملة.
+	\end{Arabic}
+	
+	% ============================================================================
+	% LISTE DES ABRÉVIATIONS
+	% ============================================================================
+	\newpage
+	\chapter*{{\headingfont Liste des abréviations}}
+	\addcontentsline{toc}{chapter}{Liste des abréviations}
+	
+	\begin{center}
+		\begin{longtable}{|l|p{11cm}|}
+			\hline
+			\textbf{\textcolor{eheiBlue}{Abréviation}} & \textbf{\textcolor{eheiBlue}{Désignation}} \\ \hline
+			\endfirsthead
+			
+			\hline
+			\textbf{\textcolor{eheiBlue}{Abréviation}} & \textbf{\textcolor{eheiBlue}{Désignation}} \\ \hline
+			\endhead
+			
+			HTML  & Hyper Text Markup Language \\ \hline
+			CSS   & Cascading Style Sheets \\ \hline
+			API   & Application Programming Interface \\ \hline
+			REST  & Representational State Transfer \\ \hline
+			HTTP  & HyperText Transfer Protocol \\ \hline
+			HTTPS & HyperText Transfer Protocol Secure \\ \hline
+			JSON  & JavaScript Object Notation \\ \hline
+			JWT   & JSON Web Token \\ \hline
+			SQL   & Structured Query Language \\ \hline
+			ORM   & Object-Relational Mapping \\ \hline
+			MVC   & Model View Controller \\ \hline
+			DTO   & Data Transfer Object \\ \hline
+			CRUD  & Create Read Update Delete \\ \hline
+			OAuth & Open Authorization \\ \hline
+			UML   & Unified Modeling Language \\ \hline
+			URL   & Uniform Resource Locator \\ \hline
+			UI    & User Interface \\ \hline
+			UX    & User Experience \\ \hline
+			AI    & Artificial Intelligence \\ \hline
+			NLP   & Natural Language Processing \\ \hline
+			LLM   & Large Language Model \\ \hline
+			CV    & Curriculum Vitae \\ \hline
+			PFA   & Projet de Fin d'Année \\ \hline
+			SOLID & Single Responsibility, Open/Closed , Liskov Substitution , Interface Segregation, and Dependency Inversion Principle \\ \hline
+			DRY   & Don't Repeat Yourself \\ \hline
+			KISS  & Keep It Simple Stupid \\ \hline
+		\end{longtable}
+	\end{center}
+	
+	% ============================================================================
+	% LISTES AUTOMATIQUES (FIN DU DOCUMENT)
+	% ============================================================================
+	
+	\newpage
+	\addcontentsline{toc}{chapter}{\listfigurename}
+	\listoffigures 
+	\vspace{1cm}
+	Add text here
+	
+	\newpage
+	\addcontentsline{toc}{chapter}{\listtablename}
+	\listoftables 
+	\vspace{1cm}
+	Add text here
+	
+\end{document}
