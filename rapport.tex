@@ -345,13 +345,13 @@ Cependant, au-delà des compétences purement techniques, le passage du monde ac
 
 C'est précisément à partir de ce constat, nourri par notre propre vécu en tant qu'étudiants en quatrième année de Génie Informatique, que l'idée de ce projet a émergé. Notre ambition est de concevoir et de développer une plateforme unifiée qui rassemble, au sein d'un même environnement, plusieurs outils complémentaires destinés à accompagner l'étudiant ingénieur tout au long de son parcours. Cette plateforme intégrée s'articule autour de quatre modules principaux :
 \begin{itemize}
-\item 
+\item
 Une application dédiée à la gestion de projets collaboratifs.
-\item 
-Une application orientée vers la création de CV et de portfolios ainsi que la recherche de stages et d’opportunités professionnelles.
-\item 
+\item
+Une application orientée vers la création de CV et de portfolios ainsi que la recherche de stages et d'opportunités professionnelles.
+\item
 Une application consacrée à l'entraînement en algorithmique et à la résolution de problèmes.
-\item 
+\item
 Une application dédiée à la préparation aux entretiens techniques et comportementaux.
 \end{itemize}
 
@@ -366,11 +366,11 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 	\addcontentsline{toc}{section}{I. Contexte du projet}
 
 	\subsection*{i. Description des besoins}
-Dans un environnement académique et professionnel en constante évolution, les étudiants en informatique doivent aujourd’hui faire preuve d’une grande polyvalence, alliant compétences techniques, organisation et préparation à l’insertion professionnelle. Cependant, plusieurs limites freinent leur progression.
+Dans un environnement académique et professionnel en constante évolution, les étudiants en informatique doivent aujourd'hui faire preuve d'une grande polyvalence, alliant compétences techniques, organisation et préparation à l'insertion professionnelle. Cependant, plusieurs limites freinent leur progression.
 
-La dispersion des outils complique la gestion des projets et nuit à la productivité. La préparation aux entretiens techniques reste insuffisante et peu immersive. De plus, l’apprentissage continu est difficile à maintenir face à la rapidité des évolutions technologiques, tandis que la valorisation du profil professionnel, notamment à travers le CV, demeure un défi pour de nombreux étudiants.
+La dispersion des outils complique la gestion des projets et nuit à la productivité. La préparation aux entretiens techniques reste insuffisante et peu immersive. De plus, l'apprentissage continu est difficile à maintenir face à la rapidité des évolutions technologiques, tandis que la valorisation du profil professionnel, notamment à travers le CV, demeure un défi pour de nombreux étudiants.
 
-Ainsi, la problématique centrale consiste à concevoir une plateforme intégrée et intuitive permettant de centraliser les outils essentiels à l’organisation, à l’apprentissage, à la préparation aux entretiens et à la valorisation du profil, afin d’accompagner efficacement les étudiants en informatique dans leur parcours et d’optimiser leurs chances de réussite.
+Ainsi, la problématique centrale consiste à concevoir une plateforme intégrée et intuitive permettant de centraliser les outils essentiels à l'organisation, à l'apprentissage, à la préparation aux entretiens et à la valorisation du profil, afin d'accompagner efficacement les étudiants en informatique dans leur parcours et d'optimiser leurs chances de réussite.
 	\addcontentsline{toc}{subsection}{i. Description des besoins}
 	% Content to be written
 
@@ -728,12 +728,242 @@ Ainsi, la problématique centrale consiste à concevoir une plateforme intégré
 	% ============================================================================
 	% iii. LES BESOINS NON-FONCTIONNELS
 	% ============================================================================
-	\subsection*{iii. Les besoins non-fonctionnels}
-	\addcontentsline{toc}{subsection}{iii. Les besoins non-fonctionnels}
-	% Content to be written
+	\subsection*{iii. Les besoins non-fonctionnels Project-Management-App}
+	\addcontentsline{toc}{subsection}{iii. Les besoins non-fonctionnels Project-Management-App}
 
+	Les besoins non fonctionnels définissent les attributs de qualité que la plateforme met en œuvre pour garantir sa robustesse, sa sécurité et sa pérennité. Contrairement aux besoins fonctionnels qui décrivent ce que le système fait, ces critères décrivent comment il le fait.
 
+	% -------------------------------------------------------
+	% 1. PERFORMANCE
+	% -------------------------------------------------------
+	\vspace{0.5cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 1. Performance}}
+	\vspace{0.3cm}
 
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
+		\caption{Besoins non fonctionnels -- Performance} \label{tab:bnf-perf} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BNF-PERF-01 & Traitement asynchrone & Découplage des traitements secondaires (logs, notifications) via Apache Kafka pour garantir une réponse HTTP immédiate. \\ \hline
+		\altrow BNF-PERF-02 & Mise en cache & Utilisation de Redis pour le stockage en mémoire (ex: liste noire des JWT), offrant un temps d'accès de l'ordre de la milliseconde. \\ \hline
+		\altrow BNF-PERF-03 & Optimisation ORM & Requêtes Entity Framework Core optimisées via le chargement sélectif (eager loading) pour éviter les problèmes de requêtes N+1. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% 2. SÉCURITÉ
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 2. Sécurité}}
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
+		\caption{Besoins non fonctionnels -- Sécurité} \label{tab:bnf-sec} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BNF-SEC-01 & Hachage cryptographique & Les mots de passe ne sont jamais stockés en clair, mais hachés via un algorithme sécurisé avant persistance. \\ \hline
+		\altrow BNF-SEC-02 & Expiration des jetons & Les jetons (vérification d'e-mail, réinitialisation) disposent d'une date d'expiration stricte. \\ \hline
+		\altrow BNF-SEC-03 & Gestion des secrets & Externalisation des secrets applicatifs (JWT, OAuth, SMTP, DB) via des variables d'environnement non versionnées. \\ \hline
+		\altrow BNF-SEC-04 & Liste noire JWT & Invalidation des jetons d'accès lors de la déconnexion via une liste noire stockée dans Redis. \\ \hline
+		\altrow BNF-SEC-05 & Protection & Verrouillage automatique des comptes (15 minutes) après 3 tentatives de connexion échouées. \\ \hline
+		\altrow BNF-SEC-06 & Traçabilité IP & Enregistrement de l'adresse IP cliente pour chaque opération sensible. \\ \hline
+		\altrow BNF-SEC-07 & Politique CORS & Restriction des requêtes cross-origin au seul domaine du front-end Angular. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% 3. SCALABILITÉ
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 3. Scalabilité}}
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
+		\caption{Besoins non fonctionnels -- Scalabilité} \label{tab:bnf-sca} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BNF-SCA-01 & Microservices & Décomposition en 7 services back-end autonomes, évoluant et se déployant indépendamment. \\ \hline
+		\altrow BNF-SCA-02 & Isolation des données & Chaque microservice possède sa propre base de données logique, éliminant les couplages SQL directs. \\ \hline
+		\altrow BNF-SCA-03 & Découplage événementiel & Kafka permet l'ajout de nouveaux consommateurs sans impacter les services producteurs existants. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% 4. DISPONIBILITÉ ET FIABILITÉ
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 4. Disponibilité et Fiabilité}}
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
+		\caption{Besoins non fonctionnels -- Disponibilité et Fiabilité} \label{tab:bnf-disp} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BNF-DISP-01 & Reprise automatique & Conteneurs configurés avec restart policy (`unless-stopped`) pour redémarrer en cas de crash. \\ \hline
+		\altrow BNF-DISP-02 & Health Checks & Vérifications périodiques d'infrastructure (SQL, Kafka) pour conditionner le démarrage des services (`depends\_on`). \\ \hline
+		\altrow BNF-DISP-03 & Résilience HTTP & Middleware centralisé interceptant les exceptions fatales et renvoyant une réponse 500 structurée. \\ \hline
+		\altrow BNF-DISP-04 & Tolérance pannes & Boucles de consommation isolées par \textit{try-catch} évitant l'arrêt d'un consommateur sur un message invalide. \\ \hline
+		\altrow BNF-DISP-05 & Persistance & Données critiques (SQL, Redis, Kafka, Uploads) conservées sur des volumes Docker nommés persistants. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% 5. MAINTENABILITÉ
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 5. Maintenabilité}}
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
+		\caption{Besoins non fonctionnels -- Maintenabilité} \label{tab:bnf-maint} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BNF-MAINT-01 & Architecture Couches & Séparation stricte (Controllers, Services, Repositories, Models) pour chaque microservice. \\ \hline
+		\altrow BNF-MAINT-02 & Patrons conception & Utilisation systématique de patrons: Repository, Abstract Factory. \\ \hline
+		\altrow BNF-MAINT-03 & Injection dépendances & Gestion native des dépendances ASP.NET pour garantir un couplage faible et faciliter les tests. \\ \hline
+		\altrow BNF-MAINT-04 & Config centralisée & Absence totale de valeurs codées en dur, paramétrage via la configuration. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% 6. PORTABILITÉ
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 6. Portabilité}}
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
+		\caption{Besoins non fonctionnels -- Portabilité} \label{tab:bnf-port} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BNF-PORT-01 & Dockerisation & Chaque service dispose d'un build Docker \textit{multi-stage} produisant une image allégée et autonome. \\ \hline
+		\altrow BNF-PORT-02 & Multi-architecture & Compatibilité ARM64 (Apple Silicon) et AMD64 pour le développement et la production. \\ \hline
+		\altrow BNF-PORT-03 & Infrastructure As Code & L'écosystème entier (14 services + infrastructure) orchestrable via de Docker compose. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% 7. INTEROPÉRABILITÉ
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 7. Interopérabilité}}
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
+		\caption{Besoins non fonctionnels -- Interopérabilité} \label{tab:bnf-inter} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BNF-INTER-01 & Standards REST et JSON & Points de terminaison conformes aux conventions HTTP et échanges standardisés en JSON. \\ \hline
+		\altrow BNF-INTER-02 & WebSockets & Communication bidirectionnelle en temps réel pour l'envoi des notifications via SignalR. \\ \hline
+		\altrow BNF-INTER-03 & Swagger UI & Documentation interactive générée dynamiquement pour faciliter l'exploration des APIs. \\ \hline
+	\end{longtable}
+
+	% -------------------------------------------------------
+	% 8. OBSERVABILITÉ ET UTILISABILITÉ
+	% -------------------------------------------------------
+	\vspace{0.3cm}
+	\noindent\textbf{\textcolor{eheiBlue}{\large 8. Observabilité \& Utilisabilité}}
+	\vspace{0.3cm}
+
+	\resetrows
+	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
+		\caption{Besoins non fonctionnels -- Observabilité et Utilisabilité} \label{tab:bnf-obs-util} \\
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endfirsthead
+		\hline
+		\rowcolor{tableHeader}
+		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+		\hline
+		\endhead
+		\hline
+		\endfoot
+
+		\altrow BNF-OBS-01 & Journalisation structurée & Intégration de Serilog et Seq pour l'agrégation et la recherche de logs système. \\ \hline
+		\altrow BNF-OBS-02 & Erreurs systémiques & Publication sur un topic Kafka dédié des erreurs critiques non interceptées. \\ \hline
+		\altrow BNF-UTIL-01 & Single Page Application & Fluidité optimale avec navigation sans rechargement complet de la page via Angular. \\ \hline
+		\altrow BNF-UTIL-02 & Ergonomie Kanban & Drag and Drop via Angular CDK pour déplacer des tickets intuitivement. \\ \hline
+	\end{longtable}
 
 % ============================================================================
 % IV. BESOINS FONCTIONNELS -- CV BUILDER APP
@@ -743,7 +973,7 @@ Ainsi, la problématique centrale consiste à concevoir une plateforme intégré
 
 \addcontentsline{toc}{section}{IV. Besoins fonctionnels -- CV Builder App}
 
-La deuxième application de notre plateforme est dédiée à la \textbf{création, l'analyse et la valorisation du profil professionnel} des étudiants : \textbf{CV Maker App}. 
+La deuxième application de notre plateforme est dédiée à la \textbf{création, l'analyse et la valorisation du profil professionnel} des étudiants : \textbf{CV Maker App}.
 
 Elle est composée de plusieurs microservices spécialisés, chacun couvrant un aspect clé du processus de construction et d'optimisation du profil professionnel.
 
