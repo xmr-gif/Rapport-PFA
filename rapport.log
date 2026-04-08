@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.4.7)  8 APR 2026 01:49
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.4.7)  8 APR 2026 10:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1104,24 +1104,26 @@ Package hyperref Info: Link coloring ON on input line 150.
 \@outlinefile=\write4
 \openout4 = `rapport.out'.
 
+File: pictures/ehei.png Graphic file (type bmp)
+<pictures/ehei.png>
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 13.20007pt on input line 159.
+(Font)              scaled to size 13.20007pt on input line 165.
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 19.0081pt on input line 159.
-LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 22.81412pt on input line 171.
+(Font)              scaled to size 22.81412pt on input line 165.
 LaTeX Font Info:    Font shape `TU/Arial(0)/b/n' will be
-(Font)              scaled to size 22.81412pt on input line 171.
-LaTeX Font Info:    Font shape `TU/Arial(0)/b/n' will be
-(Font)              scaled to size 19.0081pt on input line 174.
+(Font)              scaled to size 22.81412pt on input line 165.
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 27.36815pt on input line 184.
+(Font)              scaled to size 19.0081pt on input line 168.
 LaTeX Font Info:    Font shape `TU/Arial(0)/b/n' will be
-(Font)              scaled to size 27.36815pt on input line 184.
+(Font)              scaled to size 19.0081pt on input line 168.
+LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
+(Font)              scaled to size 27.36815pt on input line 177.
+LaTeX Font Info:    Font shape `TU/Arial(0)/b/n' will be
+(Font)              scaled to size 27.36815pt on input line 177.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 208.
+(Font)              <14.4> on input line 201.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 208.
+(Font)              <7> on input line 201.
  [1
 
 ] [1] [1
@@ -1130,11 +1132,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ] [3]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 272.
+(Font)              <12> on input line 265.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 272.
+(Font)              <8> on input line 265.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 272.
+(Font)              <6> on input line 265.
  [4
 
 ] [5
@@ -1232,12 +1234,12 @@ Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: F31BA48B9A9C5AF6D52EED2BD26129EC;11819.
  ) 
 Here is how much of TeX's memory you used:
- 26373 strings out of 402983
- 557723 string characters out of 5448897
- 1013282 words of memory out of 5000000
- 54623 multiletter control sequences out of 15000+600000
+ 26397 strings out of 402983
+ 558330 string characters out of 5448897
+ 1013330 words of memory out of 5000000
+ 54644 multiletter control sequences out of 15000+600000
  632218 words of font info for 114 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,12n,103p,1201b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,103p,1201b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on rapport.pdf (39 pages).
