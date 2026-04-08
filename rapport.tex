@@ -18,7 +18,8 @@
 \usepackage{colortbl}    % For colored table cells
 \usepackage{booktabs}    % For professional table rules
 \usepackage{multirow}    % For spanning rows
-
+\usepackage{titlesec}    % Chapter/section styling
+\usepackage{fancyhdr}
 % ============================================================================
 % CONFIGURATION DES LANGUES
 % ============================================================================
@@ -30,7 +31,6 @@
 % ============================================================================
 \setmainfont{Times New Roman}
 \newfontfamily\headingfont[Scale=1.1]{Arial}
-\newfontfamily\arabicfont[Script=Arabic,Scale=1.2]{Amiri}
 
 % ============================================================================
 % CONFIGURATION DE LA PAGE
@@ -50,6 +50,7 @@
 % ============================================================================
 \definecolor{eheiRed}{RGB}{220,53,69}
 \definecolor{eheiBlue}{RGB}{41,128,185}
+\definecolor{deepBlue}{RGB}{0,51,153}
 \definecolor{tableHeader}{RGB}{41,128,185}    % Same as eheiBlue
 \definecolor{tableRowLight}{RGB}{235,245,251}  % Very light blue
 \definecolor{tableRowWhite}{RGB}{255,255,255}  % White
@@ -70,7 +71,50 @@
 % Section header in tables
 \newcommand{\tableSectionHeader}[1]{%
   \rowcolor{sectionBg!15}%
-  \multicolumn{3}{|l|}{\textbf{\textcolor{eheiBlue}{#1}}} \\ \hline
+  \multicolumn{3}{|l|}{\textbf{\textcolor{black}{#1}}} \\ \hline
+}
+
+% ============================================================================
+% STYLE DES CHAPITRES (titlesec)
+% ============================================================================
+\titleformat{\chapter}[display]
+{\normalfont\Huge\bfseries\color{deepBlue}}
+{\filleft\Large\MakeUppercase{\chaptertitlename} \thechapter}
+{20pt}
+{\titlerule[2pt]\vspace{2pt}\filright}
+[\vspace{10pt}{\titlerule[2pt]}]
+
+
+
+\titlespacing*{\chapter}{0pt}{30pt}{40pt}
+
+\titleformat{name=\chapter,numberless}[block]
+{\normalfont\Huge\bfseries\color{deepBlue}\centering}
+{}{0pt}{}
+
+% ============================================================================
+% COMMANDE DE PAGE DE CHAPITRE
+% ============================================================================
+\newcommand{\chapterheader}[2]{%
+	\markboth{#1 : #2}{}%
+	\vspace{1cm}
+	\begin{center}
+		\noindent
+		\begin{tikzpicture}
+			\draw[line width=1.5pt, color=deepBlue] (0,0) -- (4,0);
+			\node[above] at (6.5,0) {\textit{\textcolor{deepBlue}{#1}}};
+			\draw[line width=1.5pt, color=deepBlue] (9,0) -- (13,0);
+		\end{tikzpicture}
+	\end{center}
+	\vspace{0.4cm}
+	{\color{deepBlue}\hrule height 1.5pt}
+	\vspace{0.6cm}
+	\begin{center}
+		{\LARGE \textbf{\textcolor{deepBlue}{#2}}}
+	\end{center}
+	\vspace{0.4cm}
+	{\color{deepBlue}\hrule height 1.5pt}
+	\vspace{1cm}
 }
 
 % ============================================================================
@@ -78,8 +122,12 @@
 % ============================================================================
 \pagestyle{fancy}
 \fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\textcolor{black}{\leftmark}}
+\fancyhead[R]{\textcolor{black}{2025/2026}}
+\fancyfoot[L]{\small Rapport PFA -- EHEI}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
 
 % ============================================================================
 % CONFIGURATION DES HYPERLIENS
@@ -87,9 +135,9 @@
 \hypersetup{
 	colorlinks=true,
 	linkcolor=black,
-	filecolor=eheiRed,
-	urlcolor=eheiBlue,
-	citecolor=eheiRed,
+	filecolor=black,
+	urlcolor=black,
+	citecolor=black,
 	pdfauthor={Gang of Five},
 	pdftitle={Projet de Fin d'Année - EHEI},
 }
@@ -109,13 +157,13 @@
 			\begin{minipage}[t]{0.45\textwidth}
 				\flushleft
 				{\headingfont\Large EHEI}\\
-				\textcolor{eheiRed}{\small RECONNUE PAR L'ÉTAT}
+				\textcolor{black}{\small RECONNUE PAR L'ÉTAT}
 			\end{minipage}%
 			\hfill
 			\begin{minipage}[t]{0.45\textwidth}
 				\flushright
 				{\headingfont\Large EHEI}\\
-				\textcolor{eheiRed}{\small RECONNUE PAR L'ÉTAT}
+				\textcolor{black}{\small RECONNUE PAR L'ÉTAT}
 			\end{minipage}
 
 			\vspace{1cm}
@@ -130,7 +178,7 @@
 			{\large FILIERE : GENIE INFORMATIQUE}\\[1cm]
 
 			\begin{tikzpicture}
-				\node[rectangle, draw=eheiBlue, line width=2pt,
+				\node[rectangle, draw=black, line width=2pt,
 				minimum width=0.9\textwidth, minimum height=2.5cm,
 				align=center] (titre) {
 					{\headingfont\Huge \textbf{TITRE}}
@@ -141,7 +189,7 @@
 
 			\begin{minipage}[t]{0.48\textwidth}
 				\flushleft
-				{\large \textbf{\textcolor{eheiBlue}{Réalisé par :}}}\\[0.2cm]
+				{\large \textbf{\textcolor{black}{Réalisé par :}}}\\[0.2cm]
 				M. ALWAN Charaf Eddine\\
 				M. KMIMECH Youssef\\
 				M. BOUAMAR Ayman\\
@@ -151,13 +199,13 @@
 			\hfill
 			\begin{minipage}[t]{0.48\textwidth}
 				\flushright
-				{\large \textbf{\textcolor{eheiBlue}{Encadré par :}}}\\[0.2cm]
+				{\large \textbf{\textcolor{black}{Encadré par :}}}\\[0.2cm]
 				M. MANI Mohammed Adil
 			\end{minipage}
 
 			\vspace{0.8cm}
 
-			{\large \textbf{\textcolor{eheiBlue}{\underline{Soutenance le ................ 2025 devant le Jury :}}}}\\[0.3cm]
+			{\large \textbf{\textcolor{black}{\underline{Soutenance le ................ 2025 devant le Jury :}}}}\\[0.3cm]
 			M/MME \dotfill\\[0.15cm]
 			M/MME \dotfill\\[0.15cm]
 			M/MME \dotfill\\[0.5cm]
@@ -167,6 +215,16 @@
 			{\large \textbf{Année universitaire : 2025 -- 2026}}
 		\end{center}
 	\end{titlepage}
+
+	% Empty page after title page
+	\newpage
+	\thispagestyle{empty}
+	\ 
+	\newpage
+
+	% Page numbering: roman for front matter
+	\pagenumbering{roman}
+	\setcounter{page}{1}
 
 	% ============================================================================
 	% DÉDICACE
@@ -275,11 +333,11 @@
 	\begin{center}
 		\begin{longtable}{|l|p{11cm}|}
 			\hline
-			\textbf{\textcolor{eheiBlue}{Abréviation}} & \textbf{\textcolor{eheiBlue}{Désignation}} \\ \hline
+			\textbf{Abréviation} & \textbf{Désignation} \\ \hline
 			\endfirsthead
 
 			\hline
-			\textbf{\textcolor{eheiBlue}{Abréviation}} & \textbf{\textcolor{eheiBlue}{Désignation}} \\ \hline
+			\textbf{Abréviation} & \textbf{Désignation} \\ \hline
 			\endhead
 
 			HTML  & Hyper Text Markup Language \\ \hline
@@ -315,29 +373,37 @@
 	% LISTES AUTOMATIQUES (FIN DU DOCUMENT)
 	% ============================================================================
 
+	% ============================================================================
+	% TABLE DES MATIÈRES
+	% ============================================================================
+	\newpage
+	\renewcommand{\contentsname}{{\headingfont Table des matières}}
+	\tableofcontents
+
+	% ============================================================================
+	% TABLE DES FIGURES
+	% ============================================================================
 	\newpage
 	\addcontentsline{toc}{chapter}{Table des figures}
 	\renewcommand{\listfigurename}{{\headingfont Table des figures}}
 	\listoffigures
-	\vspace{1cm}
-	Add text here
 
+	% ============================================================================
+	% LISTE DES TABLEAUX
+	% ============================================================================
 	\newpage
 	\addcontentsline{toc}{chapter}{Liste des tableaux}
 	\renewcommand{\listtablename}{{\headingfont Liste des tableaux}}
 	\listoftables
-	\vspace{1cm}
-	Add text here
-
-	\newpage
-	\addcontentsline{toc}{chapter}{Table des matières}
-	\chapter*{{\headingfont Table des matières}}
 	% ============================================================================
 	% INTRODUCTION
 	% ============================================================================
-	\newpage
+	\clearpage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
 	\chapter*{{\headingfont Introduction}}
 	\addcontentsline{toc}{chapter}{Introduction}
+	\markboth{Introduction}{}
 
 Le domaine de l'ingénierie informatique connaît une transformation profonde, portée par l'essor des technologies numériques, de l'intelligence artificielle et des architectures logicielles distribuées. Dans un contexte où les entreprises recherchent des profils polyvalents, capables de concevoir, développer et déployer des solutions complexes, les établissements de formation se doivent de préparer leurs étudiants à relever ces défis avec rigueur et créativité. L'École des Hautes Études d'Ingénierie d'Oujda, fidèle à sa vocation d'excellence, inscrit le projet de fin d'année comme un exercice fondamental permettant aux étudiants de mobiliser l'ensemble de leurs acquis académiques dans un cadre concret et professionnalisant.
 
@@ -359,797 +425,443 @@ Une application dédiée à la préparation aux entretiens techniques et comport
 Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bien ce projet ambitieux. Il débute par une analyse du contexte et des besoins identifiés, avant de présenter les choix architecturaux et technologiques retenus. Les différentes composantes de la plateforme y seront détaillées à tour de rôle tout au long du document. Les phases de conception et de réalisation y sont ensuite exposées de manière méthodique, suivies d'une présentation des résultats obtenus. Enfin, une réflexion sur les perspectives d'évolution de la solution clôture ce document, témoignant de notre volonté de pérenniser cet outil au service de la communauté étudiante.
 
 	% ============================================================================
-	% CHAPITRE I : CONTEXTE DU PROJET
+	% CHAPITRE I : PROJECT MANAGEMENT APP
 	% ============================================================================
 	\newpage
-	\section*{I. Contexte du projet}
-	\addcontentsline{toc}{section}{I. Contexte du projet}
-
-	\subsection*{i. Description des besoins}
-Dans un environnement académique et professionnel en constante évolution, les étudiants en informatique doivent aujourd'hui faire preuve d'une grande polyvalence, alliant compétences techniques, organisation et préparation à l'insertion professionnelle. Cependant, plusieurs limites freinent leur progression.
-
-La dispersion des outils complique la gestion des projets et nuit à la productivité. La préparation aux entretiens techniques reste insuffisante et peu immersive. De plus, l'apprentissage continu est difficile à maintenir face à la rapidité des évolutions technologiques, tandis que la valorisation du profil professionnel, notamment à travers le CV, demeure un défi pour de nombreux étudiants.
-
-Ainsi, la problématique centrale consiste à concevoir une plateforme intégrée et intuitive permettant de centraliser les outils essentiels à l'organisation, à l'apprentissage, à la préparation aux entretiens et à la valorisation du profil, afin d'accompagner efficacement les étudiants en informatique dans leur parcours et d'optimiser leurs chances de réussite.
-	\addcontentsline{toc}{subsection}{i. Description des besoins}
-	% Content to be written
-
-	% ============================================================================
-	% ii. LES BESOINS FONCTIONNELS
-	% ============================================================================
-	\subsection*{ii. Les Besoins fonctionnels Project-Management-App}
-	\addcontentsline{toc}{subsection}{ii. Besoins fonctionnels}
-
-	Notre projet global se compose de quatre applications distinctes formant un écosystème complet pour l'étudiant ingénieur. La première application, qui fait l'objet exclusive de cette section, est dédiée à la productivité et au travail collaboratif : \textbf{La Plateforme de Gestion de Projets et de Collaboration}.
-
-	Cette plateforme repose sur une architecture microservices composée de sept services back-end indépendants et d'une application front-end Angular. Chaque service est responsable d'un domaine métier spécifique et communique avec les autres via des API REST et un bus de messages Apache Kafka. Les besoins fonctionnels de cette première application sont organisés ci-dessous par module.
-
-	% -------------------------------------------------------
-	% TABLE 1 : AUTHENTIFICATION
-	% -------------------------------------------------------
-	\vspace{0.5cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 1. Module d'Authentification (Auth-Service)}}
-	\vspace{0.2cm}
-
-	\noindent Ce module gère l'ensemble du cycle de vie de l'authentification des utilisateurs.
-	\vspace{0.3cm}
-
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
-		\caption{Besoins fonctionnels -- Module d'Authentification} \label{tab:bf-auth} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
-
-		\altrow BF-AUTH-01 & Inscription & Le système doit permettre à un utilisateur de créer un compte en fournissant son nom complet, son adresse e-mail et un mot de passe sécurisé. \\ \hline
-		\altrow BF-AUTH-02 & Vérification par e-mail & Après l'inscription, le système doit envoyer un e-mail de vérification contenant un lien unique. L'utilisateur ne peut se connecter qu'après avoir vérifié son adresse e-mail. \\ \hline
-		\altrow BF-AUTH-03 & Renvoi de vérification & Le système doit permettre à l'utilisateur de demander le renvoi de l'e-mail de vérification en cas de non-réception. \\ \hline
-		\altrow BF-AUTH-04 & Connexion & Le système doit permettre à un utilisateur vérifié de se connecter avec son e-mail et son mot de passe et de recevoir un jeton JWT d'accès ainsi qu'un \textit{refresh token}. \\ \hline
-		\altrow BF-AUTH-05 & Rafraîchissement de session & Le système doit permettre le renouvellement automatique du jeton d'accès via le \textit{refresh token}, sans reconnexion manuelle. \\ \hline
-		\altrow BF-AUTH-06 & Déconnexion & Le système doit permettre la déconnexion avec invalidation du jeton d'accès et du \textit{refresh token} côté serveur (via Redis). \\ \hline
-		\altrow BF-AUTH-07 & Mot de passe oublié & Le système doit permettre la demande de réinitialisation de mot de passe par e-mail avec un lien à durée limitée. \\ \hline
-		\altrow BF-AUTH-08 & Réinitialisation du mot de passe & Le système doit permettre la définition d'un nouveau mot de passe à l'aide du jeton reçu par e-mail. \\ \hline
-		\altrow BF-AUTH-09 & Authentification 2FA & Le système doit permettre l'activation de l'authentification à deux facteurs via numéro de téléphone avec code de vérification SMS. \\ \hline
-		\altrow BF-AUTH-10 & Connexion via Google & Le système doit permettre l'inscription et la connexion via un compte Google (OAuth 2.0). Le profil est récupéré automatiquement. \\ \hline
-		\altrow BF-AUTH-11 & Connexion via GitHub & Le système doit permettre l'inscription et la connexion via un compte GitHub (OAuth 2.0). Le profil est récupéré automatiquement. \\ \hline
-		\altrow BF-AUTH-12 & Profil connecté & Le système doit exposer un endpoint pour récupérer les informations de l'utilisateur authentifié à partir de son jeton JWT. \\ \hline
-	\end{longtable}
-
-	% -------------------------------------------------------
-	% TABLE 2 : UTILISATEURS
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 2. Module de Gestion des Utilisateurs (Users-Service)}}
-	\vspace{0.2cm}
-
-	\noindent Ce module gère les profils utilisateurs et leurs données personnelles.
-	\vspace{0.3cm}
-
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
-		\caption{Besoins fonctionnels -- Module de Gestion des Utilisateurs} \label{tab:bf-user} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
-
-		\altrow BF-USER-01 & Consultation du profil & Le système doit permettre la consultation du profil d'un utilisateur par son identifiant (nom, prénom, e-mail, photo de profil, statut). \\ \hline
-		\altrow BF-USER-02 & Modification du profil & L'utilisateur doit pouvoir modifier ses informations personnelles (nom, prénom, numéro de téléphone). \\ \hline
-		\altrow BF-USER-03 & Photo de profil & Le système doit permettre le téléversement et la mise à jour de la photo de profil, stockée dans un volume Docker dédié. \\ \hline
-		\altrow BF-USER-04 & Statut utilisateur & Le système doit gérer le statut de chaque utilisateur (Actif, Inactif). \\ \hline
-		\altrow BF-USER-05 & Suppression de compte & Le système doit permettre la suppression logique (\textit{soft delete}) d'un compte avec horodatage et jeton de suppression. \\ \hline
-		\altrow BF-USER-06 & Liste des utilisateurs & Le système doit permettre de récupérer la liste de tous les utilisateurs enregistrés. \\ \hline
-	\end{longtable}
-
-	% -------------------------------------------------------
-	% TABLE 3 : ENVIRONNEMENTS
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 3. Module de Gestion des Environnements (Environments-Service)}}
-	\vspace{0.2cm}
-
-	\noindent Ce module gère les espaces de travail collaboratifs dans lesquels les utilisateurs collaborent.
-	\vspace{0.3cm}
-
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
-		\caption{Besoins fonctionnels -- Module de Gestion des Environnements} \label{tab:bf-env} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
-
-		\altrow BF-ENV-01 & Création d'un environnement & Un utilisateur authentifié peut créer un environnement (nom, description). Le créateur obtient le rôle de \textbf{Chef de Projet}. \\ \hline
-		\altrow BF-ENV-02 & Consultation & Le système doit permettre la consultation des détails d'un environnement (nom, description, date de création, membres). \\ \hline
-		\altrow BF-ENV-03 & Modification & Le chef de projet peut modifier le nom et la description d'un environnement qu'il a créé. \\ \hline
-		\altrow BF-ENV-04 & Suppression & Le chef de projet peut supprimer un environnement. Seul le créateur est autorisé. \\ \hline
-		\altrow BF-ENV-05 & Ajout d'un membre & Le chef de projet peut ajouter un utilisateur avec un rôle (Membre par défaut ou Chef de Projet). \\ \hline
-		\altrow BF-ENV-06 & Suppression d'un membre & Le chef de projet peut retirer un membre. Le dernier chef de projet ne peut pas se retirer. \\ \hline
-		\altrow BF-ENV-07 & Liste des membres & Le système doit lister tous les membres d'un environnement avec leurs rôles. \\ \hline
-		\altrow BF-ENV-08 & Mes environnements & L'utilisateur peut récupérer la liste de tous les environnements auxquels il a accès. \\ \hline
-		\altrow BF-ENV-09 & Système d'invitations & Le système permet d'inviter un utilisateur, qui peut consulter et accepter ses invitations en attente. \\ \hline
-		\altrow BF-ENV-10 & Contrôle d'accès par rôle & Le système distingue deux rôles : \textbf{Chef de Projet} (administration) et \textbf{Membre} (contribution limitée). \\ \hline
-	\end{longtable}
-
-	% -------------------------------------------------------
-	% TABLE 4 : ÉQUIPES
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 4. Module de Gestion des Équipes (Teams-Service)}}
-	\vspace{0.2cm}
-
-	\noindent Ce module permet d'organiser les membres d'un environnement en équipes de travail.
-	\vspace{0.3cm}
-
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
-		\caption{Besoins fonctionnels -- Module de Gestion des Équipes} \label{tab:bf-team} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
-
-		\altrow BF-TEAM-01 & Création d'une équipe & Création d'une équipe avec nom, description et membres initiaux. Le nom doit être unique dans l'environnement. \\ \hline
-		\altrow BF-TEAM-02 & Modification & Modification du nom, de la description et de la composition d'une équipe (ajout/suppression de membres). \\ \hline
-		\altrow BF-TEAM-03 & Suppression & Suppression d'une équipe avec notification des autres services via Kafka. \\ \hline
-		\altrow BF-TEAM-04 & Consultation & Consultation des détails d'une équipe (nom, description, liste des membres avec avatars). \\ \hline
-		\altrow BF-TEAM-05 & Liste des équipes & Liste de toutes les équipes d'un environnement donné. \\ \hline
-		\altrow BF-TEAM-06 & Recherche par nom & Recherche d'équipes par nom au sein d'un environnement. \\ \hline
-		\altrow BF-TEAM-07 & Limite de membres & Capacité maximale de 10 membres par équipe, avec contrôle à l'ajout. \\ \hline
-		\altrow BF-TEAM-08 & Événements Kafka & Publication d'événements Kafka lors de chaque opération (création, modification, suppression, ajout/retrait de membre). \\ \hline
-	\end{longtable}
-
-	% -------------------------------------------------------
-	% TABLE 5 : TICKETS - Gestion
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 5. Module de Gestion des Tickets (Tickets-Service)}}
-	\vspace{0.2cm}
-
-	\noindent Ce module constitue le cœur de la gestion de projet. Il gère les tickets, les workflows et l'assignation.
-	\vspace{0.3cm}
-
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
-		\caption{Besoins fonctionnels -- Gestion des Tickets} \label{tab:bf-tkt} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
-
-		\tableSectionHeader{5.1 Gestion des Tickets}
-		\altrow BF-TKT-01 & Création d'un ticket & Création avec : libellé, priorité (High/Medium/Low), dates, type (SingleTask ou MultipleTasks), workflow, étape initiale, environnement et assigné (optionnel). \\ \hline
-		\altrow BF-TKT-02 & Consultation & Consultation des détails d'un ticket (libellé, priorité, étape actuelle, sous-tâches, dates). \\ \hline
-		\altrow BF-TKT-03 & Modification & Modification des propriétés d'un ticket existant (libellé, priorité, dates). \\ \hline
-		\altrow BF-TKT-04 & Suppression & Suppression d'un ticket par son identifiant. \\ \hline
-		\altrow BF-TKT-05 & Liste par environnement & Récupération de tous les tickets associés à un environnement donné. \\ \hline
-		\altrow BF-TKT-06 & Assignation & Un administrateur peut assigner à n'importe quel membre. Un membre ne peut assigner qu'à lui-même. Déclenche une notification. \\ \hline
-		\altrow BF-TKT-07 & Types de tickets & Support de deux types : \textbf{SingleTask} (tâche unique) et \textbf{MultipleTasks} (plusieurs sous-tâches). \\ \hline
-
-		\tableSectionHeader{5.2 Gestion des Sous-tâches}
-		\altrow BF-TKT-08 & Ajout de sous-tâches & Ajout de sous-tâches à un ticket de type MultipleTasks. \\ \hline
-		\altrow BF-TKT-09 & Statut sous-tâche & Marquer une sous-tâche comme terminée ou non terminée. Réservé aux administrateurs. \\ \hline
-		\altrow BF-TKT-10 & Complétion auto. & Marquer un ticket comme complété, mettant à jour son étape dans le workflow. \\ \hline
-
-		\tableSectionHeader{5.3 Gestion des Workflows}
-		\altrow BF-WF-01 & Workflow par env. & Chaque environnement dispose d'un workflow unique composé d'étapes ordonnées. \\ \hline
-		\altrow BF-WF-02 & Étapes personnalisables & Chaque étape a un nom, un ordre, une couleur et un indicateur d'étape finale. Modification réservée aux admins. \\ \hline
-		\altrow BF-WF-03 & Kanban drag-and-drop & Déplacement de tickets entre étapes par glisser-déposer. \textbf{Réservé aux Chefs de Projet.} \\ \hline
-
-		\tableSectionHeader{5.4 Contrôle d'Accès}
-		\altrow BF-ACL-01 & Restriction de modification & Seuls les Chefs de Projet peuvent modifier l'état d'un ticket (drag-and-drop ou sous-tâches). \\ \hline
-		\altrow BF-ACL-02 & Lecture seule & Les Membres peuvent consulter les tickets mais ne peuvent pas modifier leur état. \\ \hline
-		\altrow BF-ACL-03 & Restriction d'assignation & Un Membre ne peut créer un ticket que pour lui-même. Un Chef de Projet peut assigner à tout membre. \\ \hline
-		\altrow BF-ACL-04 & Masquage admin & Le bouton «~Modifier le workflow~» n'est pas visible pour les Membres. \\ \hline
-	\end{longtable}
-
-	% -------------------------------------------------------
-	% TABLE 6 : NOTIFICATIONS
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 6. Module de Notifications (Notifications-Service)}}
-	\vspace{0.2cm}
-
-	\noindent Ce module gère les notifications en temps réel à destination des utilisateurs.
-	\vspace{0.3cm}
-
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
-		\caption{Besoins fonctionnels -- Module de Notifications} \label{tab:bf-notif} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
-
-		\altrow BF-NOTIF-01 & Temps réel & Envoi de notifications en temps réel via WebSocket (SignalR). \\ \hline
-		\altrow BF-NOTIF-02 & Types & Support de 8 types : Réunion, Tâche, Mention, Commentaire, Événement, Statut, Reportée, Assignation. \\ \hline
-		\altrow BF-NOTIF-03 & Notification d'assignation & Notification automatique de type \textit{Assignment} lors de l'assignation d'un ticket. \\ \hline
-		\altrow BF-NOTIF-04 & Consultation & Consultation des notifications dans une page dédiée et via l'icône cloche de la barre de navigation. \\ \hline
-		\altrow BF-NOTIF-05 & Marquer comme lue & L'utilisateur peut marquer une notification individuelle comme lue. \\ \hline
-		\altrow BF-NOTIF-06 & Tout marquer comme lu & Marquer toutes les notifications comme lues en une seule action. \\ \hline
-		\altrow BF-NOTIF-07 & Suppression & L'utilisateur peut supprimer une notification. \\ \hline
-		\altrow BF-NOTIF-08 & Statistiques & Statistiques sur les notifications (total, répartition par type et statut). \\ \hline
-		\altrow BF-NOTIF-09 & Consommation Kafka & Consommation des événements Kafka émis par les autres services pour générer automatiquement les notifications. \\ \hline
-	\end{longtable}
-
-	% -------------------------------------------------------
-	% TABLE 7 : JOURNALISATION
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 7. Module de Journalisation (Logs-Service)}}
-	\vspace{0.2cm}
-
-	\noindent Ce module assure la traçabilité centralisée de toutes les actions effectuées dans la plateforme.
-	\vspace{0.3cm}
-
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
-		\caption{Besoins fonctionnels -- Module de Journalisation} \label{tab:bf-log} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
-
-		\altrow BF-LOG-01 & Enregistrement auto. & Enregistrement automatique des actions : CRUD équipes, CRUD tickets, entrées/sorties de membres. \\ \hline
-		\altrow BF-LOG-02 & Consommation Kafka & Consommation des événements : \texttt{team-created}, \texttt{team-updated}, \texttt{team-deleted}, \texttt{ticket-created}, \texttt{ticket-updated}, \texttt{ticket-deleted}, \texttt{chat-created}. \\ \hline
-		\altrow BF-LOG-03 & Consultation paginée & Consultation des logs avec pagination configurable (numéro de page, taille). \\ \hline
-		\altrow BF-LOG-04 & Filtrage avancé & Filtrage par date, niveau de sévérité, service source, utilisateur et environnement. \\ \hline
-		\altrow BF-LOG-05 & Logs par utilisateur & Consultation des logs associés à un utilisateur spécifique. \\ \hline
-		\altrow BF-LOG-06 & Logs par service & Consultation des logs associés à un service spécifique. \\ \hline
-		\altrow BF-LOG-07 & Logs par niveau & Filtrage par niveau de sévérité (Info, Warning, Error, Critical). \\ \hline
-		\altrow BF-LOG-08 & Statistiques & Statistiques globales : total, répartition par niveau/service/action, utilisateurs les plus actifs. \\ \hline
-		\altrow BF-LOG-09 & Nettoyage & Suppression des logs anciens (plus de 90 jours par défaut). \\ \hline
-		\altrow BF-LOG-10 & Exportation CSV & Exportation des logs au format CSV depuis l'interface utilisateur. \\ \hline
-	\end{longtable}
-
-	% -------------------------------------------------------
-	% TABLE 8 : APPLICATION FRONT-END
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 8. Application Front-End (Project-Management-App)}}
-	\vspace{0.2cm}
-
-	\noindent L'application Angular constitue l'interface utilisateur unifiée de la plateforme.
-	\vspace{0.3cm}
-
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
-		\caption{Besoins fonctionnels -- Application Front-End} \label{tab:bf-ui} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
-
-		\altrow BF-UI-01 & Tableau de bord & Affichage synthétique : tickets assignés, réunions à venir, discussions récentes. \\ \hline
-		\altrow BF-UI-02 & Tableau Kanban & Tableau Kanban avec colonnes du workflow et glisser-déposer (admins uniquement). \\ \hline
-		\altrow BF-UI-03 & Filtres tickets & Filtres par priorité, par assigné, recherche textuelle et tri par priorité. \\ \hline
-		\altrow BF-UI-04 & Détail ticket & Modale de détail avec titre, dates, priorité et liste des sous-tâches. \\ \hline
-		\altrow BF-UI-05 & Page des équipes & Page dédiée à la gestion des équipes (création, modification, suppression, membres). \\ \hline
-		\altrow BF-UI-06 & Page notifications & Page listant toutes les notifications avec options de lecture et suppression. \\ \hline
-		\altrow BF-UI-07 & Icône cloche & Badge dans la navbar indiquant le nombre de notifications non lues. \\ \hline
-		\altrow BF-UI-08 & Page des logs & Consultation des logs avec filtres par date, niveau, service et exportation CSV. \\ \hline
-		\altrow BF-UI-09 & Gestion des envs. & Sélection, visualisation des membres et navigation entre environnements. \\ \hline
-		\altrow BF-UI-10 & Profil utilisateur & Page de modification des informations personnelles et de la photo de profil. \\ \hline
-		\altrow BF-UI-11 & Sidebar & Barre latérale permanente : Dashboard, Tickets, Équipes, Notifications, Logs, Calendrier, Discussions. \\ \hline
-		\altrow BF-UI-12 & Discussions & Page de messagerie/chat entre les membres d'un environnement. \\ \hline
-		\altrow BF-UI-13 & Calendrier & Vue calendrier pour visualiser les tickets et les échéances. \\ \hline
-	\end{longtable}
-
-	% -------------------------------------------------------
-	% TABLEAU RÉCAPITULATIF
-	% -------------------------------------------------------
-	\vspace{0.5cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large Récapitulatif des Besoins Fonctionnels}}
-	\vspace{0.3cm}
-
+	\thispagestyle{empty}
 	\begin{center}
-	\begin{tabular}{|>{\small}m{8cm}|>{\centering\arraybackslash\small\bfseries}m{3cm}|}
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{Module}} & \textcolor{white}{\textbf{Nombre de BF}} \\
-		\hline
-		\rowcolor{tableRowLight} Authentification (Auth-Service) & 12 \\ \hline
-		\rowcolor{tableRowWhite} Utilisateurs (Users-Service) & 6 \\ \hline
-		\rowcolor{tableRowLight} Environnements (Environments-Service) & 10 \\ \hline
-		\rowcolor{tableRowWhite} Équipes (Teams-Service) & 8 \\ \hline
-		\rowcolor{tableRowLight} Tickets (Tickets-Service) & 14 \\ \hline
-		\rowcolor{tableRowWhite} Notifications (Notifications-Service) & 9 \\ \hline
-		\rowcolor{tableRowLight} Journalisation (Logs-Service) & 10 \\ \hline
-		\rowcolor{tableRowWhite} Front-End (Project-Management-App) & 13 \\ \hline
-		\rowcolor{sectionBg!20} \textbf{Total} & \textbf{82} \\ \hline
-	\end{tabular}
+		\vspace*{\fill}
+		\chapterheader{Chapitre 1}{Project Management App}
+		\vspace*{\fill}
 	\end{center}
 
+	\chapter{Project Management App}
+	\fancyhead[L]{Chapitre 1 : Project Management App}
+	\thispagestyle{fancy}
+
+	\section{Contexte du projet}
+
+	\subsection{Description des besoins}
+	La plateforme de gestion de projets répond à un besoin essentiel : centraliser les outils de collaboration et de gestion de tâches pour les équipes d'étudiants. Les utilisateurs requièrent une solution intuitive permettant de gérer des projets complexes avec plusieurs membres, des workflows personnalisables et une communication en temps réel.
+
+	\subsection{Besoins fonctionnels}
+	Les besoins fonctionnels incluent : l'authentification sécurisée, la gestion des utilisateurs, la création d'environnements collaboratifs, la gestion des équipes, la création et suivi des tickets, les notifications en temps réel, et la journalisation complète des actions. Au total, 82 besoins fonctionnels ont été identifiés et documentés.
+
+	\subsection{Les besoins non-fonctionnels}
+	La plateforme doit assurer : la performance optimale via Apache Kafka, la sécurité avec hachage cryptographique et gestion JWT, la scalabilité via microservices, la disponibilité avec redémarrage automatique, la maintenabilité avec architecture en couches, la portabilité Docker, l'interopérabilité REST/JSON et WebSocket, ainsi que l'observabilité avec Serilog et Seq.
+
+	\section{Analyse et modélisation}
+
+	\subsection{Importance de la modélisation}
+	La modélisation est cruciale pour structurer la complexité du projet, communiquer efficacement avec les équipes et valider l'architecture avant implémentation.
+
+	\subsection{Définition UML}
+	UML (Unified Modeling Language) est un standard de notation graphique permettant de visualiser et documenter les systèmes logiciels complexes.
+
+	\subsection{Diagramme de use case}
+
+	\subsubsection{Définition}
+	Un diagramme de use case représente les interactions entre les acteurs (utilisateurs ou systèmes externes) et le système, illustrant les fonctionnalités principales du point de vue utilisateur.
+
+	\subsubsection{Notre diagramme de use case}
+	Le diagramme de use case du Project Management App inclut les acteurs : Utilisateur Anonyme, Utilisateur Authentifié, Chef de Projet et Administrateur. Les use cases couvrent l'authentification, la gestion des environnements, la gestion des équipes, la gestion des tickets et des notifications.
+
+	\subsection{Diagrammes de séquence}
+
+	\subsubsection{Définition}
+	Un diagramme de séquence illustre l'ordre des interactions entre objets dans le temps, montrant comment les composants communiquent pour accomplir une tâche.
+
+	\subsubsection{Nos diagrammes de séquence}
+	Les principaux diagrammes de séquence documentent : l'authentification utilisateur, la création d'un projet, l'assignation d'une tâche, la notification en temps réel et la mise à jour du statut d'un ticket.
+
+	\subsection{Diagramme de classes}
+
+	\subsubsection{Définition}
+	Un diagramme de classes représente la structure statique du système, montrant les classes, leurs attributs, méthodes et relations.
+
+	\subsubsection{Notre diagramme de classes}
+	Le modèle inclut les entités : User, Environment, Team, Ticket, Workflow, WorkflowStep, Notification, et Log, avec leurs relations d'association, d'héritage et de composition.
+
+	\section{Réalisation}
+
+	\subsection{Méthode de gestion}
+
+	\subsubsection{Définition}
+	La méthode de gestion de projet structure l'organisation du travail, les responsabilités et les livrables pour atteindre les objectifs métier.
+
+	\subsubsection{De la théorie à la pratique}
+	Nous avons adopté une approche hybride combinant Scrum et Kanban, avec des sprints de deux semaines, des daily standups, et un suivi des tâches sur un tableau Kanban.
+
+	\subsection{Environnement de programmation}
+
+	\subsubsection{Outils utilisés}
+	Nous avons utilisé : Visual Studio Code pour le développement, Docker et Docker Compose pour la conteneurisation, Git pour le contrôle de version, Postman pour les tests API, et Seq pour l'agrégation des logs.
+
+	\subsubsection{Langages utilisés}
+	C\# pour les microservices backend, TypeScript pour le frontend Angular, SQL pour les requêtes de base de données.
+
+	\subsubsection{Frameworks utilisés}
+	ASP.NET Core pour les services backend, Angular 16+ pour le frontend, Entity Framework Core pour l'accès aux données.
+
+	\subsubsection{Bibliothèques utilisées}
+	AutoMapper pour le mapping DTO, Serilog pour la journalisation, Kafka .NET pour la messagerie asynchrone, SignalR pour les WebSockets.
+
+	\subsubsection{Technologies utilisées}
+	PostgreSQL pour les bases de données, Redis pour le cache, Apache Kafka pour l'event streaming, JWT pour l'authentification, OAuth 2.0 pour les connexions sociales.
+
+	\subsection{Bonnes pratiques et assurance des BNF}
+	Nous avons implémenté des bonnes pratiques SOLID, utilisé le pattern Repository, appliqué l'injection de dépendances, effectué des tests unitaires et d'intégration, et documenté l'API avec Swagger.
+
 	% ============================================================================
-	% iii. LES BESOINS NON-FONCTIONNELS
+	% CHAPITRE II : CV BUILDER APP
 	% ============================================================================
-	\subsection*{iii. Les besoins non-fonctionnels Project-Management-App}
-	\addcontentsline{toc}{subsection}{iii. Les besoins non-fonctionnels Project-Management-App}
+	\newpage
+	\thispagestyle{empty}
+	\begin{center}
+		\vspace*{\fill}
+		\chapterheader{Chapitre 2}{CV Builder App}
+		\vspace*{\fill}
+	\end{center}
 
-	Les besoins non fonctionnels définissent les attributs de qualité que la plateforme met en œuvre pour garantir sa robustesse, sa sécurité et sa pérennité. Contrairement aux besoins fonctionnels qui décrivent ce que le système fait, ces critères décrivent comment il le fait.
+	\chapter{CV Builder App}
+	\fancyhead[L]{Chapitre 2 : CV Builder App}
+	\thispagestyle{fancy}
 
-	% -------------------------------------------------------
-	% 1. PERFORMANCE
-	% -------------------------------------------------------
-	\vspace{0.5cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 1. Performance}}
-	\vspace{0.3cm}
+	\section{Contexte du projet}
 
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
-		\caption{Besoins non fonctionnels -- Performance} \label{tab:bnf-perf} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
+	\subsection{Description des besoins}
+	La plateforme de création et d'optimisation de CV répond à un besoin critique : aider les étudiants à construire un profil professionnel attractif et à identifier les opportunités d'emploi correspondant à leur profil. Les utilisateurs demandent des outils simples pour créer un CV, analyser sa qualité et matcher avec des offres d'emploi.
 
-		\altrow BNF-PERF-01 & Traitement asynchrone & Découplage des traitements secondaires (logs, notifications) via Apache Kafka pour garantir une réponse HTTP immédiate. \\ \hline
-		\altrow BNF-PERF-02 & Mise en cache & Utilisation de Redis pour le stockage en mémoire (ex: liste noire des JWT), offrant un temps d'accès de l'ordre de la milliseconde. \\ \hline
-		\altrow BNF-PERF-03 & Optimisation ORM & Requêtes Entity Framework Core optimisées via le chargement sélectif (eager loading) pour éviter les problèmes de requêtes N+1. \\ \hline
-	\end{longtable}
+	\subsection{Besoins fonctionnels}
+	Les besoins fonctionnels incluent : création de CV avec templates, génération de portfolio, analyse d'offres d'emploi, matching intelligent CV/offres, analyse linguistique et structurelle du CV, suggestions d'amélioration et calcul de score de qualité. Au total, 23 besoins fonctionnels ont été identifiés.
 
-	% -------------------------------------------------------
-	% 2. SÉCURITÉ
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 2. Sécurité}}
-	\vspace{0.3cm}
+	\subsection{Les besoins non-fonctionnels}
+	La plateforme doit assurer : extraction de données par IA, performance optimale pour la génération de documents, sécurité des données personnelles, scalabilité pour gérer une base croissante de CV et d'offres, disponibilité constante, maintenabilité du code, portabilité Docker et interopérabilité avec LinkedIn.
 
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
-		\caption{Besoins non fonctionnels -- Sécurité} \label{tab:bnf-sec} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
+	\section{Analyse et modélisation}
 
-		\altrow BNF-SEC-01 & Hachage cryptographique & Les mots de passe ne sont jamais stockés en clair, mais hachés via un algorithme sécurisé avant persistance. \\ \hline
-		\altrow BNF-SEC-02 & Expiration des jetons & Les jetons (vérification d'e-mail, réinitialisation) disposent d'une date d'expiration stricte. \\ \hline
-		\altrow BNF-SEC-03 & Gestion des secrets & Externalisation des secrets applicatifs (JWT, OAuth, SMTP, DB) via des variables d'environnement non versionnées. \\ \hline
-		\altrow BNF-SEC-04 & Liste noire JWT & Invalidation des jetons d'accès lors de la déconnexion via une liste noire stockée dans Redis. \\ \hline
-		\altrow BNF-SEC-05 & Protection & Verrouillage automatique des comptes (15 minutes) après 3 tentatives de connexion échouées. \\ \hline
-		\altrow BNF-SEC-06 & Traçabilité IP & Enregistrement de l'adresse IP cliente pour chaque opération sensible. \\ \hline
-		\altrow BNF-SEC-07 & Politique CORS & Restriction des requêtes cross-origin au seul domaine du front-end Angular. \\ \hline
-	\end{longtable}
+	\subsection{Importance de la modélisation}
+	La modélisation permet de structurer les flux de données complexes entre les services CV Creator, Portfolio Generator, Job Matcher et Analyzer, garantissant une cohérence globale.
 
-	% -------------------------------------------------------
-	% 3. SCALABILITÉ
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 3. Scalabilité}}
-	\vspace{0.3cm}
+	\subsection{Définition UML}
+	UML fournit la notation formelle pour documenter l'interaction entre les cinq microservices et les flux de génération de CV.
 
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
-		\caption{Besoins non fonctionnels -- Scalabilité} \label{tab:bnf-sca} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
+	\subsection{Diagramme de use case}
 
-		\altrow BNF-SCA-01 & Microservices & Décomposition en 7 services back-end autonomes, évoluant et se déployant indépendamment. \\ \hline
-		\altrow BNF-SCA-02 & Isolation des données & Chaque microservice possède sa propre base de données logique, éliminant les couplages SQL directs. \\ \hline
-		\altrow BNF-SCA-03 & Découplage événementiel & Kafka permet l'ajout de nouveaux consommateurs sans impacter les services producteurs existants. \\ \hline
-	\end{longtable}
+	\subsubsection{Définition}
+	Le diagramme de use case montre comment un utilisateur interagit avec la plateforme pour créer, analyser et matcher son CV avec des offres.
 
-	% -------------------------------------------------------
-	% 4. DISPONIBILITÉ ET FIABILITÉ
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 4. Disponibilité et Fiabilité}}
-	\vspace{0.3cm}
+	\subsubsection{Notre diagramme de use case}
+	Les acteurs sont : Étudiant, Recruteur. Les use cases incluent : créer un CV, sélectionner un template, générer un portfolio, analyser un CV, matcher avec des offres, consulter les offres filtrées.
 
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
-		\caption{Besoins non fonctionnels -- Disponibilité et Fiabilité} \label{tab:bnf-disp} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
+	\subsection{Diagrammes de séquence}
 
-		\altrow BNF-DISP-01 & Reprise automatique & Conteneurs configurés avec restart policy (`unless-stopped`) pour redémarrer en cas de crash. \\ \hline
-		\altrow BNF-DISP-02 & Health Checks & Vérifications périodiques d'infrastructure (SQL, Kafka) pour conditionner le démarrage des services (`depends\_on`). \\ \hline
-		\altrow BNF-DISP-03 & Résilience HTTP & Middleware centralisé interceptant les exceptions fatales et renvoyant une réponse 500 structurée. \\ \hline
-		\altrow BNF-DISP-04 & Tolérance pannes & Boucles de consommation isolées par \textit{try-catch} évitant l'arrêt d'un consommateur sur un message invalide. \\ \hline
-		\altrow BNF-DISP-05 & Persistance & Données critiques (SQL, Redis, Kafka, Uploads) conservées sur des volumes Docker nommés persistants. \\ \hline
-	\end{longtable}
+	\subsubsection{Définition}
+	Un diagramme de séquence représente l'ordre chronologique des appels entre les cinq services lors d'une opération donnée.
 
-	% -------------------------------------------------------
-	% 5. MAINTENABILITÉ
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 5. Maintenabilité}}
-	\vspace{0.3cm}
+	\subsubsection{Nos diagrammes de séquence}
+	Les diagrammes documentent : la création de CV (formulaire → création → stockage), l'analyse de CV (upload → analyse IA → score), le matching (CV → analyse → offres → score de compatibilité).
 
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
-		\caption{Besoins non fonctionnels -- Maintenabilité} \label{tab:bnf-maint} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
+	\subsection{Diagramme de classes}
 
-		\altrow BNF-MAINT-01 & Architecture Couches & Séparation stricte (Controllers, Services, Repositories, Models) pour chaque microservice. \\ \hline
-		\altrow BNF-MAINT-02 & Patrons conception & Utilisation systématique de patrons: Repository, Abstract Factory, DTO Mapping (AutoMapper). \\ \hline
-		\altrow BNF-MAINT-03 & Injection dépendances & Gestion native des dépendances ASP.NET pour garantir un couplage faible et faciliter les tests. \\ \hline
-		\altrow BNF-MAINT-04 & Config centralisée & Absence totale de valeurs codées en dur, paramétrage via la configuration. \\ \hline
-	\end{longtable}
+	\subsubsection{Définition}
+	Le diagramme de classes montre la structure des entités : CV, Portfolio, JobOffer, CVAnalysis, MatchResult et leurs relations.
 
-	% -------------------------------------------------------
-	% 6. PORTABILITÉ
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 6. Portabilité}}
-	\vspace{0.3cm}
+	\subsubsection{Notre diagramme de classes}
+	Les classes principales incluent CV (avec sections), Template, Portfolio (avec liens), JobOffer (parsing LinkedIn), CVAnalysisResult (score, suggestions), et MatchResult (score technique/soft skills/expérience).
 
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
-		\caption{Besoins non fonctionnels -- Portabilité} \label{tab:bnf-port} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
+	\section{Réalisation}
 
-		\altrow BNF-PORT-01 & Dockerisation & Chaque service dispose d'un build Docker \textit{multi-stage} produisant une image allégée et autonome. \\ \hline
-		\altrow BNF-PORT-02 & Multi-architecture & Compatibilité ARM64 (Apple Silicon) et AMD64 pour le développement et la production. \\ \hline
-		\altrow BNF-PORT-03 & Infrastructure As Code & L'écosystème entier (14 services + infrastructure) orchestrable via de Docker compose. \\ \hline
-	\end{longtable}
+	\subsection{Méthode de gestion}
 
-	% -------------------------------------------------------
-	% 7. INTEROPÉRABILITÉ
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 7. Interopérabilité}}
-	\vspace{0.3cm}
+	\subsubsection{Définition}
+	Organisation itérative du développement avec des points de contrôle sur chaque service.
 
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
-		\caption{Besoins non fonctionnels -- Interopérabilité} \label{tab:bnf-inter} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
+	\subsubsection{De la théorie à la pratique}
+	Sprints de deux semaines focalisés sur chaque service, intégration progressive, tests d'API et validation avec des utilisateurs réels.
 
-		\altrow BNF-INTER-01 & Standards REST et JSON & Points de terminaison conformes aux conventions HTTP et échanges standardisés en JSON. \\ \hline
-		\altrow BNF-INTER-02 & WebSockets & Communication bidirectionnelle en temps réel pour l'envoi des notifications via SignalR. \\ \hline
-		\altrow BNF-INTER-03 & Swagger UI & Documentation interactive générée dynamiquement pour faciliter l'exploration des APIs. \\ \hline
-	\end{longtable}
+	\subsection{Environnement de programmation}
 
-	% -------------------------------------------------------
-	% 8. OBSERVABILITÉ ET UTILISABILITÉ
-	% -------------------------------------------------------
-	\vspace{0.3cm}
-	\noindent\textbf{\textcolor{eheiBlue}{\large 8. Observabilité \& Utilisabilité}}
-	\vspace{0.3cm}
+	\subsubsection{Outils utilisés}
+	Visual Studio Code, Docker Compose, Git, Postman, Insomnia pour tester les APIs de CV, iTextSharp (ou DinkToPdf) pour la génération PDF.
 
-	\resetrows
-	\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{2.5cm}|>{\small}m{3.2cm}|>{\small}m{8.8cm}|}
-		\caption{Besoins non fonctionnels -- Observabilité et Utilisabilité} \label{tab:bnf-obs-util} \\
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endfirsthead
-		\hline
-		\rowcolor{tableHeader}
-		\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-		\hline
-		\endhead
-		\hline
-		\endfoot
+	\subsubsection{Langages utilisés}
+	C\# pour les services, TypeScript/Angular pour le frontend, Python pour l'extraction de données LinkedIn.
 
-		\altrow BNF-OBS-01 & Journalisation structurée & Intégration de Serilog et Seq pour l'agrégation et la recherche de logs système. \\ \hline
-		\altrow BNF-OBS-02 & Erreurs systémiques & Publication sur un topic Kafka dédié des erreurs critiques non interceptées. \\ \hline
-		\altrow BNF-UTIL-01 & Single Page Application & Fluidité optimale avec navigation sans rechargement complet de la page via Angular. \\ \hline
-		\altrow BNF-UTIL-02 & Ergonomie Kanban & Drag and Drop via Angular CDK pour déplacer des tickets intuitivement. \\ \hline
-	\end{longtable}
+	\subsubsection{Frameworks utilisés}
+	ASP.NET Core pour les services backend, Angular pour le frontend, Selenium pour le scraping LinkedIn.
 
-% ============================================================================
-% IV. BESOINS FONCTIONNELS -- CV BUILDER APP
-% ============================================================================
-\newpage
-	\subsection*{iii. Les Besoins fonctionnels CV-Maker-App}
+	\subsubsection{Bibliothèques utilisées}
+	AutoMapper, Serilog, OpenAI API (ou Hugging Face) pour l'analyse d'IA, iTextSharp pour PDF generation, Newtonsoft.Json pour la sérialisation.
 
-\addcontentsline{toc}{section}{IV. Besoins fonctionnels -- CV Builder App}
+	\subsubsection{Technologies utilisées}
+	PostgreSQL pour persister les CV et offres, Redis pour cacher les offres d'emploi, Python FastAPI pour le service d'IA, Kafka pour événements de matching.
 
-La deuxième application de notre plateforme est dédiée à la \textbf{création, l'analyse et la valorisation du profil professionnel} des étudiants : \textbf{CV Maker App}.
+	\subsection{Bonnes pratiques et assurance des BNF}
+	Utilisation de DTOs pour isoler les formats API, validation stricte des entrées, chiffrement des données sensibles, tests de performance pour les analyses IA, documentation Swagger complète.
 
-Elle est composée de plusieurs microservices spécialisés, chacun couvrant un aspect clé du processus de construction et d'optimisation du profil professionnel.
+	% ============================================================================
+	% CHAPITRE III : ALGO APP
+	% ============================================================================
+	\newpage
+	\thispagestyle{empty}
+	\begin{center}
+		\vspace*{\fill}
+		\chapterheader{Chapitre 3}{Algo App}
+		\vspace*{\fill}
+	\end{center}
 
-% -------------------------------------------------------
-% 1. CV CREATOR SERVICE
-% -------------------------------------------------------
-\vspace{0.5cm}
-\noindent\textbf{\textcolor{eheiBlue}{\large 1. CV-Creator-Service}}
+	\chapter{Algo App}
+	\fancyhead[L]{Chapitre 3 : Algo App}
+	\thispagestyle{fancy}
 
-\vspace{0.3cm}
-\resetrows
-\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.5cm}|>{\small}m{9.2cm}|}
-	\caption{Besoins fonctionnels -- CV-Creator-Service} \label{tab:bf-cv} \\
-	\hline
-	\rowcolor{tableHeader}
-	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-	\hline
-	\endfirsthead
-	\hline
-	\rowcolor{tableHeader}
-	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-	\hline
-	\endhead
-	\hline
-	\endfoot
+	\section{Contexte du projet}
 
-	\altrow BF-CV-01 & Création de CV & L'utilisateur peut créer un CV en remplissant un formulaire (informations personnelles, expériences, compétences, formations). \\ \hline
-	\altrow BF-CV-02 & Templates & Sélection d'un modèle (template) de CV parmi plusieurs designs proposés. \\ \hline
-	\altrow BF-CV-03 & Génération dynamique & Le CV est généré en temps réel au fur et à mesure du remplissage. \\ \hline
-	\altrow BF-CV-04 & Modification & L'utilisateur peut modifier à tout moment les informations de son CV. \\ \hline
-	\altrow BF-CV-05 & Stockage & Les CV sont sauvegardés dans la base de données. \\ \hline
+	\subsection{Description des besoins}
+	L'application d'entraînement en algorithmique répond au besoin fondamental : préparer les étudiants aux entretiens techniques des grandes entreprises. Les utilisateurs recherchent une plateforme proposant des problèmes variés, des solutions expliquées et un système de progression.
 
-\end{longtable}
+	\subsection{Besoins fonctionnels}
+	Les besoins fonctionnels incluent : catalogue de problèmes algorithmiques classés par difficultés, éditeur de code intégré, exécution et test de code, solutions optimales avec explications, suivi de progression, leaderboard et badges. Des fonctionnalités avancées incluent la détection de patterns, statistiques détaillées et suggestions de problèmes similaires.
 
-% -------------------------------------------------------
-% 2. CV PORTFOLIO SERVICE
-% -------------------------------------------------------
-\vspace{0.3cm}
-\noindent\textbf{\textcolor{eheiBlue}{\large 2. CV-Portfolio-Service}}
+	\subsection{Les besoins non-fonctionnels}
+	La plateforme doit assurer : exécution sécurisée et isolée du code utilisateur (sandboxing), performance optimale même avec des entrées volumineuses, scalabilité pour des milliers d'utilisateurs simultanés, disponibilité 24/7, maintenabilité du code éducatif, portabilité et sécurité contre les injections de code.
 
-\vspace{0.3cm}
-\resetrows
-\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.5cm}|>{\small}m{9.2cm}|}
-	\caption{Besoins fonctionnels -- CV-Portfolio-Service} \label{tab:bf-port} \\
-	\hline
-	\rowcolor{tableHeader}
-	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-	\hline
-	\endfirsthead
-	\hline
-	\rowcolor{tableHeader}
-	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-	\hline
-	\endhead
-	\hline
-	\endfoot
+	\section{Analyse et modélisation}
 
-	\altrow BF-PORT-01 & Génération portfolio & Génération d'un portfolio à partir d'un CV existant. \\ \hline
-	\altrow BF-PORT-02 & CV externe & Import d'un CV externe avec extraction automatique des données via IA. \\ \hline
-	\altrow BF-PORT-03 & Formulaire manuel & Création d'un portfolio via un formulaire personnalisé. \\ \hline
-	\altrow BF-PORT-04 & Templates portfolio & Choix de modèles de portfolio personnalisables. \\ \hline
-	\altrow BF-PORT-05 & Modification & Modification du portfolio généré selon les préférences utilisateur. \\ \hline
+	\subsection{Importance de la modélisation}
+	La modélisation est essentielle pour structurer les flux complexes d'exécution de code, résultats de test et suivi de progression.
 
-\end{longtable}
+	\subsection{Définition UML}
+	UML permet de visualiser les relations entre le système d'apprentissage, l'éditeur de code, le compilateur/interprète et le moteur de test.
 
-% -------------------------------------------------------
-% 3. CV JOB OFFERS SERVICE
-% -------------------------------------------------------
-\vspace{0.3cm}
-\noindent\textbf{\textcolor{eheiBlue}{\large 3. CV-Job-Offers-Service}}
+	\subsection{Diagramme de use case}
 
-\vspace{0.3cm}
-\resetrows
-\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.5cm}|>{\small}m{9.2cm}|}
-	\caption{Besoins fonctionnels -- CV-Job-Offers-Service} \label{tab:bf-job} \\
-	\hline
-	\rowcolor{tableHeader}
-	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-	\hline
-	\endfirsthead
-	\hline
-	\rowcolor{tableHeader}
-	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-	\hline
-	\endhead
-	\hline
-	\endfoot
+	\subsubsection{Définition}
+	Le diagramme de use case visualise l'interaction entre l'apprenant et la plateforme algorithmique.
 
-	\altrow BF-JOB-01 & Matching CV/offres & Analyse du CV pour proposer des offres compatibles. \\ \hline
-	\altrow BF-JOB-02 & Crawling LinkedIn & Récupération dynamique des offres via API. \\ \hline
-	\altrow BF-JOB-03 & Filtres & Filtrage par ville, pays, entreprise, type de contrat. \\ \hline
-	\altrow BF-JOB-04 & Accès aux offres & Redirection vers les publications LinkedIn pour postuler. \\ \hline
-	\altrow BF-JOB-05 & Interface recruteur & Consultation des CV publics pour rechercher des profils. \\ \hline
+	\subsubsection{Notre diagramme de use case}
+	Les acteurs sont : Apprenant, Instructeur, Système d'Évaluation. Les use cases incluent : consulter les problèmes, coder une solution, tester le code, visualiser la solution, consulter les statistiques, participer au leaderboard.
 
-\end{longtable}
+	\subsection{Diagrammes de séquence}
 
-% -------------------------------------------------------
-% 4. CV ANALYSIS SERVICE
-% -------------------------------------------------------
-\vspace{0.3cm}
-\noindent\textbf{\textcolor{eheiBlue}{\large 4. CV-Analysis-Service}}
+	\subsubsection{Définition}
+	Un diagramme de séquence montre le flux d'exécution lors de la soumission et l'évaluation d'une solution.
 
-\vspace{0.3cm}
-\resetrows
-\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.5cm}|>{\small}m{9.2cm}|}
-	\caption{Besoins fonctionnels -- CV-Analysis-Service} \label{tab:bf-ana} \\
-	\hline
-	\rowcolor{tableHeader}
-	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-	\hline
-	\endfirsthead
-	\hline
-	\rowcolor{tableHeader}
-	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-	\hline
-	\endhead
-	\hline
-	\endfoot
+	\subsubsection{Nos diagrammes de séquence}
+	Les diagrammes documentent : soumettre une solution (éditeur → backend → compilateur → test → feedback), consulter le leaderboard (filtrage → tri → affichage), voir les explications (analyse de code → suggestions de patterns).
 
-	\altrow BF-ANA-01 & Analyse linguistique & Détection des fautes grammaticales et orthographiques. \\ \hline
-	\altrow BF-ANA-02 & Analyse structurelle & Détection des problèmes de structure et de logique. \\ \hline
-	\altrow BF-ANA-03 & Suggestions & Proposition de corrections et améliorations. \\ \hline
-	\altrow BF-ANA-04 & Score CV & Calcul d'un score global de qualité du CV. \\ \hline
+	\subsection{Diagramme de classes}
 
-\end{longtable}
+	\subsubsection{Définition}
+	Le diagramme de classes représente les entités principales du système algorithmique.
 
-% -------------------------------------------------------
-% 5. CV MATCH ANALYZER SERVICE
-% -------------------------------------------------------
-\vspace{0.3cm}
-\noindent\textbf{\textcolor{eheiBlue}{\large 5. CV-Match-Analyzer-Service}}
+	\subsubsection{Notre diagramme de classes}
+	Les classes incluent : Problem, TestCase, Solution, User, ExecutionResult, Leaderboard, Badge, avec leurs attributs et relations.
 
-\vspace{0.3cm}
-\resetrows
-\begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.5cm}|>{\small}m{9.2cm}|}
-	\caption{Besoins fonctionnels -- CV-Match-Analyzer-Service} \label{tab:bf-match} \\
-	\hline
-	\rowcolor{tableHeader}
-	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-	\hline
-	\endfirsthead
-	\hline
-	\rowcolor{tableHeader}
-	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
-	\hline
-	\endhead
-	\hline
-	\endfoot
+	\section{Réalisation}
 
-	\altrow BF-MATCH-01 & Upload CV externe & Import d'un CV externe. \\ \hline
-	\altrow BF-MATCH-02 & Analyse offre & Analyse d'une offre via lien LinkedIn. \\ \hline
-	\altrow BF-MATCH-03 & Matching intelligent & Comparaison CV/offre selon critères : technique (60\%), soft skills (20\%), expérience (20\%). \\ \hline
-	\altrow BF-MATCH-04 & Score de compatibilité & Génération d'un score de correspondance. \\ \hline
+	\subsection{Méthode de gestion}
 
-\end{longtable}
+	\subsubsection{Définition}
+	Gestion structurée des problèmes, des cas de test et de l'évolution de la plateforme.
 
-% -------------------------------------------------------
-% TABLEAU RÉCAPITULATIF
-% -------------------------------------------------------
-\vspace{0.5cm}
-\noindent\textbf{\textcolor{eheiBlue}{\large Récapitulatif des Besoins Fonctionnels}}
-\vspace{0.3cm}
+	\subsubsection{De la théorie à la pratique}
+	Ajout progressif de problèmes par difficulté, tests exhaustifs des cas limites, feedback utilisateur intégré au processus d'amélioration.
 
-\begin{center}
-\begin{tabular}{|>{\small}m{8cm}|>{\centering\arraybackslash\small\bfseries}m{3cm}|}
-	\hline
-	\rowcolor{tableHeader}
-	\textcolor{white}{\textbf{Module}} & \textcolor{white}{\textbf{Nombre de BF}} \\
-	\hline
-	\rowcolor{tableRowLight}  CV-Creator-Service & 5 \\ \hline
-	\rowcolor{tableRowWhite}  CV-Portfolio-Service & 5 \\ \hline
-	\rowcolor{tableRowLight}  CV-Job-Offers-Service & 5 \\ \hline
-	\rowcolor{tableRowWhite}  CV-Analysis-Service & 4 \\ \hline
-	\rowcolor{tableRowLight}  CV-Match-Analyzer-Service & 4 \\ \hline
-	\rowcolor{sectionBg!20} \textbf{Total} & \textbf{23} \\ \hline
-\end{tabular}
-\end{center}
+	\subsection{Environnement de programmation}
+
+	\subsubsection{Outils utilisés}
+	Visual Studio Code, Docker pour isoler les exécutions, Git, Jenkins pour l'intégration continue, Prometheus pour le monitoring.
+
+	\subsubsection{Langages utilisés}
+	C\# pour le backend, TypeScript pour le frontend, Python/Java/C++ (runtime sandboxé) pour l'exécution des solutions utilisateurs.
+
+	\subsubsection{Frameworks utilisés}
+	ASP.NET Core, Angular, Docker avec namespace isolation pour le sandboxing.
+
+	\subsubsection{Bibliothèques utilisées}
+	Docker SDK, Roslyn (analyse C\#), Judge0 ou similaire pour l'exécution sécurisée, xUnit pour les tests unitaires.
+
+	\subsubsection{Technologies utilisées}
+	PostgreSQL pour les problèmes et solutions, Redis pour le cache des leaderboards, Docker pour le sandboxing, Kubernetes pour la scalabilité.
+
+	\subsection{Bonnes pratiques et assurance des BNF}
+	Sandboxing strict du code utilisateur, timeouts et limite mémoire, tests exhaustifs des cas limites, monitoring continu des performances, documentation claire des algorithmes et patterns.
+
+	% ============================================================================
+	% CHAPITRE IV : ENTRETIEN APP
+	% ============================================================================
+	\newpage
+	\thispagestyle{empty}
+	\begin{center}
+		\vspace*{\fill}
+		\chapterheader{Chapitre 4}{Entretien App}
+		\vspace*{\fill}
+	\end{center}
+
+	\chapter{Entretien App}
+	\fancyhead[L]{Chapitre 4 : Entretien App}
+	\thispagestyle{fancy}
+
+	\section{Contexte du projet}
+
+	\subsection{Description des besoins}
+	L'application de préparation aux entretiens répond à un besoin crucial : préparer les étudiants aux entretiens techniques et comportementaux menés par les grandes entreprises. Les utilisateurs demandent des simulations d'entretiens, des feedbacks personnalisés et des ressources de développement personnel.
+
+	\subsection{Besoins fonctionnels}
+	Les besoins fonctionnels incluent : banque de questions d'entretien, simulations d'entretiens en temps réel, enregistrement et relecture vidéo, analyse de la performance, feedbacks détaillés, suggestions d'amélioration, ressources par domaine technique et soft skills.
+
+	\subsection{Les besoins non-fonctionnels}
+	La plateforme doit assurer : qualité vidéo optimale, latence minimale pour les simulations en temps réel, analyse du langage naturel pour le feedback, scalabilité pour les sessions simultanées, disponibilité constante, maintenabilité du contenu éducatif, portabilité sur tous les navigateurs et appareils.
+
+	\section{Analyse et modélisation}
+
+	\subsection{Importance de la modélisation}
+	La modélisation structure les flux complexes d'enregistrement vidéo, analyse de performance et génération de feedbacks.
+
+	\subsection{Définition UML}
+	UML visualise les interactions entre le système de simulation, le moteur d'analyse et le service de feedback.
+
+	\subsection{Diagramme de use case}
+
+	\subsubsection{Définition}
+	Le diagramme de use case montre comment un candidat interagit avec la plateforme pour s'entraîner aux entretiens.
+
+	\subsubsection{Notre diagramme de use case}
+	Les acteurs sont : Candidat, Mentor Virtuel, Analyseur de Performance. Les use cases incluent : consulter les questions, pratiquer une simulation, enregistrer une réponse, recevoir un feedback, consulter les ressources, suivre la progression.
+
+	\subsection{Diagrammes de séquence}
+
+	\subsubsection{Définition}
+	Un diagramme de séquence illustre le flux d'une simulation d'entretien de bout en bout.
+
+	\subsubsection{Nos diagrammes de séquence}
+	Les diagrammes documentent : démarrer une simulation (sélection question → enregistrement vidéo → traitement → analyse → feedback), lister les ressources (filtrage → affichage organisé), suivre la progression (statistiques → comparaison).
+
+	\subsection{Diagramme de classes}
+
+	\subsubsection{Définition}
+	Le diagramme de classes représente les entités principales du système d'entraînement aux entretiens.
+
+	\subsubsection{Notre diagramme de classes}
+	Les classes incluent : Question, InterviewSimulation, VideoRecording, PerformanceAnalysis, Feedback, Resource, UserProgress, avec leurs attributs et relations.
+
+	\section{Réalisation}
+
+	\subsection{Méthode de gestion}
+
+	\subsubsection{Définition}
+	Gestion structurée de la création de contenu questions, des cas de test d'IA et du développement de l'analyseur.
+
+	\subsubsection{De la théorie à la pratique}
+	Curation de questions réalistes par domaine, raffinage progressif de l'analyseur d'IA, tests avec candidats réels, intération basée sur les résultats.
+
+	\subsection{Environnement de programmation}
+
+	\subsubsection{Outils utilisés}
+	Visual Studio Code, Docker, Git, WebRTC pour les communications vidéo, Jitsi ou OBS pour le streaming.
+
+	\subsubsection{Langages utilisés}
+	C\# pour le backend, TypeScript pour le frontend, Python pour l'analyse NLP et vidéo.
+
+	\subsubsection{Frameworks utilisés}
+	ASP.NET Core, Angular avec WebRTC, Python FastAPI pour l'analyse.
+
+	\subsubsection{Bibliothèques utilisées}
+	OpenAI API (ou LLM local) pour la génération de feedbacks, TensorFlow/PyTorch pour l'analyse du langage corporel, FFmpeg pour le traitement vidéo, OpenSSL pour le chiffrement.
+
+	\subsubsection{Technologies utilisées}
+	PostgreSQL pour les questions et résultats, S3 ou MinIO pour le stockage vidéo, Redis pour les sessions WebRTC, Kafka pour les événements d'analyse.
+
+	\subsection{Bonnes pratiques et assurance des BNF}
+	Respect de la vie privée avec consentement vidéo, analyse d'IA transparente et explicable, feedback constructif et bienveillant, documentation des critères d'évaluation, tests de performance pour les sessions simultanées.
+
+	% ============================================================================
+	% CONCLUSION
+	% ============================================================================
+	\newpage
+	\chapter*{{\headingfont Conclusion}}
+	\addcontentsline{toc}{chapter}{Conclusion}
+	\markboth{Conclusion}{}
+
+	Ce projet de fin d'année représente l'aboutissement de quatre années d'études en Génie Informatique et l'application concrète de nos acquis académiques. Nous avons conçu et développé une plateforme intégrée composée de quatre applications complémentaires, chacune répondant à un besoin spécifique de l'étudiant ingénieur.
+
+	Le Project Management App offre une solution complète de gestion de projets collaboratifs, avec une architecture microservices robuste et scalable. Le CV Builder App aide les étudiants à construire leur profil professionnel et à identifier les opportunités d'emploi correspondantes. L'Algo App prépare les candidats aux défis téchniques des entretiens d'embauche. Enfin, l'Entretien App simule les conditions d'entretien réelles et fournit des feedbacks personnalisés.
+
+	Au-delà des aspects techniques, ce projet nous a permis de développer nos compétences en gestion de projet, communication en équipe, et résolution de problèmes complexes. Nous avons appris l'importance de la modélisation, de la documentation et des bonnes pratiques de développement logiciel.
+
+	Nous envisageons de nombreuses améliorations futures : l'ajout de l'intelligence artificielle pour une analyse plus poussée, l'intégration avec les réseaux sociaux professionnels, l'expansion du catalogue de problèmes algorithmiques et de questions d'entretien, et l'amélioration de l'expérience utilisateur sur tous les appareils.
+
+	Nous remercions l'École des Hautes Études d'Ingénierie d'Oujda, notre encadrant pédagogique et technique, ainsi que tous nos camarades qui nous ont soutenus tout au long de ce projet. Cette plateforme est notre contribution à l'amélioration de la formation des futurs ingénieurs informatiques.
+
+	% ============================================================================
+	% WEBOGRAPHIE
+	% ============================================================================
+	\newpage
+	\chapter*{{\headingfont Webographie}}
+	\addcontentsline{toc}{chapter}{Webographie}
+	\markboth{Webographie}{}
+
+	\begin{thebibliography}{99}
+
+		\bibitem{microservices} Sam Newman. \textit{Building Microservices}. O'Reilly Media, 2015.
+
+		\bibitem{aspnetcore} Microsoft Documentation. \textit{ASP.NET Core documentation}. https://docs.microsoft.com/en-us/aspnet/core
+
+		\bibitem{angular} Angular Documentation. \textit{Angular official documentation}. https://angular.io/docs
+
+		\bibitem{docker} Docker Documentation. \textit{Docker official documentation}. https://docs.docker.com
+
+		\bibitem{kafka} Apache Kafka. \textit{Apache Kafka Documentation}. https://kafka.apache.org/documentation/
+
+		\bibitem{uml} Grady Booch, Robert A. Maksimchuk. \textit{Object-Oriented Analysis and Design with Applications}. Addison-Wesley, 2007.
+
+		\bibitem{designpatterns} Gang of Four. \textit{Design Patterns: Elements of Reusable Object-Oriented Software}. Addison-Wesley, 1994.
+
+		\bibitem{restapi} Leonard Richardson, Mike Amundsen. \textit{RESTful Web APIs}. O'Reilly Media, 2013.
+
+		\bibitem{security} Bruce Schneier. \textit{Cryptography Engineering}. Wiley, 2010.
+
+		\bibitem{agile} Ken Beck. \textit{Extreme Programming Explained}. Addison-Wesley, 1999.
+
+	\end{thebibliography}
+
+	% ============================================================================
+	% ANNEXE
+	% ============================================================================
+	\newpage
+	\chapter*{{\headingfont Annexe}}
+	\addcontentsline{toc}{chapter}{Annexe}
+	\markboth{Annexe}{}
+
+	\section*{A. Architecture globale}
+	L'architecture de la plateforme repose sur une approche microservices avec 14 services indépendants, une base de données PostgreSQL partagée (avec schémas isolés), Redis pour le cache et la liste noire JWT, Apache Kafka pour la messagerie asynchrone, et un frontend Angular monolithique.
+
+	\section*{B. Schémas de bases de données}
+	Chaque microservice possède son schéma logique contenant les tables essentielles. Les relations entre services sont gérées via Kafka et les APIs REST, éliminant les dépendances SQL directes.
+
+	\section*{C. Diagrammes d'architecture}
+	Les diagrammes d'architecture système incluent la vue de déploiement Docker Compose, la vue logique des microservices, et la vue des flux de données via Kafka.
+
+	\section*{D. Exemples de code source}
+	Des extraits de code significatifs illustrent : l'authentification JWT, le pattern Repository, la configuration Kafka, et les interceptors Angular.
+
+	\section*{E. Documentation des APIs}
+	La documentation Swagger est disponible à \texttt{http://localhost:5000/swagger} une fois le projet déployé. Elle inclut toutes les routes, paramètres et schémas de réponse.
+
+	\section*{F. Cas de test}
+	Les cas de test incluent : tests unitaires des services, tests d'intégration des APIs, tests de charge pour valider la performance, et tests de sécurité pour les vulnerabilités courantes.
+
+	\section*{G. Manuel de déploiement}
+	Instructions complètes pour déployer la plateforme en environnement de développement (Docker Compose local), de staging et de production (Kubernetes ou cloud provider).
+
+	\section*{H. Calendrier du projet}
+	Chronologie détaillée des sprints, jalons produits, et dates clés du développement sur les 6 mois du projet.
+
+	\section*{I. Résumé des technologies utilisées}
+	Tableau récapitulatif de tous les langages, frameworks, bibliothèques et services utilisés dans la plateforme.
+
+	\section*{J. Glossaire}
+	Définitions des termes techniques spécifiques au projet : microservices, Kafka, JWT, WebSocket, DAO, DTO, etc.
 
 \end{document}
