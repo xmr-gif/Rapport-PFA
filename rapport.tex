@@ -20,6 +20,7 @@
 \usepackage{multirow}    % For spanning rows
 \usepackage{titlesec}    % Chapter/section styling
 \usepackage{fancyhdr}
+\usepackage{float}       % For precise figure positioning with [H]
 % ============================================================================
 % CONFIGURATION DES LANGUES
 % ============================================================================
@@ -378,7 +379,7 @@
 	% ============================================================================
 	\newpage
 	\addcontentsline{toc}{chapter}{Table des figures}
-	\renewcommand{\listfigurename}{{\headingfont Table des figures}}
+		\renewcommand{\listfigurename}{{\headingfont Table des figures}}
 	\listoffigures
 
 	% ============================================================================
@@ -431,6 +432,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 	\chapter{Project Management App}
 	\fancyhead[L]{Chapitre 1 : Project Management App}
 	\thispagestyle{fancy}
+	\addtocontents{lof}{\textbf{Chapitre 1 -- Project Management App}\par\medskip}
+	\addtocontents{lot}{\textbf{Chapitre 1 -- Project Management App}\par\medskip}
 
 	\section{Contexte du projet}
 
@@ -480,34 +483,294 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 	\subsection{Méthode de gestion}
 
 	\subsubsection{Définition}
-	La méthode de gestion de projet structure l'organisation du travail, les responsabilités et les livrables pour atteindre les objectifs métier.
+	La méthode de gestion de projet définit le cadre organisationnel qui structure la planification, le suivi et la livraison des fonctionnalités. Elle détermine comment les tâches sont réparties entre les membres de l'équipe, comment les priorités sont établies, et comment les itérations sont rythmées pour assurer une progression continue et mesurable du projet.
 
 	\subsubsection{De la théorie à la pratique}
-	Nous avons adopté une approche hybride combinant Scrum et Kanban, avec des sprints de deux semaines, des daily standups, et un suivi des tâches sur un tableau Kanban.
+	Pour le développement du Project Management App, nous avons adopté une approche hybride combinant \textbf{Scrum} et \textbf{Kanban}. Le projet a été découpé en sprints de deux semaines, avec des \textit{daily standups} pour synchroniser l'avancement de chaque microservice. Le suivi des tâches s'est effectué sur un tableau Kanban à quatre colonnes : \texttt{To Do}, \texttt{Doing}, \texttt{Done} et \texttt{Happy Day}, reflétant directement les statuts de tickets implémentés dans l'application elle-même. Chaque sprint visait la livraison d'un service complet --- de la couche données à la couche présentation --- permettant une intégration incrémentale. Les revues de sprint ont servi à valider les fonctionnalités avec l'encadrant et à ajuster les priorités du backlog.
 
 	\subsection{Environnement de programmation}
 
 	\subsubsection{Outils utilisés}
-	Nous avons utilisé : Visual Studio Code pour le développement, Docker et Docker Compose pour la conteneurisation, Git pour le contrôle de version, Postman pour les tests API, et Seq pour l'agrégation des logs.
+
+	Le tableau~\ref{tab:outils-ch1} présente les outils de développement utilisés pour la réalisation du Project Management App.
+
+	\begin{table}[h!]
+		\centering
+		\caption{Outils de développement utilisés}
+		\label{tab:outils-ch1}
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|m{7.5cm}|}
+			\hline
+			\rowcolor{tableHeader}
+			\textcolor{white}{\textbf{Outil}} & \textcolor{white}{\textbf{Logo}} & \centering\arraybackslash\textcolor{white}{\textbf{Description}} \\ \hline
+
+			\altrow
+			Visual Studio Code & \includegraphics[width=1.5cm]{pictures/vscode.png} & Éditeur de code principal utilisé pour le développement frontend Angular et backend .NET, avec extensions pour C\#, TypeScript, Docker et Git. \\ \hline
+
+			\altrow
+			Docker \& Docker Compose & \includegraphics[width=1.5cm]{pictures/Docker.png} & Conteneurisation de l'ensemble des microservices, de la base de données SQL Server, de Kafka et de Zookeeper via des fichiers \texttt{docker-compose.yaml} multi-services. \\ \hline
+
+			\altrow
+			Git \& GitHub & \includegraphics[width=1.5cm]{pictures/github.png} & Contrôle de version distribué avec gestion des branches par fonctionnalité et revues de code via pull requests. \\ \hline
+
+			\altrow
+			Postman &  \includegraphics[width=1.2cm]{pictures/postman.jpg}
+			 & Test et validation des endpoints REST de chaque microservice, avec collections organisées par service. \\ \hline
+
+		
+		\end{tabular}
+	\end{table}
+	\resetrows
 
 	\subsubsection{Langages utilisés}
-	C\# pour les microservices backend, TypeScript pour le frontend Angular, SQL pour les requêtes de base de données.
+
+	Le tableau~\ref{tab:langages-ch1} présente les langages de programmation employés dans le projet.
+
+	\begin{table}[h!]
+		\centering
+		\caption{Langages de programmation utilisés}
+		\label{tab:langages-ch1}
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|m{7.5cm}|}
+			\hline
+			\rowcolor{tableHeader}
+			\textcolor{white}{\textbf{Langage}} & \textcolor{white}{\textbf{Logo}} & \centering\arraybackslash\textcolor{white}{\textbf{Utilisation}} \\ \hline
+
+			\altrow
+			C\# &  \includegraphics[width=1.5cm]{pictures/csharp.jpg}
+			& Langage principal pour les trois microservices backend (Logs-Service, Notifications-Service, Teams-Service), exploitant la programmation orientée objet, les génériques et la programmation asynchrone (\texttt{async/await}). \\ \hline
+
+			\altrow
+			TypeScript &  \includegraphics[width=1.5cm]{pictures/typescript.jpg}
+			 & Langage fortement typé utilisé pour le développement de l'application frontend Angular 20, offrant la sûreté de type et l'autocomplétion pour une base de code maintenable. \\ \hline
+
+			\altrow
+			SQL &  \includegraphics[width=1.5cm]{pictures/sql.png}
+			& Utilisé via Entity Framework Core pour les migrations de schéma et les requêtes LINQ traduites vers SQL Server pour les services Logs et Teams. \\ \hline
+
+			\altrow
+			HTML / CSS &  \includegraphics[width=1.5cm]{pictures/html.png}
+			 & Structuration des templates Angular et stylisation avec Tailwind CSS 3.4 pour une interface responsive et moderne avec un thème sombre. \\ \hline
+		\end{tabular}
+	\end{table}
+	\resetrows
 
 	\subsubsection{Frameworks utilisés}
-	ASP.NET Core pour les services backend, Angular 16+ pour le frontend, Entity Framework Core pour l'accès aux données.
+
+	Le tableau~\ref{tab:frameworks-ch1} détaille les frameworks structurants du projet.
+
+	\begin{table}[h!]
+		\centering
+		\caption{Frameworks utilisés}
+		\label{tab:frameworks-ch1}
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{2cm}|m{8.5cm}|}
+			\hline
+			\rowcolor{tableHeader}
+			\textcolor{white}{\textbf{Framework}} & \textcolor{white}{\textbf{Version}} & \centering\arraybackslash\textcolor{white}{\textbf{Rôle}} \\ \hline
+
+			\altrow
+			ASP.NET Core & 8.0 / 9.0 & Framework backend pour la construction des APIs REST des microservices. Le Logs-Service utilise .NET 8.0, tandis que le Teams-Service et le Notifications-Service sont développés avec .NET 9.0. \\ \hline
+
+			\altrow
+			Angular & 20.3 & Framework frontend pour le développement de l'application SPA (Single Page Application). Utilise l'architecture \textit{standalone components}, les \textit{signals} pour la gestion d'état réactive, et le routage déclaratif. \\ \hline
+
+			\altrow
+			Entity Framework Core & 8.0 / 9.0 & ORM (Object-Relational Mapping) pour l'accès aux données SQL Server, la génération de migrations et l'exécution de requêtes LINQ avec stratégies \texttt{AsNoTracking} pour les lectures. \\ \hline
+
+			\altrow
+			Tailwind CSS & 3.4.18 & Framework CSS utilitaire pour le stylisme rapide de l'interface utilisateur avec un système de couleurs personnalisé (\texttt{card}, \texttt{cardBorder}, \texttt{cardText}) et un thème sombre cohérent. \\ \hline
+		\end{tabular}
+	\end{table}
+	\resetrows
 
 	\subsubsection{Bibliothèques utilisées}
-	AutoMapper pour le mapping DTO, Serilog pour la journalisation, Kafka .NET pour la messagerie asynchrone, SignalR pour les WebSockets.
+
+	Le tableau~\ref{tab:libs-ch1} recense les bibliothèques tierces intégrées au projet.
+
+	\begin{table}[h!]
+		\centering
+		\caption{Bibliothèques utilisées}
+		\label{tab:libs-ch1}
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{2cm}|m{8cm}|}
+			\hline
+			\rowcolor{tableHeader}
+			\textcolor{white}{\textbf{Bibliothèque}} & \textcolor{white}{\textbf{Version}} & \centering\arraybackslash\textcolor{white}{\textbf{Rôle}} \\ \hline
+
+			\altrow
+			AutoMapper & 12.0 / 13.0 & Mapping automatique entre les entités de base de données et les DTOs (Data Transfer Objects), réduisant le code de conversion manuel dans les trois services backend. \\ \hline
+
+			\altrow
+			Confluent.Kafka & 2.3 / 2.12 & Client .NET pour Apache Kafka, utilisé pour la production et la consommation d'événements asynchrones entre les microservices (création d'équipe, assignation de tâche, etc.). \\ \hline
+
+			\altrow
+			SignalR & intégré & Bibliothèque de communication temps réel via WebSockets, utilisée dans le Notifications-Service pour diffuser les notifications instantanément aux clients connectés via le hub \texttt{/notificationHub}. \\ \hline
+
+			\altrow
+			Swashbuckle & 6.5 / 7.2 / 10.0 & Génération automatique de la documentation OpenAPI/Swagger pour chaque microservice, fournissant une interface de test interactive. \\ \hline
+
+			\altrow
+			Newtonsoft.Json & 13.0.3 & Sérialisation et désérialisation JSON avancée, utilisée dans le Notifications-Service pour la persistance fichier des notifications. \\ \hline
+
+			\altrow
+			Lucide Angular & 0.554.0 & Bibliothèque d'icônes SVG pour Angular, fournissant les icônes de l'interface (recherche, calendrier, alertes, utilisateurs, etc.). \\ \hline
+
+			\altrow
+			RxJS & 7.8.0 & Bibliothèque de programmation réactive pour la gestion des flux de données asynchrones côté frontend (appels HTTP, événements SignalR, filtrage en temps réel). \\ \hline
+		\end{tabular}
+	\end{table}
+	\resetrows
 
 	\subsubsection{Technologies utilisées}
-	PostgreSQL pour les bases de données, Redis pour le cache, Apache Kafka pour l'event streaming, JWT pour l'authentification, OAuth 2.0 pour les connexions sociales.
+
+	Le tableau~\ref{tab:tech-ch1} présente les technologies d'infrastructure utilisées.
+
+	\begin{table}[h!]
+		\centering
+		\caption{Technologies d'infrastructure}
+		\label{tab:tech-ch1}
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|m{10cm}|}
+			\hline
+			\rowcolor{tableHeader}
+			\textcolor{white}{\textbf{Technologie}} & \centering\arraybackslash\textcolor{white}{\textbf{Rôle dans le projet}} \\ \hline
+
+			\altrow
+			SQL Server 2022 & Base de données relationnelle pour les services Logs et Teams. Chaque service possède sa propre base (\texttt{LogsDB}, \texttt{TeamsDB}) avec des schémas isolés et des index optimisés (timestamp, service, userId, level). \\ \hline
+
+			\altrow
+			Apache Kafka 7.5 & Plateforme de streaming d'événements assurant la communication asynchrone entre microservices. Gère plus de 10 topics incluant : \texttt{team-created}, \texttt{team-updated}, \texttt{team-deleted}, \texttt{team.member.added}, \texttt{team.member.removed}, \texttt{task.assigned}, \texttt{meeting.scheduled}, \texttt{ticket.note.added}, etc. \\ \hline
+
+			\altrow
+			Apache Zookeeper & Service de coordination pour le cluster Kafka, gérant la découverte des brokers et la synchronisation des métadonnées (port 2181). \\ \hline
+
+			\altrow
+			Docker & Conteneurisation de chaque microservice avec des Dockerfiles multi-étapes (restore $\rightarrow$ build $\rightarrow$ publish $\rightarrow$ runtime) et exécution en tant qu'utilisateur non-root pour la sécurité. \\ \hline
+
+			\altrow
+			JWT & JSON Web Tokens pour l'authentification. Les tokens sont stockés côté client dans le \texttt{localStorage} et injectés automatiquement via un intercepteur HTTP Angular (\texttt{authInterceptor}). \\ \hline
+
+			\altrow
+			WebSocket (SignalR) & Protocole de communication bidirectionnelle pour les notifications temps réel. Le hub \texttt{/notificationHub} diffuse les événements \texttt{ReceiveNotification}, \texttt{NotificationUpdated}, \texttt{AllNotificationsRead} et \texttt{NotificationDeleted} aux clients. \\ \hline
+		\end{tabular}
+	\end{table}
+	\resetrows
 
 	\subsection{Bonnes pratiques et assurance des BNF}
-	Nous avons implémenté des bonnes pratiques SOLID, utilisé le pattern Repository, appliqué l'injection de dépendances, effectué des tests unitaires et d'intégration, et documenté l'API avec Swagger.
+
+	La qualité logicielle du Project Management App repose sur l'application rigoureuse de plusieurs bonnes pratiques architecturales et de développement, assurant simultanément le respect des besoins non-fonctionnels identifiés lors de la phase d'analyse.
+
+	\subsubsection{Architecture en couches et pattern Repository}
+	Chaque microservice adopte une architecture en couches clairement séparées : \textbf{Controllers} (couche présentation), \textbf{Services} (couche métier) et \textbf{Repositories} (couche accès aux données). Le pattern Repository isole la logique d'accès aux données derrière des interfaces, facilitant les tests et permettant de changer de source de données sans impacter la logique métier. Par exemple, le Notifications-Service utilise un repository basé sur un fichier JSON avec verrouillage par \texttt{SemaphoreSlim}, tandis que les services Logs et Teams utilisent Entity Framework Core avec SQL Server.
+
+	\subsubsection{Injection de dépendances et DTOs}
+	L'injection de dépendances est systématiquement utilisée dans les trois services backend, conformément au conteneur IoC natif d'ASP.NET Core. Les DTOs (Data Transfer Objects) séparent strictement les modèles internes des contrats d'API : chaque entité possède ses \texttt{CreateDto}, \texttt{UpdateDto} et \texttt{ResponseDto}, avec AutoMapper assurant la conversion automatique.
+
+	\subsubsection{Gestion des erreurs et intercepteurs}
+	Côté frontend, un \textbf{intercepteur d'erreurs HTTP} capture toutes les réponses d'erreur et les transforme en messages utilisables, couvrant les codes 400 (Bad Request), 401 (Unauthorized), 403 (Forbidden), 404 (Not Found), 409 (Conflict), 422 (Validation Error), 500 (Server Error), 502 (Bad Gateway), 503 (Service Unavailable) et 504 (Gateway Timeout). Un \textbf{intercepteur d'authentification} injecte automatiquement le token JWT dans chaque requête sortante.
+
+	\subsubsection{Sécurité}
+	La sécurité est assurée à plusieurs niveaux : authentification JWT avec injection automatique via intercepteur, configuration CORS stricte n'autorisant que l'origine \texttt{http://localhost:4200} avec credentials, exécution des conteneurs Docker en tant qu'utilisateur non-root (\texttt{appuser}), et commits manuels Kafka après traitement réussi pour garantir la fiabilité de la messagerie (\texttt{EnableAutoCommit: false}).
+
+	\subsubsection{Résilience et santé des services}
+	Les services intègrent des mécanismes de résilience : les connexions Entity Framework Core sont configurées avec une stratégie de \textit{retry on failure} (5 tentatives, délai de 30 secondes), et des \textit{health checks} surveillent la disponibilité de SQL Server et du DbContext. Les migrations de base de données s'exécutent automatiquement au démarrage de chaque service.
+
+\newpage
+	\subsection{Interfaces de l'application}
+
+	Cette sous-section présente les principales interfaces utilisateur du Project Management App, illustrant les fonctionnalités implémentées.
+
+	\subsubsection{Page des environnements}
+	La page d'accueil de l'application affiche les environnements auxquels l'utilisateur participe sous forme de cartes dans une grille responsive. Elle propose la création de nouveaux environnements et la consultation des invitations reçues via des modales dédiées. Un état vide avec une illustration guide les nouveaux utilisateurs.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/env-page.png}
+		
+		\caption{Page des environnements de travail}
+		\label{fig:env-page}
+	\end{figure}
+
+	\subsubsection{Tableau de bord (Dashboard)}
+	Le tableau de bord offre une vue d'ensemble du projet avec trois zones principales : une section de synthèse en haut, un tableau Kanban de type \textit{drag-and-drop} affichant les tickets de l'utilisateur connecté (colonnes \texttt{To Do}, \texttt{Doing}, \texttt{Done}, \texttt{Happy Day}) et une barre latérale montrant les réunions à venir et les discussions récentes.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/dashboard.png}
+		\caption{Dashboard}
+		\label{fig:dashboard}
+	\end{figure}
+
+	\subsubsection{Gestion des tickets}
+	La page de gestion des tickets propose un tableau Kanban plein écran avec une barre d'outils permettant le filtrage par recherche textuelle, par priorité (Low, Medium, High) et par assigné. La création de tickets s'effectue via une modale permettant de définir le titre, le statut, la priorité et les membres assignés.
+
+	\begin{figure}[H]
+		\centering 
+		 \includegraphics[width=0.95\textwidth]{screenshots/tickets-page.png}
+	
+		\caption{Page de gestion des tickets }
+		\label{fig:tickets-page}
+	\end{figure}
+\newpage
+	\subsubsection{Gestion des équipes}
+	La page des équipes affiche les équipes sous forme de cartes avec recherche, tri (ascendant/descendant) et possibilité de création via une modale. Chaque carte d'équipe présente les détails de l'équipe et permet d'accéder à une vue détaillée pour la gestion des membres.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/teams-page.png}
+
+		\caption{Page de gestion des équipes}
+		\label{fig:teams-page}
+	\end{figure}
+
+	\subsubsection{Centre de notifications}
+	Le centre de notifications adopte une disposition en deux volets : une boîte de réception (70\% de la largeur) avec filtrage par type (Tous, Mentions, Tâches, Réunions) et un panneau de détail/statistiques (30\%). Les notifications sont reçues en temps réel via SignalR et offrent des actions de lecture, archivage et suppression.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/notifications-page.png}
+	
+		\caption{Centre de notifications en temps réel}
+		\label{fig:notifications-page}
+	\end{figure}
+
+	\subsubsection{Calendrier et réunions}
+	Le module calendrier supporte trois vues : semaine (par défaut), jour et mois. La barre d'outils permet la navigation temporelle, la recherche et la planification de nouvelles réunions. La page des réunions dédiée offre un filtrage avancé (Aujourd'hui, Cette semaine, Mes réunions) avec un panneau de détail latéral.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/calendar-page.png}
+		\caption{Vue calendrier avec planification de réunions}
+		\label{fig:calendar-page}
+	\end{figure}
+
+	\subsubsection{Espace de discussions}
+	L'espace de discussions présente une disposition en deux colonnes : une liste de conversations (35\%) et une zone de chat détaillée (65\%). Chaque conversation affiche les avatars des participants, les messages avec horodatage, les pièces jointes avec icônes et taille, ainsi que les réactions sous forme d'emojis.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/discussions-page.png}
+		
+		\caption{Espace de discussions collaboratif}
+		\label{fig:discussions-page}
+	\end{figure}
+
+	\subsubsection{Journal des activités (Logs)}
+	La page des logs présente quatre cartes de statistiques en haut (total, erreurs, avertissements, logs du jour), suivies de filtres avancés (plage de dates, service, niveau, recherche) avec export, et d'un tableau paginé de 50 entrées par page affichant l'ensemble des activités du système.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/logs-page.png}
+	
+		\caption{Journal des activités avec filtrage avancé}
+		\label{fig:logs-page}
+	\end{figure}
 
 	% ============================================================================
 	% CHAPITRE II : CV BUILDER APP
 	% ============================================================================
+	\clearpage
 	\newpage
 	\thispagestyle{empty}
 	\begin{center}
@@ -519,6 +782,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 	\chapter{CV Builder App}
 	\fancyhead[L]{Chapitre 2 : CV Builder App}
 	\thispagestyle{fancy}
+	\addtocontents{lof}{\textbf{Chapitre 2 -- CV Builder App}\par\medskip}
+	\addtocontents{lot}{\textbf{Chapitre 2 -- CV Builder App}\par\medskip}
 
 	\section{Contexte du projet}
 
@@ -607,6 +872,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 	\chapter{Algo App}
 	\fancyhead[L]{Chapitre 3 : Algo App}
 	\thispagestyle{fancy}
+	\addtocontents{lof}{\textbf{Chapitre 3 -- Algo App}\par\medskip}
+	\addtocontents{lot}{\textbf{Chapitre 3 -- Algo App}\par\medskip}
 
 	\section{Contexte du projet}
 
@@ -695,6 +962,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 	\chapter{Entretien App}
 	\fancyhead[L]{Chapitre 4 : Entretien App}
 	\thispagestyle{fancy}
+	\addtocontents{lof}{\textbf{Chapitre 4 -- Entretien App}\par\medskip}
+	\addtocontents{lot}{\textbf{Chapitre 4 -- Entretien App}\par\medskip}
 
 	\section{Contexte du projet}
 
@@ -773,7 +1042,7 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 	% CONCLUSION
 	% ============================================================================
 	\newpage
-	\chapter*{{\headingfont Conclusion}}
+		\chapter*{{\headingfont Conclusion}}
 	\addcontentsline{toc}{chapter}{Conclusion}
 	\markboth{Conclusion}{}
 
