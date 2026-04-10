@@ -448,76 +448,76 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 
 	\section{Analyse et modélisation}
 
-	\subsection{Importance de la mod├⌐lisation}
-    	La conception d'une application de gestion de projets collaboratifs implique une complexit├⌐
-    	architecturale significative : deux niveaux de privil├¿ges distincts, des workflows dynamiques
-    	personnalisables, une communication en temps r├⌐el via WebSockets, et une architecture microservices
-    	compos├⌐e de plusieurs services interd├⌐pendants. Dans ce contexte, la mod├⌐lisation n'est pas une
-    	├⌐tape facultative mais une n├⌐cessit├⌐ fondamentale.
+	\subsection{Importance de la modélisation}
+    	La conception d'une application de gestion de projets collaboratifs implique une complexité
+    	architecturale significative : deux niveaux de privilèges distincts, des workflows dynamiques
+    	personnalisables, une communication en temps réel via WebSockets, et une architecture microservices
+    	composée de plusieurs services interdépendants. Dans ce contexte, la modélisation n'est pas une
+    	étape facultative mais une nécessité fondamentale.
 
-    	Elle nous a permis, en premier lieu, d'anticiper les ambigu├»t├⌐s fonctionnelles avant toute ligne
-    	de code ├⌐crite, en confrontant les diff├⌐rentes visions des membres de l'├⌐quipe autour d'une
-    	repr├⌐sentation commune et formelle. En second lieu, elle a servi de contrat entre les d├⌐veloppeurs
-    	: chaque service, chaque entit├⌐ et chaque interaction ont ├⌐t├⌐ d├⌐finis et valid├⌐s collectivement,
-    	r├⌐duisant ainsi les risques d'incoh├⌐rence lors de l'int├⌐gration. Enfin, la mod├⌐lisation a facilit├⌐
-    	la communication avec notre encadrant, en offrant une vue structur├⌐e et lisible de nos choix de
+    	Elle nous a permis, en premier lieu, d'anticiper les ambiguïtés fonctionnelles avant toute ligne
+    	de code écrite, en confrontant les différentes visions des membres de l'équipe autour d'une
+    	représentation commune et formelle. En second lieu, elle a servi de contrat entre les développeurs
+    	: chaque service, chaque entité et chaque interaction ont été définis et validés collectivement,
+    	réduisant ainsi les risques d'incohérence lors de l'intégration. Enfin, la modélisation a facilité
+    	la communication avec notre encadrant, en offrant une vue structurée et lisible de nos choix de
     	conception.
 
-    	\subsection{D├⌐finition UML}
-    	UML (Unified Modeling Language), dans sa version 2.x, est un langage de mod├⌐lisation standardis├⌐
+    	\subsection{Définition UML}
+    	UML (Unified Modeling Language), dans sa version 2.x, est un langage de modélisation standardisé
     	par l'OMG (Object Management Group) qui fournit un ensemble de notations graphiques formelles pour
-    	visualiser, sp├⌐cifier et documenter les syst├¿mes logiciels. Il ne s'agit pas d'une m├⌐thode de
-    	d├⌐veloppement mais d'un langage de communication entre les acteurs d'un projet.
+    	visualiser, spécifier et documenter les systèmes logiciels. Il ne s'agit pas d'une méthode de
+    	développement mais d'un langage de communication entre les acteurs d'un projet.
 
-    	Dans le cadre de ce projet, nous avons mobilis├⌐ trois types de diagrammes compl├⌐mentaires : le
+    	Dans le cadre de ce projet, nous avons mobilisé trois types de diagrammes complémentaires : le
     	\textbf{diagramme de use case} pour capturer les besoins fonctionnels du point de vue utilisateur,
-    	le \textbf{diagramme de s├⌐quence} pour mod├⌐liser les interactions dynamiques entre composants, et
-    	le \textbf{diagramme de classes} pour repr├⌐senter la structure statique du syst├¿me. Ces diagrammes
-    	ont ├⌐t├⌐ r├⌐alis├⌐s ├á l'aide de \textbf{Figma}, utilis├⌐ comme outil de conception graphique pour la
-    	mod├⌐lisation visuelle des diagrammes UML, offrant une collaboration en temps r├⌐el entre les cinq
-    	membres de l'├⌐quipe.
+    	le \textbf{diagramme de séquence} pour modéliser les interactions dynamiques entre composants, et
+    	le \textbf{diagramme de classes} pour représenter la structure statique du système. Ces diagrammes
+    	ont été réalisés à l'aide de \textbf{Figma}, utilisé comme outil de conception graphique pour la
+    	modélisation visuelle des diagrammes UML, offrant une collaboration en temps réel entre les cinq
+    	membres de l'équipe.
 
     	\subsection{Diagramme de use case}
 
-    	\subsubsection{D├⌐finition}
-    	Le diagramme de use case, ou diagramme de cas d'utilisation, est un outil UML qui mod├⌐lise les
-    	interactions entre les \textbf{acteurs} --- entit├⌐s externes au syst├¿me, qu'il s'agisse
-    	d'utilisateurs humains ou de syst├¿mes tiers --- et les \textbf{fonctionnalit├⌐s} que le syst├¿me
-    	expose. Il d├⌐limite explicitement la \textbf{fronti├¿re du syst├¿me} (\textit{system boundary}),
-    	s├⌐parant ce qui est pris en charge par l'application de ce qui lui est externe.
+    	\subsubsection{Définition}
+    	Le diagramme de use case, ou diagramme de cas d'utilisation, est un outil UML qui modélise les
+    	interactions entre les \textbf{acteurs} --- entités externes au système, qu'il s'agisse
+    	d'utilisateurs humains ou de systèmes tiers --- et les \textbf{fonctionnalités} que le système
+    	expose. Il délimite explicitement la \textbf{frontière du système} (\textit{system boundary}),
+    	séparant ce qui est pris en charge par l'application de ce qui lui est externe.
 
-    	Les relations entre cas d'utilisation se d├⌐clinent principalement en deux types : la relation
+    	Les relations entre cas d'utilisation se déclinent principalement en deux types : la relation
     	\textbf{$\langle\langle$include$\rangle\rangle$}, qui exprime qu'un cas d'utilisation en incorpore
-    	syst├⌐matiquement un autre (par exemple, toute action authentifi├⌐e inclut obligatoirement la
-    	v├⌐rification du token JWT), et la relation
-    	\textbf{$\langle\langle$extend$\rangle\rangle$}, qui mod├⌐lise un comportement optionnel ou
-    	conditionnel venant enrichir un cas de base. Ce diagramme constitue le point d'entr├⌐e de l'analyse
-    	fonctionnelle et sert de r├⌐f├⌐rence tout au long du d├⌐veloppement.
+    	systématiquement un autre (par exemple, toute action authentifiée inclut obligatoirement la
+    	vérification du token JWT), et la relation
+    	\textbf{$\langle\langle$extend$\rangle\rangle$}, qui modélise un comportement optionnel ou
+    	conditionnel venant enrichir un cas de base. Ce diagramme constitue le point d'entrée de l'analyse
+    	fonctionnelle et sert de référence tout au long du développement.
 
     	\subsubsection{Notre diagramme de use case}
-    	Le diagramme de use case du Project Management App, pr├⌐sent├⌐ ├á la figure
-    	\ref{fig:usecase-project-management}, mod├⌐lise l'ensemble des interactions entre les acteurs
-    	identifi├⌐s et les fonctionnalit├⌐s de la plateforme.
+    	Le diagramme de use case du Project Management App, présenté à la figure
+    	\ref{fig:usecase-project-management}, modélise l'ensemble des interactions entre les acteurs
+    	identifiés et les fonctionnalités de la plateforme.
 
-    	Deux acteurs principaux ont ├⌐t├⌐ d├⌐finis, refl├⌐tant la hi├⌐rarchie de droits du syst├¿me. Le
-    	\textbf{Membre} repr├⌐sente tout utilisateur authentifi├⌐ ayant acc├¿s ├á un environnement de travail.
-    	Il dispose des fonctionnalit├⌐s suivantes, toutes reli├⌐es par des relations
-    	\textbf{$\langle\langle$include$\rangle\rangle$} traduisant leur caract├¿re syst├⌐matique : voir la
-    	liste des tickets, recevoir des notifications, changer l'├⌐tat d'un ticket, consulter le dashboard,
-    	consulter l'historique, et g├⌐rer un meet. Le Membre peut ├⌐galement \textbf{cr├⌐er un ticket
-    		personnalis├⌐}, avec la possibilit├⌐ d'├⌐tendre cette action via trois relations
-    	\textbf{$\langle\langle$extend$\rangle\rangle$} optionnelles : ajouter une description, d├⌐finir la
-    	priorit├⌐, et d├⌐finir un deadline.
+    	Deux acteurs principaux ont été définis, reflétant la hiérarchie de droits du système. Le
+    	\textbf{Membre} représente tout utilisateur authentifié ayant accès à un environnement de travail.
+    	Il dispose des fonctionnalités suivantes, toutes reliées par des relations
+    	\textbf{$\langle\langle$include$\rangle\rangle$} traduisant leur caractère systématique : voir la
+    	liste des tickets, recevoir des notifications, changer l'état d'un ticket, consulter le dashboard,
+    	consulter l'historique, et gérer un meet. Le Membre peut également \textbf{créer un ticket
+    		personnalisé}, avec la possibilité d'étendre cette action via trois relations
+    	\textbf{$\langle\langle$extend$\rangle\rangle$} optionnelles : ajouter une description, définir la
+    	priorité, et définir un deadline.
 
-    	Le \textbf{Chef de Projet} h├⌐rite du p├⌐rim├¿tre du Membre via l'authentification commune, et dispose
-    	en plus de fonctionnalit├⌐s de gestion avanc├⌐es. Il peut cr├⌐er un environnement de travail, attribuer
-    	des tickets aux membres (avec la possibilit├⌐ de r├⌐assigner un ticket, et d'inclure la d├⌐finition de
-    	priorit├⌐ et de deadline), g├⌐rer les petites ├⌐quipes via des op├⌐rations \textbf{CRUD}, v├⌐rifier un
-    	ticket en l'acceptant ou le rejetant, g├⌐rer les membres via \textbf{CRUD}, et recevoir des alertes.
+    	Le \textbf{Chef de Projet} hérite du périmètre du Membre via l'authentification commune, et dispose
+    	en plus de fonctionnalités de gestion avancées. Il peut créer un environnement de travail, attribuer
+    	des tickets aux membres (avec la possibilité de réassigner un ticket, et d'inclure la définition de
+    	priorité et de deadline), gérer les petites équipes via des opérations \textbf{CRUD}, vérifier un
+    	ticket en l'acceptant ou le rejetant, gérer les membres via \textbf{CRUD}, et recevoir des alertes.
 
-    	Le point d'entr├⌐e commun aux deux acteurs est le cas \textbf{S'authentifier}, qui conditionne via
-    	des relations \textbf{$\langle\langle$include$\rangle\rangle$} l'acc├¿s ├á l'environnement de travail
-    	et ├á l'ensemble des fonctionnalit├⌐s de la plateforme.
+    	Le point d'entrée commun aux deux acteurs est le cas \textbf{S'authentifier}, qui conditionne via
+    	des relations \textbf{$\langle\langle$include$\rangle\rangle$} l'accès à l'environnement de travail
+    	et à l'ensemble des fonctionnalités de la plateforme.
 
     	\begin{figure}[H]
     		\centering
