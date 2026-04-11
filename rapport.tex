@@ -494,10 +494,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 
 	Le tableau~\ref{tab:outils-ch1} présente les outils de développement utilisés pour la réalisation du Project Management App.
 
-	\begin{table}[h!]
+	\begin{table}[H]
 		\centering
-		\caption{Outils de développement utilisés}
-		\label{tab:outils-ch1}
 		\renewcommand{\arraystretch}{1.4}
 		\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|m{7.5cm}|}
 			\hline
@@ -519,6 +517,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 
 		
 		\end{tabular}
+		\caption{Outils de développement utilisés}
+		\label{tab:outils-ch1}
 	\end{table}
 	\resetrows
 
@@ -526,10 +526,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 
 	Le tableau~\ref{tab:langages-ch1} présente les langages de programmation employés dans le projet.
 
-	\begin{table}[h!]
+	\begin{table}[H]
 		\centering
-		\caption{Langages de programmation utilisés}
-		\label{tab:langages-ch1}
 		\renewcommand{\arraystretch}{1.4}
 		\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|m{7.5cm}|}
 			\hline
@@ -538,7 +536,7 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 
 			\altrow
 			C\# &  \includegraphics[width=1.5cm]{pictures/csharp.jpg}
-			& Langage principal pour les trois microservices backend (Logs-Service, Notifications-Service, Teams-Service), exploitant la programmation orientée objet, les génériques et la programmation asynchrone (\texttt{async/await}). \\ \hline
+			& Langage principal pour la totalité de microservices backend (Logs-Service, Notifications-Service, Teams-Service, etc), exploitant la programmation orientée objet, les génériques et la programmation asynchrone (\texttt{async/await}). \\ \hline
 
 			\altrow
 			TypeScript &  \includegraphics[width=1.5cm]{pictures/typescript.jpg}
@@ -552,6 +550,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 			HTML / CSS &  \includegraphics[width=1.5cm]{pictures/html.png}
 			 & Structuration des templates Angular et stylisation avec Tailwind CSS 3.4 pour une interface responsive et moderne avec un thème sombre. \\ \hline
 		\end{tabular}
+		\caption{Langages de programmation utilisés}
+		\label{tab:langages-ch1}
 	\end{table}
 	\resetrows
 
@@ -559,10 +559,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 
 	Le tableau~\ref{tab:frameworks-ch1} détaille les frameworks structurants du projet.
 
-	\begin{table}[h!]
+	\begin{table}[H]
 		\centering
-		\caption{Frameworks utilisés}
-		\label{tab:frameworks-ch1}
 		\renewcommand{\arraystretch}{1.4}
 		\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{2cm}|m{8.5cm}|}
 			\hline
@@ -570,17 +568,19 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 			\textcolor{white}{\textbf{Framework}} & \textcolor{white}{\textbf{Version}} & \centering\arraybackslash\textcolor{white}{\textbf{Rôle}} \\ \hline
 
 			\altrow
-			ASP.NET Core & 8.0 / 9.0 & Framework backend pour la construction des APIs REST des microservices. Le Logs-Service utilise .NET 8.0, tandis que le Teams-Service et le Notifications-Service sont développés avec .NET 9.0. \\ \hline
+			ASP.NET Core & 9.0 & Framework backend pour la construction des APIs REST des microservices.  \\ \hline
 
 			\altrow
 			Angular & 20.3 & Framework frontend pour le développement de l'application SPA (Single Page Application). Utilise l'architecture \textit{standalone components}, les \textit{signals} pour la gestion d'état réactive, et le routage déclaratif. \\ \hline
 
 			\altrow
-			Entity Framework Core & 8.0 / 9.0 & ORM (Object-Relational Mapping) pour l'accès aux données SQL Server, la génération de migrations et l'exécution de requêtes LINQ avec stratégies \texttt{AsNoTracking} pour les lectures. \\ \hline
+			Entity Framework Core & 9.0 & ORM (Object-Relational Mapping) pour l'accès aux données SQL Server, la génération de migrations et l'exécution de requêtes LINQ avec stratégies \texttt{AsNoTracking} pour les lectures. \\ \hline
 
 			\altrow
 			Tailwind CSS & 3.4.18 & Framework CSS utilitaire pour le stylisme rapide de l'interface utilisateur avec un système de couleurs personnalisé (\texttt{card}, \texttt{cardBorder}, \texttt{cardText}) et un thème sombre cohérent. \\ \hline
 		\end{tabular}
+		\caption{Frameworks utilisés}
+		\label{tab:frameworks-ch1}
 	\end{table}
 	\resetrows
 
@@ -588,18 +588,15 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 
 	Le tableau~\ref{tab:libs-ch1} recense les bibliothèques tierces intégrées au projet.
 
-	\begin{table}[h!]
+	\begin{table}[H]
 		\centering
-		\caption{Bibliothèques utilisées}
-		\label{tab:libs-ch1}
 		\renewcommand{\arraystretch}{1.4}
 		\begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{2cm}|m{8cm}|}
 			\hline
 			\rowcolor{tableHeader}
 			\textcolor{white}{\textbf{Bibliothèque}} & \textcolor{white}{\textbf{Version}} & \centering\arraybackslash\textcolor{white}{\textbf{Rôle}} \\ \hline
 
-			\altrow
-			AutoMapper & 12.0 / 13.0 & Mapping automatique entre les entités de base de données et les DTOs (Data Transfer Objects), réduisant le code de conversion manuel dans les trois services backend. \\ \hline
+			
 
 			\altrow
 			Confluent.Kafka & 2.3 / 2.12 & Client .NET pour Apache Kafka, utilisé pour la production et la consommation d'événements asynchrones entre les microservices (création d'équipe, assignation de tâche, etc.). \\ \hline
@@ -619,6 +616,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 			\altrow
 			RxJS & 7.8.0 & Bibliothèque de programmation réactive pour la gestion des flux de données asynchrones côté frontend (appels HTTP, événements SignalR, filtrage en temps réel). \\ \hline
 		\end{tabular}
+		\caption{Bibliothèques utilisées}
+		\label{tab:libs-ch1}
 	\end{table}
 	\resetrows
 
@@ -626,10 +625,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 
 	Le tableau~\ref{tab:tech-ch1} présente les technologies d'infrastructure utilisées.
 
-	\begin{table}[h!]
+	\begin{table}[H]
 		\centering
-		\caption{Technologies d'infrastructure}
-		\label{tab:tech-ch1}
 		\renewcommand{\arraystretch}{1.4}
 		\begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|m{10cm}|}
 			\hline
@@ -654,6 +651,8 @@ Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bi
 			\altrow
 			WebSocket (SignalR) & Protocole de communication bidirectionnelle pour les notifications temps réel. Le hub \texttt{/notificationHub} diffuse les événements \texttt{ReceiveNotification}, \texttt{NotificationUpdated}, \texttt{AllNotificationsRead} et \texttt{NotificationDeleted} aux clients. \\ \hline
 		\end{tabular}
+		\caption{Technologies d'infrastructure}
+		\label{tab:tech-ch1}
 	\end{table}
 	\resetrows
 
