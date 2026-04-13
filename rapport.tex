@@ -7,7 +7,6 @@
 \usepackage{polyglossia} 
 \usepackage{geometry}
 \usepackage{graphicx}
-\usepackage{float}
 \usepackage{fancyhdr}
 \usepackage{xcolor}
 \usepackage{tikz}
@@ -21,6 +20,7 @@
 \usepackage{multirow}    % For spanning rows
 \usepackage{titlesec}    % Chapter/section styling
 \usepackage{fancyhdr}
+\usepackage{float}       % For precise figure positioning with [H]
 % ============================================================================
 % CONFIGURATION DES LANGUES
 % ============================================================================
@@ -65,14 +65,14 @@
 \newcounter{rowcounter}
 \newcommand{\resetrows}{\setcounter{rowcounter}{0}}
 \newcommand{\altrow}{%
-	\stepcounter{rowcounter}%
-	\ifodd\value{rowcounter}\rowcolor{tableRowLight}\else\rowcolor{tableRowWhite}\fi%
+  \stepcounter{rowcounter}%
+  \ifodd\value{rowcounter}\rowcolor{tableRowLight}\else\rowcolor{tableRowWhite}\fi%
 }
 
 % Section header in tables
 \newcommand{\tableSectionHeader}[1]{%
-	\rowcolor{sectionBg!15}%
-	\multicolumn{3}{|l|}{\textbf{\textcolor{black}{#1}}} \\ \hline
+  \rowcolor{sectionBg!15}%
+  \multicolumn{3}{|l|}{\textbf{\textcolor{black}{#1}}} \\ \hline
 }
 
 % ============================================================================
@@ -149,7 +149,7 @@
 % DÉBUT DU DOCUMENT
 % ============================================================================
 \begin{document}
-	
+
 	% ============================================================================
 	% PAGE DE GARDE
 	% ============================================================================
@@ -162,15 +162,15 @@
 		
 		\begin{center}
 			\vspace{2cm}
-			
+
 			{\headingfont\LARGE \textbf{ECOLE DES HAUTES ETUDES}}\\[0.2cm]
 			{\headingfont\LARGE \textbf{D'INGENIERIE -- OUJDA}}\\[0.8cm]
-			
+
 			{\headingfont\Large \textbf{Mémoire de PFA}}\\[0.2cm]
-			
-			
+		
+
 			{\large FILIERE : GENIE INFORMATIQUE}\\[1cm]
-			
+
 			\begin{tikzpicture}
 				\node[rectangle, draw=black, line width=2pt,
 				minimum width=0.9\textwidth, minimum height=2.5cm,
@@ -178,9 +178,9 @@
 					{\headingfont\Huge \textbf{TITRE}}
 				};
 			\end{tikzpicture}
-			
+
 			\vspace{1cm}
-			
+
 			\begin{minipage}[t]{0.48\textwidth}
 				\flushleft
 				{\large \textbf{\textcolor{deepBlue}{Réalisé par :}}}\\[0.2cm]
@@ -196,84 +196,84 @@
 				{\large \textbf{\textcolor{deepBlue}{Encadré par :}}}\\[0.2cm]
 				M. MANI Mohammed Adil
 			\end{minipage}
-			
+
 			\vspace{0.8cm}
-			
+
 			{\large \textbf{\textcolor{deepBlue}{\underline{Soutenance le ................ 2025 devant le Jury :}}}}\\[0.3cm]
 			M/MME \dotfill\\[0.15cm]
 			M/MME \dotfill\\[0.15cm]
 			M/MME \dotfill\\[0.5cm]
-			
+
 			\vfill
-			
+
 			{\large \textbf{Année universitaire : 2025 -- 2026}}
 		\end{center}
 	\end{titlepage}
-	
+
 	% Empty page after title page
 	\newpage
 	\thispagestyle{empty}
 	\ 
 	\newpage
-	
+
 	% Page numbering: roman for front matter
 	\pagenumbering{roman}
 	\setcounter{page}{1}
-	
+
 	% ============================================================================
 	% DÉDICACE
 	% ============================================================================
 	\newpage
 	\chapter*{{\headingfont Dédicace}}
 	\addcontentsline{toc}{chapter}{Dédicace}
-	
+
 	Tout travail académique abouti est le fruit d'un parcours jalonné d'efforts, de remises en question et de soutiens précieux. Ce projet de fin d'année s'inscrit dans cette dynamique : il représente bien plus qu'une simple réalisation technique, mais l'aboutissement d'un chemin parcouru avec persévérance, entraide et détermination. C'est à ce titre que nous souhaitons consacrer ces quelques lignes à celles et ceux qui ont contribué, de manière essentielle, à sa concrétisation.
-	
+
 	Nous dédions ce travail avant tout à nos parents, dont le soutien indéfectible a constitué le socle de notre réussite. Par leur patience, leurs encouragements constants et les sacrifices consentis tout au long de notre parcours académique, ils ont su nous offrir un cadre propice à l'apprentissage et à l'épanouissement. Leur confiance et leur présence, tant dans les moments d'incertitude que dans les phases de réussite, ont été une source permanente de motivation et de stabilité.
-	
+
 	Nous tenons également à mettre à l'honneur les membres de notre équipe, \textbf{THE GANG OF FIVE}. Ce projet n'aurait pu aboutir sans leur sérieux, leur sens des responsabilités et leur engagement collectif. Chacun, par son investissement, sa rigueur et son esprit de collaboration, a contribué à faire de ce travail une réalisation cohérente et aboutie. Les échanges constructifs, la complémentarité des compétences et la capacité à faire face ensemble aux défis rencontrés ont été des éléments déterminants tout au long du projet.
-	
+
 	Enfin, nous adressons notre reconnaissance à toutes les personnes qui, de près ou de loin, ont cru en nous et nous ont encouragés à aller au-delà de nos limites. À travers leurs conseils, leur disponibilité et leurs orientations, nos enseignants ont contribué à structurer notre réflexion et à renforcer notre rigueur académique. Nous pensons également à nos camarades et collègues, dont le soutien moral et la présence ont accompagné notre parcours. L'ensemble de ces apports a joué un rôle essentiel dans notre progression, tant sur le plan académique que personnel, et a contribué à donner à ce projet toute sa valeur.
-	
+
 	% ============================================================================
 	% REMERCIEMENTS
 	% ============================================================================
 	\newpage
 	\chapter*{{\headingfont Remerciements}}
 	\addcontentsline{toc}{chapter}{Remerciements}
-	
+
 	Au terme de ce projet de fin d'année, il nous est particulièrement agréable d'exprimer notre profonde reconnaissance envers toutes les personnes qui ont contribué, de près ou de loin, à la réalisation de ce travail.
-	
+
 	Nous tenons tout d'abord à adresser nos remerciements les plus sincères à Monsieur BARBOUCHA Mohammed, Directeur de l'École des Hautes Études d'Ingénierie, pour la vision qu'il porte et qui fait de l'EHEI bien plus qu'un simple établissement d'enseignement : un véritable tremplin vers l'excellence et l'innovation. Le cadre académique stimulant qu'il a su instaurer nous a permis de nous épanouir et de développer notre esprit d'initiative, essence même de ce projet.
-	
+
 	Nous exprimons notre gratitude particulière à Monsieur MANI Mohammed Adil, notre encadrant technique, dont l'accompagnement a été un pilier fondamental dans la concrétisation de notre vision. Sa disponibilité constante, ses conseils avisés et sa capacité à nous guider tout en respectant notre autonomie créative ont été déterminants. Au-delà de l'expertise technique, il a su être un véritable mentor et un soutien psychologique précieux. Dans les moments de doute, face à la complexité de concilier documentation, apprentissage autonome de nouvelles technologies et charge académique, ses paroles encourageantes et sa bienveillance nous ont redonné confiance et motivation. Son attention particulière à notre bien-être physique et mental, ainsi que ses orientations méthodologiques, nous ont permis de persévérer et de transformer les obstacles en opportunités d'apprentissage. Sa confiance inébranlable en notre capacité à explorer des domaines non couverts par notre programme d'études nous a encouragés à repousser nos limites et à croire en notre potentiel.
-	
+
 	Nos remerciements s'adressent également à notre encadrant pédagogique, dont le suivi rigoureux et les recommandations méthodologiques ont contribué à structurer notre démarche et à maintenir la qualité académique de notre travail tout au long de ce projet d'envergure.
-	
+
 	Nous souhaitons remercier chaleureusement l'ensemble du corps professoral et administratif de l'EHEI. Leurs enseignements, qui allient théorie et pratique, nous ont fourni les fondations solides nécessaires pour concevoir et développer une application aussi ambitieuse. Les compétences techniques, mais aussi les valeurs de rigueur, de persévérance et de travail collaboratif qu'ils nous ont transmises, constituent aujourd'hui notre plus précieux bagage pour aborder notre future vie professionnelle.
-	
+
 	Enfin, nous tenons à exprimer notre reconnaissance envers l'EHEI dans son ensemble, qui nous a offert bien plus qu'une formation : une communauté d'apprentissage, un environnement propice à l'innovation et une expérience humaine enrichissante qui restera gravée dans nos mémoires.
-	
+
 	Ce projet représente pour nous l'aboutissement de quatre années d'efforts, de découvertes et de croissance personnelle. Il symbolise notre passage de l'apprentissage à la création, de l'étudiant à l'ingénieur. Pour cela, we be eternally grateful.
-	
+
 	% ============================================================================
 	% RÉSUMÉ (Français)
 	% ============================================================================
 	\newpage
 	\chapter*{{\headingfont Résumé}}
 	\addcontentsline{toc}{chapter}{Résumé}
-	
+
 	Ce rapport présente le projet de fin d'année mené au sein de la 4\textsuperscript{ème} année \textbf{Génie Informatique}. Il s'inscrit dans une démarche visant à mettre en pratique les \textbf{compétences} acquises tout au long de notre formation et à nous préparer aux exigences du monde professionnel. L'objectif principal de ce travail est la conception et le développement d'une application destinée à soutenir les étudiants en génie informatique dans leur organisation, leur \textbf{apprentissage} et leur préparation à l'\textbf{insertion professionnelle}.
-	
+
 	L'idée du projet est née de notre propre expérience étudiante et de l'identification de besoins réels liés à \textbf{la gestion des projets}, au \textbf{développement de compétences techniques}, à la \textbf{préparation aux entretiens} et à l'amélioration de \textbf{la présentation professionnelle}. Pour y répondre, nous avons imaginé une \textbf{plateforme intégrée} regroupant plusieurs outils complémentaires, chacun destiné à accompagner l'étudiant dans une dimension essentielle de son parcours.
-	
+
 	Notre démarche s'est articulée autour d'une analyse approfondie des besoins, puis d'une phase de conception structurée permettant de définir l'architecture générale de la solution. Ce rapport retrace l'ensemble du processus suivi, depuis la définition de l'idée initiale jusqu'à la formalisation du concept final, en passant par les choix méthodologiques qui ont guidé notre travail collectif.
-	
+
 	Ce projet représente une occasion d'appliquer nos connaissances, mais aussi une expérience collaborative enrichissante, renforçant nos compétences en organisation, communication et conception au sein d'un travail d'équipe.
-	
+
 	\vspace{1cm}
 	\noindent\textbf{Mots Clés :} génie informatique, compétences, apprentissage, insertion professionnelle, gestion des projets, développement de compétences techniques, préparation aux entretiens, présentation professionnelle, plateforme intégrée.
-	
+
 	% ============================================================================
 	% ABSTRACT (English)
 	% ============================================================================
@@ -281,19 +281,19 @@
 	\begin{english}
 		\chapter*{{\headingfont Abstract}}
 		\addcontentsline{toc}{chapter}{Abstract}
-		
+
 		This report presents the final year project conducted within the 4\textsuperscript{th} year of \textbf{Computer Engineering}. It is part of an approach aimed at applying the \textbf{skills} acquired throughout our training and preparing us for the demands of the professional world. The main objective of this work is the design and development of an application intended to support computer engineering students in their organization, \textbf{learning}, and preparation for \textbf{professional integration}.
-		
+
 		The project idea originated from our own student experience and the identification of real needs related to \textbf{project management}, \textbf{technical skills development}, \textbf{interview preparation}, and improvement of \textbf{professional presentation}. To address these needs, we envisioned an \textbf{integrated platform} bringing together several complementary tools, each designed to support students in an essential dimension of their academic journey.
-		
+
 		Our approach was structured around an in-depth needs analysis, followed by a structured design phase that defined the overall architecture of the solution. This report traces the entire process followed, from the definition of the initial idea to the formalization of the final concept, including the methodological choices that guided our collective work.
-		
+
 		This project represents an opportunity to apply our knowledge, but also an enriching collaborative experience, strengthening our skills in organization, communication, and design within teamwork.
-		
+
 		\vspace{1cm}
 		\noindent\textbf{Keywords:} computer engineering, skills, learning, professional integration, project management, technical skills development, interview preparation, professional presentation, integrated platform.
 	\end{english}
-	
+
 	% ============================================================================
 	% ملخص (Arabic)
 	% ============================================================================
@@ -301,39 +301,39 @@
 	\begin{Arabic}
 		\chapter*{ملخص}
 		\addcontentsline{toc}{chapter}{ملخص}
-		
+
 		\setRTL
 		\setlength{\parindent}{2cm}
-		
+
 		\indent يقدم هذا التقرير مشروع نهاية السنة الذي تم إنجازه في إطار السنة الرابعة من \textbf{هندسة المعلوميات}. يندرج هذا المشروع ضمن نهج يهدف إلى تطبيق \textbf{الكفاءات} المكتسبة طوال فترة تكويننا وإعدادنا لمتطلبات العالم المهني. الهدف الرئيسي من هذا العمل هو تصميم وتطوير تطبيق يهدف إلى دعم طلاب هندسة المعلوميات في تنظيمهم و\textbf{تعلمهم} وإعدادهم \textbf{للاندماج المهني}.
-		
+
 		\indent نشأت فكرة المشروع من تجربتنا الطلابية الخاصة ومن تحديد الاحتياجات الحقيقية المتعلقة \textbf{بإدارة المشاريع}، و\textbf{تطوير المهارات التقنية}، و\textbf{التحضير للمقابلات}، وتحسين \textbf{العرض المهني}. وللإجابة على هذه الاحتياجات، تصورنا \textbf{منصة متكاملة} تجمع بين عدة أدوات تكميلية، كل منها مصمم لمرافقة الطالب في بُعد أساسي من مساره الأكاديمي.
-		
+
 		\indent تمحور نهجنا حول تحليل معمق للاحتياجات، يليه مرحلة تصميم منظمة سمحت بتحديد الهندسة العامة للحل. يتتبع هذا التقرير العملية برمتها، من تحديد الفكرة الأولية إلى إضفاء الطابع الرسمي على المفهوم النهائي، مرورًا بالاختيارات المنهجية التي وجهت عملنا الجماعي.
-		
+
 		\indent يمثل هذا المشروع فرصة لتطبيق معارفنا، ولكنه أيضًا تجربة تعاونية مثرية، تعزز مهاراتنا في التنظيم والتواصل والتصميم ضمن العمل الجماعي.
-		
+
 		\vspace{1cm}
 		\noindent\textbf{الكلمات المفتاحية:} هندسة المعلوميات، الكفاءات، التعلم، الاندماج المهني، إدارة المشاريع، تطوير المهارات التقنية، التحضير للمقابلات، العرض المهني، منصة متكاملة.
 	\end{Arabic}
-	
+
 	% ============================================================================
 	% LISTE DES ABRÉVIATIONS
 	% ============================================================================
 	\newpage
 	\chapter*{{\headingfont Liste des abréviations}}
 	\addcontentsline{toc}{chapter}{Liste des abréviations}
-	
+
 	\begin{center}
 		\begin{longtable}{|l|p{11cm}|}
 			\hline
 			\textbf{Abréviation} & \textbf{Désignation} \\ \hline
 			\endfirsthead
-			
+
 			\hline
 			\textbf{Abréviation} & \textbf{Désignation} \\ \hline
 			\endhead
-			
+
 			HTML  & Hyper Text Markup Language \\ \hline
 			CSS   & Cascading Style Sheets \\ \hline
 			API   & Application Programming Interface \\ \hline
@@ -362,26 +362,26 @@
 			KISS  & Keep It Simple Stupid \\ \hline
 		\end{longtable}
 	\end{center}
-	
+
 	% ============================================================================
 	% LISTES AUTOMATIQUES (FIN DU DOCUMENT)
 	% ============================================================================
-	
+
 	% ============================================================================
 	% TABLE DES MATIÈRES
 	% ============================================================================
 	\newpage
 	\renewcommand{\contentsname}{{\headingfont Table des matières}}
 	\tableofcontents
-	
+
 	% ============================================================================
 	% TABLE DES FIGURES
 	% ============================================================================
 	\newpage
 	\addcontentsline{toc}{chapter}{Table des figures}
-	\renewcommand{\listfigurename}{{\headingfont Table des figures}}
+		\renewcommand{\listfigurename}{{\headingfont Table des figures}}
 	\listoffigures
-	
+
 	% ============================================================================
 	% LISTE DES TABLEAUX
 	% ============================================================================
@@ -398,26 +398,26 @@
 	\chapter*{{\headingfont Introduction}}
 	\addcontentsline{toc}{chapter}{Introduction}
 	\markboth{Introduction}{}
-	
-	Le domaine de l'ingénierie informatique connaît une transformation profonde, portée par l'essor des technologies numériques, de l'intelligence artificielle et des architectures logicielles distribuées. Dans un contexte où les entreprises recherchent des profils polyvalents, capables de concevoir, développer et déployer des solutions complexes, les établissements de formation se doivent de préparer leurs étudiants à relever ces défis avec rigueur et créativité. L'École des Hautes Études d'Ingénierie d'Oujda, fidèle à sa vocation d'excellence, inscrit le projet de fin d'année comme un exercice fondamental permettant aux étudiants de mobiliser l'ensemble de leurs acquis académiques dans un cadre concret et professionnalisant.
-	
-	Cependant, au-delà des compétences purement techniques, le passage du monde académique au monde professionnel exige la maîtrise de dimensions souvent négligées dans les cursus traditionnels : la gestion efficace de projets collaboratifs, le perfectionnement des aptitudes en résolution de problèmes algorithmiques, la construction d'un profil professionnel attractif, ou encore la préparation méthodique aux processus de recrutement. Ces compétences transversales, bien qu'essentielles, sont rarement adressées de manière intégrée par les outils existants, laissant les étudiants face à un écosystème fragmenté de ressources dispersées et peu adaptées à leurs besoins spécifiques.
-	
-	C'est précisément à partir de ce constat, nourri par notre propre vécu en tant qu'étudiants en quatrième année de Génie Informatique, que l'idée de ce projet a émergé. Notre ambition est de concevoir et de développer une plateforme unifiée qui rassemble, au sein d'un même environnement, plusieurs outils complémentaires destinés à accompagner l'étudiant ingénieur tout au long de son parcours. Cette plateforme intégrée s'articule autour de quatre modules principaux :
-	\begin{itemize}
-		\item
-		Une application dédiée à la gestion de projets collaboratifs.
-		\item
-		Une application orientée vers la création de CV et de portfolios ainsi que la recherche de stages et d'opportunités professionnelles.
-		\item
-		Une application consacrée à l'entraînement en algorithmique et à la résolution de problèmes.
-		\item
-		Une application dédiée à la préparation aux entretiens techniques et comportementaux.
-	\end{itemize}
-	
-	
-	Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bien ce projet ambitieux. Il débute par une analyse du contexte et des besoins identifiés, avant de présenter les choix architecturaux et technologiques retenus. Les différentes composantes de la plateforme y seront détaillées à tour de rôle tout au long du document. Les phases de conception et de réalisation y sont ensuite exposées de manière méthodique, suivies d'une présentation des résultats obtenus. Enfin, une réflexion sur les perspectives d'évolution de la solution clôture ce document, témoignant de notre volonté de pérenniser cet outil au service de la communauté étudiante.
-	
+
+Le domaine de l'ingénierie informatique connaît une transformation profonde, portée par l'essor des technologies numériques, de l'intelligence artificielle et des architectures logicielles distribuées. Dans un contexte où les entreprises recherchent des profils polyvalents, capables de concevoir, développer et déployer des solutions complexes, les établissements de formation se doivent de préparer leurs étudiants à relever ces défis avec rigueur et créativité. L'École des Hautes Études d'Ingénierie d'Oujda, fidèle à sa vocation d'excellence, inscrit le projet de fin d'année comme un exercice fondamental permettant aux étudiants de mobiliser l'ensemble de leurs acquis académiques dans un cadre concret et professionnalisant.
+
+Cependant, au-delà des compétences purement techniques, le passage du monde académique au monde professionnel exige la maîtrise de dimensions souvent négligées dans les cursus traditionnels : la gestion efficace de projets collaboratifs, le perfectionnement des aptitudes en résolution de problèmes algorithmiques, la construction d'un profil professionnel attractif, ou encore la préparation méthodique aux processus de recrutement. Ces compétences transversales, bien qu'essentielles, sont rarement adressées de manière intégrée par les outils existants, laissant les étudiants face à un écosystème fragmenté de ressources dispersées et peu adaptées à leurs besoins spécifiques.
+
+C'est précisément à partir de ce constat, nourri par notre propre vécu en tant qu'étudiants en quatrième année de Génie Informatique, que l'idée de ce projet a émergé. Notre ambition est de concevoir et de développer une plateforme unifiée qui rassemble, au sein d'un même environnement, plusieurs outils complémentaires destinés à accompagner l'étudiant ingénieur tout au long de son parcours. Cette plateforme intégrée s'articule autour de quatre modules principaux :
+\begin{itemize}
+\item
+Une application dédiée à la gestion de projets collaboratifs.
+\item
+Une application orientée vers la création de CV et de portfolios ainsi que la recherche de stages et d'opportunités professionnelles.
+\item
+Une application consacrée à l'entraînement en algorithmique et à la résolution de problèmes.
+\item
+Une application dédiée à la préparation aux entretiens techniques et comportementaux.
+\end{itemize}
+
+
+Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bien ce projet ambitieux. Il débute par une analyse du contexte et des besoins identifiés, avant de présenter les choix architecturaux et technologiques retenus. Les différentes composantes de la plateforme y seront détaillées à tour de rôle tout au long du document. Les phases de conception et de réalisation y sont ensuite exposées de manière méthodique, suivies d'une présentation des résultats obtenus. Enfin, une réflexion sur les perspectives d'évolution de la solution clôture ce document, témoignant de notre volonté de pérenniser cet outil au service de la communauté étudiante.
+
 	% ============================================================================
 	% CHAPITRE I : PROJECT MANAGEMENT APP
 	% ============================================================================
@@ -428,229 +428,706 @@
 		\chapterheader{Chapitre 1}{Project Management App}
 		\vspace*{\fill}
 	\end{center}
-	
+
 	\chapter{Project Management App}
 	\fancyhead[L]{Chapitre 1 : Project Management App}
 	\thispagestyle{fancy}
-	
+	\addtocontents{lof}{\textbf{Chapitre 1 -- Project Management App}\par\medskip}
+	\addtocontents{lot}{\textbf{Chapitre 1 -- Project Management App}\par\medskip}
+
 	\section{Contexte du projet}
-	
+
 	\subsection{Description des besoins}
 	La plateforme de gestion de projets répond à un besoin essentiel : centraliser les outils de collaboration et de gestion de tâches pour les équipes d'étudiants. Les utilisateurs requièrent une solution intuitive permettant de gérer des projets complexes avec plusieurs membres, des workflows personnalisables et une communication en temps réel.
-	
+
 	\subsection{Besoins fonctionnels}
-	Les besoins fonctionnels incluent : l'authentification sécurisée, la gestion des utilisateurs, la création d'environnements collaboratifs, la gestion des équipes, la création et suivi des tickets, les notifications en temps réel, et la journalisation complète des actions. Au total, 82 besoins fonctionnels ont été identifiés et documentés.
-	
+
+    Notre projet global se compose de quatre applications distinctes formant un écosystème complet
+    pour l'étudiant ingénieur. La première application, qui fait l'objet exclusive de cette section,
+    est dédiée à la productivité et au travail collaboratif : \textbf{La Plateforme de Gestion de
+    Projets et de Collaboration}.
+
+    Cette plateforme repose sur une architecture microservices composée de sept services back-end
+    indépendants et d'une application front-end Angular. Chaque service est responsable d'un domaine
+    métier spécifique et communique avec les autres via des API REST et un bus de messages Apache Kafka.
+    Les besoins fonctionnels de cette première application sont organisés ci-dessous par module.
+
+    % -------------------------------------------------------
+    % TABLE 1 : AUTHENTIFICATION
+    % -------------------------------------------------------
+    \vspace{0.5cm}
+    \noindent\textbf{\textcolor{eheiBlue}{\large 1. Module d'Authentification (Auth-Service)}}
+    \vspace{0.2cm}
+
+    \noindent Ce module gère l'ensemble du cycle de vie de l'authentification des utilisateurs.
+    \vspace{0.3cm}
+
+    \resetrows
+    \begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endfirsthead
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endhead
+    	\hline
+    	\endfoot
+    	\caption{Besoins fonctionnels -- Module d'Authentification} \label{tab:bf-auth}
+    	\endlastfoot
+
+    	\altrow BF-01 & Inscription & Le système doit permettre à un utilisateur de créer un compte en fournissant son nom complet, son adresse e-mail et un mot de passe sécurisé. \\ \hline
+    	\altrow BF-02 & Vérification par e-mail & Après l'inscription, le système doit envoyer un e-mail de vérification contenant un lien unique. L'utilisateur ne peut se connecter qu'après avoir vérifié son adresse e-mail. \\ \hline
+    	\altrow BF-03 & Renvoi de vérification & Le système doit permettre à l'utilisateur de demander le renvoi de l'e-mail de vérification en cas de non-réception. \\ \hline
+    	\altrow BF-04 & Connexion & Le système doit permettre à un utilisateur vérifié de se connecter avec son e-mail et son mot de passe et de recevoir un jeton JWT d'accès ainsi qu'un \textit{refresh token}. \\ \hline
+    	\altrow BF-05 & Rafraîchissement de session & Le système doit permettre le renouvellement automatique du jeton d'accès via le \textit{refresh token}, sans reconnexion manuelle. \\ \hline
+    	\altrow BF-06 & Déconnexion & Le système doit permettre la déconnexion avec invalidation du jeton d'accès et du \textit{refresh token} côté serveur (via Redis). \\ \hline
+    	\altrow BF-07 & Mot de passe oublié & Le système doit permettre la demande de réinitialisation de mot de passe par e-mail avec un lien à durée limitée. \\ \hline
+    	\altrow BF-08 & Réinitialisation du mot de passe & Le système doit permettre la définition d'un nouveau mot de passe à l'aide du jeton reçu par e-mail. \\ \hline
+    	\altrow BF-09 & Authentification 2FA & Le système doit permettre l'activation de l'authentification à deux facteurs via numéro de téléphone avec code de vérification SMS. \\ \hline
+    	\altrow BF-10 & Connexion via Google & Le système doit permettre l'inscription et la connexion via un compte Google (OAuth 2.0). Le profil est récupéré automatiquement. \\ \hline
+    	\altrow BF-11 & Connexion via GitHub & Le système doit permettre l'inscription et la connexion via un compte GitHub (OAuth 2.0). Le profil est récupéré automatiquement. \\ \hline
+    	\altrow BF-12 & Profil connecté & Le système doit exposer un endpoint pour récupérer les informations de l'utilisateur authentifié à partir de son jeton JWT. \\ \hline
+    \end{longtable}
+
+    % -------------------------------------------------------
+    % TABLE 2 : UTILISATEURS
+    % -------------------------------------------------------
+    \vspace{0.3cm}
+    \noindent\textbf{\textcolor{eheiBlue}{\large 2. Module de Gestion des Utilisateurs (Users-Service)}}
+    \vspace{0.2cm}
+
+    \noindent Ce module gère les profils utilisateurs et leurs données personnelles.
+    \vspace{0.3cm}
+
+    \resetrows
+    \begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endfirsthead
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endhead
+    	\hline
+    	\endfoot
+    	\caption{Besoins fonctionnels -- Module de Gestion des Utilisateurs} \label{tab:bf-user}
+    	\endlastfoot
+
+    	\altrow BF-01 & Consultation du profil & Le système doit permettre la consultation du profil d'un utilisateur par son identifiant (nom, prénom, e-mail, photo de profil, statut). \\ \hline
+    	\altrow BF-02 & Modification du profil & L'utilisateur doit pouvoir modifier ses informations personnelles (nom, prénom, numéro de téléphone). \\ \hline
+    	\altrow BF-03 & Photo de profil & Le système doit permettre le téléversement et la mise à jour de la photo de profil, stockée dans un volume Docker dédié. \\ \hline
+    	\altrow BF-04 & Statut utilisateur & Le système doit gérer le statut de chaque utilisateur (Actif, Inactif). \\ \hline
+    	\altrow BF-05 & Suppression de compte & Le système doit permettre la suppression logique (\textit{soft delete}) d'un compte avec horodatage et jeton de suppression. \\ \hline
+    	\altrow BF-06 & Liste des utilisateurs & Le système doit permettre de récupérer la liste de tous les utilisateurs enregistrés. \\ \hline
+    \end{longtable}
+
+    % -------------------------------------------------------
+    % TABLE 3 : ENVIRONNEMENTS
+    % -------------------------------------------------------
+    \vspace{0.3cm}
+    \noindent\textbf{\textcolor{eheiBlue}{\large 3. Module de Gestion des Environnements (Environments-Service)}}
+    \vspace{0.2cm}
+
+    \noindent Ce module gère les espaces de travail collaboratifs dans lesquels les utilisateurs collaborent.
+    \vspace{0.3cm}
+
+    \resetrows
+    \begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endfirsthead
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endhead
+    	\hline
+    	\endfoot
+    	\caption{Besoins fonctionnels -- Module de Gestion des Environnements} \label{tab:bf-env}
+    	\endlastfoot
+
+    	\altrow BF-01 & Création d'un environnement & Un utilisateur authentifié peut créer un environnement (nom, description). Le créateur obtient le rôle de \textbf{Chef de Projet}. \\ \hline
+    	\altrow BF-02 & Consultation & Le système doit permettre la consultation des détails d'un environnement (nom, description, date de création, membres). \\ \hline
+    	\altrow BF-03 & Modification & Le chef de projet peut modifier le nom et la description d'un environnement qu'il a créé. \\ \hline
+    	\altrow BF-04 & Suppression & Le chef de projet peut supprimer un environnement. Seul le créateur est autorisé. \\ \hline
+    	\altrow BF-05 & Ajout d'un membre & Le chef de projet peut ajouter un utilisateur avec un rôle (Membre par défaut ou Chef de Projet). \\ \hline
+    	\altrow BF-06 & Suppression d'un membre & Le chef de projet peut retirer un membre. Le dernier chef de projet ne peut pas se retirer. \\ \hline
+    	\altrow BF-07 & Liste des membres & Le système doit lister tous les membres d'un environnement avec leurs rôles. \\ \hline
+    	\altrow BF-08 & Mes environnements & L'utilisateur peut récupérer la liste de tous les environnements auxquels il a accès. \\ \hline
+    	\altrow BF-09 & Système d'invitations & Le système permet d'inviter un utilisateur, qui peut consulter et accepter ses invitations en attente. \\ \hline
+    	\altrow BF-10 & Contrôle d'accès par rôle & Le système distingue deux rôles : \textbf{Chef de Projet} (administration) et \textbf{Membre} (contribution limitée). \\ \hline
+    \end{longtable}
+
+    % -------------------------------------------------------
+    % TABLE 4 : ÉQUIPES
+    % -------------------------------------------------------
+    \vspace{0.3cm}
+    \noindent\textbf{\textcolor{eheiBlue}{\large 4. Module de Gestion des Équipes (Teams-Service)}}
+    \vspace{0.2cm}
+
+    \noindent Ce module permet d'organiser les membres d'un environnement en équipes de travail.
+    \vspace{0.3cm}
+
+    \resetrows
+    \begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endfirsthead
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endhead
+    	\hline
+    	\endfoot
+    	\caption{Besoins fonctionnels -- Module de Gestion des Équipes} \label{tab:bf-team}
+    	\endlastfoot
+
+    	\altrow BF-01 & Création d'une équipe & Création d'une équipe avec nom, description et membres initiaux. Le nom doit être unique dans l'environnement. \\ \hline
+    	\altrow BF-02 & Modification & Modification du nom, de la description et de la composition d'une équipe (ajout/suppression de membres). \\ \hline
+    	\altrow BF-03 & Suppression & Suppression d'une équipe avec notification des autres services via Kafka. \\ \hline
+    	\altrow BF-04 & Consultation & Consultation des détails d'une équipe (nom, description, liste des membres avec avatars). \\ \hline
+    	\altrow BF-05 & Liste des équipes & Liste de toutes les équipes d'un environnement donné. \\ \hline
+    	\altrow BF-06 & Recherche par nom & Recherche d'équipes par nom au sein d'un environnement. \\ \hline
+    	\altrow BF-07 & Limite de membres & Capacité maximale de 10 membres par équipe, avec contrôle à l'ajout. \\ \hline
+    	\altrow BF-08 & Événements Kafka & Publication d'événements Kafka lors de chaque opération (création, modification, suppression, ajout/retrait de membre). \\ \hline
+    \end{longtable}
+
+    % -------------------------------------------------------
+    % TABLE 5 : TICKETS
+    % -------------------------------------------------------
+    \vspace{0.3cm}
+    \noindent\textbf{\textcolor{eheiBlue}{\large 5. Module de Gestion des Tickets (Tickets-Service)}}
+    \vspace{0.2cm}
+
+    \noindent Ce module constitue le c\oe{}ur de la gestion de projet. Il gère les tickets, les workflows et l'assignation.
+    \vspace{0.3cm}
+
+    \resetrows
+    \begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endfirsthead
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endhead
+    	\hline
+    	\endfoot
+    	\caption{Besoins fonctionnels -- Gestion des Tickets} \label{tab:bf-tkt}
+    	\endlastfoot
+
+    	\tableSectionHeader{5.1 Gestion des Tickets}
+    	\altrow BF-01 & Création d'un ticket & Création avec : libellé, priorité (High/Medium/Low), dates, type (SingleTask ou MultipleTasks), workflow, étape initiale, environnement et assigné (optionnel). \\ \hline
+    	\altrow BF-02 & Consultation & Consultation des détails d'un ticket (libellé, priorité, étape actuelle, sous-tâches, dates). \\ \hline
+    	\altrow BF-03 & Modification & Modification des propriétés d'un ticket existant (libellé, priorité, dates). \\ \hline
+    	\altrow BF-04 & Suppression & Suppression d'un ticket par son identifiant. \\ \hline
+    	\altrow BF-05 & Liste par environnement & Récupération de tous les tickets associés à un environnement donné. \\ \hline
+    	\altrow BF-06 & Assignation & Un administrateur peut assigner à n'importe quel membre. Un membre ne peut assigner qu'à lui-même. Déclenche une notification. \\ \hline
+    	\altrow BF-07 & Types de tickets & Support de deux types : \textbf{SingleTask} (tâche unique) et \textbf{MultipleTasks} (plusieurs sous-tâches). \\ \hline
+
+    	\tableSectionHeader{5.2 Gestion des Sous-tâches}
+    	\altrow BF-08 & Ajout de sous-tâches & Ajout de sous-tâches à un ticket de type MultipleTasks. \\ \hline
+    	\altrow BF-09 & Statut sous-tâche & Marquer une sous-tâche comme terminée ou non terminée. Réservé aux administrateurs. \\ \hline
+    	\altrow BF-10 & Complétion auto. & Marquer un ticket comme complété, mettant à jour son étape dans le workflow. \\ \hline
+
+    	\tableSectionHeader{5.3 Gestion des Workflows}
+    	\altrow BF-11 & Workflow par env. & Chaque environnement dispose d'un workflow unique composé d'étapes ordonnées. \\ \hline
+    	\altrow BF-12 & Étapes personnalisables & Chaque étape a un nom, un ordre, une couleur et un indicateur d'étape finale. Modification réservée aux admins. \\ \hline
+    	\altrow BF-13 & Kanban drag-and-drop & Déplacement de tickets entre étapes par glisser-déposer. \textbf{Réservé aux Chefs de Projet.} \\ \hline
+
+    	\tableSectionHeader{5.4 Contrôle d'Accès}
+    	\altrow BF-14 & Restriction de modification & Seuls les Chefs de Projet peuvent modifier l'état d'un ticket (drag-and-drop ou sous-tâches). \\ \hline
+    	\altrow BF-15 & Lecture seule & Les Membres peuvent consulter les tickets mais ne peuvent pas modifier leur état. \\ \hline
+    	\altrow BF-16 & Restriction d'assignation & Un Membre ne peut créer un ticket que pour lui-même. Un Chef de Projet peut assigner à tout membre. \\ \hline
+    	\altrow BF-17 & Masquage admin & Le bouton «~Modifier le workflow~» n'est pas visible pour les Membres. \\ \hline
+    \end{longtable}
+
+    % -------------------------------------------------------
+    % TABLE 6 : NOTIFICATIONS
+    % -------------------------------------------------------
+    \vspace{0.3cm}
+    \noindent\textbf{\textcolor{eheiBlue}{\large 6. Module de Notifications (Notifications-Service)}}
+    \vspace{0.2cm}
+
+    \noindent Ce module gère les notifications en temps réel à destination des utilisateurs.
+    \vspace{0.3cm}
+
+    \resetrows
+    \begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endfirsthead
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endhead
+    	\hline
+    	\endfoot
+    	\caption{Besoins fonctionnels -- Module de Notifications} \label{tab:bf-notif}
+    	\endlastfoot
+
+    	\altrow BF-01 & Temps réel & Envoi de notifications en temps réel via WebSocket (SignalR). \\ \hline
+    	\altrow BF-02 & Types & Support de 8 types : Réunion, Tâche, Mention, Commentaire, Événement, Statut, Reportée, Assignation. \\ \hline
+    	\altrow BF-03 & Notification d'assignation & Notification automatique de type \textit{Assignment} lors de l'assignation d'un ticket. \\ \hline
+    	\altrow BF-04 & Consultation & Consultation des notifications dans une page dédiée et via l'icône cloche de la barre de navigation. \\ \hline
+    	\altrow BF-05 & Marquer comme lue & L'utilisateur peut marquer une notification individuelle comme lue. \\ \hline
+    	\altrow BF-06 & Tout marquer comme lu & Marquer toutes les notifications comme lues en une seule action. \\ \hline
+    	\altrow BF-07 & Suppression & L'utilisateur peut supprimer une notification. \\ \hline
+    	\altrow BF-08 & Statistiques & Statistiques sur les notifications (total, répartition par type et statut). \\ \hline
+    	\altrow BF-09 & Consommation Kafka & Consommation des événements Kafka émis par les autres services pour générer automatiquement les notifications. \\ \hline
+    \end{longtable}
+
+    % -------------------------------------------------------
+    % TABLE 7 : JOURNALISATION
+    % -------------------------------------------------------
+    \vspace{0.3cm}
+    \noindent\textbf{\textcolor{eheiBlue}{\large 7. Module de Journalisation (Logs-Service)}}
+    \vspace{0.2cm}
+
+    \noindent Ce module assure la traçabilité centralisée de toutes les actions effectuées dans la plateforme.
+    \vspace{0.3cm}
+
+    \resetrows
+    \begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endfirsthead
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endhead
+    	\hline
+    	\endfoot
+    	\caption{Besoins fonctionnels -- Module de Journalisation} \label{tab:bf-log}
+    	\endlastfoot
+
+    	\altrow BF-01 & Enregistrement auto. & Enregistrement automatique des actions : CRUD équipes, CRUD tickets, entrées/sorties de membres. \\ \hline
+    	\altrow BF-02 & Consommation Kafka & Consommation des événements : \texttt{team-created}, \texttt{team-updated}, \texttt{team-deleted}, \texttt{ticket-created}, \texttt{ticket-updated}, \texttt{ticket-deleted}, \texttt{chat-created}. \\ \hline
+    	\altrow BF-03 & Consultation paginée & Consultation des logs avec pagination configurable (numéro de page, taille). \\ \hline
+    	\altrow BF-04 & Filtrage avancé & Filtrage par date, niveau de sévérité, service source, utilisateur et environnement. \\ \hline
+    	\altrow BF-05 & Logs par utilisateur & Consultation des logs associés à un utilisateur spécifique. \\ \hline
+    	\altrow BF-06 & Logs par service & Consultation des logs associés à un service spécifique. \\ \hline
+    	\altrow BF-07 & Logs par niveau & Filtrage par niveau de sévérité (Info, Warning, Error, Critical). \\ \hline
+    	\altrow BF-08 & Statistiques & Statistiques globales : total, répartition par niveau/service/action, utilisateurs les plus actifs. \\ \hline
+    	\altrow BF-09 & Nettoyage & Suppression des logs anciens (plus de 90 jours par défaut). \\ \hline
+    	\altrow BF-10 & Exportation CSV & Exportation des logs au format CSV depuis l'interface utilisateur. \\ \hline
+    \end{longtable}
+
+    % -------------------------------------------------------
+    % TABLE 8 : APPLICATION FRONT-END
+    % -------------------------------------------------------
+    \vspace{0.3cm}
+    \noindent\textbf{\textcolor{eheiBlue}{\large 8. Application Front-End (Project-Management-App)}}
+    \vspace{0.2cm}
+
+    \noindent L'application Angular constitue l'interface utilisateur unifiée de la plateforme.
+    \vspace{0.3cm}
+
+    \resetrows
+    \begin{longtable}{|>{\centering\arraybackslash\bfseries\small}m{1.8cm}|>{\small}m{3.2cm}|>{\small}m{9.5cm}|}
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endfirsthead
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Besoin}} & \textcolor{white}{\textbf{Description}} \\
+    	\hline
+    	\endhead
+    	\hline
+    	\endfoot
+    	\caption{Besoins fonctionnels -- Application Front-End} \label{tab:bf-ui}
+    	\endlastfoot
+
+    	\altrow BF-01 & Tableau de bord & Affichage synthétique : tickets assignés, réunions à venir, discussions récentes. \\ \hline
+    	\altrow BF-02 & Tableau Kanban & Tableau Kanban avec colonnes du workflow et glisser-déposer (admins uniquement). \\ \hline
+    	\altrow BF-03 & Filtres tickets & Filtres par priorité, par assigné, recherche textuelle et tri par priorité. \\ \hline
+    	\altrow BF-04 & Détail ticket & Modale de détail avec titre, dates, priorité et liste des sous-tâches. \\ \hline
+    	\altrow BF-05 & Page des équipes & Page dédiée à la gestion des équipes (création, modification, suppression, membres). \\ \hline
+    	\altrow BF-06 & Page notifications & Page listant toutes les notifications avec options de lecture et suppression. \\ \hline
+    	\altrow BF-07 & Icône cloche & Badge dans la navbar indiquant le nombre de notifications non lues. \\ \hline
+    	\altrow BF-08 & Page des logs & Consultation des logs avec filtres par date, niveau, service et exportation CSV. \\ \hline
+    	\altrow BF-09 & Gestion des envs. & Sélection, visualisation des membres et navigation entre environnements. \\ \hline
+    	\altrow BF-10 & Profil utilisateur & Page de modification des informations personnelles et de la photo de profil. \\ \hline
+    	\altrow BF-11 & Sidebar & Barre latérale permanente : Dashboard, Tickets, Équipes, Notifications, Logs, Calendrier, Discussions. \\ \hline
+    	\altrow BF-12 & Discussions & Page de messagerie/chat entre les membres d'un environnement. \\ \hline
+    	\altrow BF-13 & Calendrier & Vue calendrier pour visualiser les tickets et les échéances. \\ \hline
+    \end{longtable}
+
+    % -------------------------------------------------------
+    % TABLEAU RÉCAPITULATIF
+    % -------------------------------------------------------
+    \vspace{0.5cm}
+    \noindent\textbf{\textcolor{eheiBlue}{\large Récapitulatif des Besoins Fonctionnels}}
+    \vspace{0.3cm}
+
+    \begin{center}
+    \begin{tabular}{|>{\small}m{8cm}|>{\centering\arraybackslash\small\bfseries}m{3cm}|}
+    	\hline
+    	\rowcolor{tableHeader}
+    	\textcolor{white}{\textbf{Module}} & \textcolor{white}{\textbf{Nombre de BF}} \\
+    	\hline
+    	\rowcolor{tableRowLight} Authentification (Auth-Service) & 12 \\ \hline
+    	\rowcolor{tableRowWhite} Utilisateurs (Users-Service) & 6 \\ \hline
+    	\rowcolor{tableRowLight} Environnements (Environments-Service) & 10 \\ \hline
+    	\rowcolor{tableRowWhite} Équipes (Teams-Service) & 8 \\ \hline
+    	\rowcolor{tableRowLight} Tickets (Tickets-Service) & 14 \\ \hline
+    	\rowcolor{tableRowWhite} Notifications (Notifications-Service) & 9 \\ \hline
+    	\rowcolor{tableRowLight} Journalisation (Logs-Service) & 10 \\ \hline
+    	\rowcolor{tableRowWhite} Front-End (Project-Management-App) & 13 \\ \hline
+    	\rowcolor{sectionBg!20} \textbf{Total} & \textbf{82} \\ \hline
+    \end{tabular}
+    \end{center}
+
 	\subsection{Les besoins non-fonctionnels}
 	La plateforme doit assurer : la performance optimale via Apache Kafka, la sécurité avec hachage cryptographique et gestion JWT, la scalabilité via microservices, la disponibilité avec redémarrage automatique, la maintenabilité avec architecture en couches, la portabilité Docker, l'interopérabilité REST/JSON et WebSocket, ainsi que l'observabilité avec Serilog et Seq.
-	
-	% ============================================================================
-	% SECTION MODIFIÉE : Analyse et modélisation
-	% ============================================================================
+
 	\section{Analyse et modélisation}
-	
+
 	\subsection{Importance de la modélisation}
-	La conception d'une application de gestion de projets collaboratifs implique une complexité
-	architecturale significative : deux niveaux de privilèges distincts, des workflows dynamiques
-	personnalisables, une communication en temps réel via WebSockets, et une architecture microservices
-	composée de plusieurs services interdépendants. Dans ce contexte, la modélisation n'est pas une
-	étape facultative mais une nécessité fondamentale.
-	
-	Elle nous a permis, en premier lieu, d'anticiper les ambiguïtés fonctionnelles avant toute ligne
-	de code écrite, en confrontant les différentes visions des membres de l'équipe autour d'une
-	représentation commune et formelle. En second lieu, elle a servi de contrat entre les développeurs
-	: chaque service, chaque entité et chaque interaction ont été définis et validés collectivement,
-	réduisant ainsi les risques d'incohérence lors de l'intégration. Enfin, la modélisation a facilité
-	la communication avec notre encadrant, en offrant une vue structurée et lisible de nos choix de
-	conception.
-	
+	La modélisation est cruciale pour structurer la complexité du projet, communiquer efficacement avec les équipes et valider l'architecture avant implémentation.
+
 	\subsection{Définition UML}
-	UML (Unified Modeling Language), dans sa version 2.x, est un langage de modélisation standardisé
-	par l'OMG (Object Management Group) qui fournit un ensemble de notations graphiques formelles pour
-	visualiser, spécifier et documenter les systèmes logiciels. Il ne s'agit pas d'une méthode de
-	développement mais d'un langage de communication entre les acteurs d'un projet.
-	
-	Dans le cadre de ce projet, nous avons mobilisé trois types de diagrammes complémentaires : le
-	\textbf{diagramme de use case} pour capturer les besoins fonctionnels du point de vue utilisateur,
-	le \textbf{diagramme de séquence} pour modéliser les interactions dynamiques entre composants, et
-	le \textbf{diagramme de classes} pour représenter la structure statique du système. Ces diagrammes
-	ont été réalisés à l'aide de \textbf{Figma}, utilisé comme outil de conception graphique pour la
-	modélisation visuelle des diagrammes UML, offrant une collaboration en temps réel entre les cinq
-	membres de l'équipe.
-	
+	UML (Unified Modeling Language) est un standard de notation graphique permettant de visualiser et documenter les systèmes logiciels complexes.
+
 	\subsection{Diagramme de use case}
-	
+
 	\subsubsection{Définition}
-	Le diagramme de use case, ou diagramme de cas d'utilisation, est un outil UML qui modélise les
-	interactions entre les \textbf{acteurs} --- entités externes au système, qu'il s'agisse
-	d'utilisateurs humains ou de systèmes tiers --- et les \textbf{fonctionnalités} que le système
-	expose. Il délimite explicitement la \textbf{frontière du système} (\textit{system boundary}),
-	séparant ce qui est pris en charge par l'application de ce qui lui est externe.
-	
-	Les relations entre cas d'utilisation se déclinent principalement en deux types : la relation
-	\textbf{$\langle\langle$include$\rangle\rangle$}, qui exprime qu'un cas d'utilisation en incorpore
-	systématiquement un autre (par exemple, toute action authentifiée inclut obligatoirement la
-	vérification du token JWT), et la relation
-	\textbf{$\langle\langle$extend$\rangle\rangle$}, qui modélise un comportement optionnel ou
-	conditionnel venant enrichir un cas de base. Ce diagramme constitue le point d'entrée de l'analyse
-	fonctionnelle et sert de référence tout au long du développement.
-	
+	Un diagramme de use case représente les interactions entre les acteurs (utilisateurs ou systèmes externes) et le système, illustrant les fonctionnalités principales du point de vue utilisateur.
+
 	\subsubsection{Notre diagramme de use case}
-	Le diagramme de use case du Project Management App, présenté à la figure
-	\ref{fig:usecase-project-management}, modélise l'ensemble des interactions entre les acteurs
-	identifiés et les fonctionnalités de la plateforme.
-	
-	Deux acteurs principaux ont été définis, reflétant la hiérarchie de droits du système. Le
-	\textbf{Membre} représente tout utilisateur authentifié ayant accès à un environnement de travail.
-	Il dispose des fonctionnalités suivantes, toutes reliées par des relations
-	\textbf{$\langle\langle$include$\rangle\rangle$} traduisant leur caractère systématique : voir la
-	liste des tickets, recevoir des notifications, changer l'état d'un ticket, consulter le dashboard,
-	consulter l'historique, et gérer un meet. Le Membre peut également \textbf{créer un ticket
-		personnalisé}, avec la possibilité d'étendre cette action via trois relations
-	\textbf{$\langle\langle$extend$\rangle\rangle$} optionnelles : ajouter une description, définir la
-	priorité, et définir un deadline.
-	
-	Le \textbf{Chef de Projet} hérite du périmètre du Membre via l'authentification commune, et dispose
-	en plus de fonctionnalités de gestion avancées. Il peut créer un environnement de travail, attribuer
-	des tickets aux membres (avec la possibilité de réassigner un ticket, et d'inclure la définition de
-	priorité et de deadline), gérer les petites équipes via des opérations \textbf{CRUD}, vérifier un
-	ticket en l'acceptant ou le rejetant, gérer les membres via \textbf{CRUD}, et recevoir des alertes.
-	
-	Le point d'entrée commun aux deux acteurs est le cas \textbf{S'authentifier}, qui conditionne via
-	des relations \textbf{$\langle\langle$include$\rangle\rangle$} l'accès à l'environnement de travail
-	et à l'ensemble des fonctionnalités de la plateforme.
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{pictures/usecaseprojectmanagementapp.png}
-		\caption{Diagramme de use case du Project Management App}
-		\label{fig:usecase-project-management}
-	\end{figure}
-	
+	Le diagramme de use case du Project Management App inclut les acteurs : Utilisateur Anonyme, Utilisateur Authentifié, Chef de Projet et Administrateur. Les use cases couvrent l'authentification, la gestion des environnements, la gestion des équipes, la gestion des tickets et des notifications.
+
 	\subsection{Diagrammes de séquence}
-	
+
 	\subsubsection{Définition}
-	Un diagramme de séquence est un diagramme comportemental UML qui représente les interactions entre
-	les différents participants d'un scénario donné, ordonnées chronologiquement selon un axe vertical
-	du temps. Chaque participant est représenté par une \textbf{ligne de vie} (\textit{lifeline}), et
-	les échanges entre eux sont matérialisés par des \textbf{messages} --- synchrones (appels bloquants,
-	représentés par des flèches pleines) ou asynchrones (représentés par des flèches ouvertes) --- ainsi
-	que des \textbf{messages de retour} (flèches pointillées).
+	Un diagramme de séquence illustre l'ordre des interactions entre objets dans le temps, montrant comment les composants communiquent pour accomplir une tâche.
 
-	Le diagramme de séquence permet de modéliser avec précision l'ordre d'exécution des opérations, les
-	conditions de branchement via des \textbf{fragments combinés} (\texttt{alt}, \texttt{opt},
-	\texttt{loop}), et les responsabilités de chaque composant dans un flux donné. Il constitue un
-	complément indispensable au diagramme de use case : là où ce dernier décrit \textit{quoi} fait le
-	système, le diagramme de séquence décrit \textit{comment} et \textit{dans quel ordre} les
-	interactions se produisent entre les acteurs et les composants internes.
-	
 	\subsubsection{Nos diagrammes de séquence}
-	Nous avons modélisé cinq diagrammes de séquence couvrant les flux principaux du Project Management
-	App.
+	Les principaux diagrammes de séquence documentent : l'authentification utilisateur, la création d'un projet, l'assignation d'une tâche, la notification en temps réel et la mise à jour du statut d'un ticket.
 
-	Le premier diagramme (figure \ref{fig:seq-authentification}) illustre le flux d'
-	\textbf{authentification classique} : l'utilisateur soumet ses identifiants via \texttt{POST
-		/login}, le serveur vérifie les credentials en base de données, génère un JWT en cas de succès et
-	retourne les tokens \texttt{access} et \texttt{refresh}, qui sont stockés dans le LocalStorage. En
-	cas d'identifiants invalides, un \texttt{401 Unauthorized} est retourné.
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{pictures/authentification.png}
-		\caption{Diagramme de séquence -- Authentification classique}
-		\label{fig:seq-authentification}
-	\end{figure}
-
-	Le second diagramme (figure \ref{fig:seq-oauth}) modélise le flux d'\textbf{authentification OAuth}
-	: l'utilisateur initie la connexion via \texttt{GET auth/oauth/\{provider\}}, est redirigé vers le
-	fournisseur OAuth, accorde ses permissions, et le serveur échange le code d'autorisation contre un
-	token d'accès auprès du provider. L'utilisateur est créé ou récupéré en base, un JWT est généré, et
-	la redirection finale est effectuée avec le token.
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{pictures/0auth.png}
-		\caption{Diagramme de séquence -- Authentification OAuth}
-		\label{fig:seq-oauth}
-	\end{figure}
-
-	Le troisième diagramme (figure \ref{fig:seq-environnement}) représente la \textbf{création d'un
-		environnement de travail} : l'utilisateur soumet le formulaire via \texttt{POST /workspaces}, le
-	serveur vérifie le JWT, crée l'environnement en base, désigne automatiquement le créateur comme chef
-	de projet, et initialise les canaux par défaut avant de retourner un \texttt{200 OK}.
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{pictures/creation-d'envirenement.png}
-		\caption{Diagramme de séquence -- Création d'un environnement de travail}
-		\label{fig:seq-environnement}
-	\end{figure}
-
-	Le quatrième diagramme (figure \ref{fig:seq-ticket}) décrit la \textbf{création d'un ticket
-		personnel} : le membre clique sur « Créer un ticket », saisit les informations dans le formulaire,
-	qui sont soumises via \texttt{POST /api/tickets}. Le serveur effectue une validation des données,
-	insère le ticket en base, et confirme la création avec un \texttt{201 Created}.
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{pictures/creation-ticket.png}
-		\caption{Diagramme de séquence -- Création d'un ticket personnel}
-		\label{fig:seq-ticket}
-	\end{figure}
-
-	Le cinquième diagramme (figure \ref{fig:seq-attribuer}) illustre l'\textbf{attribution d'un ticket}
-	par le chef de projet : ce dernier choisit le membre, la priorité et le deadline, déclenche
-	\texttt{PUT /api/Tickets/\{id\}/assign}, le serveur effectue un contrôle de cohérence sur les dates
-	et la priorité, met à jour le ticket en base, et retourne un \texttt{200 OK} confirmant l'attribution.
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{pictures/attribuer-ticket.png}
-		\caption{Diagramme de séquence -- Attribution d'un ticket}
-		\label{fig:seq-attribuer}
-	\end{figure}
-	
 	\subsection{Diagramme de classes}
-	
+
 	\subsubsection{Définition}
 	Un diagramme de classes représente la structure statique du système, montrant les classes, leurs attributs, méthodes et relations.
-	
+
 	\subsubsection{Notre diagramme de classes}
 	Le modèle inclut les entités : User, Environment, Team, Ticket, Workflow, WorkflowStep, Notification, et Log, avec leurs relations d'association, d'héritage et de composition.
-	
+
 	\section{Réalisation}
-	
+
 	\subsection{Méthode de gestion}
-	
+
 	\subsubsection{Définition}
-	La méthode de gestion de projet structure l'organisation du travail, les responsabilités et les livrables pour atteindre les objectifs métier.
-	
+	La méthode de gestion de projet définit le cadre organisationnel qui structure la planification, le suivi et la livraison des fonctionnalités. Elle détermine comment les tâches sont réparties entre les membres de l'équipe, comment les priorités sont établies, et comment les itérations sont rythmées pour assurer une progression continue et mesurable du projet.
+
 	\subsubsection{De la théorie à la pratique}
-	Nous avons adopté une approche hybride combinant Scrum et Kanban, avec des sprints de deux semaines, des daily standups, et un suivi des tâches sur un tableau Kanban.
-	
+	Pour le développement du Project Management App, nous avons adopté une approche hybride combinant \textbf{Scrum} et \textbf{Kanban}. Le projet a été découpé en sprints de deux semaines, avec des \textit{daily standups} pour synchroniser l'avancement de chaque microservice. Le suivi des tâches s'est effectué sur un tableau Kanban à quatre colonnes : \texttt{To Do}, \texttt{Doing}, \texttt{Done} et \texttt{Happy Day}, reflétant directement les statuts de tickets implémentés dans l'application elle-même. Chaque sprint visait la livraison d'un service complet --- de la couche données à la couche présentation --- permettant une intégration incrémentale. Les revues de sprint ont servi à valider les fonctionnalités avec l'encadrant et à ajuster les priorités du backlog.
+
 	\subsection{Environnement de programmation}
-	
+
 	\subsubsection{Outils utilisés}
-	Nous avons utilisé : Visual Studio Code pour le développement, Docker et Docker Compose pour la conteneurisation, Git pour le contrôle de version, Postman pour les tests API, et Seq pour l'agrégation des logs.
-	
+
+	Le tableau~\ref{tab:outils-ch1} présente les outils de développement utilisés pour la réalisation du Project Management App.
+
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|m{7.5cm}|}
+			\hline
+			\rowcolor{tableHeader}
+			\textcolor{white}{\textbf{Outil}} & \textcolor{white}{\textbf{Logo}} & \centering\arraybackslash\textcolor{white}{\textbf{Description}} \\ \hline
+
+			\altrow
+			Visual Studio Code & \includegraphics[width=1.5cm]{pictures/vscode.png} & Éditeur de code principal utilisé pour le développement frontend Angular et backend .NET, avec extensions pour C\#, TypeScript, Docker et Git. \\ \hline
+
+			\altrow
+			Docker \& Docker Compose & \includegraphics[width=1.5cm]{pictures/Docker.png} & Conteneurisation de l'ensemble des microservices, de la base de données SQL Server, de Kafka et de Zookeeper via des fichiers \texttt{docker-compose.yaml} multi-services. \\ \hline
+
+			\altrow
+			Git \& GitHub & \includegraphics[width=1.5cm]{pictures/github.png} & Contrôle de version distribué avec gestion des branches par fonctionnalité et revues de code via pull requests. \\ \hline
+
+			\altrow
+			Postman &  \includegraphics[width=1.2cm]{pictures/postman.jpg}
+			 & Test et validation des endpoints REST de chaque microservice, avec collections organisées par service. \\ \hline
+
+		
+		\end{tabular}
+		\caption{Outils de développement utilisés}
+		\label{tab:outils-ch1}
+	\end{table}
+	\resetrows
+
 	\subsubsection{Langages utilisés}
-	C\# pour les microservices backend, TypeScript pour le frontend Angular, SQL pour les requêtes de base de données.
-	
+
+	Le tableau~\ref{tab:langages-ch1} présente les langages de programmation employés dans le projet.
+
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|m{7.5cm}|}
+			\hline
+			\rowcolor{tableHeader}
+			\textcolor{white}{\textbf{Langage}} & \textcolor{white}{\textbf{Logo}} & \centering\arraybackslash\textcolor{white}{\textbf{Utilisation}} \\ \hline
+
+			\altrow
+			C\# &  \includegraphics[width=1.5cm]{pictures/csharp.jpg}
+			& Langage principal pour la totalité de microservices backend (Logs-Service, Notifications-Service, Teams-Service, etc), exploitant la programmation orientée objet, les génériques et la programmation asynchrone (\texttt{async/await}). \\ \hline
+
+			\altrow
+			TypeScript &  \includegraphics[width=1.5cm]{pictures/typescript.jpg}
+			 & Langage fortement typé utilisé pour le développement de l'application frontend Angular 20, offrant la sûreté de type et l'autocomplétion pour une base de code maintenable. \\ \hline
+
+			\altrow
+			SQL &  \includegraphics[width=1.5cm]{pictures/sql.png}
+			& Utilisé via Entity Framework Core pour les migrations de schéma et les requêtes LINQ traduites vers SQL Server pour les services Logs et Teams. \\ \hline
+
+			\altrow
+			HTML / CSS &  \includegraphics[width=1.5cm]{pictures/html.png}
+			 & Structuration des templates Angular et stylisation avec Tailwind CSS 3.4 pour une interface responsive et moderne avec un thème sombre. \\ \hline
+		\end{tabular}
+		\caption{Langages de programmation utilisés}
+		\label{tab:langages-ch1}
+	\end{table}
+	\resetrows
+
 	\subsubsection{Frameworks utilisés}
-	ASP.NET Core pour les services backend, Angular 16+ pour le frontend, Entity Framework Core pour l'accès aux données.
-	
+
+	Le tableau~\ref{tab:frameworks-ch1} détaille les frameworks structurants du projet.
+
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{2cm}|m{8.5cm}|}
+			\hline
+			\rowcolor{tableHeader}
+			\textcolor{white}{\textbf{Framework}} & \textcolor{white}{\textbf{Version}} & \centering\arraybackslash\textcolor{white}{\textbf{Rôle}} \\ \hline
+
+			\altrow
+			ASP.NET Core & 9.0 & Framework backend pour la construction des APIs REST des microservices.  \\ \hline
+
+			\altrow
+			Angular & 20.3 & Framework frontend pour le développement de l'application SPA (Single Page Application). Utilise l'architecture \textit{standalone components}, les \textit{signals} pour la gestion d'état réactive, et le routage déclaratif. \\ \hline
+
+			\altrow
+			Entity Framework Core & 9.0 & ORM (Object-Relational Mapping) pour l'accès aux données SQL Server, la génération de migrations et l'exécution de requêtes LINQ avec stratégies \texttt{AsNoTracking} pour les lectures. \\ \hline
+
+			\altrow
+			Tailwind CSS & 3.4.18 & Framework CSS utilitaire pour le stylisme rapide de l'interface utilisateur avec un système de couleurs personnalisé (\texttt{card}, \texttt{cardBorder}, \texttt{cardText}) et un thème sombre cohérent. \\ \hline
+		\end{tabular}
+		\caption{Frameworks utilisés}
+		\label{tab:frameworks-ch1}
+	\end{table}
+	\resetrows
+
 	\subsubsection{Bibliothèques utilisées}
-	AutoMapper pour le mapping DTO, Serilog pour la journalisation, Kafka .NET pour la messagerie asynchrone, SignalR pour les WebSockets.
-	
+
+	Le tableau~\ref{tab:libs-ch1} recense les bibliothèques tierces intégrées au projet.
+
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{2cm}|m{8cm}|}
+			\hline
+			\rowcolor{tableHeader}
+			\textcolor{white}{\textbf{Bibliothèque}} & \textcolor{white}{\textbf{Version}} & \centering\arraybackslash\textcolor{white}{\textbf{Rôle}} \\ \hline
+
+			
+
+			\altrow
+			Confluent.Kafka & 2.3 / 2.12 & Client .NET pour Apache Kafka, utilisé pour la production et la consommation d'événements asynchrones entre les microservices (création d'équipe, assignation de tâche, etc.). \\ \hline
+
+			\altrow
+			SignalR & intégré & Bibliothèque de communication temps réel via WebSockets, utilisée dans le Notifications-Service pour diffuser les notifications instantanément aux clients connectés via le hub \texttt{/notificationHub}. \\ \hline
+
+			\altrow
+			Swashbuckle & 6.5 / 7.2 / 10.0 & Génération automatique de la documentation OpenAPI/Swagger pour chaque microservice, fournissant une interface de test interactive. \\ \hline
+
+			\altrow
+			Newtonsoft.Json & 13.0.3 & Sérialisation et désérialisation JSON avancée, utilisée dans le Notifications-Service pour la persistance fichier des notifications. \\ \hline
+
+			\altrow
+			Lucide Angular & 0.554.0 & Bibliothèque d'icônes SVG pour Angular, fournissant les icônes de l'interface (recherche, calendrier, alertes, utilisateurs, etc.). \\ \hline
+
+			\altrow
+			RxJS & 7.8.0 & Bibliothèque de programmation réactive pour la gestion des flux de données asynchrones côté frontend (appels HTTP, événements SignalR, filtrage en temps réel). \\ \hline
+		\end{tabular}
+		\caption{Bibliothèques utilisées}
+		\label{tab:libs-ch1}
+	\end{table}
+	\resetrows
+
 	\subsubsection{Technologies utilisées}
-	PostgreSQL pour les bases de données, Redis pour le cache, Apache Kafka pour l'event streaming, JWT pour l'authentification, OAuth 2.0 pour les connexions sociales.
-	
+
+	Le tableau~\ref{tab:tech-ch1} présente les technologies d'infrastructure utilisées.
+
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|m{10cm}|}
+			\hline
+			\rowcolor{tableHeader}
+			\textcolor{white}{\textbf{Technologie}} & \centering\arraybackslash\textcolor{white}{\textbf{Rôle dans le projet}} \\ \hline
+
+			\altrow
+			SQL Server 2022 & Base de données relationnelle pour les services Logs et Teams. Chaque service possède sa propre base (\texttt{LogsDB}, \texttt{TeamsDB}) avec des schémas isolés et des index optimisés (timestamp, service, userId, level). \\ \hline
+
+			\altrow
+			Apache Kafka 7.5 & Plateforme de streaming d'événements assurant la communication asynchrone entre microservices. Gère plus de 10 topics incluant : \texttt{team-created}, \texttt{team-updated}, \texttt{team-deleted}, \texttt{team.member.added}, \texttt{team.member.removed}, \texttt{task.assigned}, \texttt{meeting.scheduled}, \texttt{ticket.note.added}, etc. \\ \hline
+
+			\altrow
+			Apache Zookeeper & Service de coordination pour le cluster Kafka, gérant la découverte des brokers et la synchronisation des métadonnées (port 2181). \\ \hline
+
+			\altrow
+			Docker & Conteneurisation de chaque microservice avec des Dockerfiles multi-étapes (restore $\rightarrow$ build $\rightarrow$ publish $\rightarrow$ runtime) et exécution en tant qu'utilisateur non-root pour la sécurité. \\ \hline
+
+			\altrow
+			JWT & JSON Web Tokens pour l'authentification. Les tokens sont stockés côté client dans le \texttt{localStorage} et injectés automatiquement via un intercepteur HTTP Angular (\texttt{authInterceptor}). \\ \hline
+
+			\altrow
+			WebSocket (SignalR) & Protocole de communication bidirectionnelle pour les notifications temps réel. Le hub \texttt{/notificationHub} diffuse les événements \texttt{ReceiveNotification}, \texttt{NotificationUpdated}, \texttt{AllNotificationsRead} et \texttt{NotificationDeleted} aux clients. \\ \hline
+		\end{tabular}
+		\caption{Technologies d'infrastructure}
+		\label{tab:tech-ch1}
+	\end{table}
+	\resetrows
+
 	\subsection{Bonnes pratiques et assurance des BNF}
-	Nous avons implémenté des bonnes pratiques SOLID, utilisé le pattern Repository, appliqué l'injection de dépendances, effectué des tests unitaires et d'intégration, et documenté l'API avec Swagger.
+
+	La qualité logicielle du Project Management App repose sur l'application rigoureuse de plusieurs bonnes pratiques architecturales et de développement, assurant simultanément le respect des besoins non-fonctionnels identifiés lors de la phase d'analyse.
+
+	\subsubsection{Architecture en couches et pattern Repository}
+	Chaque microservice adopte une architecture en couches clairement séparées : \textbf{Controllers} (couche présentation), \textbf{Services} (couche métier) et \textbf{Repositories} (couche accès aux données). Le pattern Repository isole la logique d'accès aux données derrière des interfaces, facilitant les tests et permettant de changer de source de données sans impacter la logique métier. Par exemple, le Notifications-Service utilise un repository basé sur un fichier JSON avec verrouillage par \texttt{SemaphoreSlim}, tandis que les services Logs et Teams utilisent Entity Framework Core avec SQL Server.
+
+	\subsubsection{Injection de dépendances et DTOs}
+	L'injection de dépendances est systématiquement utilisée dans les trois services backend, conformément au conteneur IoC natif d'ASP.NET Core. Les DTOs (Data Transfer Objects) séparent strictement les modèles internes des contrats d'API : chaque entité possède ses \texttt{CreateDto}, \texttt{UpdateDto} et \texttt{ResponseDto}, avec AutoMapper assurant la conversion automatique.
+
+	\subsubsection{Gestion des erreurs et intercepteurs}
+	Côté frontend, un \textbf{intercepteur d'erreurs HTTP} capture toutes les réponses d'erreur et les transforme en messages utilisables, couvrant les codes 400 (Bad Request), 401 (Unauthorized), 403 (Forbidden), 404 (Not Found), 409 (Conflict), 422 (Validation Error), 500 (Server Error), 502 (Bad Gateway), 503 (Service Unavailable) et 504 (Gateway Timeout). Un \textbf{intercepteur d'authentification} injecte automatiquement le token JWT dans chaque requête sortante.
+
+	\subsubsection{Sécurité}
+	La sécurité est assurée à plusieurs niveaux : authentification JWT avec injection automatique via intercepteur, configuration CORS stricte n'autorisant que l'origine \texttt{http://localhost:4200} avec credentials, exécution des conteneurs Docker en tant qu'utilisateur non-root (\texttt{appuser}), et commits manuels Kafka après traitement réussi pour garantir la fiabilité de la messagerie (\texttt{EnableAutoCommit: false}).
+
+	\subsubsection{Résilience et santé des services}
+	Les services intègrent des mécanismes de résilience : les connexions Entity Framework Core sont configurées avec une stratégie de \textit{retry on failure} (5 tentatives, délai de 30 secondes), et des \textit{health checks} surveillent la disponibilité de SQL Server et du DbContext. Les migrations de base de données s'exécutent automatiquement au démarrage de chaque service.
+
+\newpage
+	\subsection{Interfaces de l'application}
+
+	Cette sous-section présente les principales interfaces utilisateur du Project Management App, illustrant les fonctionnalités implémentées.
+
+	\subsubsection{Page des environnements}
+	La page d'accueil de l'application affiche les environnements auxquels l'utilisateur participe sous forme de cartes dans une grille responsive. Elle propose la création de nouveaux environnements et la consultation des invitations reçues via des modales dédiées. Un état vide avec une illustration guide les nouveaux utilisateurs.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/env-page.png}
+		
+		\caption{Page des environnements de travail}
+		\label{fig:env-page}
+	\end{figure}
+
+	\subsubsection{Tableau de bord (Dashboard)}
+	Le tableau de bord offre une vue d'ensemble du projet avec trois zones principales : une section de synthèse en haut, un tableau Kanban de type \textit{drag-and-drop} affichant les tickets de l'utilisateur connecté (colonnes \texttt{To Do}, \texttt{Doing}, \texttt{Done}, \texttt{Happy Day}) et une barre latérale montrant les réunions à venir et les discussions récentes.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/dashboard.png}
+		\caption{Dashboard}
+		\label{fig:dashboard}
+	\end{figure}
+
+	\subsubsection{Gestion des tickets}
+	La page de gestion des tickets propose un tableau Kanban plein écran avec une barre d'outils permettant le filtrage par recherche textuelle, par priorité (Low, Medium, High) et par assigné. La création de tickets s'effectue via une modale permettant de définir le titre, le statut, la priorité et les membres assignés.
+
+	\begin{figure}[H]
+		\centering 
+		 \includegraphics[width=0.95\textwidth]{screenshots/tickets-page.png}
 	
+		\caption{Page de gestion des tickets }
+		\label{fig:tickets-page}
+	\end{figure}
+\newpage
+	\subsubsection{Gestion des équipes}
+	La page des équipes affiche les équipes sous forme de cartes avec recherche, tri (ascendant/descendant) et possibilité de création via une modale. Chaque carte d'équipe présente les détails de l'équipe et permet d'accéder à une vue détaillée pour la gestion des membres.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/teams-page.png}
+
+		\caption{Page de gestion des équipes}
+		\label{fig:teams-page}
+	\end{figure}
+
+	\subsubsection{Centre de notifications}
+	Le centre de notifications adopte une disposition en deux volets : une boîte de réception (70\% de la largeur) avec filtrage par type (Tous, Mentions, Tâches, Réunions) et un panneau de détail/statistiques (30\%). Les notifications sont reçues en temps réel via SignalR et offrent des actions de lecture, archivage et suppression.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/notifications-page.png}
+	
+		\caption{Centre de notifications en temps réel}
+		\label{fig:notifications-page}
+	\end{figure}
+
+	\subsubsection{Calendrier et réunions}
+	Le module calendrier supporte trois vues : semaine (par défaut), jour et mois. La barre d'outils permet la navigation temporelle, la recherche et la planification de nouvelles réunions. La page des réunions dédiée offre un filtrage avancé (Aujourd'hui, Cette semaine, Mes réunions) avec un panneau de détail latéral.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/calendar-page.png}
+		\caption{Vue calendrier avec planification de réunions}
+		\label{fig:calendar-page}
+	\end{figure}
+
+	\subsubsection{Espace de discussions}
+	L'espace de discussions présente une disposition en deux colonnes : une liste de conversations (35\%) et une zone de chat détaillée (65\%). Chaque conversation affiche les avatars des participants, les messages avec horodatage, les pièces jointes avec icônes et taille, ainsi que les réactions sous forme d'emojis.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/discussions-page.png}
+		
+		\caption{Espace de discussions collaboratif}
+		\label{fig:discussions-page}
+	\end{figure}
+
+	\subsubsection{Journal des activités (Logs)}
+	La page des logs présente quatre cartes de statistiques en haut (total, erreurs, avertissements, logs du jour), suivies de filtres avancés (plage de dates, service, niveau, recherche) avec export, et d'un tableau paginé de 50 entrées par page affichant l'ensemble des activités du système.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.95\textwidth]{screenshots/logs-page.png}
+	
+		\caption{Journal des activités avec filtrage avancé}
+		\label{fig:logs-page}
+	\end{figure}
+
 	% ============================================================================
 	% CHAPITRE II : CV BUILDER APP
 	% ============================================================================
+	\clearpage
 	\newpage
 	\thispagestyle{empty}
 	\begin{center}
@@ -658,84 +1135,86 @@
 		\chapterheader{Chapitre 2}{CV Builder App}
 		\vspace*{\fill}
 	\end{center}
-	
+
 	\chapter{CV Builder App}
 	\fancyhead[L]{Chapitre 2 : CV Builder App}
 	\thispagestyle{fancy}
-	
+	\addtocontents{lof}{\textbf{Chapitre 2 -- CV Builder App}\par\medskip}
+	\addtocontents{lot}{\textbf{Chapitre 2 -- CV Builder App}\par\medskip}
+
 	\section{Contexte du projet}
-	
+
 	\subsection{Description des besoins}
 	La plateforme de création et d'optimisation de CV répond à un besoin critique : aider les étudiants à construire un profil professionnel attractif et à identifier les opportunités d'emploi correspondant à leur profil. Les utilisateurs demandent des outils simples pour créer un CV, analyser sa qualité et matcher avec des offres d'emploi.
-	
+
 	\subsection{Besoins fonctionnels}
 	Les besoins fonctionnels incluent : création de CV avec templates, génération de portfolio, analyse d'offres d'emploi, matching intelligent CV/offres, analyse linguistique et structurelle du CV, suggestions d'amélioration et calcul de score de qualité. Au total, 23 besoins fonctionnels ont été identifiés.
-	
+
 	\subsection{Les besoins non-fonctionnels}
 	La plateforme doit assurer : extraction de données par IA, performance optimale pour la génération de documents, sécurité des données personnelles, scalabilité pour gérer une base croissante de CV et d'offres, disponibilité constante, maintenabilité du code, portabilité Docker et interopérabilité avec LinkedIn.
-	
+
 	\section{Analyse et modélisation}
-	
+
 	\subsection{Importance de la modélisation}
 	La modélisation permet de structurer les flux de données complexes entre les services CV Creator, Portfolio Generator, Job Matcher et Analyzer, garantissant une cohérence globale.
-	
+
 	\subsection{Définition UML}
 	UML fournit la notation formelle pour documenter l'interaction entre les cinq microservices et les flux de génération de CV.
-	
+
 	\subsection{Diagramme de use case}
-	
+
 	\subsubsection{Définition}
 	Le diagramme de use case montre comment un utilisateur interagit avec la plateforme pour créer, analyser et matcher son CV avec des offres.
-	
+
 	\subsubsection{Notre diagramme de use case}
 	Les acteurs sont : Étudiant, Recruteur. Les use cases incluent : créer un CV, sélectionner un template, générer un portfolio, analyser un CV, matcher avec des offres, consulter les offres filtrées.
-	
+
 	\subsection{Diagrammes de séquence}
-	
+
 	\subsubsection{Définition}
 	Un diagramme de séquence représente l'ordre chronologique des appels entre les cinq services lors d'une opération donnée.
-	
+
 	\subsubsection{Nos diagrammes de séquence}
 	Les diagrammes documentent : la création de CV (formulaire → création → stockage), l'analyse de CV (upload → analyse IA → score), le matching (CV → analyse → offres → score de compatibilité).
-	
+
 	\subsection{Diagramme de classes}
-	
+
 	\subsubsection{Définition}
 	Le diagramme de classes montre la structure des entités : CV, Portfolio, JobOffer, CVAnalysis, MatchResult et leurs relations.
-	
+
 	\subsubsection{Notre diagramme de classes}
 	Les classes principales incluent CV (avec sections), Template, Portfolio (avec liens), JobOffer (parsing LinkedIn), CVAnalysisResult (score, suggestions), et MatchResult (score technique/soft skills/expérience).
-	
+
 	\section{Réalisation}
-	
+
 	\subsection{Méthode de gestion}
-	
+
 	\subsubsection{Définition}
 	Organisation itérative du développement avec des points de contrôle sur chaque service.
-	
+
 	\subsubsection{De la théorie à la pratique}
 	Sprints de deux semaines focalisés sur chaque service, intégration progressive, tests d'API et validation avec des utilisateurs réels.
-	
+
 	\subsection{Environnement de programmation}
-	
+
 	\subsubsection{Outils utilisés}
 	Visual Studio Code, Docker Compose, Git, Postman, Insomnia pour tester les APIs de CV, iTextSharp (ou DinkToPdf) pour la génération PDF.
-	
+
 	\subsubsection{Langages utilisés}
 	C\# pour les services, TypeScript/Angular pour le frontend, Python pour l'extraction de données LinkedIn.
-	
+
 	\subsubsection{Frameworks utilisés}
 	ASP.NET Core pour les services backend, Angular pour le frontend, Selenium pour le scraping LinkedIn.
-	
+
 	\subsubsection{Bibliothèques utilisées}
 	AutoMapper, Serilog, OpenAI API (ou Hugging Face) pour l'analyse d'IA, iTextSharp pour PDF generation, Newtonsoft.Json pour la sérialisation.
-	
+
 	\subsubsection{Technologies utilisées}
 	PostgreSQL pour persister les CV et offres, Redis pour cacher les offres d'emploi, Python FastAPI pour le service d'IA, Kafka pour événements de matching.
-	
+
 	\subsection{Bonnes pratiques et assurance des BNF}
 	Utilisation de DTOs pour isoler les formats API, validation stricte des entrées, chiffrement des données sensibles, tests de performance pour les analyses IA, documentation Swagger complète.
-	
+
 	% ============================================================================
 	% CHAPITRE III : ALGO APP
 	% ============================================================================
@@ -746,84 +1225,86 @@
 		\chapterheader{Chapitre 3}{Algo App}
 		\vspace*{\fill}
 	\end{center}
-	
+
 	\chapter{Algo App}
 	\fancyhead[L]{Chapitre 3 : Algo App}
 	\thispagestyle{fancy}
-	
+	\addtocontents{lof}{\textbf{Chapitre 3 -- Algo App}\par\medskip}
+	\addtocontents{lot}{\textbf{Chapitre 3 -- Algo App}\par\medskip}
+
 	\section{Contexte du projet}
-	
+
 	\subsection{Description des besoins}
 	L'application d'entraînement en algorithmique répond au besoin fondamental : préparer les étudiants aux entretiens techniques des grandes entreprises. Les utilisateurs recherchent une plateforme proposant des problèmes variés, des solutions expliquées et un système de progression.
-	
+
 	\subsection{Besoins fonctionnels}
 	Les besoins fonctionnels incluent : catalogue de problèmes algorithmiques classés par difficultés, éditeur de code intégré, exécution et test de code, solutions optimales avec explications, suivi de progression, leaderboard et badges. Des fonctionnalités avancées incluent la détection de patterns, statistiques détaillées et suggestions de problèmes similaires.
-	
+
 	\subsection{Les besoins non-fonctionnels}
 	La plateforme doit assurer : exécution sécurisée et isolée du code utilisateur (sandboxing), performance optimale même avec des entrées volumineuses, scalabilité pour des milliers d'utilisateurs simultanés, disponibilité 24/7, maintenabilité du code éducatif, portabilité et sécurité contre les injections de code.
-	
+
 	\section{Analyse et modélisation}
-	
+
 	\subsection{Importance de la modélisation}
 	La modélisation est essentielle pour structurer les flux complexes d'exécution de code, résultats de test et suivi de progression.
-	
+
 	\subsection{Définition UML}
 	UML permet de visualiser les relations entre le système d'apprentissage, l'éditeur de code, le compilateur/interprète et le moteur de test.
-	
+
 	\subsection{Diagramme de use case}
-	
+
 	\subsubsection{Définition}
 	Le diagramme de use case visualise l'interaction entre l'apprenant et la plateforme algorithmique.
-	
+
 	\subsubsection{Notre diagramme de use case}
 	Les acteurs sont : Apprenant, Instructeur, Système d'Évaluation. Les use cases incluent : consulter les problèmes, coder une solution, tester le code, visualiser la solution, consulter les statistiques, participer au leaderboard.
-	
+
 	\subsection{Diagrammes de séquence}
-	
+
 	\subsubsection{Définition}
 	Un diagramme de séquence montre le flux d'exécution lors de la soumission et l'évaluation d'une solution.
-	
+
 	\subsubsection{Nos diagrammes de séquence}
 	Les diagrammes documentent : soumettre une solution (éditeur → backend → compilateur → test → feedback), consulter le leaderboard (filtrage → tri → affichage), voir les explications (analyse de code → suggestions de patterns).
-	
+
 	\subsection{Diagramme de classes}
-	
+
 	\subsubsection{Définition}
 	Le diagramme de classes représente les entités principales du système algorithmique.
-	
+
 	\subsubsection{Notre diagramme de classes}
 	Les classes incluent : Problem, TestCase, Solution, User, ExecutionResult, Leaderboard, Badge, avec leurs attributs et relations.
-	
+
 	\section{Réalisation}
-	
+
 	\subsection{Méthode de gestion}
-	
+
 	\subsubsection{Définition}
 	Gestion structurée des problèmes, des cas de test et de l'évolution de la plateforme.
-	
+
 	\subsubsection{De la théorie à la pratique}
 	Ajout progressif de problèmes par difficulté, tests exhaustifs des cas limites, feedback utilisateur intégré au processus d'amélioration.
-	
+
 	\subsection{Environnement de programmation}
-	
+
 	\subsubsection{Outils utilisés}
 	Visual Studio Code, Docker pour isoler les exécutions, Git, Jenkins pour l'intégration continue, Prometheus pour le monitoring.
-	
+
 	\subsubsection{Langages utilisés}
 	C\# pour le backend, TypeScript pour le frontend, Python/Java/C++ (runtime sandboxé) pour l'exécution des solutions utilisateurs.
-	
+
 	\subsubsection{Frameworks utilisés}
 	ASP.NET Core, Angular, Docker avec namespace isolation pour le sandboxing.
-	
+
 	\subsubsection{Bibliothèques utilisées}
 	Docker SDK, Roslyn (analyse C\#), Judge0 ou similaire pour l'exécution sécurisée, xUnit pour les tests unitaires.
-	
+
 	\subsubsection{Technologies utilisées}
 	PostgreSQL pour les problèmes et solutions, Redis pour le cache des leaderboards, Docker pour le sandboxing, Kubernetes pour la scalabilité.
-	
+
 	\subsection{Bonnes pratiques et assurance des BNF}
 	Sandboxing strict du code utilisateur, timeouts et limite mémoire, tests exhaustifs des cas limites, monitoring continu des performances, documentation claire des algorithmes et patterns.
-	
+
 	% ============================================================================
 	% CHAPITRE IV : ENTRETIEN APP
 	% ============================================================================
@@ -834,102 +1315,104 @@
 		\chapterheader{Chapitre 4}{Entretien App}
 		\vspace*{\fill}
 	\end{center}
-	
+
 	\chapter{Entretien App}
 	\fancyhead[L]{Chapitre 4 : Entretien App}
 	\thispagestyle{fancy}
-	
+	\addtocontents{lof}{\textbf{Chapitre 4 -- Entretien App}\par\medskip}
+	\addtocontents{lot}{\textbf{Chapitre 4 -- Entretien App}\par\medskip}
+
 	\section{Contexte du projet}
-	
+
 	\subsection{Description des besoins}
 	L'application de préparation aux entretiens répond à un besoin crucial : préparer les étudiants aux entretiens techniques et comportementaux menés par les grandes entreprises. Les utilisateurs demandent des simulations d'entretiens, des feedbacks personnalisés et des ressources de développement personnel.
-	
+
 	\subsection{Besoins fonctionnels}
 	Les besoins fonctionnels incluent : banque de questions d'entretien, simulations d'entretiens en temps réel, enregistrement et relecture vidéo, analyse de la performance, feedbacks détaillés, suggestions d'amélioration, ressources par domaine technique et soft skills.
-	
+
 	\subsection{Les besoins non-fonctionnels}
 	La plateforme doit assurer : qualité vidéo optimale, latence minimale pour les simulations en temps réel, analyse du langage naturel pour le feedback, scalabilité pour les sessions simultanées, disponibilité constante, maintenabilité du contenu éducatif, portabilité sur tous les navigateurs et appareils.
-	
+
 	\section{Analyse et modélisation}
-	
+
 	\subsection{Importance de la modélisation}
 	La modélisation structure les flux complexes d'enregistrement vidéo, analyse de performance et génération de feedbacks.
-	
+
 	\subsection{Définition UML}
 	UML visualise les interactions entre le système de simulation, le moteur d'analyse et le service de feedback.
-	
+
 	\subsection{Diagramme de use case}
-	
+
 	\subsubsection{Définition}
 	Le diagramme de use case montre comment un candidat interagit avec la plateforme pour s'entraîner aux entretiens.
-	
+
 	\subsubsection{Notre diagramme de use case}
 	Les acteurs sont : Candidat, Mentor Virtuel, Analyseur de Performance. Les use cases incluent : consulter les questions, pratiquer une simulation, enregistrer une réponse, recevoir un feedback, consulter les ressources, suivre la progression.
-	
+
 	\subsection{Diagrammes de séquence}
-	
+
 	\subsubsection{Définition}
 	Un diagramme de séquence illustre le flux d'une simulation d'entretien de bout en bout.
-	
+
 	\subsubsection{Nos diagrammes de séquence}
 	Les diagrammes documentent : démarrer une simulation (sélection question → enregistrement vidéo → traitement → analyse → feedback), lister les ressources (filtrage → affichage organisé), suivre la progression (statistiques → comparaison).
-	
+
 	\subsection{Diagramme de classes}
-	
+
 	\subsubsection{Définition}
 	Le diagramme de classes représente les entités principales du système d'entraînement aux entretiens.
-	
+
 	\subsubsection{Notre diagramme de classes}
 	Les classes incluent : Question, InterviewSimulation, VideoRecording, PerformanceAnalysis, Feedback, Resource, UserProgress, avec leurs attributs et relations.
-	
+
 	\section{Réalisation}
-	
+
 	\subsection{Méthode de gestion}
-	
+
 	\subsubsection{Définition}
 	Gestion structurée de la création de contenu questions, des cas de test d'IA et du développement de l'analyseur.
-	
+
 	\subsubsection{De la théorie à la pratique}
 	Curation de questions réalistes par domaine, raffinage progressif de l'analyseur d'IA, tests avec candidats réels, intération basée sur les résultats.
-	
+
 	\subsection{Environnement de programmation}
-	
+
 	\subsubsection{Outils utilisés}
 	Visual Studio Code, Docker, Git, WebRTC pour les communications vidéo, Jitsi ou OBS pour le streaming.
-	
+
 	\subsubsection{Langages utilisés}
 	C\# pour le backend, TypeScript pour le frontend, Python pour l'analyse NLP et vidéo.
-	
+
 	\subsubsection{Frameworks utilisés}
 	ASP.NET Core, Angular avec WebRTC, Python FastAPI pour l'analyse.
-	
+
 	\subsubsection{Bibliothèques utilisées}
 	OpenAI API (ou LLM local) pour la génération de feedbacks, TensorFlow/PyTorch pour l'analyse du langage corporel, FFmpeg pour le traitement vidéo, OpenSSL pour le chiffrement.
-	
+
 	\subsubsection{Technologies utilisées}
 	PostgreSQL pour les questions et résultats, S3 ou MinIO pour le stockage vidéo, Redis pour les sessions WebRTC, Kafka pour les événements d'analyse.
-	
+
 	\subsection{Bonnes pratiques et assurance des BNF}
 	Respect de la vie privée avec consentement vidéo, analyse d'IA transparente et explicable, feedback constructif et bienveillant, documentation des critères d'évaluation, tests de performance pour les sessions simultanées.
-	
+
 	% ============================================================================
 	% CONCLUSION
 	% ============================================================================
 	\newpage
-	\chapter*{{\headingfont Conclusion}}
+		\chapter*{{\headingfont Conclusion}}
 	\addcontentsline{toc}{chapter}{Conclusion}
 	\markboth{Conclusion}{}
-	
+
 	Ce projet de fin d'année représente l'aboutissement de quatre années d'études en Génie Informatique et l'application concrète de nos acquis académiques. Nous avons conçu et développé une plateforme intégrée composée de quatre applications complémentaires, chacune répondant à un besoin spécifique de l'étudiant ingénieur.
-	
+
 	Le Project Management App offre une solution complète de gestion de projets collaboratifs, avec une architecture microservices robuste et scalable. Le CV Builder App aide les étudiants à construire leur profil professionnel et à identifier les opportunités d'emploi correspondantes. L'Algo App prépare les candidats aux défis téchniques des entretiens d'embauche. Enfin, l'Entretien App simule les conditions d'entretien réelles et fournit des feedbacks personnalisés.
-	
+
 	Au-delà des aspects techniques, ce projet nous a permis de développer nos compétences en gestion de projet, communication en équipe, et résolution de problèmes complexes. Nous avons appris l'importance de la modélisation, de la documentation et des bonnes pratiques de développement logiciel.
-	
+
 	Nous envisageons de nombreuses améliorations futures : l'ajout de l'intelligence artificielle pour une analyse plus poussée, l'intégration avec les réseaux sociaux professionnels, l'expansion du catalogue de problèmes algorithmiques et de questions d'entretien, et l'amélioration de l'expérience utilisateur sur tous les appareils.
-	
+
 	Nous remercions l'École des Hautes Études d'Ingénierie d'Oujda, notre encadrant pédagogique et technique, ainsi que tous nos camarades qui nous ont soutenus tout au long de ce projet. Cette plateforme est notre contribution à l'amélioration de la formation des futurs ingénieurs informatiques.
-	
+
 	% ============================================================================
 	% WEBOGRAPHIE
 	% ============================================================================
@@ -937,31 +1420,31 @@
 	\chapter*{{\headingfont Webographie}}
 	\addcontentsline{toc}{chapter}{Webographie}
 	\markboth{Webographie}{}
-	
+
 	\begin{thebibliography}{99}
-		
+
 		\bibitem{microservices} Sam Newman. \textit{Building Microservices}. O'Reilly Media, 2015.
-		
+
 		\bibitem{aspnetcore} Microsoft Documentation. \textit{ASP.NET Core documentation}. https://docs.microsoft.com/en-us/aspnet/core
-		
+
 		\bibitem{angular} Angular Documentation. \textit{Angular official documentation}. https://angular.io/docs
-		
+
 		\bibitem{docker} Docker Documentation. \textit{Docker official documentation}. https://docs.docker.com
-		
+
 		\bibitem{kafka} Apache Kafka. \textit{Apache Kafka Documentation}. https://kafka.apache.org/documentation/
-		
+
 		\bibitem{uml} Grady Booch, Robert A. Maksimchuk. \textit{Object-Oriented Analysis and Design with Applications}. Addison-Wesley, 2007.
-		
+
 		\bibitem{designpatterns} Gang of Four. \textit{Design Patterns: Elements of Reusable Object-Oriented Software}. Addison-Wesley, 1994.
-		
+
 		\bibitem{restapi} Leonard Richardson, Mike Amundsen. \textit{RESTful Web APIs}. O'Reilly Media, 2013.
-		
+
 		\bibitem{security} Bruce Schneier. \textit{Cryptography Engineering}. Wiley, 2010.
-		
+
 		\bibitem{agile} Ken Beck. \textit{Extreme Programming Explained}. Addison-Wesley, 1999.
-		
+
 	\end{thebibliography}
-	
+
 	% ============================================================================
 	% ANNEXE
 	% ============================================================================
@@ -969,35 +1452,35 @@
 	\chapter*{{\headingfont Annexe}}
 	\addcontentsline{toc}{chapter}{Annexe}
 	\markboth{Annexe}{}
-	
+
 	\section*{A. Architecture globale}
 	L'architecture de la plateforme repose sur une approche microservices avec 14 services indépendants, une base de données PostgreSQL partagée (avec schémas isolés), Redis pour le cache et la liste noire JWT, Apache Kafka pour la messagerie asynchrone, et un frontend Angular monolithique.
-	
+
 	\section*{B. Schémas de bases de données}
 	Chaque microservice possède son schéma logique contenant les tables essentielles. Les relations entre services sont gérées via Kafka et les APIs REST, éliminant les dépendances SQL directes.
-	
+
 	\section*{C. Diagrammes d'architecture}
 	Les diagrammes d'architecture système incluent la vue de déploiement Docker Compose, la vue logique des microservices, et la vue des flux de données via Kafka.
-	
+
 	\section*{D. Exemples de code source}
 	Des extraits de code significatifs illustrent : l'authentification JWT, le pattern Repository, la configuration Kafka, et les interceptors Angular.
-	
+
 	\section*{E. Documentation des APIs}
 	La documentation Swagger est disponible à \texttt{http://localhost:5000/swagger} une fois le projet déployé. Elle inclut toutes les routes, paramètres et schémas de réponse.
-	
+
 	\section*{F. Cas de test}
 	Les cas de test incluent : tests unitaires des services, tests d'intégration des APIs, tests de charge pour valider la performance, et tests de sécurité pour les vulnerabilités courantes.
-	
+
 	\section*{G. Manuel de déploiement}
 	Instructions complètes pour déployer la plateforme en environnement de développement (Docker Compose local), de staging et de production (Kubernetes ou cloud provider).
-	
+
 	\section*{H. Calendrier du projet}
 	Chronologie détaillée des sprints, jalons produits, et dates clés du développement sur les 6 mois du projet.
-	
+
 	\section*{I. Résumé des technologies utilisées}
 	Tableau récapitulatif de tous les langages, frameworks, bibliothèques et services utilisés dans la plateforme.
-	
+
 	\section*{J. Glossaire}
 	Définitions des termes techniques spécifiques au projet : microservices, Kafka, JWT, WebSocket, DAO, DTO, etc.
-	
+
 \end{document}
