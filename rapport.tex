@@ -536,7 +536,7 @@
 	les échanges entre eux sont matérialisés par des \textbf{messages} --- synchrones (appels bloquants,
 	représentés par des flèches pleines) ou asynchrones (représentés par des flèches ouvertes) --- ainsi
 	que des \textbf{messages de retour} (flèches pointillées).
-	
+
 	Le diagramme de séquence permet de modéliser avec précision l'ordre d'exécution des opérations, les
 	conditions de branchement via des \textbf{fragments combinés} (\texttt{alt}, \texttt{opt},
 	\texttt{loop}), et les responsabilités de chaque composant dans un flux donné. Il constitue un
@@ -547,62 +547,62 @@
 	\subsubsection{Nos diagrammes de séquence}
 	Nous avons modélisé cinq diagrammes de séquence couvrant les flux principaux du Project Management
 	App.
-	
+
 	Le premier diagramme (figure \ref{fig:seq-authentification}) illustre le flux d'
 	\textbf{authentification classique} : l'utilisateur soumet ses identifiants via \texttt{POST
 		/login}, le serveur vérifie les credentials en base de données, génère un JWT en cas de succès et
 	retourne les tokens \texttt{access} et \texttt{refresh}, qui sont stockés dans le LocalStorage. En
 	cas d'identifiants invalides, un \texttt{401 Unauthorized} est retourné.
-	
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth]{pictures/authentification.png}
 		\caption{Diagramme de séquence -- Authentification classique}
 		\label{fig:seq-authentification}
 	\end{figure}
-	
+
 	Le second diagramme (figure \ref{fig:seq-oauth}) modélise le flux d'\textbf{authentification OAuth}
 	: l'utilisateur initie la connexion via \texttt{GET auth/oauth/\{provider\}}, est redirigé vers le
 	fournisseur OAuth, accorde ses permissions, et le serveur échange le code d'autorisation contre un
 	token d'accès auprès du provider. L'utilisateur est créé ou récupéré en base, un JWT est généré, et
 	la redirection finale est effectuée avec le token.
-	
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth]{pictures/0auth.png}
 		\caption{Diagramme de séquence -- Authentification OAuth}
 		\label{fig:seq-oauth}
 	\end{figure}
-	
+
 	Le troisième diagramme (figure \ref{fig:seq-environnement}) représente la \textbf{création d'un
 		environnement de travail} : l'utilisateur soumet le formulaire via \texttt{POST /workspaces}, le
 	serveur vérifie le JWT, crée l'environnement en base, désigne automatiquement le créateur comme chef
 	de projet, et initialise les canaux par défaut avant de retourner un \texttt{200 OK}.
-	
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth]{pictures/creation-d'envirenement.png}
 		\caption{Diagramme de séquence -- Création d'un environnement de travail}
 		\label{fig:seq-environnement}
 	\end{figure}
-	
+
 	Le quatrième diagramme (figure \ref{fig:seq-ticket}) décrit la \textbf{création d'un ticket
 		personnel} : le membre clique sur « Créer un ticket », saisit les informations dans le formulaire,
 	qui sont soumises via \texttt{POST /api/tickets}. Le serveur effectue une validation des données,
 	insère le ticket en base, et confirme la création avec un \texttt{201 Created}.
-	
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth]{pictures/creation-ticket.png}
 		\caption{Diagramme de séquence -- Création d'un ticket personnel}
 		\label{fig:seq-ticket}
 	\end{figure}
-	
+
 	Le cinquième diagramme (figure \ref{fig:seq-attribuer}) illustre l'\textbf{attribution d'un ticket}
 	par le chef de projet : ce dernier choisit le membre, la priorité et le deadline, déclenche
 	\texttt{PUT /api/Tickets/\{id\}/assign}, le serveur effectue un contrôle de cohérence sur les dates
 	et la priorité, met à jour le ticket en base, et retourne un \texttt{200 OK} confirmant l'attribution.
-	
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth]{pictures/attribuer-ticket.png}
