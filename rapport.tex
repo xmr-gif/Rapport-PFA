@@ -30,8 +30,8 @@
 % ============================================================================
 % CONFIGURATION DES POLICES
 % ============================================================================
-\setmainfont{Times New Roman}
-\newfontfamily\headingfont[Scale=1.1]{Arial}
+\newcommand{\headingfont}{}
+\newfontfamily\arabicfont{Arabic Typesetting}
 
 % ============================================================================
 % CONFIGURATION DE LA PAGE
@@ -250,11 +250,9 @@
 	
 	Nos remerciements s'adressent également à notre encadrant pédagogique, dont le suivi rigoureux et les recommandations méthodologiques ont contribué à structurer notre démarche et à maintenir la qualité académique de notre travail tout au long de ce projet d'envergure.
 	
-	Nous souhaitons remercier chaleureusement l'ensemble du corps professoral et administratif de l'EHEI. Leurs enseignements, qui allient théorie et pratique, nous ont fourni les fondations solides nécessaires pour concevoir et développer une application aussi ambitieuse. Les compétences techniques, mais aussi les valeurs de rigueur, de persévérance et de travail collaboratif qu'ils nous ont transmises, constituent aujourd'hui notre plus précieux bagage pour aborder notre future vie professionnelle.
+	Enfin, nous souhaitons remercier chaleureusement l'ensemble du corps professoral et administratif de l'EHEI. Leurs enseignements, qui allient théorie et pratique, nous ont fourni les fondations solides nécessaires pour concevoir et développer une application aussi ambitieuse. Les compétences techniques, mais aussi les valeurs de rigueur, de persévérance et de travail collaboratif qu'ils nous ont transmises, constituent aujourd'hui notre plus précieux bagage pour aborder notre future vie professionnelle.
 	
-	Enfin, nous tenons à exprimer notre reconnaissance envers l'EHEI dans son ensemble, qui nous a offert bien plus qu'une formation : une communauté d'apprentissage, un environnement propice à l'innovation et une expérience humaine enrichissante qui restera gravée dans nos mémoires.
-	
-	Ce projet représente pour nous l'aboutissement de quatre années d'efforts, de découvertes et de croissance personnelle. Il symbolise notre passage de l'apprentissage à la création, de l'étudiant à l'ingénieur. Pour cela, we be eternally grateful.
+
 	
 	% ============================================================================
 	% RÉSUMÉ (Français)
@@ -294,29 +292,7 @@
 		\noindent\textbf{Keywords:} computer engineering, skills, learning, professional integration, project management, technical skills development, interview preparation, professional presentation, integrated platform.
 	\end{english}
 	
-	% ============================================================================
-	% ملخص (Arabic)
-	% ============================================================================
-	\newpage
-	\begin{Arabic}
-		\chapter*{ملخص}
-		\addcontentsline{toc}{chapter}{ملخص}
-		
-		\setRTL
-		\setlength{\parindent}{2cm}
-		
-		\indent يقدم هذا التقرير مشروع نهاية السنة الذي تم إنجازه في إطار السنة الرابعة من \textbf{هندسة المعلوميات}. يندرج هذا المشروع ضمن نهج يهدف إلى تطبيق \textbf{الكفاءات} المكتسبة طوال فترة تكويننا وإعدادنا لمتطلبات العالم المهني. الهدف الرئيسي من هذا العمل هو تصميم وتطوير تطبيق يهدف إلى دعم طلاب هندسة المعلوميات في تنظيمهم و\textbf{تعلمهم} وإعدادهم \textbf{للاندماج المهني}.
-		
-		\indent نشأت فكرة المشروع من تجربتنا الطلابية الخاصة ومن تحديد الاحتياجات الحقيقية المتعلقة \textbf{بإدارة المشاريع}، و\textbf{تطوير المهارات التقنية}، و\textbf{التحضير للمقابلات}، وتحسين \textbf{العرض المهني}. وللإجابة على هذه الاحتياجات، تصورنا \textbf{منصة متكاملة} تجمع بين عدة أدوات تكميلية، كل منها مصمم لمرافقة الطالب في بُعد أساسي من مساره الأكاديمي.
-		
-		\indent تمحور نهجنا حول تحليل معمق للاحتياجات، يليه مرحلة تصميم منظمة سمحت بتحديد الهندسة العامة للحل. يتتبع هذا التقرير العملية برمتها، من تحديد الفكرة الأولية إلى إضفاء الطابع الرسمي على المفهوم النهائي، مرورًا بالاختيارات المنهجية التي وجهت عملنا الجماعي.
-		
-		\indent يمثل هذا المشروع فرصة لتطبيق معارفنا، ولكنه أيضًا تجربة تعاونية مثرية، تعزز مهاراتنا في التنظيم والتواصل والتصميم ضمن العمل الجماعي.
-		
-		\vspace{1cm}
-		\noindent\textbf{الكلمات المفتاحية:} هندسة المعلوميات، الكفاءات، التعلم، الاندماج المهني، إدارة المشاريع، تطوير المهارات التقنية، التحضير للمقابلات، العرض المهني، منصة متكاملة.
-	\end{Arabic}
-	
+	% 
 	% ============================================================================
 	% LISTE DES ABRÉVIATIONS
 	% ============================================================================
@@ -419,52 +395,48 @@
 	Le présent rapport retrace l'ensemble de la démarche adoptée pour mener à bien ce projet ambitieux. Il débute par une analyse du contexte et des besoins identifiés, avant de présenter les choix architecturaux et technologiques retenus. Les différentes composantes de la plateforme y seront détaillées à tour de rôle tout au long du document. Les phases de conception et de réalisation y sont ensuite exposées de manière méthodique, suivies d'une présentation des résultats obtenus. Enfin, une réflexion sur les perspectives d'évolution de la solution clôture ce document, témoignant de notre volonté de pérenniser cet outil au service de la communauté étudiante.
 	
 	% ============================================================================
-	% CHAPITRE I : PROJECT MANAGEMENT APP
+	% CHAPITRE I : CONTEXTE GÉNÉRAL DU PROJET
 	% ============================================================================
 	\newpage
 	\thispagestyle{empty}
 	\begin{center}
 		\vspace*{\fill}
-		\chapterheader{Chapitre 1}{Project Management App}
+		\chapterheader{Chapitre 1}{Contexte général du projet}
 		\vspace*{\fill}
 	\end{center}
 	
-	\chapter{Project Management App}
-	\fancyhead[L]{Chapitre 1 : Project Management App}
+	\chapter{Contexte général du projet}
+	\fancyhead[L]{Chapitre 1 : Contexte général du projet}
 	\thispagestyle{fancy}
 	
-	\section{Contexte du projet}
+	\section{Description des besoins}
+	Le domaine de l'ingénierie informatique connaît une transformation profonde, portée par l'essor des technologies numériques, de l'intelligence artificielle et des architectures logicielles distribuées. Dans ce contexte, les étudiants en génie informatique font face à un écosystème fragmenté de ressources dispersées et peu adaptées à leurs besoins spécifiques. Notre plateforme intégrée vise à centraliser plusieurs outils complémentaires au sein d'un même environnement, répondant aux besoins réels identifiés : la gestion efficace de projets collaboratifs, la construction d'un profil professionnel attractif, le perfectionnement des aptitudes en résolution de problèmes algorithmiques, et la préparation méthodique aux processus de recrutement.
 	
-	\subsection{Description des besoins}
-	La plateforme de gestion de projets répond à un besoin essentiel : centraliser les outils de collaboration et de gestion de tâches pour les équipes d'étudiants. Les utilisateurs requièrent une solution intuitive permettant de gérer des projets complexes avec plusieurs membres, des workflows personnalisables et une communication en temps réel.
+	\section{Les besoins fonctionnels}
+	Les besoins fonctionnels de la plateforme couvrent l'ensemble des quatre modules :
+	\begin{itemize}
+		\item \textbf{Gestion de projets} : authentification sécurisée, gestion des utilisateurs, création d'environnements collaboratifs, gestion des équipes, création et suivi des tickets, notifications en temps réel, et journalisation complète des actions.
+		\item \textbf{CV Builder} : création de CV avec templates, génération de portfolio, analyse d'offres d'emploi, matching intelligent CV/offres, analyse linguistique et structurelle du CV, suggestions d'amélioration et calcul de score de qualité.
+		\item \textbf{Algorithmique} : catalogue de problèmes algorithmiques classés par difficulté, éditeur de code intégré, exécution et test de code, solutions optimales avec explications, suivi de progression, leaderboard et badges.
+		\item \textbf{Entretiens} : banque de questions d'entretien, simulations d'entretiens en temps réel, enregistrement et relecture vidéo, analyse de la performance, feedbacks détaillés, suggestions d'amélioration.
+	\end{itemize}
 	
-	\subsection{Besoins fonctionnels}
-	Les besoins fonctionnels incluent : l'authentification sécurisée, la gestion des utilisateurs, la création d'environnements collaboratifs, la gestion des équipes, la création et suivi des tickets, les notifications en temps réel, et la journalisation complète des actions. Au total, 82 besoins fonctionnels ont été identifiés et documentés.
+	\section{Les besoins non fonctionnels}
+	La plateforme doit globalement assurer :
+	\begin{itemize}
+		\item \textbf{Performance} : temps de réponse optimaux via Apache Kafka et Redis pour le cache.
+		\item \textbf{Sécurité} : hachage cryptographique, gestion JWT, OAuth 2.0, sandboxing du code utilisateur, chiffrement des données sensibles.
+		\item \textbf{Scalabilité} : architecture microservices permettant la montée en charge indépendante de chaque module.
+		\item \textbf{Disponibilité} : redémarrage automatique, monitoring continu.
+		\item \textbf{Maintenabilité} : architecture en couches, pattern Repository, principes SOLID.
+		\item \textbf{Portabilité} : conteneurisation Docker.
+		\item \textbf{Interopérabilité} : APIs REST/JSON, WebSocket, intégration avec des services tiers.
+		\item \textbf{Observabilité} : journalisation avec Serilog et Seq, monitoring avec Prometheus.
+	\end{itemize}
 	
-	\subsection{Les besoins non-fonctionnels}
-	La plateforme doit assurer : la performance optimale via Apache Kafka, la sécurité avec hachage cryptographique et gestion JWT, la scalabilité via microservices, la disponibilité avec redémarrage automatique, la maintenabilité avec architecture en couches, la portabilité Docker, l'interopérabilité REST/JSON et WebSocket, ainsi que l'observabilité avec Serilog et Seq.
+	\section{Définitions générales}
 	
-	% ============================================================================
-	% SECTION MODIFIÉE : Analyse et modélisation
-	% ============================================================================
-	\section{Analyse et modélisation}
-	
-	\subsection{Importance de la modélisation}
-	La conception d'une application de gestion de projets collaboratifs implique une complexité
-	architecturale significative : deux niveaux de privilèges distincts, des workflows dynamiques
-	personnalisables, une communication en temps réel via WebSockets, et une architecture microservices
-	composée de plusieurs services interdépendants. Dans ce contexte, la modélisation n'est pas une
-	étape facultative mais une nécessité fondamentale.
-	
-	Elle nous a permis, en premier lieu, d'anticiper les ambiguïtés fonctionnelles avant toute ligne
-	de code écrite, en confrontant les différentes visions des membres de l'équipe autour d'une
-	représentation commune et formelle. En second lieu, elle a servi de contrat entre les développeurs
-	: chaque service, chaque entité et chaque interaction ont été définis et validés collectivement,
-	réduisant ainsi les risques d'incohérence lors de l'intégration. Enfin, la modélisation a facilité
-	la communication avec notre encadrant, en offrant une vue structurée et lisible de nos choix de
-	conception.
-	
-	\subsection{Définition UML}
+	\subsection{UML}
 	UML (Unified Modeling Language), dans sa version 2.x, est un langage de modélisation standardisé
 	par l'OMG (Object Management Group) qui fournit un ensemble de notations graphiques formelles pour
 	visualiser, spécifier et documenter les systèmes logiciels. Il ne s'agit pas d'une méthode de
@@ -478,9 +450,9 @@
 	modélisation visuelle des diagrammes UML, offrant une collaboration en temps réel entre les cinq
 	membres de l'équipe.
 	
-	\subsection{Diagramme de use case}
+	\subsection{Diagrammes}
 	
-	\subsubsection{Définition}
+	\subsubsection{Diagramme de use case}
 	Le diagramme de use case, ou diagramme de cas d'utilisation, est un outil UML qui modélise les
 	interactions entre les \textbf{acteurs} --- entités externes au système, qu'il s'agisse
 	d'utilisateurs humains ou de systèmes tiers --- et les \textbf{fonctionnalités} que le système
@@ -489,13 +461,55 @@
 	
 	Les relations entre cas d'utilisation se déclinent principalement en deux types : la relation
 	\textbf{$\langle\langle$include$\rangle\rangle$}, qui exprime qu'un cas d'utilisation en incorpore
-	systématiquement un autre (par exemple, toute action authentifiée inclut obligatoirement la
-	vérification du token JWT), et la relation
+	systématiquement un autre, et la relation
 	\textbf{$\langle\langle$extend$\rangle\rangle$}, qui modélise un comportement optionnel ou
 	conditionnel venant enrichir un cas de base. Ce diagramme constitue le point d'entrée de l'analyse
 	fonctionnelle et sert de référence tout au long du développement.
 	
-	\subsubsection{Notre diagramme de use case}
+	\subsubsection{Diagramme de séquence}
+	Un diagramme de séquence est un diagramme comportemental UML qui représente les interactions entre
+	les différents participants d'un scénario donné, ordonnées chronologiquement selon un axe vertical
+	du temps. Chaque participant est représenté par une \textbf{ligne de vie} (\textit{lifeline}), et
+	les échanges entre eux sont matérialisés par des \textbf{messages} --- synchrones (appels bloquants,
+	représentés par des flèches pleines) ou asynchrones (représentés par des flèches ouvertes) --- ainsi
+	que des \textbf{messages de retour} (flèches pointillées).
+
+	Le diagramme de séquence permet de modéliser avec précision l'ordre d'exécution des opérations, les
+	conditions de branchement via des \textbf{fragments combinés} (\texttt{alt}, \texttt{opt},
+	\texttt{loop}), et les responsabilités de chaque composant dans un flux donné. Il constitue un
+	complément indispensable au diagramme de use case : là où ce dernier décrit \textit{quoi} fait le
+	système, le diagramme de séquence décrit \textit{comment} et \textit{dans quel ordre} les
+	interactions se produisent entre les acteurs et les composants internes.
+	
+	\subsubsection{Diagramme de classes}
+	Un diagramme de classes représente la structure statique du système, montrant les classes, leurs attributs, méthodes et relations. Il constitue la base de la conception orientée objet et guide directement l'implémentation du code.
+	
+	% ============================================================================
+	% CHAPITRE II : MICROSERVICES
+	% ============================================================================
+	\newpage
+	\thispagestyle{empty}
+	\begin{center}
+		\vspace*{\fill}
+		\chapterheader{Chapitre 2}{Microservices}
+		\vspace*{\fill}
+	\end{center}
+	
+	\chapter{Microservices}
+	\fancyhead[L]{Chapitre 2 : Microservices}
+	\thispagestyle{fancy}
+	
+	% --- 1. Project Management App ---
+	\section{Project Management App}
+	
+	\subsection{Description des besoins fonctionnels}
+	La plateforme de gestion de projets répond à un besoin essentiel : centraliser les outils de collaboration et de gestion de tâches pour les équipes d'étudiants. Les utilisateurs requièrent une solution intuitive permettant de gérer des projets complexes avec plusieurs membres, des workflows personnalisables et une communication en temps réel.
+	
+	Les besoins fonctionnels incluent : l'authentification sécurisée, la gestion des utilisateurs, la création d'environnements collaboratifs, la gestion des équipes, la création et suivi des tickets, les notifications en temps réel, et la journalisation complète des actions. Au total, 82 besoins fonctionnels ont été identifiés et documentés.
+	
+	\subsection{Analyse et modélisation}
+	
+	\subsubsection{Diagramme de use case}
 	Le diagramme de use case du Project Management App, présenté à la figure
 	\ref{fig:usecase-project-management}, modélise l'ensemble des interactions entre les acteurs
 	identifiés et les fonctionnalités de la plateforme.
@@ -527,24 +541,7 @@
 		\label{fig:usecase-project-management}
 	\end{figure}
 	
-	\subsection{Diagrammes de séquence}
-	
-	\subsubsection{Définition}
-	Un diagramme de séquence est un diagramme comportemental UML qui représente les interactions entre
-	les différents participants d'un scénario donné, ordonnées chronologiquement selon un axe vertical
-	du temps. Chaque participant est représenté par une \textbf{ligne de vie} (\textit{lifeline}), et
-	les échanges entre eux sont matérialisés par des \textbf{messages} --- synchrones (appels bloquants,
-	représentés par des flèches pleines) ou asynchrones (représentés par des flèches ouvertes) --- ainsi
-	que des \textbf{messages de retour} (flèches pointillées).
-
-	Le diagramme de séquence permet de modéliser avec précision l'ordre d'exécution des opérations, les
-	conditions de branchement via des \textbf{fragments combinés} (\texttt{alt}, \texttt{opt},
-	\texttt{loop}), et les responsabilités de chaque composant dans un flux donné. Il constitue un
-	complément indispensable au diagramme de use case : là où ce dernier décrit \textit{quoi} fait le
-	système, le diagramme de séquence décrit \textit{comment} et \textit{dans quel ordre} les
-	interactions se produisent entre les acteurs et les composants internes.
-	
-	\subsubsection{Nos diagrammes de séquence}
+	\subsubsection{Diagrammes de séquences}
 	Nous avons modélisé cinq diagrammes de séquence couvrant les flux principaux du Project Management
 	App.
 
@@ -610,307 +607,607 @@
 		\label{fig:seq-attribuer}
 	\end{figure}
 	
-	\subsection{Diagramme de classes}
-	
-	\subsubsection{Définition}
-	Un diagramme de classes représente la structure statique du système, montrant les classes, leurs attributs, méthodes et relations.
-	
-	\subsubsection{Notre diagramme de classes}
+	\subsubsection{Diagramme de classe}
 	Le modèle inclut les entités : User, Environment, Team, Ticket, Workflow, WorkflowStep, Notification, et Log, avec leurs relations d'association, d'héritage et de composition.
 	
-	\section{Réalisation}
+	\subsection{Environnement technologique}
 	
-	\subsection{Méthode de gestion}
+	Les principaux outils et technologies utilisés dans le développement du Project Management App sont présentés ci-dessous.
 	
-	\subsubsection{Définition}
-	La méthode de gestion de projet structure l'organisation du travail, les responsabilités et les livrables pour atteindre les objectifs métier.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=1.5cm]{pictures/vscode.png}\hspace{0.8cm}
+		\includegraphics[height=1.5cm]{pictures/Docker.png}\hspace{0.8cm}
+		\includegraphics[height=1.5cm]{pictures/github.png}\hspace{0.8cm}
+		\includegraphics[height=1.5cm]{pictures/postman.jpg}\hspace{0.8cm}
+		\includegraphics[height=1.5cm]{pictures/csharp.jpg}\hspace{0.8cm}
+		\includegraphics[height=1.5cm]{pictures/typescript.jpg}\hspace{0.8cm}
+		\includegraphics[height=1.5cm]{pictures/sql.png}\hspace{0.8cm}
+		\includegraphics[height=1.5cm]{pictures/html.png}
+		\caption{Technologies et outils utilisés dans le Project Management App}
+		\label{fig:pm-tech}
+	\end{figure}
 	
-	\subsubsection{De la théorie à la pratique}
-	Nous avons adopté une approche hybride combinant Scrum et Kanban, avec des sprints de deux semaines, des daily standups, et un suivi des tâches sur un tableau Kanban.
+	\begin{itemize}
+		\item \textbf{Outils} : Visual Studio Code pour le développement, Docker et Docker Compose pour la conteneurisation, Git et GitHub pour le contrôle de version, Postman pour les tests API, et Seq pour l'agrégation des logs.
+		\item \textbf{Langages} : C\# pour les microservices backend, TypeScript pour le frontend Angular, SQL pour les requêtes de base de données.
+		\item \textbf{Frameworks} : ASP.NET Core pour les services backend, Angular 16+ pour le frontend, Entity Framework Core pour l'accès aux données.
+		\item \textbf{Bibliothèques} :Serilog pour la journalisation, Kafka .NET pour la messagerie asynchrone, SignalR pour les WebSockets.
+		\item \textbf{Technologies} : PostgreSQL pour les bases de données, Redis pour le cache, Apache Kafka pour l'event streaming, JWT pour l'authentification, OAuth 2.0 pour les connexions sociales.
+	\end{itemize}
 	
-	\subsection{Environnement de programmation}
+	\subsection{Captures d'écran}
+	Les captures d'écran suivantes illustrent les principales interfaces du Project Management App.
 	
-	\subsubsection{Outils utilisés}
-	Nous avons utilisé : Visual Studio Code pour le développement, Docker et Docker Compose pour la conteneurisation, Git pour le contrôle de version, Postman pour les tests API, et Seq pour l'agrégation des logs.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{screenshots/env-page.png}
+		\caption{Page des environnements -- sélection et création d'un espace de travail}
+		\label{fig:pm-env}
+	\end{figure}
 	
-	\subsubsection{Langages utilisés}
-	C\# pour les microservices backend, TypeScript pour le frontend Angular, SQL pour les requêtes de base de données.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{screenshots/dashboard.png}
+		\caption{Tableau de bord -- vue d'ensemble avec statistiques des tickets, Kanban personnel et réunions}
+		\label{fig:pm-dashboard}
+	\end{figure}
 	
-	\subsubsection{Frameworks utilisés}
-	ASP.NET Core pour les services backend, Angular 16+ pour le frontend, Entity Framework Core pour l'accès aux données.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{screenshots/tickets-page.png}
+		\caption{Page des tickets -- tableau Kanban avec colonnes To Do, In Progress, Done et filtrage par priorité}
+		\label{fig:pm-tickets}
+	\end{figure}
 	
-	\subsubsection{Bibliothèques utilisées}
-	AutoMapper pour le mapping DTO, Serilog pour la journalisation, Kafka .NET pour la messagerie asynchrone, SignalR pour les WebSockets.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{screenshots/teams-page.png}
+		\caption{Page des équipes -- visualisation et gestion des équipes avec avatars des membres}
+		\label{fig:pm-teams}
+	\end{figure}
 	
-	\subsubsection{Technologies utilisées}
-	PostgreSQL pour les bases de données, Redis pour le cache, Apache Kafka pour l'event streaming, JWT pour l'authentification, OAuth 2.0 pour les connexions sociales.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{screenshots/discussions-page.png}
+		\caption{Page des discussions -- messagerie en temps réel avec canaux, partage de fichiers et mentions}
+		\label{fig:pm-discussions}
+	\end{figure}
 	
-	\subsection{Bonnes pratiques et assurance des BNF}
-	Nous avons implémenté des bonnes pratiques SOLID, utilisé le pattern Repository, appliqué l'injection de dépendances, effectué des tests unitaires et d'intégration, et documenté l'API avec Swagger.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{screenshots/calendar-page.png}
+		\caption{Calendrier -- vue hebdomadaire des réunions avec navigation et création de meetings}
+		\label{fig:pm-calendar}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{screenshots/notifications-page.png}
+		\caption{Page des notifications -- boîte de réception avec filtres par type et marquage de lecture}
+		\label{fig:pm-notifications}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{screenshots/logs-page.png}
+		\caption{Journal d'activité -- traçabilité complète des actions avec filtres par date, service et niveau}
+		\label{fig:pm-logs}
+	\end{figure}
+	
+	% --- 2. CV Builder App ---
+	\section{CV Builder App}
+	
+	\subsection{Description des besoins fonctionnels}
+	La plateforme CV Builder répond à un besoin critique : aider les étudiants à construire un profil professionnel attractif et à identifier les opportunités d'emploi correspondant à leur profil. L'application adopte une architecture full-stack composée d'un backend API Symfony (PHP), d'un frontend Angular, d'un système de messagerie Kafka, d'un moteur de recherche Elasticsearch et d'un cache Redis.
+	
+	Les besoins fonctionnels identifiés couvrent quatre modules complémentaires :
+	\begin{itemize}
+		\item \textbf{CV Builder} : création de CV avec plus de 12 templates prédéfinis (modern, classic, creative, minimal, tech, executive, sidebar-right, compact, etc.), personnalisation avancée des couleurs, polices et mise en page, concepteur de templates personnalisés avec configuration du layout (single, sidebar-left/right, two-column), style d'en-tête, formatage des sections et positionnement des éléments. Duplication de CV existants.
+		\item \textbf{CV Analyzer} : analyse grammaticale et de contenu du CV par intelligence artificielle, détection d'erreurs catégorisées, suggestions d'amélioration et calcul de score de qualité. Possibilité d'analyser un CV uploadé ou un CV existant en base.
+		\item \textbf{CV Compatibility Checker} : vérification de compatibilité entre un CV et une offre d'emploi LinkedIn, calcul d'un score de compatibilité avec suggestions d'amélioration ciblées.
+		\item \textbf{Portfolio Generator} : génération de sites portfolio professionnels à partir des données du CV, avec gestion des portfolios créés, formulaire d'édition et prévisualisation.
+	\end{itemize}
+	
+	Le modèle de données principal est l'entité \textbf{CV}, identifiée par UUID, contenant : un titre, un userId (référence externe), un templateId, une couleur primaire, un statut actif, et un champ JSON structuré regroupant les informations personnelles (nom, email, téléphone, adresse, résumé, photo, liens LinkedIn/GitHub), les expériences professionnelles (entreprise, poste, dates, description, lieu), les formations (institution, diplôme, domaine), les compétences (nom, niveau 1-5, catégorie), les langues (nom, niveau), les projets (nom, description, URL, technologies) et la configuration de style.
+
+	\subsection{Analyse et modélisation}
+	
+	\subsubsection{Diagramme de use case}
+	% TODO: Add diagram from pictures/cv-usecase-diagram.png
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=0.8\textwidth]{pictures/cv-usecase-diagram.png}
+		\textit{[Diagramme de use case du CV Builder App]}
+		\caption{Diagramme de use case -- CV Builder App}
+		\label{fig:cv-usecase}
+	\end{figure}
+	
+	Les acteurs principaux identifiés sont :
+	\begin{itemize}
+		\item \textbf{Utilisateur authentifié} : acteur principal qui interagit avec l'ensemble des fonctionnalités de la plateforme via un token JWT.
+	\end{itemize}
+	
+	Les cas d'utilisation incluent :
+	\begin{itemize}
+		\item Créer un CV en remplissant les sections (informations personnelles, expériences, formations, compétences, langues, projets)
+		\item Sélectionner et personnaliser un template parmi les 12+ modèles disponibles
+		\item Concevoir un template personnalisé via le Custom Template Designer
+		\item Dupliquer un CV existant pour créer une variante
+		\item Exporter un CV en PDF via html2canvas et jsPDF
+		\item Analyser la qualité d'un CV (upload ou depuis la base) avec retour IA
+		\item Vérifier la compatibilité CV/offre d'emploi LinkedIn
+		\item Générer et gérer un portfolio professionnel
+		\item Rechercher des CV via le moteur Elasticsearch (recherche full-text avec analyseurs edge\_ngram)
+	\end{itemize}
+	
+	\subsubsection{Diagrammes de séquences}
+	% TODO: Add diagrams from pictures/cv-sequence-creation.png, pictures/cv-sequence-analysis.png, pictures/cv-sequence-compatibility.png
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=0.8\textwidth]{pictures/cv-sequence-creation.png}
+		\textit{[Diagrammes de séquence du CV Builder App]}
+		\caption{Diagrammes de séquence -- CV Builder App (Création, Analyse, Compatibilité)}
+		\label{fig:cv-sequences}
+	\end{figure}
+	
+	Les diagrammes de séquence documentent les flux principaux :
+	\begin{itemize}
+		\item \textbf{Création de CV} : l'utilisateur remplit le formulaire dans le form-panel → le frontend envoie \texttt{POST /api/cvs} avec le token JWT → le backend valide le token via le JwtAuthenticator, consulte le cache Redis → le CvService crée l'entité CV en base SQL Server → un message \texttt{CvCreatedMessage} est dispatché vers Kafka → le CvEventHandler indexe le CV dans Elasticsearch → retour \texttt{201 Created}.
+		\item \textbf{Analyse de CV} : l'utilisateur upload un fichier ou sélectionne un CV existant → le frontend envoie les données au service d'analyse → l'IA analyse le contenu (grammaire, structure, mots-clés) → retour du score et des suggestions catégorisées.
+		\item \textbf{Compatibilité CV/offre} : l'utilisateur fournit son CV et l'URL LinkedIn de l'offre → le système compare les compétences, l'expérience et les mots-clés → retour du score de compatibilité et des recommandations.
+		\item \textbf{Recherche de CV} : l'utilisateur saisit une requête → le frontend appelle \texttt{GET /api/search/cvs} avec paramètres de filtrage → l'ElasticsearchService exécute une recherche full-text avec filtres (userId, templateId, skills, location) → retour des résultats paginés.
+	\end{itemize}
+	
+	\subsubsection{Diagramme de classe}
+	% TODO: Add diagram from pictures/cv-classes-diagram.png
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=0.8\textwidth]{pictures/cv-classes-diagram.png}
+		\textit{[Diagramme de classes du CV Builder App]}
+		\caption{Diagramme de classes -- CV Builder App}
+		\label{fig:cv-classes}
+	\end{figure}
+	
+	Les classes principales du système sont :
+	\begin{itemize}
+		\item \textbf{Cv} : entité principale avec id (UUID), userId, title, data (JSON), templateId, primaryColor, isActive, createdAt, updatedAt.
+		\item \textbf{CvService} : couche métier gérant les opérations CRUD, la duplication et le dispatch des événements Kafka.
+		\item \textbf{ElasticsearchService} : gestion de l'indexation et de la recherche full-text avec analyseurs edge\_ngram (2-20 grammes).
+		\item \textbf{UserCacheService} : décodage JWT et mise en cache du contexte utilisateur dans Redis (TTL configurable, défaut 300s).
+		\item \textbf{JwtAuthenticator} : validation des tokens Bearer, consultation du cache Redis.
+		\item \textbf{CvEventHandler} : consommateur des messages Kafka (CvCreatedMessage, CvUpdatedMessage, CvDeletedMessage).
+	\end{itemize}
+
+	\subsection{Environnement technologique}
+	
+	% TODO: Ajouter les icônes des technologies du CV Builder App
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[height=1.5cm]{pictures/php.png}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/symfony.jpg}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/angular.jpg}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/typescript.jpg}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/Docker.png}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/redis.jpg}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/kafka.jpg}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/elasticsearch.jpg}
+		\caption{Technologies et outils utilisés dans le CV Builder App}
+		\label{fig:cv-tech}
+	\end{figure}
+	
+	\begin{itemize}
+		\item \textbf{Outils} : Visual Studio Code et PhpStorm pour le développement, Docker et Docker Compose pour la conteneurisation (8 conteneurs : cv\_app, cv\_nginx, cv\_sqlserver, cv\_redis, cv\_kafka, cv\_zookeeper, cv\_elasticsearch, cv\_kibana, cv\_worker), Git et GitHub pour le contrôle de version, Postman pour les tests API.
+		\item \textbf{Langages} : PHP 8.3+ pour le backend API, TypeScript 5.9 pour le frontend Angular, SQL pour les requêtes de base de données.
+		\item \textbf{Frameworks} : Symfony 7.1 pour le backend, Angular 20 pour le frontend, Doctrine ORM 3.2 pour l'accès aux données, Nginx 1.25 comme reverse proxy.
+		\item \textbf{Bibliothèques} : Lexik JWT Bundle 3.1 pour l'authentification JWT, Nelmio CORS Bundle 2.6 pour la sécurité API, Symfony Messenger pour la messagerie asynchrone, TailwindCSS 3.4 pour le styling, Lucide Angular pour l'iconographie, html2canvas et jsPDF pour l'export PDF.
+		\item \textbf{Technologies} : Microsoft SQL Server 2022 pour la base de données, Redis 7.2 pour le cache utilisateur, Apache Kafka avec Zookeeper pour la messagerie événementielle, Elasticsearch 8.13 avec Kibana pour la recherche full-text et le monitoring, PHPUnit 11 et Jasmine/Karma pour les tests.
+	\end{itemize}
+	
+	\subsection{Captures d'écran}
+	Les captures d'écran suivantes illustrent les principales interfaces du CV Builder App.
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/cv-my-cvs.png}
+		
+		\caption{Mes CVs -- tableau de bord avec liste des CVs créés, recherche et tri}
+		\label{fig:cv-my-cvs}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/cv-builder-editor.png}
+		\caption{CV Builder -- éditeur split-panel avec formulaire et prévisualisation en temps réel}
+		\label{fig:cv-builder-editor}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/cv-templates.png}
+		\caption{Templates -- galerie de modèles avec sélecteur de couleur et personnalisation}
+		\label{fig:cv-templates}
+	\end{figure}
+	
+
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/cv-analyzer.png}
+		\caption{CV Analyzer -- analyse IA avec score, erreurs par sévérité et suggestions}
+		\label{fig:cv-analyzer}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/cv-compatibility.png}
+		\caption{CV Compatibility -- vérification de compatibilité CV/offre d'emploi LinkedIn}
+		\label{fig:cv-compatibility}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/cv-portfolio-home.png}
+		
+		\caption{Portfolio -- page d'accueil avec options d'upload CV ou création manuelle}
+		\label{fig:cv-portfolio-home}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/cv-portfolio-preview.png}
+		
+		\caption{Portfolio Preview -- prévisualisation du portfolio généré avec export HTML}
+		\label{fig:cv-portfolio-preview}
+	\end{figure}
+	
+	% --- 3. Problem Solving App ---
+	\section{Problem Solving App}
+	
+	\subsection{Description des besoins fonctionnels}
+	L'application Problem Solving répond au besoin fondamental de préparer les étudiants aux entretiens techniques des grandes entreprises à travers une plateforme de programmation compétitive. Le système repose sur une architecture microservices composée de trois services backend indépendants (Java/Spring Boot), d'un frontend Angular et d'un mécanisme d'exécution de code isolé via Docker.
+	
+	Les besoins fonctionnels identifiés couvrent trois axes principaux :
+	\begin{itemize}
+		\item \textbf{Gestion des langages} : administration des langages de programmation supportés par la plateforme (C, C++, Java, Python, JavaScript), incluant la gestion des versions disponibles et des icônes associées via un panneau d'administration CRUD complet.
+		\item \textbf{Soumission et exécution de code} : soumission de solutions par les utilisateurs, compilation et exécution dans des conteneurs Docker isolés avec sandboxing strict (pas d'accès réseau, mémoire limitée à 64 Mo, CPU limité à 0.5 cœur, limite de 50 processus, système de fichiers en lecture seule avec tmpfs de 10 Mo), retour de résultats avec statut (OK, COMPILATION\_ERROR, RUNTIME\_ERROR, TLE -- Time Limit Exceeded).
+		\item \textbf{Classement et gamification} : système de leaderboard avec points, niveaux et streaks (séries consécutives de soumissions réussies), progression à travers 6 tiers (Bronze → Silver → Gold → Platinum → Diamond → Legendary), personnalisation d'avatar et suivi de la progression quotidienne.
+	\end{itemize}
+
+	\subsection{Analyse et modélisation}
+	
+	\subsubsection{Diagramme de use case}
+	% TODO: Add diagram from pictures/algo-usecase-diagram.png
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=0.8\textwidth]{pictures/algo-usecase-diagram.png}
+		\textit{[Diagramme de use case du Problem Solving App]}
+		\caption{Diagramme de use case -- Problem Solving App}
+		\label{fig:algo-usecase}
+	\end{figure}
+	
+	Les acteurs identifiés sont :
+	\begin{itemize}
+		\item \textbf{Apprenant} : utilisateur principal qui soumet du code, consulte le leaderboard, personnalise son avatar et suit sa progression.
+		\item \textbf{Administrateur} : gère les langages de programmation disponibles (création, modification, suppression) et leurs versions.
+		\item \textbf{Système d'exécution Docker} : acteur système qui compile et exécute le code soumis dans des conteneurs isolés.
+	\end{itemize}
+	
+	Les cas d'utilisation incluent :
+	\begin{itemize}
+		\item Soumettre une solution dans l'un des 5 langages supportés (C, C++, Java, Python, JavaScript)
+		\item Recevoir le résultat d'exécution avec sortie, erreurs et statut
+		\item Consulter le leaderboard global et le top N des meilleurs joueurs
+		\item Personnaliser son avatar et profil
+		\item Sélectionner un mode de jeu
+		\item Gérer les langages de programmation (CRUD administrateur)
+		\item Consulter les tiers et la progression
+	\end{itemize}
+	
+	\subsubsection{Diagrammes de séquences}
+	% TODO: Add diagrams from pictures/algo-sequence-languages.png, pictures/algo-sequence-submission.png, pictures/algo-sequence-leaderboard.png
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=0.8\textwidth]{pictures/algo-sequence-languages.png}
+		\textit{[Diagrammes de séquence du Problem Solving App]}
+		\caption{Diagrammes de séquence -- Problem Solving App (Soumission, Leaderboard, Gestion des langages)}
+		\label{fig:algo-sequences}
+	\end{figure}
+	
+	Les diagrammes de séquence documentent les flux principaux :
+	\begin{itemize}
+		\item \textbf{Soumission de code} : l'utilisateur saisit son code dans l'éditeur et sélectionne le langage → le frontend envoie \texttt{POST /api/submissions} avec le code, l'input et le langage → le Compilers-Service reçoit la requête → l'ExecutionStrategyFactory sélectionne la stratégie appropriée selon le langage (pattern Strategy) → la stratégie écrit le code source dans un fichier temporaire → le DockerExecutor lance un conteneur Docker isolé avec les contraintes de sécurité (\texttt{-{}-network=none}, \texttt{-{}-memory=64m}, \texttt{-{}-cpus=0.5}, \texttt{-{}-cap-drop=ALL}, \texttt{-{}-read-only}) → le conteneur compile et exécute le code → le résultat (output/error/status) est retourné au frontend.
+		\item \textbf{Consultation du leaderboard} : le frontend appelle \texttt{GET /api/leaderboard/top/\{limit\}} → le Leaderboard-Service interroge la base SQL Server → retour des entrées triées par rang avec username, points, level, tier, streak et avatar.
+		\item \textbf{Gestion des langages (Admin)} : l'administrateur accède au panneau d'administration → opérations CRUD via \texttt{/api/languages} → le Languages-Service persiste les modifications en base SQL Server.
+	\end{itemize}
+	
+	\subsubsection{Diagramme de classe}
+	% TODO: Add diagram from pictures/algo-classes-diagram.png
+	\begin{figure}[H]
+		\centering
+		\textit{[Diagramme de classes du Problem Solving App]}
+		\caption{Diagramme de classes -- Problem Solving App}
+		\label{fig:algo-classes}
+	\end{figure}
+	
+	Les classes et entités principales du système sont :
+	\begin{itemize}
+		\item \textbf{ProgrammingLanguage} : entité JPA avec id (Long), label (String, unique), iconPath (LOB), versions (List<String>) -- représente un langage supporté.
+		\item \textbf{LeaderboardEntry} : entité JPA avec id (Long), rank (Integer), username (String, unique), points (Integer), level (Integer), tier (Enum: LEGENDARY, DIAMOND, PLATINUM, GOLD, SILVER, BRONZE), streak (Integer), avatar (LOB).
+		\item \textbf{Language} (Enum) : énumération des langages supportés : C, CPP, JAVA, PYTHON, JAVASCRIPT.
+		\item \textbf{ExecutionStatus} (Enum) : OK, COMPILATION\_ERROR, RUNTIME\_ERROR, TLE.
+		\item \textbf{SubmissionRequest} (Record) : DTO immuable contenant code, input, language.
+		\item \textbf{CompilationResult} (Record) : DTO immuable contenant success, output, error, status.
+		\item \textbf{ExecutionStrategy} (Interface) : interface définissant le contrat d'exécution par langage, implémentée par CExecutionStrategy, CppExecutionStrategy, JavaExecutionStrategy, PythonExecutionStrategy, JavaScriptExecutionStrategy.
+		\item \textbf{ExecutionStrategyFactory} : factory qui auto-discover les stratégies via injection de dépendances Spring et construit la map de résolution dynamiquement.
+		\item \textbf{DockerExecutor} : composant responsable de l'exécution des processus Docker avec les contraintes de sécurité.
+	\end{itemize}
+
+	\subsection{Environnement technologique}
+	
+	% TODO: Ajouter les icônes des technologies du Problem Solving App
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[height=1.5cm]{pictures/java.jpg}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/springboot.jpg}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/angular.jpg}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/typescript.jpg}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/Docker.png}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/redis.jpg}\hspace{0.8cm}
+		 \includegraphics[height=1.5cm]{pictures/sql.png}
+		\caption{Technologies et outils utilisés dans le Problem Solving App}
+		\label{fig:algo-tech}
+	\end{figure}
+	
+	\begin{itemize}
+		\item \textbf{Outils} : IntelliJ IDEA et Visual Studio Code pour le développement, Docker et Docker Compose pour la conteneurisation et le sandboxing de l'exécution de code, Git et GitHub pour le contrôle de version, Maven pour le build des services Java, Postman pour les tests API.
+		\item \textbf{Langages} : Java 17 (Languages-Service, Leaderboard-Service) et Java 21 (Compilers-Service) pour les microservices backend, TypeScript 5.9 pour le frontend Angular.
+		\item \textbf{Frameworks} : Spring Boot 3.3.5 (Languages et Leaderboard) et Spring Boot 3.2.4 (Compilers) pour le backend, Angular 21 pour le frontend, Spring Data JPA avec Hibernate pour l'accès aux données, TailwindCSS 4.1 pour le styling.
+		\item \textbf{Bibliothèques} : Lombok pour la réduction du boilerplate Java, MapStruct pour le mapping objet (Compilers-Service), Spring Validation (Jakarta) pour la validation des entrées, Lucide Angular pour l'iconographie, Vitest pour les tests frontend, Prettier pour le formatage du code.
+		\item \textbf{Technologies} : Microsoft SQL Server 2022 pour les bases de données (languagesdb et leaderboarddb), Redis 7 Alpine pour le cache du Compilers-Service, Docker-in-Docker pour l'exécution isolée du code utilisateur avec images Alpine+GCC (C/C++), Node.js 20 Alpine (JavaScript), et JDK/Python intégrés.
+	\end{itemize}
+	
+	\subsection{Captures d'écran}
+	Les captures d'écran suivantes illustrent les principales interfaces du Problem Solving App.
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/algo-welcome.png}
+		\caption{Welcome -- cutscene d'introduction animée avec mascotte et dialogue}
+		\label{fig:algo-welcome}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/algo-avatar.png}
+		
+		\caption{Avatar Customization -- personnalisation du personnage pixel avec couleurs et nom}
+		\label{fig:algo-avatar}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/algo-mode-selection.png}
+		
+		\caption{Mode Selection -- hub principal avec choix du mode de jeu et carousel des langages}
+		\label{fig:algo-mode-selection}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/algo-problem-list.png}
+		\caption{Problem List -- liste des problèmes avec filtres par difficulté, type et recherche}
+		\label{fig:algo-problem-list}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/algo-code-editor.png}
+		\caption{Code Editor -- éditeur split-pane avec compilateur et énoncé du problème}
+		\label{fig:algo-code-editor}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/algo-leaderboard.png}
+		
+		\caption{Leaderboard -- classement avec podium top-3 et tableau des joueurs}
+		\label{fig:algo-leaderboard}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/algo-tiers.png}
+		
+		\caption{Tiers -- système de rangs Bronze à Legendary avec progression et avantages}
+		\label{fig:algo-tiers}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=\textwidth]{screenshots/algo-admin-languages.png}
+		
+		\caption{Admin  -- interface CRUD de gestion des langages, problemes et evenements de programmation}
+		\label{fig:algo-admin-languages}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[height=10cm]{screenshots/algo-chatbot.png}
+		
+		\caption{AI Chatbot -- assistant IA flottant avec messages et suggestions}
+		\label{fig:algo-chatbot}
+	\end{figure}
+	
+	% --- 4. Entretien App ---
+	\section{Entretien App}
+	
+	\subsection{Description des besoins fonctionnels}
+
+	
+	\subsection{Analyse et modélisation}
+	
+	\subsubsection{Diagramme de use case}
+	% TODO: Add diagram from pictures/interview-usecase-diagram.png
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=0.8\textwidth]{pictures/interview-usecase-diagram.png}
+		\textit{[Diagramme de use case du Interview Preparation App]}
+		\caption{Diagramme de use case -- Interview Preparation App}
+		\label{fig:interview-usecase}
+	\end{figure}
+	
+
+	
+	\subsubsection{Diagrammes de séquences}
+	% TODO: Add diagrams from pictures/interview-sequence-simulation.png, pictures/interview-sequence-feedback.png, pictures/interview-sequence-resources.png
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=0.8\textwidth]{pictures/interview-sequence-simulation.png}
+		\textit{[Diagrammes de séquence du Interview Preparation App]}
+		\caption{Diagrammes de séquence -- Interview Preparation App (Simulation, Feedback, Ressources)}
+		\label{fig:interview-sequences}
+	\end{figure}
+	
+
+	\subsubsection{Diagramme de classe}
+	% TODO: Add diagram from pictures/interview-classes-diagram.png
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=0.8\textwidth]{pictures/interview-classes-diagram.png}
+		\textit{[Diagramme de classes du Interview Preparation App]}
+		\caption{Diagramme de classes -- Interview Preparation App}
+		\label{fig:interview-classes}
+	\end{figure}
+	
+
+	
+	\subsection{Environnement technologique}
+	\begin{itemize}
+		\item \textbf{Outils} :
+		\item \textbf{Langages} : 
+		\item \textbf{Frameworks} :
+		\item \textbf{Bibliothèques} :
+		\item \textbf{Technologies} : 
+	\end{itemize}
+	
+	\subsection{Captures d'écran}
+	Les captures d'écran suivantes illustrent les principales interfaces de l'Interview Preparation App.
+	
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=\textwidth]{screenshots/interview-question-bank.png}
+		\textit{[Capture d'écran à ajouter]}
+		\caption{Banque de questions -- catalogue de questions d'entretien filtrables par domaine}
+		\label{fig:interview-question-bank}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=\textwidth]{screenshots/interview-simulation.png}
+		\textit{[Capture d'écran à ajouter]}
+		\caption{Simulation d'entretien -- interface d'enregistrement vidéo avec question affichée}
+		\label{fig:interview-simulation}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=\textwidth]{screenshots/interview-feedback.png}
+		\textit{[Capture d'écran à ajouter]}
+		\caption{Feedback -- analyse détaillée de la performance avec score et suggestions}
+		\label{fig:interview-feedback}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=\textwidth]{screenshots/interview-progress.png}
+		\textit{[Capture d'écran à ajouter]}
+		\caption{Progression -- suivi des statistiques et comparaison des performances}
+		\label{fig:interview-progress}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=\textwidth]{screenshots/interview-resources.png}
+		\textit{[Capture d'écran à ajouter]}
+		\caption{Ressources -- guides et matériaux organisés par domaine technique et soft skills}
+		\label{fig:interview-resources}
+	\end{figure}
 	
 	% ============================================================================
-	% CHAPITRE II : CV BUILDER APP
+	% CHAPITRE III : MÉTHODOLOGIE DE GESTION ET BONNES PRATIQUES
 	% ============================================================================
 	\newpage
 	\thispagestyle{empty}
 	\begin{center}
 		\vspace*{\fill}
-		\chapterheader{Chapitre 2}{CV Builder App}
+		\chapterheader{Chapitre 3}{Méthodologie de gestion et bonnes pratiques}
 		\vspace*{\fill}
 	\end{center}
 	
-	\chapter{CV Builder App}
-	\fancyhead[L]{Chapitre 2 : CV Builder App}
+	\chapter{Méthodologie de gestion et bonnes pratiques}
+	\fancyhead[L]{Chapitre 3 : Méthodologie de gestion et bonnes pratiques}
 	\thispagestyle{fancy}
 	
-	\section{Contexte du projet}
-	
-	\subsection{Description des besoins}
-	La plateforme de création et d'optimisation de CV répond à un besoin critique : aider les étudiants à construire un profil professionnel attractif et à identifier les opportunités d'emploi correspondant à leur profil. Les utilisateurs demandent des outils simples pour créer un CV, analyser sa qualité et matcher avec des offres d'emploi.
-	
-	\subsection{Besoins fonctionnels}
-	Les besoins fonctionnels incluent : création de CV avec templates, génération de portfolio, analyse d'offres d'emploi, matching intelligent CV/offres, analyse linguistique et structurelle du CV, suggestions d'amélioration et calcul de score de qualité. Au total, 23 besoins fonctionnels ont été identifiés.
-	
-	\subsection{Les besoins non-fonctionnels}
-	La plateforme doit assurer : extraction de données par IA, performance optimale pour la génération de documents, sécurité des données personnelles, scalabilité pour gérer une base croissante de CV et d'offres, disponibilité constante, maintenabilité du code, portabilité Docker et interopérabilité avec LinkedIn.
-	
-	\section{Analyse et modélisation}
-	
-	\subsection{Importance de la modélisation}
-	La modélisation permet de structurer les flux de données complexes entre les services CV Creator, Portfolio Generator, Job Matcher et Analyzer, garantissant une cohérence globale.
-	
-	\subsection{Définition UML}
-	UML fournit la notation formelle pour documenter l'interaction entre les cinq microservices et les flux de génération de CV.
-	
-	\subsection{Diagramme de use case}
-	
-	\subsubsection{Définition}
-	Le diagramme de use case montre comment un utilisateur interagit avec la plateforme pour créer, analyser et matcher son CV avec des offres.
-	
-	\subsubsection{Notre diagramme de use case}
-	Les acteurs sont : Étudiant, Recruteur. Les use cases incluent : créer un CV, sélectionner un template, générer un portfolio, analyser un CV, matcher avec des offres, consulter les offres filtrées.
-	
-	\subsection{Diagrammes de séquence}
-	
-	\subsubsection{Définition}
-	Un diagramme de séquence représente l'ordre chronologique des appels entre les cinq services lors d'une opération donnée.
-	
-	\subsubsection{Nos diagrammes de séquence}
-	Les diagrammes documentent : la création de CV (formulaire → création → stockage), l'analyse de CV (upload → analyse IA → score), le matching (CV → analyse → offres → score de compatibilité).
-	
-	\subsection{Diagramme de classes}
-	
-	\subsubsection{Définition}
-	Le diagramme de classes montre la structure des entités : CV, Portfolio, JobOffer, CVAnalysis, MatchResult et leurs relations.
-	
-	\subsubsection{Notre diagramme de classes}
-	Les classes principales incluent CV (avec sections), Template, Portfolio (avec liens), JobOffer (parsing LinkedIn), CVAnalysisResult (score, suggestions), et MatchResult (score technique/soft skills/expérience).
-	
-	\section{Réalisation}
-	
-	\subsection{Méthode de gestion}
-	
-	\subsubsection{Définition}
-	Organisation itérative du développement avec des points de contrôle sur chaque service.
-	
-	\subsubsection{De la théorie à la pratique}
-	Sprints de deux semaines focalisés sur chaque service, intégration progressive, tests d'API et validation avec des utilisateurs réels.
-	
-	\subsection{Environnement de programmation}
-	
-	\subsubsection{Outils utilisés}
-	Visual Studio Code, Docker Compose, Git, Postman, Insomnia pour tester les APIs de CV, iTextSharp (ou DinkToPdf) pour la génération PDF.
-	
-	\subsubsection{Langages utilisés}
-	C\# pour les services, TypeScript/Angular pour le frontend, Python pour l'extraction de données LinkedIn.
-	
-	\subsubsection{Frameworks utilisés}
-	ASP.NET Core pour les services backend, Angular pour le frontend, Selenium pour le scraping LinkedIn.
-	
-	\subsubsection{Bibliothèques utilisées}
-	AutoMapper, Serilog, OpenAI API (ou Hugging Face) pour l'analyse d'IA, iTextSharp pour PDF generation, Newtonsoft.Json pour la sérialisation.
-	
-	\subsubsection{Technologies utilisées}
-	PostgreSQL pour persister les CV et offres, Redis pour cacher les offres d'emploi, Python FastAPI pour le service d'IA, Kafka pour événements de matching.
-	
-	\subsection{Bonnes pratiques et assurance des BNF}
-	Utilisation de DTOs pour isoler les formats API, validation stricte des entrées, chiffrement des données sensibles, tests de performance pour les analyses IA, documentation Swagger complète.
-	
-	% ============================================================================
-	% CHAPITRE III : ALGO APP
-	% ============================================================================
-	\newpage
-	\thispagestyle{empty}
-	\begin{center}
-		\vspace*{\fill}
-		\chapterheader{Chapitre 3}{Algo App}
-		\vspace*{\fill}
-	\end{center}
-	
-	\chapter{Algo App}
-	\fancyhead[L]{Chapitre 3 : Algo App}
-	\thispagestyle{fancy}
-	
-	\section{Contexte du projet}
-	
-	\subsection{Description des besoins}
-	L'application d'entraînement en algorithmique répond au besoin fondamental : préparer les étudiants aux entretiens techniques des grandes entreprises. Les utilisateurs recherchent une plateforme proposant des problèmes variés, des solutions expliquées et un système de progression.
-	
-	\subsection{Besoins fonctionnels}
-	Les besoins fonctionnels incluent : catalogue de problèmes algorithmiques classés par difficultés, éditeur de code intégré, exécution et test de code, solutions optimales avec explications, suivi de progression, leaderboard et badges. Des fonctionnalités avancées incluent la détection de patterns, statistiques détaillées et suggestions de problèmes similaires.
-	
-	\subsection{Les besoins non-fonctionnels}
-	La plateforme doit assurer : exécution sécurisée et isolée du code utilisateur (sandboxing), performance optimale même avec des entrées volumineuses, scalabilité pour des milliers d'utilisateurs simultanés, disponibilité 24/7, maintenabilité du code éducatif, portabilité et sécurité contre les injections de code.
-	
-	\section{Analyse et modélisation}
-	
-	\subsection{Importance de la modélisation}
-	La modélisation est essentielle pour structurer les flux complexes d'exécution de code, résultats de test et suivi de progression.
-	
-	\subsection{Définition UML}
-	UML permet de visualiser les relations entre le système d'apprentissage, l'éditeur de code, le compilateur/interprète et le moteur de test.
-	
-	\subsection{Diagramme de use case}
-	
-	\subsubsection{Définition}
-	Le diagramme de use case visualise l'interaction entre l'apprenant et la plateforme algorithmique.
-	
-	\subsubsection{Notre diagramme de use case}
-	Les acteurs sont : Apprenant, Instructeur, Système d'Évaluation. Les use cases incluent : consulter les problèmes, coder une solution, tester le code, visualiser la solution, consulter les statistiques, participer au leaderboard.
-	
-	\subsection{Diagrammes de séquence}
-	
-	\subsubsection{Définition}
-	Un diagramme de séquence montre le flux d'exécution lors de la soumission et l'évaluation d'une solution.
-	
-	\subsubsection{Nos diagrammes de séquence}
-	Les diagrammes documentent : soumettre une solution (éditeur → backend → compilateur → test → feedback), consulter le leaderboard (filtrage → tri → affichage), voir les explications (analyse de code → suggestions de patterns).
-	
-	\subsection{Diagramme de classes}
-	
-	\subsubsection{Définition}
-	Le diagramme de classes représente les entités principales du système algorithmique.
-	
-	\subsubsection{Notre diagramme de classes}
-	Les classes incluent : Problem, TestCase, Solution, User, ExecutionResult, Leaderboard, Badge, avec leurs attributs et relations.
-	
-	\section{Réalisation}
-	
-	\subsection{Méthode de gestion}
-	
-	\subsubsection{Définition}
-	Gestion structurée des problèmes, des cas de test et de l'évolution de la plateforme.
-	
-	\subsubsection{De la théorie à la pratique}
-	Ajout progressif de problèmes par difficulté, tests exhaustifs des cas limites, feedback utilisateur intégré au processus d'amélioration.
-	
-	\subsection{Environnement de programmation}
-	
-	\subsubsection{Outils utilisés}
-	Visual Studio Code, Docker pour isoler les exécutions, Git, Jenkins pour l'intégration continue, Prometheus pour le monitoring.
-	
-	\subsubsection{Langages utilisés}
-	C\# pour le backend, TypeScript pour le frontend, Python/Java/C++ (runtime sandboxé) pour l'exécution des solutions utilisateurs.
-	
-	\subsubsection{Frameworks utilisés}
-	ASP.NET Core, Angular, Docker avec namespace isolation pour le sandboxing.
-	
-	\subsubsection{Bibliothèques utilisées}
-	Docker SDK, Roslyn (analyse C\#), Judge0 ou similaire pour l'exécution sécurisée, xUnit pour les tests unitaires.
-	
-	\subsubsection{Technologies utilisées}
-	PostgreSQL pour les problèmes et solutions, Redis pour le cache des leaderboards, Docker pour le sandboxing, Kubernetes pour la scalabilité.
-	
-	\subsection{Bonnes pratiques et assurance des BNF}
-	Sandboxing strict du code utilisateur, timeouts et limite mémoire, tests exhaustifs des cas limites, monitoring continu des performances, documentation claire des algorithmes et patterns.
-	
-	% ============================================================================
-	% CHAPITRE IV : ENTRETIEN APP
-	% ============================================================================
-	\newpage
-	\thispagestyle{empty}
-	\begin{center}
-		\vspace*{\fill}
-		\chapterheader{Chapitre 4}{Entretien App}
-		\vspace*{\fill}
-	\end{center}
-	
-	\chapter{Entretien App}
-	\fancyhead[L]{Chapitre 4 : Entretien App}
-	\thispagestyle{fancy}
-	
-	\section{Contexte du projet}
-	
-	\subsection{Description des besoins}
-	L'application de préparation aux entretiens répond à un besoin crucial : préparer les étudiants aux entretiens techniques et comportementaux menés par les grandes entreprises. Les utilisateurs demandent des simulations d'entretiens, des feedbacks personnalisés et des ressources de développement personnel.
-	
-	\subsection{Besoins fonctionnels}
-	Les besoins fonctionnels incluent : banque de questions d'entretien, simulations d'entretiens en temps réel, enregistrement et relecture vidéo, analyse de la performance, feedbacks détaillés, suggestions d'amélioration, ressources par domaine technique et soft skills.
-	
-	\subsection{Les besoins non-fonctionnels}
-	La plateforme doit assurer : qualité vidéo optimale, latence minimale pour les simulations en temps réel, analyse du langage naturel pour le feedback, scalabilité pour les sessions simultanées, disponibilité constante, maintenabilité du contenu éducatif, portabilité sur tous les navigateurs et appareils.
-	
-	\section{Analyse et modélisation}
-	
-	\subsection{Importance de la modélisation}
-	La modélisation structure les flux complexes d'enregistrement vidéo, analyse de performance et génération de feedbacks.
-	
-	\subsection{Définition UML}
-	UML visualise les interactions entre le système de simulation, le moteur d'analyse et le service de feedback.
-	
-	\subsection{Diagramme de use case}
-	
-	\subsubsection{Définition}
-	Le diagramme de use case montre comment un candidat interagit avec la plateforme pour s'entraîner aux entretiens.
-	
-	\subsubsection{Notre diagramme de use case}
-	Les acteurs sont : Candidat, Mentor Virtuel, Analyseur de Performance. Les use cases incluent : consulter les questions, pratiquer une simulation, enregistrer une réponse, recevoir un feedback, consulter les ressources, suivre la progression.
-	
-	\subsection{Diagrammes de séquence}
-	
-	\subsubsection{Définition}
-	Un diagramme de séquence illustre le flux d'une simulation d'entretien de bout en bout.
-	
-	\subsubsection{Nos diagrammes de séquence}
-	Les diagrammes documentent : démarrer une simulation (sélection question → enregistrement vidéo → traitement → analyse → feedback), lister les ressources (filtrage → affichage organisé), suivre la progression (statistiques → comparaison).
-	
-	\subsection{Diagramme de classes}
-	
-	\subsubsection{Définition}
-	Le diagramme de classes représente les entités principales du système d'entraînement aux entretiens.
-	
-	\subsubsection{Notre diagramme de classes}
-	Les classes incluent : Question, InterviewSimulation, VideoRecording, PerformanceAnalysis, Feedback, Resource, UserProgress, avec leurs attributs et relations.
-	
-	\section{Réalisation}
-	
-	\subsection{Méthode de gestion}
-	
-	\subsubsection{Définition}
-	Gestion structurée de la création de contenu questions, des cas de test d'IA et du développement de l'analyseur.
-	
-	\subsubsection{De la théorie à la pratique}
-	Curation de questions réalistes par domaine, raffinage progressif de l'analyseur d'IA, tests avec candidats réels, intération basée sur les résultats.
-	
-	\subsection{Environnement de programmation}
-	
-	\subsubsection{Outils utilisés}
-	Visual Studio Code, Docker, Git, WebRTC pour les communications vidéo, Jitsi ou OBS pour le streaming.
-	
-	\subsubsection{Langages utilisés}
-	C\# pour le backend, TypeScript pour le frontend, Python pour l'analyse NLP et vidéo.
-	
-	\subsubsection{Frameworks utilisés}
-	ASP.NET Core, Angular avec WebRTC, Python FastAPI pour l'analyse.
-	
-	\subsubsection{Bibliothèques utilisées}
-	OpenAI API (ou LLM local) pour la génération de feedbacks, TensorFlow/PyTorch pour l'analyse du langage corporel, FFmpeg pour le traitement vidéo, OpenSSL pour le chiffrement.
-	
-	\subsubsection{Technologies utilisées}
-	PostgreSQL pour les questions et résultats, S3 ou MinIO pour le stockage vidéo, Redis pour les sessions WebRTC, Kafka pour les événements d'analyse.
-	
-	\subsection{Bonnes pratiques et assurance des BNF}
-	Respect de la vie privée avec consentement vidéo, analyse d'IA transparente et explicable, feedback constructif et bienveillant, documentation des critères d'évaluation, tests de performance pour les sessions simultanées.
+	\section{Méthode de gestion de projet}
+	La méthode de gestion de projet structure l'organisation du travail, les responsabilités et les livrables pour atteindre les objectifs métier. Nous avons adopté la méthodologie Scrum, avec des sprints de deux semaines, des daily standups, des cérémonies de sprint planning, de review et de retrospective. Cette approche agile nous a permis de maintenir un rythme de développement soutenu, de livrer des incréments fonctionnels régulièrement et de nous adapter rapidement aux changements de priorités et aux obstacles rencontrés.
+	
+	\subsection{Jira -- Outil de gestion}
+	Jira a été notre outil central pour la gestion des sprints, le suivi des tâches et la collaboration entre les équipes. Les captures d'écran suivantes illustrent l'organisation du projet.
+	
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=\textwidth]{screenshots/jira-backlog.png}
+		\textit{[Capture d'écran à ajouter]}
+		\caption{Jira Backlog -- Product Backlog avec user stories, épics et priorités}
+		\label{fig:jira-backlog}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=\textwidth]{screenshots/jira-sprint-board.png}
+		\textit{[Capture d'écran à ajouter]}
+		\caption{Jira Sprint Board -- tableau Kanban avec colonnes To Do, In Progress, In Review, Done}
+		\label{fig:jira-sprint-board}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=\textwidth]{screenshots/jira-sprint-planning.png}
+		\textit{[Capture d'écran à ajouter]}
+		\caption{Jira Sprint Planning -- sélection des user stories pour le sprint}
+		\label{fig:jira-sprint-planning}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=\textwidth]{screenshots/jira-issue-details.png}
+		\textit{[Capture d'écran à ajouter]}
+		\caption{Jira Issue Details -- détails d'une user story avec description, assignée, estimation et commentaires}
+		\label{fig:jira-issue-details}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		% \includegraphics[width=\textwidth]{screenshots/jira-burndown.png}
+		\textit{[Capture d'écran à ajouter]}
+		\caption{Jira Burndown Chart -- graphique de progression du sprint}
+		\label{fig:jira-burndown}
+	\end{figure}
+	
+	\section{Bonnes pratiques de développement}
+	Nous avons implémenté les bonnes pratiques suivantes à travers l'ensemble des microservices :
+	\begin{itemize}
+		\item \textbf{Principes SOLID} : respect des cinq principes de conception orientée objet pour un code maintenable et extensible.
+		\item \textbf{Pattern Repository} : isolation de la couche d'accès aux données pour faciliter les tests et la maintenabilité.
+		\item \textbf{Injection de dépendances} : découplage des composants pour une meilleure testabilité.
+		\item \textbf{DTOs} : isolation des formats API pour protéger les modèles internes.
+		\item \textbf{Validation stricte} : validation des entrées à chaque frontière du système.
+		\item \textbf{Tests} : tests unitaires et d'intégration pour assurer la qualité du code.
+		\item \textbf{Documentation API} : documentation Swagger complète pour chaque microservice.
+		\item \textbf{Sécurité} : chiffrement des données sensibles, sandboxing du code utilisateur, respect de la vie privée.
+		\item \textbf{Monitoring} : journalisation structurée avec Serilog, agrégation avec Seq, monitoring avec Prometheus.
+	\end{itemize}
 	
 	% ============================================================================
 	% CONCLUSION
