@@ -1,129 +1,61 @@
 \xpg@aux {}{french}
 \contentsline {chapter}{Dédicace}{i}{chapter*.1}%
 \contentsline {chapter}{Remerciements}{ii}{chapter*.2}%
-\contentsline {chapter}{Résumé}{iv}{chapter*.3}%
+\contentsline {chapter}{Résumé}{iii}{chapter*.3}%
 \xpg@aux {}{english}
-\contentsline {chapter}{Abstract}{v}{chapter*.4}%
+\contentsline {chapter}{Abstract}{iv}{chapter*.4}%
 \xpg@aux {}{french}
-\xpg@aux {}{arabic}
-\contentsline {chapter}{ملخص}{vi}{chapter*.5}%
-\xpg@aux {}{french}
-\contentsline {chapter}{Liste des abréviations}{vii}{chapter*.6}%
-\contentsline {chapter}{Table des figures}{xi}{chapter*.7}%
-\contentsline {chapter}{Liste des tableaux}{xii}{chapter*.8}%
-\contentsline {chapter}{Introduction}{1}{chapter*.10}%
-\contentsline {chapter}{\numberline {1}Project Management App}{4}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Contexte du projet}{4}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Description des besoins}{4}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Besoins fonctionnels}{4}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Les besoins non-fonctionnels}{4}{subsection.1.1.3}%
-\contentsline {section}{\numberline {1.2}Analyse et modélisation}{4}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Importance de la modélisation}{4}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Définition UML}{5}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Diagramme de use case}{5}{subsection.1.2.3}%
-\contentsline {subsubsection}{Définition}{5}{subsection.1.2.3}%
-\contentsline {subsubsection}{Notre diagramme de use case}{6}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Diagrammes de séquence}{7}{subsection.1.2.4}%
-\contentsline {subsubsection}{Définition}{7}{subsection.1.2.4}%
-\contentsline {subsubsection}{Nos diagrammes de séquence}{7}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}Diagramme de classes}{10}{subsection.1.2.5}%
-\contentsline {subsubsection}{Définition}{10}{subsection.1.2.5}%
-\contentsline {subsubsection}{Notre diagramme de classes}{10}{subsection.1.2.5}%
-\contentsline {section}{\numberline {1.3}Réalisation}{10}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Méthode de gestion}{10}{subsection.1.3.1}%
-\contentsline {subsubsection}{Définition}{10}{subsection.1.3.1}%
-\contentsline {subsubsection}{De la théorie à la pratique}{11}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Environnement de programmation}{11}{subsection.1.3.2}%
-\contentsline {subsubsection}{Outils utilisés}{11}{subsection.1.3.2}%
-\contentsline {subsubsection}{Langages utilisés}{11}{subsection.1.3.2}%
-\contentsline {subsubsection}{Frameworks utilisés}{11}{subsection.1.3.2}%
-\contentsline {subsubsection}{Bibliothèques utilisées}{11}{subsection.1.3.2}%
-\contentsline {subsubsection}{Technologies utilisées}{11}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Bonnes pratiques et assurance des BNF}{11}{subsection.1.3.3}%
-\contentsline {chapter}{\numberline {2}CV Builder App}{13}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Contexte du projet}{13}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Description des besoins}{13}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Besoins fonctionnels}{13}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Les besoins non-fonctionnels}{13}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Analyse et modélisation}{13}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Importance de la modélisation}{13}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Définition UML}{14}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Diagramme de use case}{14}{subsection.2.2.3}%
-\contentsline {subsubsection}{Définition}{14}{subsection.2.2.3}%
-\contentsline {subsubsection}{Notre diagramme de use case}{14}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Diagrammes de séquence}{14}{subsection.2.2.4}%
-\contentsline {subsubsection}{Définition}{14}{subsection.2.2.4}%
-\contentsline {subsubsection}{Nos diagrammes de séquence}{14}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Diagramme de classes}{14}{subsection.2.2.5}%
-\contentsline {subsubsection}{Définition}{14}{subsection.2.2.5}%
-\contentsline {subsubsection}{Notre diagramme de classes}{14}{subsection.2.2.5}%
-\contentsline {section}{\numberline {2.3}Réalisation}{15}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Méthode de gestion}{15}{subsection.2.3.1}%
-\contentsline {subsubsection}{Définition}{15}{subsection.2.3.1}%
-\contentsline {subsubsection}{De la théorie à la pratique}{15}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Environnement de programmation}{15}{subsection.2.3.2}%
-\contentsline {subsubsection}{Outils utilisés}{15}{subsection.2.3.2}%
-\contentsline {subsubsection}{Langages utilisés}{15}{subsection.2.3.2}%
-\contentsline {subsubsection}{Frameworks utilisés}{15}{subsection.2.3.2}%
-\contentsline {subsubsection}{Bibliothèques utilisées}{15}{subsection.2.3.2}%
-\contentsline {subsubsection}{Technologies utilisées}{15}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Bonnes pratiques et assurance des BNF}{16}{subsection.2.3.3}%
-\contentsline {chapter}{\numberline {3}Algo App}{18}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Contexte du projet}{18}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Description des besoins}{18}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Besoins fonctionnels}{18}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Les besoins non-fonctionnels}{18}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Analyse et modélisation}{18}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Importance de la modélisation}{18}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Définition UML}{19}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Diagramme de use case}{19}{subsection.3.2.3}%
-\contentsline {subsubsection}{Définition}{19}{subsection.3.2.3}%
-\contentsline {subsubsection}{Notre diagramme de use case}{19}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Diagrammes de séquence}{19}{subsection.3.2.4}%
-\contentsline {subsubsection}{Définition}{19}{subsection.3.2.4}%
-\contentsline {subsubsection}{Nos diagrammes de séquence}{19}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Diagramme de classes}{19}{subsection.3.2.5}%
-\contentsline {subsubsection}{Définition}{19}{subsection.3.2.5}%
-\contentsline {subsubsection}{Notre diagramme de classes}{19}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Réalisation}{20}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Méthode de gestion}{20}{subsection.3.3.1}%
-\contentsline {subsubsection}{Définition}{20}{subsection.3.3.1}%
-\contentsline {subsubsection}{De la théorie à la pratique}{20}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Environnement de programmation}{20}{subsection.3.3.2}%
-\contentsline {subsubsection}{Outils utilisés}{20}{subsection.3.3.2}%
-\contentsline {subsubsection}{Langages utilisés}{20}{subsection.3.3.2}%
-\contentsline {subsubsection}{Frameworks utilisés}{20}{subsection.3.3.2}%
-\contentsline {subsubsection}{Bibliothèques utilisées}{20}{subsection.3.3.2}%
-\contentsline {subsubsection}{Technologies utilisées}{20}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Bonnes pratiques et assurance des BNF}{20}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {4}Entretien App}{22}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Contexte du projet}{22}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Description des besoins}{22}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Besoins fonctionnels}{22}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Les besoins non-fonctionnels}{22}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Analyse et modélisation}{22}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Importance de la modélisation}{22}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Définition UML}{23}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Diagramme de use case}{23}{subsection.4.2.3}%
-\contentsline {subsubsection}{Définition}{23}{subsection.4.2.3}%
-\contentsline {subsubsection}{Notre diagramme de use case}{23}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Diagrammes de séquence}{23}{subsection.4.2.4}%
-\contentsline {subsubsection}{Définition}{23}{subsection.4.2.4}%
-\contentsline {subsubsection}{Nos diagrammes de séquence}{23}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Diagramme de classes}{23}{subsection.4.2.5}%
-\contentsline {subsubsection}{Définition}{23}{subsection.4.2.5}%
-\contentsline {subsubsection}{Notre diagramme de classes}{23}{subsection.4.2.5}%
-\contentsline {section}{\numberline {4.3}Réalisation}{24}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Méthode de gestion}{24}{subsection.4.3.1}%
-\contentsline {subsubsection}{Définition}{24}{subsection.4.3.1}%
-\contentsline {subsubsection}{De la théorie à la pratique}{24}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Environnement de programmation}{24}{subsection.4.3.2}%
-\contentsline {subsubsection}{Outils utilisés}{24}{subsection.4.3.2}%
-\contentsline {subsubsection}{Langages utilisés}{24}{subsection.4.3.2}%
-\contentsline {subsubsection}{Frameworks utilisés}{24}{subsection.4.3.2}%
-\contentsline {subsubsection}{Bibliothèques utilisées}{24}{subsection.4.3.2}%
-\contentsline {subsubsection}{Technologies utilisées}{24}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Bonnes pratiques et assurance des BNF}{24}{subsection.4.3.3}%
-\contentsline {chapter}{Conclusion}{25}{chapter*.11}%
-\contentsline {chapter}{Webographie}{26}{chapter*.12}%
-\contentsline {chapter}{Annexe}{28}{chapter*.14}%
+\contentsline {chapter}{Liste des abréviations}{v}{chapter*.5}%
+\contentsline {chapter}{Table des figures}{viii}{chapter*.6}%
+\contentsline {chapter}{Liste des tableaux}{xi}{chapter*.7}%
+\contentsline {chapter}{Introduction}{1}{chapter*.9}%
+\contentsline {chapter}{\numberline {1}Contexte général du projet}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Description des besoins}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Les besoins fonctionnels}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Les besoins non fonctionnels}{5}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Définitions générales}{5}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}UML}{5}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Diagrammes}{6}{subsection.1.4.2}%
+\contentsline {subsubsection}{Diagramme de use case}{6}{subsection.1.4.2}%
+\contentsline {subsubsection}{Diagramme de séquence}{6}{subsection.1.4.2}%
+\contentsline {subsubsection}{Diagramme de classes}{6}{subsection.1.4.2}%
+\contentsline {chapter}{\numberline {2}Microservices}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Project Management App}{8}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Description des besoins fonctionnels}{8}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Analyse et modélisation}{8}{subsection.2.1.2}%
+\contentsline {subsubsection}{Diagramme de use case}{8}{subsection.2.1.2}%
+\contentsline {subsubsection}{Diagrammes de séquences}{9}{figure.2.1}%
+\contentsline {subsubsection}{Diagramme de classe}{12}{figure.2.6}%
+\contentsline {subsection}{\numberline {2.1.3}Environnement technologique}{12}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Captures d'écran}{13}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}CV Builder App}{17}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Description des besoins fonctionnels}{17}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Analyse et modélisation}{18}{subsection.2.2.2}%
+\contentsline {subsubsection}{Diagramme de use case}{18}{subsection.2.2.2}%
+\contentsline {subsubsection}{Diagrammes de séquences}{19}{figure.2.16}%
+\contentsline {subsubsection}{Diagramme de classe}{19}{figure.2.17}%
+\contentsline {subsection}{\numberline {2.2.3}Environnement technologique}{20}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Captures d'écran}{21}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Problem Solving App}{24}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Description des besoins fonctionnels}{24}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Analyse et modélisation}{25}{subsection.2.3.2}%
+\contentsline {subsubsection}{Diagramme de use case}{25}{subsection.2.3.2}%
+\contentsline {subsubsection}{Diagrammes de séquences}{25}{figure.2.27}%
+\contentsline {subsubsection}{Diagramme de classe}{26}{figure.2.28}%
+\contentsline {subsection}{\numberline {2.3.3}Environnement technologique}{27}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Captures d'écran}{28}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Entretien App}{32}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Description des besoins fonctionnels}{32}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Analyse et modélisation}{32}{subsection.2.4.2}%
+\contentsline {subsubsection}{Diagramme de use case}{32}{subsection.2.4.2}%
+\contentsline {subsubsection}{Diagrammes de séquences}{32}{figure.2.40}%
+\contentsline {subsubsection}{Diagramme de classe}{32}{figure.2.41}%
+\contentsline {subsection}{\numberline {2.4.3}Environnement technologique}{33}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Captures d'écran}{33}{subsection.2.4.4}%
+\contentsline {chapter}{\numberline {3}Méthodologie de gestion et bonnes pratiques}{35}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Méthode de gestion de projet}{35}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Jira -- Outil de gestion}{35}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Bonnes pratiques de développement}{36}{section.3.2}%
+\contentsline {chapter}{Conclusion}{37}{chapter*.10}%
+\contentsline {chapter}{Webographie}{38}{chapter*.11}%
+\contentsline {chapter}{Annexe}{40}{chapter*.13}%
