@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.4.7)  20 APR 2026 14:21
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.4.7)  23 APR 2026 00:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1079,11 +1079,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [7] (rapport.lof [8
 
-] [9])
+])
 \tf@lof=\write6
 \openout6 = `rapport.lof'.
 
- [10] (rapport.lot)
+ [9] [10] (rapport.lot)
 \tf@lot=\write7
 \openout7 = `rapport.lot'.
 
@@ -1260,29 +1260,39 @@ File: screenshots/algo-chatbot.png Graphic file (type bmp)
 <screenshots/algo-chatbot.png>
  [31] [32] [33] [34]
 Chapitre 3.
+File: screenshots/jira-backlog.png Graphic file (type bmp)
+<screenshots/jira-backlog.png>
 [35
 
-] [36] [37
+]
+File: screenshots/jira-sprint-board.png Graphic file (type bmp)
+<screenshots/jira-sprint-board.png>
+File: screenshots/jira-issue-details.png Graphic file (type bmp)
+<screenshots/jira-issue-details.png>
+ [36]
+File: screenshots/jira-burndown.png Graphic file (type bmp)
+<screenshots/jira-burndown.png>
+ [37] [38] [39
 
-] [38
+] [40
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1242--1243
+Underfull \hbox (badness 10000) in paragraph at lines 1234--1235
 [][]\TU/lmr/m/n/12 Microsoft Documentation. \TU/lmr/m/it/12 ASP.NET Core docume
 ntation\TU/lmr/m/n/12 .[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1248--1249
+Underfull \hbox (badness 10000) in paragraph at lines 1240--1241
 [][]\TU/lmr/m/n/12 Apache Kafka. \TU/lmr/m/it/12 Apache Kafka Documentation\TU/
 lmr/m/n/12 . https ://kaf-[]
  []
 
-[39
+[41
 
-] [40
+] [42
 
-] [41] (rapport.aux)
+] [43] (rapport.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1291,12 +1301,12 @@ Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: 6A999B89924B8D57B5C7D49FF654575B;7026.
  ) 
 Here is how much of TeX's memory you used:
- 26785 strings out of 402983
- 567301 string characters out of 5448897
- 1014384 words of memory out of 5000000
- 55018 multiletter control sequences out of 15000+600000
+ 26820 strings out of 402983
+ 568535 string characters out of 5448897
+ 1014267 words of memory out of 5000000
+ 55049 multiletter control sequences out of 15000+600000
  631906 words of font info for 75 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,12n,94p,1201b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,11n,94p,1201b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on rapport.pdf (54 pages).
+Output written on rapport.pdf (56 pages).
