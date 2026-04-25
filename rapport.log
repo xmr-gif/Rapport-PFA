@@ -1,49 +1,88 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.4.7)  23 APR 2026 00:33
-entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**./rapport.tex
-(rapport.tex
+This is LuaHBTeX, Version 1.21.0 (MiKTeX 25.2 NEXT) (format=lualatex 2026.4.25)  25 APR 2026 17:18
+ restricted system commands enabled.
+**rapport.tex
+(./rapport.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended 
+collection.
+luaotfload | conf : Root cache directory is "C:/Users/MANI Mohammed Adil/AppData
+/Local/MiKTeX/luatex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-res
+olved path "C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/luatex
+/luaotfload/fontloader-2023-12-28.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.134
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "C:/Users/MANI Mohammed Adil/AppData
+/Local/MiKTeX/luatex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `tracingstacklevels' in `input_level_string'.
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/base/repo
+rt.cls"
 Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/base/size
+12.clo"
 File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
-)
-\c@part=\count271
-\c@chapter=\count272
-\c@section=\count273
-\c@subsection=\count274
-\c@subsubsection=\count275
-\c@paragraph=\count276
-\c@subparagraph=\count277
-\c@figure=\count278
-\c@table=\count279
+luaotfload | db : Font names database loaded from C:/Users/MANI Mohammed Adil/Ap
+pData/Local/MiKTeX/luatex-cache/generic/names/luaotfload-names.luc.gz)
+\c@part=\count273
+\c@chapter=\count274
+\c@section=\count275
+\c@subsection=\count276
+\c@subsubsection=\count277
+\c@paragraph=\count278
+\c@subparagraph=\count279
+\c@figure=\count280
+\c@table=\count281
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen148
+\bibindent=\dimen147
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.
-sty (C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/
+fontspec.sty"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/l3package
+s/xparse/xparse.sty"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/l3kernel/
+expl3.sty"
 Package: expl3 2026-01-19 L3 programming layer (loader) 
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xetex
-.def
-File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
-\g__graphics_track_int=\count280
-\g__pdfannot_backend_int=\count281
-\g__pdfannot_backend_link_int=\count282
-))
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/l3backend
+/l3backend-luatex.def"
+File: l3backend-luatex.def 2025-10-09 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count282
+Inserting `l3color' in `luaotfload.parse_color'.))
 Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
-
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex.s
-ty
-Package: fontspec-xetex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTe
-X
+Lua module: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/
+fontspec-luatex.sty"
+Package: fontspec-luatex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaT
+eX
 \l__fontspec_script_int=\count283
 \l__fontspec_language_int=\count284
 \l__fontspec_strnum_int=\count285
@@ -55,72 +94,96 @@ X
 \l__fontspec_emdef_int=\count291
 \l__fontspec_strong_int=\count292
 \l__fontspec_strongdef_int=\count293
-\l__fontspec_tmpa_dim=\dimen149
-\l__fontspec_tmpb_dim=\dimen150
-\l__fontspec_tmpc_dim=\dimen151
- (C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+\l__fontspec_tmpa_dim=\dimen148
+\l__fontspec_tmpb_dim=\dimen149
+\l__fontspec_tmpc_dim=\dimen150
+
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/base/font
+enc.sty"
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg)))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\polyglossia.s
-ty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/
+fontspec.cfg")))
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/polygloss
+ia/polyglossia.sty"
 Package: polyglossia 2025/12/01 v2.9 Modern multilingual typesetting with XeLaT
 eX and LuaLaTeX
- (C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/
+etoolbox.sty"
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count294
-) (C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+)
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/iftex/i
+ftex.sty"
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 )
+Lua module: polyglossia 2013/05/11 v1.3 Polyglossia
 \l_xpg_alias_keyvals_int=\count295
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\gloss-latex.l
-df
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/polygloss
+ia/gloss-latex.ldf"
 File: gloss-latex.ldf polyglossia: module for default language
-))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+)
+
+Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz
+
+)
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/geometry/
+geometry.sty"
 Package: geometry 2026/03/07 v6.0 Page Geometry
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/graphics/
+keyval.sty"
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/iftex/i
+fvtex.sty"
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count296
 \Gm@cntv=\count297
 \c@Gm@tempcnt=\count298
-\Gm@bindingoffset=\dimen152
-\Gm@wd@mp=\dimen153
-\Gm@odd@mp=\dimen154
-\Gm@even@mp=\dimen155
-\Gm@layoutwidth=\dimen156
-\Gm@layoutheight=\dimen157
-\Gm@layouthoffset=\dimen158
-\Gm@layoutvoffset=\dimen159
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
 \Gm@dimlist=\toks18
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/geometry/
+geometry.cfg"))
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/graphics/
+graphicx.sty"
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/graphics/
+graphics.sty"
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/graphics/
+trig.sty"
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/graphics-
+cfg/graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: xetex.def on input line 106.
- (C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def
-File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
+Package graphics Info: Driver file: luatex.def on input line 106.
+
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/graphics-
+def/luatex.def"
+File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
 ))
-\Gin@req@height=\dimen160
-\Gin@req@width=\dimen161
-) (C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+\Gin@req@height=\dimen159
+\Gin@req@width=\dimen160
+)
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/float/flo
+at.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count299
 \float@exts=\toks19
@@ -128,7 +191,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks20
 \@floatcapt=\box54
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/fancyhdr/
+fancyhdr.sty"
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip51
@@ -147,16 +211,20 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthR=\skip64
 \@temptokenb=\toks21
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xc
+olor.sty"
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/graphics-
+cfg/color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: xetex.def on input line 274.
+Package xcolor Info: Driver file: luatex.def on input line 274.
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/graphics/
+mathcolor.ltx")
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
@@ -165,53 +233,57 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.st
-y (C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-c
-ommon.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/pgf/front
+endlayer/tikz.sty"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basic
+layer/pgf.sty"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utili
+ties/pgfrcs.sty"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/uti
+lities/pgfutil-common.tex"
 \pgfutil@everybye=\toks22
-\pgfutil@tempdima=\dimen162
-\pgfutil@tempdimb=\dimen163
+\pgfutil@tempdima=\dimen161
+\pgfutil@tempdimb=\dimen162
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-l
-atex.def
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/uti
+lities/pgfutil-latex.def"
 \pgfutil@abb=\box55
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.co
-de.tex
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/uti
+lities/pgfrcs.code.tex"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/pgf
+.revision.tex")
 Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
 ))
 Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.st
-y
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.st
-y
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.
-code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basic
+layer/pgfcore.sty"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/pgf/syste
+mlayer/pgfsys.sty"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/sys
+temlayer/pgfsys.code.tex"
 Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.c
-ode.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/uti
+lities/pgfkeys.code.tex"
 \pgfkeys@pathtoks=\toks23
 \pgfkeys@temptoks=\toks24
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeysli
-braryfiltered.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/uti
+lities/pgfkeyslibraryfiltered.code.tex"
 \pgfkeys@tmptoks=\toks25
 ))
-\pgf@x=\dimen164
-\pgf@y=\dimen165
-\pgf@xa=\dimen166
-\pgf@ya=\dimen167
-\pgf@xb=\dimen168
-\pgf@yb=\dimen169
-\pgf@xc=\dimen170
-\pgf@yc=\dimen171
-\pgf@xd=\dimen172
-\pgf@yd=\dimen173
+\pgf@x=\dimen163
+\pgf@y=\dimen164
+\pgf@xa=\dimen165
+\pgf@ya=\dimen166
+\pgf@xb=\dimen167
+\pgf@yb=\dimen168
+\pgf@xc=\dimen169
+\pgf@yc=\dimen170
+\pgf@xd=\dimen171
+\pgf@yd=\dimen172
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
 \c@pgf@counta=\count300
@@ -223,324 +295,340 @@ braryfiltered.code.tex
 \t@pgf@tokc=\toks28
 \pgf@sys@id@count=\count304
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/sys
+temlayer/pgf.cfg"
 File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
-Driver file for pgf: pgfsys-xetex.def
+Driver file for pgf: pgfsys-luatex.def
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-
-xetex.def
-File: pgfsys-xetex.def 2025-08-29 v3.1.11a (3.1.11a)
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/sys
+temlayer/pgfsys-luatex.def"
+File: pgfsys-luatex.def 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-
-dvipdfmx.def
-File: pgfsys-dvipdfmx.def 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-
-common-pdf.def
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/sys
+temlayer/pgfsys-common-pdf.def"
 File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
-)
-\pgfsys@objnum=\count305
 )))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyss
-oftpath.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/sys
+temlayer/pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfsyssoftpath@smallbuffer@items=\count306
-\pgfsyssoftpath@bigbuffer@items=\count307
+\pgfsyssoftpath@smallbuffer@items=\count305
+\pgfsyssoftpath@bigbuffer@items=\count306
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysp
-rotocol.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/sys
+temlayer/pgfsysprotocol.code.tex"
 File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.
-code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcore.code.tex"
 Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.t
-ex
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.co
-de.tex)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.
-code.tex
-\pgfmath@dimen=\dimen174
-\pgfmath@count=\count308
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmath.code.tex"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathutil.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathparser.code.tex"
+\pgfmath@dimen=\dimen173
+\pgfmath@count=\count307
 \pgfmath@box=\box56
 \pgfmath@toks=\toks29
 \pgfmath@stack@operand=\toks30
 \pgfmath@stack@operation=\toks31
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctio
-ns.code.tex)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctio
-ns.basic.code.tex)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctio
-ns.trigonometric.code.tex)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctio
-ns.random.code.tex)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctio
-ns.comparison.code.tex)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctio
-ns.base.code.tex)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctio
-ns.round.code.tex)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctio
-ns.misc.code.tex)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctio
-ns.integerarithmetics.code.tex)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.co
-de.tex)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.c
-ode.tex
-\c@pgfmathroundto@lastzeros=\count309
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathfunctions.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathfunctions.basic.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathfunctions.trigonometric.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathfunctions.random.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathfunctions.comparison.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathfunctions.base.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathfunctions.round.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathfunctions.misc.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathfunctions.integerarithmetics.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathcalc.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmathfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count308
 ))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.te
-x)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorep
-oints.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfint.code.tex")
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@picminx=\dimen175
-\pgf@picmaxx=\dimen176
-\pgf@picminy=\dimen177
-\pgf@picmaxy=\dimen178
-\pgf@pathminx=\dimen179
-\pgf@pathmaxx=\dimen180
-\pgf@pathminy=\dimen181
-\pgf@pathmaxy=\dimen182
-\pgf@xx=\dimen183
-\pgf@xy=\dimen184
-\pgf@yx=\dimen185
-\pgf@yy=\dimen186
-\pgf@zx=\dimen187
-\pgf@zy=\dimen188
+\pgf@picminx=\dimen174
+\pgf@picmaxx=\dimen175
+\pgf@picminy=\dimen176
+\pgf@picmaxy=\dimen177
+\pgf@pathminx=\dimen178
+\pgf@pathmaxx=\dimen179
+\pgf@pathminy=\dimen180
+\pgf@pathmaxy=\dimen181
+\pgf@xx=\dimen182
+\pgf@xy=\dimen183
+\pgf@yx=\dimen184
+\pgf@yy=\dimen185
+\pgf@zx=\dimen186
+\pgf@zy=\dimen187
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorep
-athconstruct.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@path@lastx=\dimen189
-\pgf@path@lasty=\dimen190
+\pgf@path@lastx=\dimen188
+\pgf@path@lasty=\dimen189
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorep
-athusage.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcorepathusage.code.tex"
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@shorten@end@additional=\dimen191
-\pgf@shorten@start@additional=\dimen192
+\pgf@shorten@end@additional=\dimen190
+\pgf@shorten@start@additional=\dimen191
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcores
-copes.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcorescopes.code.tex"
 File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box57
 \pgf@hbox=\box58
 \pgf@layerbox@main=\box59
-\pgf@picture@serial@count=\count310
+\pgf@picture@serial@count=\count309
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreg
-raphicstate.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcoregraphicstate.code.tex"
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgflinewidth=\dimen193
+\pgflinewidth=\dimen192
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoret
-ransformations.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcoretransformations.code.tex"
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@pt@x=\dimen194
-\pgf@pt@y=\dimen195
-\pgf@pt@temp=\dimen196
+\pgf@pt@x=\dimen193
+\pgf@pt@y=\dimen194
+\pgf@pt@temp=\dimen195
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreq
-uick.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcorequick.code.tex"
 File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreo
-bjects.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcoreobjects.code.tex"
 File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorep
-athprocessing.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcorepathprocessing.code.tex"
 File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorea
-rrows.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcorearrows.code.tex"
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowsep=\dimen197
+\pgfarrowsep=\dimen196
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcores
-hade.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@max=\dimen198
-\pgf@sys@shading@range@num=\count311
-\pgf@shadingcount=\count312
+\pgf@max=\dimen197
+\pgf@sys@shading@range@num=\count310
+\pgf@shadingcount=\count311
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorei
-mage.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcoreimage.code.tex"
 File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoree
-xternal.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcoreexternal.code.tex"
 File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfexternal@startupbox=\box60
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorel
-ayers.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcorelayers.code.tex"
 File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoret
-ransparency.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcoretransparency.code.tex"
 File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorep
-atterns.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcorepatterns.code.tex"
 File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorer
-df.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/bas
+iclayer/pgfcorerdf.code.tex"
 File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulesh
-apes.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mod
+ules/pgfmoduleshapes.code.tex"
 File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodeparttextbox=\box61
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulepl
-ot.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mod
+ules/pgfmoduleplot.code.tex"
 File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp
--version-0-65.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compa
+tibility/pgfcomp-version-0-65.sty"
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@nodesepstart=\dimen199
-\pgf@nodesepend=\dimen256
+\pgf@nodesepstart=\dimen198
+\pgf@nodesepend=\dimen199
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp
--version-1-18.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compa
+tibility/pgfcomp-version-1-18.sty"
 Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
 ))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty
-
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.c
-ode.tex))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.t
-ex))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.co
-de.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utili
+ties/pgffor.sty"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utili
+ties/pgfkeys.sty"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/uti
+lities/pgfkeys.code.tex"))
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/pgf/math/
+pgfmath.sty"
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mat
+h/pgfmath.code.tex"))
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/uti
+lities/pgffor.code.tex"
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
-\pgffor@iter=\dimen257
-\pgffor@skip=\dimen258
+\pgffor@iter=\dimen256
+\pgffor@skip=\dimen257
 \pgffor@stack=\toks32
 \pgffor@toks=\toks33
 ))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\
-tikz.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/fro
+ntendlayer/tikz/tikz.code.tex"
 Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrar
-yplothandlers.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/lib
+raries/pgflibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@plot@mark@count=\count313
-\pgfplotmarksize=\dimen259
+\pgf@plot@mark@count=\count312
+\pgfplotmarksize=\dimen258
 )
-\tikz@lastx=\dimen260
-\tikz@lasty=\dimen261
-\tikz@lastxsaved=\dimen262
-\tikz@lastysaved=\dimen263
-\tikz@lastmovetox=\dimen264
-\tikz@lastmovetoy=\dimen265
-\tikzleveldistance=\dimen266
-\tikzsiblingdistance=\dimen267
+\tikz@lastx=\dimen259
+\tikz@lasty=\dimen260
+\tikz@lastxsaved=\dimen261
+\tikz@lastysaved=\dimen262
+\tikz@lastmovetox=\dimen263
+\tikz@lastmovetoy=\dimen264
+\tikzleveldistance=\dimen265
+\tikzsiblingdistance=\dimen266
 \tikz@figbox=\box62
 \tikz@figbox@bg=\box63
 \tikz@tempbox=\box64
 \tikz@tempbox@bg=\box65
-\tikztreelevel=\count314
-\tikznumberofchildren=\count315
-\tikznumberofcurrentchild=\count316
-\tikz@fig@count=\count317
+\tikztreelevel=\count313
+\tikznumberofchildren=\count314
+\tikznumberofcurrentchild=\count315
+\tikz@fig@count=\count316
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulema
-trix.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/mod
+ules/pgfmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfmatrixcurrentrow=\count318
-\pgfmatrixcurrentcolumn=\count319
-\pgf@matrix@numberofcolumns=\count320
+\pgfmatrixcurrentrow=\count317
+\pgfmatrixcurrentcolumn=\count318
+\pgf@matrix@numberofcolumns=\count319
 )
-\tikz@expandcount=\count321
+\tikz@expandcount=\count320
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/
-libraries\tikzlibrarytopaths.code.tex
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pgf/fro
+ntendlayer/tikz/libraries/tikzlibrarytopaths.code.tex"
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/setspace/
+setspace.sty"
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/enumitem/
+enumitem.sty"
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip65
-\enit@outerparindent=\dimen268
+\enit@outerparindent=\dimen267
 \enit@toks=\toks34
 \enit@inbox=\box66
-\enit@count@id=\count322
-\enitdp@description=\count323
+\enit@count@id=\count321
+\enitdp@description=\count322
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/
+hyperref.sty"
 Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys
+/kvsetkeys.sty"
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefineke
-ys.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/kvdefin
+ekeys/kvdefinekeys.sty"
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pdfesca
+pe/pdfescape.sty"
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds
+/ltxcmds.sty"
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.s
-ty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/pdftexc
+mds/pdftexcmds.sty"
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/infware
+rr/infwarerr.sty"
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode not found.
-)) (C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks35
+))
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/hycolor/h
+ycolor.sty"
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/
+nameref.sty"
 Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/refcount/
+refcount.sty"
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitle
-string.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/gettitl
+estring/gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions
+/kvoptions.sty"
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count324
+\c@section@level=\count323
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/stringe
+nc/stringenc.sty"
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen269
-\Hy@linkcounter=\count325
-\Hy@pagecounter=\count326
- (C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+\@linkdim=\dimen268
+\Hy@linkcounter=\count324
+\Hy@pagecounter=\count325
+
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/
+pd1enc.def"
 File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/intcalc
+/intcalc.sty"
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count327
+\Hy@SavedSpaceFactor=\count326
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/
+puenc.def"
 File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Hyper figures OFF on input line 4201.
@@ -550,26 +638,28 @@ Package hyperref Info: Plain pages OFF on input line 4216.
 Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4468.
-\c@Hy@tempcnt=\count328
+\c@Hy@tempcnt=\count327
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/url/url.s
+ty"
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4807.
-\XeTeXLinkMargin=\dimen270
+\XeTeXLinkMargin=\dimen269
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/bitset/
+bitset.sty"
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.s
-ty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/bigintc
+alc/bigintcalc.sty"
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count329
-\Field@Width=\dimen271
-\Fld@charsize=\dimen272
+\Fld@menulength=\count328
+\Field@Width=\dimen270
+\Fld@charsize=\dimen271
 Package hyperref Info: Hyper figures OFF on input line 6084.
 Package hyperref Info: Link nesting OFF on input line 6089.
 Package hyperref Info: Hyper index ON on input line 6092.
@@ -577,25 +667,24 @@ Package hyperref Info: backreferencing OFF on input line 6099.
 Package hyperref Info: Link coloring OFF on input line 6104.
 Package hyperref Info: Link coloring with OCG OFF on input line 6109.
 Package hyperref Info: PDF/A mode OFF on input line 6114.
-\Hy@abspage=\count330
-\c@Item=\count331
-\c@Hfootnote=\count332
+\Hy@abspage=\count329
+\c@Item=\count330
+\c@Hfootnote=\count331
 )
-Package hyperref Info: Driver (autodetected): hxetex.
- (C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
-File: hxetex.def 2026-01-29 v7.01p Hyperref driver for XeTeX
-\pdfm@box=\box67
-\c@Hy@AnnotLevel=\count333
-\HyField@AnnotCount=\count334
-\Fld@listcount=\count335
-\c@bookmark@seq@number=\count336
+Package hyperref Info: Driver (autodetected): hluatex.
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilec
-heck.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/
+hluatex.def"
+File: hluatex.def 2026-01-29 v7.01p Hyperref driver for luaTeX
+\Fld@listcount=\count332
+\c@bookmark@seq@number=\count333
+
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/rerunfile
+check/rerunfilecheck.sty"
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecou
-nter.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/generic/uniquec
+ounter/uniquecounter.sty"
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -603,349 +692,183 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip66
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/tools/lon
+gtable.sty"
 Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTleft=\skip67
 \LTright=\skip68
 \LTpre=\skip69
 \LTpost=\skip70
-\LTchunksize=\count337
-\LTcapwidth=\dimen273
-\LT@head=\box68
-\LT@firsthead=\box69
-\LT@foot=\box70
-\LT@lastfoot=\box71
-\LT@gbox=\box72
-\LT@cols=\count338
-\LT@rows=\count339
-\c@LT@tables=\count340
-\c@LT@chunks=\count341
-\LT@p@ftn=\toks35
+\LTchunksize=\count334
+\LTcapwidth=\dimen272
+\LT@head=\box67
+\LT@firsthead=\box68
+\LT@foot=\box69
+\LT@lastfoot=\box70
+\LT@gbox=\box71
+\LT@cols=\count335
+\LT@rows=\count336
+\c@LT@tables=\count337
+\c@LT@chunks=\count338
+\LT@p@ftn=\toks36
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/tools/arr
+ay.sty"
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen274
-\ar@mcellbox=\box73
-\extrarowheight=\dimen275
-\NC@list=\toks36
+\col@sep=\dimen273
+\ar@mcellbox=\box72
+\extrarowheight=\dimen274
+\NC@list=\toks37
 \extratabsurround=\skip71
 \backup@length=\skip72
-\ar@cellbox=\box74
+\ar@cellbox=\box73
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/colortbl/
+colortbl.sty"
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
-\everycr=\toks37
+\everycr=\toks38
 \minrowclearance=\skip73
-\rownum=\count342
+\rownum=\count339
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/booktabs/
+booktabs.sty"
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen276
-\lightrulewidth=\dimen277
-\cmidrulewidth=\dimen278
-\belowrulesep=\dimen279
-\belowbottomsep=\dimen280
-\aboverulesep=\dimen281
-\abovetopsep=\dimen282
-\cmidrulesep=\dimen283
-\cmidrulekern=\dimen284
-\defaultaddspace=\dimen285
-\@cmidla=\count343
-\@cmidlb=\count344
-\@aboverulesep=\dimen286
-\@belowrulesep=\dimen287
-\@thisruleclass=\count345
-\@lastruleclass=\count346
-\@thisrulewidth=\dimen288
+\heavyrulewidth=\dimen275
+\lightrulewidth=\dimen276
+\cmidrulewidth=\dimen277
+\belowrulesep=\dimen278
+\belowbottomsep=\dimen279
+\aboverulesep=\dimen280
+\abovetopsep=\dimen281
+\cmidrulesep=\dimen282
+\cmidrulekern=\dimen283
+\defaultaddspace=\dimen284
+\@cmidla=\count340
+\@cmidlb=\count341
+\@aboverulesep=\dimen285
+\@belowrulesep=\dimen286
+\@thisruleclass=\count342
+\@lastruleclass=\count343
+\@thisrulewidth=\dimen287
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/multirow/
+multirow.sty"
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip74
-\multirow@cntb=\count347
+\multirow@cntb=\count344
 \multirow@dima=\skip75
-\bigstrutjot=\dimen289
+\bigstrutjot=\dimen288
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/
+titlesec.sty"
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
-\ttl@box=\box75
+\ttl@box=\box74
 \beforetitleunit=\skip76
 \aftertitleunit=\skip77
-\ttl@plus=\dimen290
-\ttl@minus=\dimen291
-\ttl@toksa=\toks38
-\titlewidth=\dimen292
-\titlewidthlast=\dimen293
-\titlewidthfirst=\dimen294
+\ttl@plus=\dimen289
+\ttl@minus=\dimen290
+\ttl@toksa=\toks39
+\titlewidth=\dimen291
+\titlewidthlast=\dimen292
+\titlewidthfirst=\dimen293
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\gloss-french.
-ldf
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/polygloss
+ia/gloss-french.ldf"
 File: gloss-french.ldf polyglossia: module for French
-\french@openbrackets=\XeTeXcharclass1
-\french@closebrackets=\XeTeXcharclass2
-\french@questionexclamation=\XeTeXcharclass3
-\french@punctthin=\XeTeXcharclass4
-\french@punctthick=\XeTeXcharclass5
-\french@punctguillstart=\XeTeXcharclass6
-\french@punctguillend=\XeTeXcharclass7
-)
+Module polyglossia Info: Language data for french
+(polyglossia)            hyphenation	
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            loader	loadhyph-fr.tex
+(polyglossia)            patterns	hyph-fr.pat.txt
+(polyglossia)            righthyphenmin	2
+(polyglossia)            synonyms	patois,francais on input line 17
+Module polyglossia Info: Language french was not yet loaded; created with id 2 o
+n input line 17
+Lua-only attribute polyglossia_punct = 4
+Inserting `polyglossia-punct.process' in `pre_shaping_filter'.)
 
 Package polyglossia Info: Default language is french
 
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\gloss-english
-.ldf
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/polygloss
+ia/gloss-english.ldf"
 File: gloss-english.ldf polyglossia: module for English
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\gloss-arabic.
-ldf
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/polygloss
+ia/gloss-arabic.ldf"
 File: gloss-arabic.ldf polyglossia: module for Arabic
- (C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\bidi.sty
-Package: bidi 2026/01/08 v26.01.08 (Release Iran) Bidirectional typesetting in 
-plain TeX and LaTeX
 
-****************************************************
-* 
-* bidi package (Bidirectional typesetting with
-* plain TeX and LaTeX formats in XeTeX and LuaTeX engines)
-* 
-* Description: A convenient interface for
-* typesetting bidirectional texts in plain TeX
-* and LaTeX. The package includes adaptations
-* for use with many other commonly-used packages.
-* 
-* Copyright (c) 2007--2026 Vafa Khalighi
-* Copyright (c) 2018--2020 bidi-tex GitHub organization
-* 
-* v26.01.08 (Release Iran), 2026/01/08
-* 
-* License: LaTeX Project Public License, version
-* 1.3c or higher (your choice)
-* 
-* Location on CTAN: /macros/unicodetex/generic/bidi
-* 
-* Issue tracker: https://github.com/xepersian/bidi/issues
-* 
-* Primary author of bidi package: Vafa Khalighi.
-* 
-****************************************************
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\biditools.sty
-Package: biditools 2025/12/19 v2.9 Programming tools for bidi package
-\@bidi@envbody=\toks39
-\@bidi@emptytoks=\toks40
-\bidi@poscount=\count348
-\bidi@tempcountb=\count349
-\bidi@temptoksa=\toks41
-\bidi@temptoksb=\toks42
-\bidi@dummies=\count350
-\bidi@are@these@correct=\toks43
-\bidi@toks@lista=\toks44
-\bidi@toks@listb=\toks45
-\bidi@stack@length=\count351
-\bidi@empty@stack=\toks46
-\bidi@looprepeat@depth=\count352
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
-Package: zref-abspage 2026-03-07 v2.37 Module abspage for zref (HO)
-
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
-Package: zref-base 2026-03-07 v2.37 Module base for zref (HO)
-
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
-Package zref Info: New property list: main on input line 767.
-Package zref Info: New property: default on input line 768.
-Package zref Info: New property: page on input line 769.
-)
-\c@abspage=\count353
-Package zref Info: New property: abspage on input line 67.
-)
-\@bidi@copyins@=\insert252
-\bidi@typesethour=\count354
-\bidi@typesetminute=\count355
-
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\latex-xetex-bidi.def
-File: latex-xetex-bidi.def 2025/12/19 v1.5.6 bidi adaptations for `latex.ltx' f
-or XeTeX engine
-\bidi@n@everypar=\toks47
-LaTeX Info: Redefining \centerline on input line 317.
-LaTeX Info: Redefining \leftline on input line 326.
-LaTeX Info: Redefining \rightline on input line 327.
-LaTeX Info: Redefining \underline on input line 335.
-\bidi@column@check@number=\count356
-
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\footnote-xetex-bidi.
-def
-File: footnote-xetex-bidi.def 2025/09/30 v1.6 bidi footnote macros for XeTeX en
-gine
-\c@footdir@label=\count357
-\footdir@toks=\toks48
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\report-xetex-bidi.de
-f
-File: report-xetex-bidi.def 2025/12/19 v1.3 bidi adaptations for standard repor
-t class for XeTeX engine
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\array-xetex-bidi.def
-File: array-xetex-bidi.def 2025/12/06 v0.8 bidi adaptations for array package f
-or XeTeX engine
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\color-xetex-bidi.def
-File: color-xetex-bidi.def 2013/04/08 v0.2 bidi adaptations for color package f
-or XeTeX engine
-LaTeX Info: Redefining \color on input line 50.
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\colortbl-xetex-bidi.
-def
-File: colortbl-xetex-bidi.def 2012/06/10 v0.2 bidi adaptations for colortbl pac
-kage for XeTeX engine
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\fancyhdr-xetex-bidi.
-def
-File: fancyhdr-xetex-bidi.def 2025/09/03 v1.0 bidi adaptations for fancyhdr pac
-kage for XeTeX engine
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\float-xetex-bidi.def
-File: float-xetex-bidi.def 2013/04/04 v0.2 bidi adaptations for float package f
-or XeTeX engine
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\geometry-xetex-bidi.
-def
-File: geometry-xetex-bidi.def 2017/01/14 v0.2 bidi adaptations for geometry pac
-kage for XeTeX engine
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\graphicx-xetex-bidi.
-def
-File: graphicx-xetex-bidi.def 2017/06/17 v0.5 bidi adaptations for graphicx pac
-kage for XeTeX engine
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\hyperref-xetex-bidi.
-def
-File: hyperref-xetex-bidi.def 2025/12/06 v1.5 bidi adaptations for hyperref pac
-kage for XeTeX engine
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\longtable-xetex-bidi
-.def
-File: longtable-xetex-bidi.def 2025/01/05 v0.8 bidi adaptations for longtable p
-ackage for XeTeX engine
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\pgfsys-xetex-bidi.de
-f
-File: pgfsys-xetex-bidi.def 2025/01/05 v0.1 bidi adaptations for pgfsys package
- for XeTeX engine
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\titlesec-xetex-bidi.
-def
-File: titlesec-xetex-bidi.def 2010/07/25 v0.1 bidi adaptations for titlesec pac
-kage for XeTeX engine
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\xcolor-xetex-bidi.de
-f
-File: xcolor-xetex-bidi.def 2022/06/13 v0.3 bidi adaptations for xcolor package
- for XeTeX engine
-LaTeX Info: Redefining \color on input line 49.
-LaTeX Info: Redefining \bidicolor on input line 92.
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\pgfcorescopes.code-x
-etex-bidi.def
-File: pgfcorescopes.code-xetex-bidi.def 2015/11/14 v0.1 bidi adaptations for pg
-f package for XeTeX engine
-))
-\bidi@digits=\count358
-\bidi@digits@charclass=\XeTeXcharclass8
-\bidi@sepmark@charclass=\XeTeXcharclass9
-)
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\arabicnumbers
-.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/lualatex/luabid
+i/luabidi.sty"
+Package: luabidi 2026/04/10 v1.0 Bidirectional typesetting in LuaTeX
+\everyvbox=\toks40
+\luabidi@cctab=\catcodetable14
+\footnoterulewidth=\skip78
+Lua function luabidi@auto@fnr = 32
+Inserting `luabidi.pre_output' in `pre_output_filter'.
+Inserting `luabidi.post_output' in `buildpage_filter'.
+Inserting `luabidi.remove_spurious_enddir' in `pre_linebreak_filter'.)
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/polygloss
+ia/arabicnumbers.sty"
 Package: arabicnumbers 2010/03/18 v0.2 Formatting of Arabic and Farsi digits an
 d of Arabic abjad numerals
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\hijrical.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/polygloss
+ia/hijrical.sty"
 Package: hijrical 2010/07/12 v0.2 Islamic calendar
 
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/tools/cal
+c.sty"
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
-\calc@Acount=\count359
-\calc@Bcount=\count360
-\calc@Adimen=\dimen295
-\calc@Bdimen=\dimen296
-\calc@Askip=\skip78
-\calc@Bskip=\skip79
+\calc@Acount=\count345
+\calc@Bcount=\count346
+\calc@Adimen=\dimen294
+\calc@Bdimen=\dimen295
+\calc@Askip=\skip79
+\calc@Bskip=\skip80
 LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
-\calc@Ccount=\count361
-\calc@Cskip=\skip80
+\calc@Ccount=\count347
+\calc@Cskip=\skip81
 )
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\cal-util.def
-\c@tmpA=\count362
-\c@tmpB=\count363
-\c@tmpC=\count364
-\c@tmpD=\count365
-\c@tmpE=\count366
-\c@tmpF=\count367
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/polygloss
+ia/cal-util.def"
+\c@tmpA=\count348
+\c@tmpB=\count349
+\c@tmpC=\count350
+\c@tmpD=\count351
+\c@tmpE=\count352
+\c@tmpF=\count353
 )
-\c@Hijriday=\count368
-\c@Hijrimonth=\count369
-\c@Hijriyear=\count370
+\c@Hijriday=\count354
+\c@Hijrimonth=\count355
+\c@Hijriyear=\count356
 ))
+\c@rowcounter=\count357
+Package hyperref Info: Option `colorlinks' set `true' on input line 145.
+ (./rapport.aux)
+\openout1 = rapport.aux
 
-Package fontspec Info: 
-(fontspec)             Could not resolve font "Arabic Typesetting/BI" (it
-(fontspec)             probably doesn't exist).
-
-
-Package fontspec Info: 
-(fontspec)             Could not resolve font "Arabic Typesetting/B" (it
-(fontspec)             probably doesn't exist).
-
-
-Package fontspec Info: 
-(fontspec)             Could not resolve font "Arabic Typesetting/I" (it
-(fontspec)             probably doesn't exist).
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'ArabicTypesetting(0)' created for font
-(fontspec)             'Arabic Typesetting' with options [].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Arabic
-(fontspec)             Typesetting/OT:script=latn;language=dflt;"
-
-\c@rowcounter=\count371
-Package hyperref Info: Option `colorlinks' set `true' on input line 144.
-
-(C:\Users\Unk\AppData\Local\Programs\MiKTeX\tex/latex/bidi\float-xetex-bidi.def
-File: float-xetex-bidi.def 2013/04/04 v0.2 bidi adaptations for float package f
-or XeTeX engine
-) (rapport.aux)
-\openout1 = `rapport.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
 
 Package fontspec Info: 
 (fontspec)             Adjusting the maths setup (use [no-math] to avoid
@@ -953,63 +876,63 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 151.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 151.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 151.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 151.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 151.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 151.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 151.
-LaTeX Font Info:    Redeclaring math accent \check on input line 151.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 151.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 151.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 151.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 151.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 151.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 152.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 152.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 152.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 152.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 152.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 152.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 152.
+LaTeX Font Info:    Redeclaring math accent \check on input line 152.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 152.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 152.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 152.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 152.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 151.
+(Font)              `operators' in the math version `normal' on input line 152.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 151.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 152.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 151.
+(Font)              `operators' in the math version `bold' on input line 152.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 151.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 152.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 151.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 152.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 151.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 152.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 151.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 152.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 151.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 152.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 151.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 152.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 151.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 152.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 151.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 152.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 151.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 152.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 151.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 152.
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: xetex
+*geometry* detected driver: luatex
 *geometry* verbose mode - [ preamble ] result:
-* driver: xetex
+* driver: luatex
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -1040,273 +963,529 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 151.
-(rapport.out) (rapport.out)
-\@outlinefile=\write4
-\openout4 = `rapport.out'.
 
-File: pictures/ehei.png Graphic file (type bmp)
-<pictures/ehei.png>
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/context/base/mk
+ii/supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count358
+\scratchdimen=\dimen296
+\scratchbox=\box75
+\nofMPsegments=\count359
+\nofMParguments=\count360
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count361
+\MPscratchDim=\dimen297
+\MPnumerator=\count362
+\makeMPintoPDFobject=\count363
+\everyMPtoPDFconversion=\toks42
+)
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-
+pkg/epstopdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+("C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/tex/latex/00miktex/
+epstopdf-sys.cfg"
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring ON on input line 152.
+ (./rapport.out) (./rapport.out)
+\@outlinefile=\write4
+
+\openout4 = rapport.out
+<pictures/ehei.png, id=194, 104.1345pt x 60.444pt>
+File: pictures/ehei.png Graphic file (type png)
+<use pictures/ehei.png>
+Package luatex.def Info: pictures/ehei.png  used on input line 160.
+(luatex.def)             Requested size: 113.81102pt x 66.06065pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 202.
+(Font)              <14.4> on input line 203.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 202.
+(Font)              <7> on input line 203.
  [1
 
-] [1] [1
+{C:/Users/MANI Mohammed Adil/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}<.
+/pictures/ehei.png>]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1] [1
 
 ] [2
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 264.
+(Font)              <12> on input line 265.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 264.
+(Font)              <8> on input line 265.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 264.
+(Font)              <6> on input line 265.
  [3
 
 ] [4
 
 ] [5
 
-] (rapport.toc [6
+] (./rapport.lof [6
 
 ])
-\tf@toc=\write5
-\openout5 = `rapport.toc'.
+\tf@lof=\write5
 
+\openout5 = rapport.lof
+ [7] [8] (./rapport.lot)
+\tf@lot=\write6
 
-[7] (rapport.lof [8
+\openout6 = rapport.lot
+ [9
+
+]
+(./rapport.toc [10
 
 ])
-\tf@lof=\write6
-\openout6 = `rapport.lof'.
+\tf@toc=\write7
 
- [9] [10] (rapport.lot)
-\tf@lot=\write7
-\openout7 = `rapport.lot'.
-
- [11
-
-] [1
+\openout7 = rapport.toc
+ [11]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1
 
 
 ] [2] [3]
 Chapitre 1.
 [4
 
-] [5] [6] [7]
+] [5]
+Overfull \hbox (9.01083pt too wide) in paragraph at lines 475--476
+[]\TU/lmr/m/n/12 Les be-soins non fonc-tion-nels (BNF) re-pré-sentent les at-tr
+i-buts de qua-li-té et les contraintes
+ []
+
+[6] [7] [8] [9]
 Chapitre 2.
-[8
+[10
 
 ]
-File: pictures/usecaseprojectmanagementapp.png Graphic file (type bmp)
-<pictures/usecaseprojectmanagementapp.png>
-File: pictures/authentification.png Graphic file (type bmp)
-<pictures/authentification.png>
- [9]
-File: pictures/0auth.png Graphic file (type bmp)
-<pictures/0auth.png>
- [10]
-File: pictures/creation-d'envirenement.png Graphic file (type bmp)
-<pictures/creation-d'envirenement.png>
-File: pictures/creation-ticket.png Graphic file (type bmp)
-<pictures/creation-ticket.png>
+<pictures/usecaseprojectmanagementapp.png, id=476, 1286.55656pt x 558.58687pt>
+File: pictures/usecaseprojectmanagementapp.png Graphic file (type png)
+<use pictures/usecaseprojectmanagementapp.png>
+Package luatex.def Info: pictures/usecaseprojectmanagementapp.png  used on inpu
+t line 592.
+(luatex.def)             Requested size: 455.24411pt x 197.6562pt.
+<pictures/authentification.png, id=478, 3281.25874pt x 2045.6425pt>
+File: pictures/authentification.png Graphic file (type png)
+<use pictures/authentification.png>
+Package luatex.def Info: pictures/authentification.png  used on input line 609.
 
-Overfull \hbox (80.45195pt too wide) in paragraph at lines 598--602
-[]\TU/lmr/m/n/12 projet : ce dernier choisit le membre, la priorité et le deadl
-ine, déclenche \TU/lmtt/m/n/12 PUT /api/Tickets/{id}/assign\TU/lmr/m/n/12 ,[]
+(luatex.def)             Requested size: 455.24411pt x 283.79724pt.
+ [11<./pictures/usecaseprojectmanagementapp.png>]
+<pictures/0auth.png, id=487, 3281.25874pt x 1804.7425pt>
+File: pictures/0auth.png Graphic file (type png)
+<use pictures/0auth.png>
+Package luatex.def Info: pictures/0auth.png  used on input line 622.
+(luatex.def)             Requested size: 455.24411pt x 250.37656pt.
+ [12<./pictures/authentification.png><./pictures/0auth.png>]
+<pictures/creation-d'envirenement.png, id=496, 3072.47874pt x 1458.44875pt>
+File: pictures/creation-d'envirenement.png Graphic file (type png)
+<use pictures/creation-d'envirenement.png>
+Package luatex.def Info: pictures/creation-d'envirenement.png  used on input li
+ne 634.
+(luatex.def)             Requested size: 455.24411pt x 216.08737pt.
+<pictures/creation-ticket.png, id=498, 3025.3025pt x 1691.31876pt>
+File: pictures/creation-ticket.png Graphic file (type png)
+<use pictures/creation-ticket.png>
+Package luatex.def Info: pictures/creation-ticket.png  used on input line 646.
+(luatex.def)             Requested size: 455.24411pt x 254.4869pt.
+
+Overfull \hbox (80.45193pt too wide) in paragraph at lines 651--655
+\TU/lmr/m/n/12 pro-jet : ce der-nier choi-sit le membre, la prio-ri-té et le de
+ad-line, dé-clenche \TU/lmtt/m/n/12 PUT /api/Tickets/{id}/assign\TU/lmr/m/n/12
+ ,
  []
 
-[11]
-File: pictures/attribuer-ticket.png Graphic file (type bmp)
-<pictures/attribuer-ticket.png>
-File: pictures/vscode.png Graphic file (type bmp)
-<pictures/vscode.png>
-File: pictures/Docker.png Graphic file (type bmp)
-<pictures/Docker.png>
-File: pictures/github.png Graphic file (type bmp)
-<pictures/github.png>
-File: pictures/postman.jpg Graphic file (type bmp)
-<pictures/postman.jpg>
-File: pictures/csharp.jpg Graphic file (type bmp)
-<pictures/csharp.jpg>
-File: pictures/typescript.jpg Graphic file (type bmp)
-<pictures/typescript.jpg>
-File: pictures/sql.png Graphic file (type bmp)
-<pictures/sql.png>
-File: pictures/html.png Graphic file (type bmp)
-<pictures/html.png>
- [12]
-File: screenshots/env-page.png Graphic file (type bmp)
-<screenshots/env-page.png>
-File: screenshots/dashboard.png Graphic file (type bmp)
-<screenshots/dashboard.png>
- [13]
-File: screenshots/tickets-page.png Graphic file (type bmp)
-<screenshots/tickets-page.png>
-File: screenshots/teams-page.png Graphic file (type bmp)
-<screenshots/teams-page.png>
- [14]
-File: screenshots/discussions-page.png Graphic file (type bmp)
-<screenshots/discussions-page.png>
-File: screenshots/calendar-page.png Graphic file (type bmp)
-<screenshots/calendar-page.png>
- [15]
-File: screenshots/notifications-page.png Graphic file (type bmp)
-<screenshots/notifications-page.png>
-File: screenshots/logs-page.png Graphic file (type bmp)
-<screenshots/logs-page.png>
- [16] [17] [18] [19]
-Overfull \hbox (1.47993pt too wide) in paragraph at lines 779--780
-[][]\TU/lmr/bx/n/12 CvEventHandler \TU/lmr/m/n/12 : consommateur des messages K
-afka (CvCreatedMessage, CvUp-[]
+[13<./pictures/creation-d'envirenement.png><./pictures/creation-ticket.png>]
+<pictures/attribuer-ticket.png, id=507, 3076.49374pt x 1691.31876pt>
+File: pictures/attribuer-ticket.png Graphic file (type png)
+<use pictures/attribuer-ticket.png>
+Package luatex.def Info: pictures/attribuer-ticket.png  used on input line 658.
+
+(luatex.def)             Requested size: 455.24411pt x 250.25449pt.
+<pictures/vscode.png, id=508, 1027.84pt x 1027.84pt>
+File: pictures/vscode.png Graphic file (type png)
+<use pictures/vscode.png>
+Package luatex.def Info: pictures/vscode.png  used on input line 672.
+(luatex.def)             Requested size: 42.67494pt x 42.67912pt.
+<pictures/Docker.png, id=509, 3854.4pt x 2168.1pt>
+File: pictures/Docker.png Graphic file (type png)
+<use pictures/Docker.png>
+Package luatex.def Info: pictures/Docker.png  used on input line 673.
+(luatex.def)             Requested size: 75.86919pt x 42.67912pt.
+<pictures/github.png, id=510, 12.848pt x 12.848pt>
+File: pictures/github.png Graphic file (type png)
+<use pictures/github.png>
+Package luatex.def Info: pictures/github.png  used on input line 674.
+(luatex.def)             Requested size: 42.68002pt x 42.67912pt.
+<pictures/postman.jpg, id=511, 301.125pt x 301.125pt>
+File: pictures/postman.jpg Graphic file (type jpg)
+<use pictures/postman.jpg>
+Package luatex.def Info: pictures/postman.jpg  used on input line 675.
+(luatex.def)             Requested size: 42.67642pt x 42.67912pt.
+<pictures/csharp.jpg, id=512, 501.875pt x 501.875pt>
+File: pictures/csharp.jpg Graphic file (type jpg)
+<use pictures/csharp.jpg>
+Package luatex.def Info: pictures/csharp.jpg  used on input line 676.
+(luatex.def)             Requested size: 42.67795pt x 42.67912pt.
+<pictures/typescript.jpg, id=513, 521.15831pt x 521.15831pt>
+File: pictures/typescript.jpg Graphic file (type jpg)
+<use pictures/typescript.jpg>
+Package luatex.def Info: pictures/typescript.jpg  used on input line 677.
+(luatex.def)             Requested size: 42.67163pt x 42.67912pt.
+<pictures/sql.png, id=514, 695.59875pt x 361.35pt>
+File: pictures/sql.png Graphic file (type png)
+<use pictures/sql.png>
+Package luatex.def Info: pictures/sql.png  used on input line 678.
+(luatex.def)             Requested size: 82.15211pt x 42.67912pt.
+<pictures/html.png, id=515, 401.5pt x 401.5pt>
+File: pictures/html.png Graphic file (type png)
+<use pictures/html.png>
+Package luatex.def Info: pictures/html.png  used on input line 679.
+(luatex.def)             Requested size: 42.67642pt x 42.67912pt.
+
+[14<./pictures/attribuer-ticket.png><./pictures/vscode.png><./pictures/Docker.pn
+g><./pictures/github.png><./pictures/postman.jpg><./pictures/csharp.jpg><./pictu
+res/typescript.jpg><./pictures/sql.png><./pictures/html.png>]
+<screenshots/env-page.png, id=528, 2854.665pt x 1678.27pt>
+File: screenshots/env-page.png Graphic file (type png)
+<use screenshots/env-page.png>
+Package luatex.def Info: screenshots/env-page.png  used on input line 697.
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
+<screenshots/dashboard.png, id=529, 2854.665pt x 1678.27pt>
+File: screenshots/dashboard.png Graphic file (type png)
+<use screenshots/dashboard.png>
+Package luatex.def Info: screenshots/dashboard.png  used on input line 704.
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
+ [15<./screenshots/env-page.png>]
+<screenshots/tickets-page.png, id=535, 2854.665pt x 1678.27pt>
+File: screenshots/tickets-page.png Graphic file (type png)
+<use screenshots/tickets-page.png>
+Package luatex.def Info: screenshots/tickets-page.png  used on input line 711.
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
+<screenshots/teams-page.png, id=536, 2854.665pt x 1678.27pt>
+File: screenshots/teams-page.png Graphic file (type png)
+<use screenshots/teams-page.png>
+Package luatex.def Info: screenshots/teams-page.png  used on input line 718.
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
+ [16<./screenshots/dashboard.png><./screenshots/tickets-page.png>]
+<screenshots/discussions-page.png, id=543, 2854.665pt x 1678.27pt>
+File: screenshots/discussions-page.png Graphic file (type png)
+<use screenshots/discussions-page.png>
+Package luatex.def Info: screenshots/discussions-page.png  used on input line 7
+25.
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
+<screenshots/calendar-page.png, id=544, 2854.665pt x 1678.27pt>
+File: screenshots/calendar-page.png Graphic file (type png)
+<use screenshots/calendar-page.png>
+Package luatex.def Info: screenshots/calendar-page.png  used on input line 732.
+
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
+ [17<./screenshots/teams-page.png><./screenshots/discussions-page.png>]
+<screenshots/notifications-page.png, id=551, 2854.665pt x 1678.27pt>
+File: screenshots/notifications-page.png Graphic file (type png)
+<use screenshots/notifications-page.png>
+Package luatex.def Info: screenshots/notifications-page.png  used on input line
+ 739.
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
+<screenshots/logs-page.png, id=552, 2854.665pt x 1678.27pt>
+File: screenshots/logs-page.png Graphic file (type png)
+<use screenshots/logs-page.png>
+Package luatex.def Info: screenshots/logs-page.png  used on input line 746.
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
+
+[18<./screenshots/calendar-page.png><./screenshots/notifications-page.png>]
+[19<./screenshots/logs-page.png>] [20] [21]
+Overfull \hbox (1.48006pt too wide) in paragraph at lines 832--833
+[]\TU/lmr/bx/n/12 CvE-ven-tHand-ler \TU/lmr/m/n/12 : consom-ma-teur des mes-sage
+s Kaf-ka (Cv-Crea-ted-Mes-sage, CvUp-
  []
 
-File: pictures/php.png Graphic file (type bmp)
-<pictures/php.png>
-File: pictures/symfony.jpg Graphic file (type bmp)
-<pictures/symfony.jpg>
-File: pictures/angular.jpg Graphic file (type bmp)
-<pictures/angular.jpg>
-File: pictures/typescript.jpg Graphic file (type bmp)
-<pictures/typescript.jpg>
-File: pictures/Docker.png Graphic file (type bmp)
-<pictures/Docker.png>
-File: pictures/redis.jpg Graphic file (type bmp)
-<pictures/redis.jpg>
-File: pictures/kafka.jpg Graphic file (type bmp)
-<pictures/kafka.jpg>
-File: pictures/elasticsearch.jpg Graphic file (type bmp)
-<pictures/elasticsearch.jpg>
+<pictures/php.png, id=573, 671.50874pt x 374.39874pt>
+File: pictures/php.png Graphic file (type png)
+<use pictures/php.png>
+Package luatex.def Info: pictures/php.png  used on input line 840.
+(luatex.def)             Requested size: 76.5405pt x 42.67912pt.
+<pictures/symfony.jpg, id=574, 401.5pt x 401.5pt>
+File: pictures/symfony.jpg Graphic file (type jpg)
+<use pictures/symfony.jpg>
+Package luatex.def Info: pictures/symfony.jpg  used on input line 841.
+(luatex.def)             Requested size: 42.67642pt x 42.67912pt.
+<pictures/angular.jpg, id=575, 501.875pt x 501.875pt>
+File: pictures/angular.jpg Graphic file (type jpg)
+<use pictures/angular.jpg>
+Package luatex.def Info: pictures/angular.jpg  used on input line 842.
+(luatex.def)             Requested size: 42.67795pt x 42.67912pt.
+File: pictures/typescript.jpg Graphic file (type jpg)
+<use pictures/typescript.jpg>
+Package luatex.def Info: pictures/typescript.jpg  used on input line 843.
+(luatex.def)             Requested size: 42.67163pt x 42.67912pt.
+File: pictures/Docker.png Graphic file (type png)
+<use pictures/Docker.png>
+Package luatex.def Info: pictures/Docker.png  used on input line 844.
+(luatex.def)             Requested size: 75.86919pt x 42.67912pt.
+<pictures/redis.jpg, id=576, 301.125pt x 301.125pt>
+File: pictures/redis.jpg Graphic file (type jpg)
+<use pictures/redis.jpg>
+Package luatex.def Info: pictures/redis.jpg  used on input line 845.
+(luatex.def)             Requested size: 42.67642pt x 42.67912pt.
+<pictures/kafka.jpg, id=577, 513.92pt x 256.96pt>
+File: pictures/kafka.jpg Graphic file (type jpg)
+<use pictures/kafka.jpg>
+Package luatex.def Info: pictures/kafka.jpg  used on input line 846.
+(luatex.def)             Requested size: 85.35774pt x 42.67912pt.
+<pictures/elasticsearch.jpg, id=578, 669.50125pt x 375.4025pt>
+File: pictures/elasticsearch.jpg Graphic file (type jpg)
+<use pictures/elasticsearch.jpg>
+Package luatex.def Info: pictures/elasticsearch.jpg  used on input line 847.
+(luatex.def)             Requested size: 76.10736pt x 42.67912pt.
 
-Overfull \hbox (0.37463pt too wide) in paragraph at lines 803--804
-[][]\TU/lmr/bx/n/12 Bibliothèques \TU/lmr/m/n/12 : Lexik JWT Bundle 3.1 pour l’
-authentification JWT, Nelmio CORS[]
+Overfull \hbox (0.37473pt too wide) in paragraph at lines 856--857
+[]\TU/lmr/bx/n/12 Bi-blio-thèques \TU/lmr/m/n/12 : Lexik JWT Bundle 3.1 pour l
+’au-then-ti-fi-ca-tion JWT, Nel-mio CORS
  []
 
-File: screenshots/cv-my-cvs.png Graphic file (type bmp)
-<screenshots/cv-my-cvs.png>
-[20]
-File: screenshots/cv-builder-editor.png Graphic file (type bmp)
-<screenshots/cv-builder-editor.png>
-File: screenshots/cv-templates.png Graphic file (type bmp)
-<screenshots/cv-templates.png>
- [21]
-File: screenshots/cv-analyzer.png Graphic file (type bmp)
-<screenshots/cv-analyzer.png>
-File: screenshots/cv-compatibility.png Graphic file (type bmp)
-<screenshots/cv-compatibility.png>
- [22]
-File: screenshots/cv-portfolio-home.png Graphic file (type bmp)
-<screenshots/cv-portfolio-home.png>
-File: screenshots/cv-portfolio-preview.png Graphic file (type bmp)
-<screenshots/cv-portfolio-preview.png>
- [23] [24] [25]
-Overfull \hbox (43.17189pt too wide) in paragraph at lines 920--921
-[][]\TU/lmr/bx/n/12 Consultation du leaderboard \TU/lmr/m/n/12 : le frontend ap
-pelle \TU/lmtt/m/n/12 GET /api/leaderboard/top/{limit}[]
+<screenshots/cv-my-cvs.png, id=579, 2891.80376pt x 1549.79pt>
+File: screenshots/cv-my-cvs.png Graphic file (type png)
+<use screenshots/cv-my-cvs.png>
+Package luatex.def Info: screenshots/cv-my-cvs.png  used on input line 865.
+(luatex.def)             Requested size: 455.24411pt x 243.97498pt.
+[22<./pictures/php.png><./pictures/symfony.jpg><./pictures/angular.jpg><./pictur
+es/redis.jpg><./pictures/kafka.jpg><./pictures/elasticsearch.jpg>]
+<screenshots/cv-builder-editor.png, id=590, 2854.665pt x 1529.715pt>
+File: screenshots/cv-builder-editor.png Graphic file (type png)
+<use screenshots/cv-builder-editor.png>
+Package luatex.def Info: screenshots/cv-builder-editor.png  used on input line 
+873.
+(luatex.def)             Requested size: 455.24411pt x 243.94244pt.
+<screenshots/cv-templates.png, id=591, 2854.665pt x 1529.715pt>
+File: screenshots/cv-templates.png Graphic file (type png)
+<use screenshots/cv-templates.png>
+Package luatex.def Info: screenshots/cv-templates.png  used on input line 880.
+(luatex.def)             Requested size: 455.24411pt x 243.94244pt.
+ [23<./screenshots/cv-my-cvs.png><./screenshots/cv-builder-editor.png>]
+<screenshots/cv-analyzer.png, id=598, 2891.80376pt x 1549.79pt>
+File: screenshots/cv-analyzer.png Graphic file (type png)
+<use screenshots/cv-analyzer.png>
+Package luatex.def Info: screenshots/cv-analyzer.png  used on input line 889.
+(luatex.def)             Requested size: 455.24411pt x 243.97498pt.
+<screenshots/cv-compatibility.png, id=599, 2891.80376pt x 1549.79pt>
+File: screenshots/cv-compatibility.png Graphic file (type png)
+<use screenshots/cv-compatibility.png>
+Package luatex.def Info: screenshots/cv-compatibility.png  used on input line 8
+96.
+(luatex.def)             Requested size: 455.24411pt x 243.97498pt.
+ [24<./screenshots/cv-templates.png><./screenshots/cv-analyzer.png>]
+<screenshots/cv-portfolio-home.png, id=606, 2891.80376pt x 1549.79pt>
+File: screenshots/cv-portfolio-home.png Graphic file (type png)
+<use screenshots/cv-portfolio-home.png>
+Package luatex.def Info: screenshots/cv-portfolio-home.png  used on input line 
+903.
+(luatex.def)             Requested size: 455.24411pt x 243.97498pt.
+<screenshots/cv-portfolio-preview.png, id=607, 2891.80376pt x 1549.79pt>
+File: screenshots/cv-portfolio-preview.png Graphic file (type png)
+<use screenshots/cv-portfolio-preview.png>
+Package luatex.def Info: screenshots/cv-portfolio-preview.png  used on input li
+ne 911.
+(luatex.def)             Requested size: 455.24411pt x 243.97498pt.
+ [25<./screenshots/cv-compatibility.png><./screenshots/cv-portfolio-home.png>] 
+[26<./screenshots/cv-portfolio-preview.png>] [27]
+Overfull \hbox (43.17169pt too wide) in paragraph at lines 973--974
+[]\TU/lmr/bx/n/12 Consul-ta-tion du lea-der-board \TU/lmr/m/n/12 : le fron-tend ap-pelle \TU/lmtt/m/n/12 GET /api/leaderboard/top/{limit}
  []
 
 
-Overfull \hbox (2.13193pt too wide) in paragraph at lines 938--939
-[][]\TU/lmr/bx/n/12 ExecutionStatus \TU/lmr/m/n/12 (Enum) : OK, COMPILATION_ERR
-OR, RUNTIME_ERROR,[]
+Overfull \hbox (2.13185pt too wide) in paragraph at lines 991--992
+[]\TU/lmr/bx/n/12 Exe-cu-tionS-ta-tus \TU/lmr/m/n/12 (Enum) : OK, COM-PI-LA-TION
+_ER-ROR, RUN-TIME_ER-ROR,
  []
 
-[26]
-File: pictures/java.jpg Graphic file (type bmp)
-<pictures/java.jpg>
-File: pictures/springboot.jpg Graphic file (type bmp)
-<pictures/springboot.jpg>
-File: pictures/angular.jpg Graphic file (type bmp)
-<pictures/angular.jpg>
-File: pictures/typescript.jpg Graphic file (type bmp)
-<pictures/typescript.jpg>
-File: pictures/Docker.png Graphic file (type bmp)
-<pictures/Docker.png>
-File: pictures/redis.jpg Graphic file (type bmp)
-<pictures/redis.jpg>
-File: pictures/sql.png Graphic file (type bmp)
-<pictures/sql.png>
+[28]
+<pictures/java.jpg, id=628, 501.875pt x 501.875pt>
+File: pictures/java.jpg Graphic file (type jpg)
+<use pictures/java.jpg>
+Package luatex.def Info: pictures/java.jpg  used on input line 1004.
+(luatex.def)             Requested size: 42.67795pt x 42.67912pt.
+<pictures/springboot.jpg, id=629, 501.875pt x 501.875pt>
+File: pictures/springboot.jpg Graphic file (type jpg)
+<use pictures/springboot.jpg>
+Package luatex.def Info: pictures/springboot.jpg  used on input line 1005.
+(luatex.def)             Requested size: 42.67795pt x 42.67912pt.
+File: pictures/angular.jpg Graphic file (type jpg)
+<use pictures/angular.jpg>
+Package luatex.def Info: pictures/angular.jpg  used on input line 1006.
+(luatex.def)             Requested size: 42.67795pt x 42.67912pt.
+File: pictures/typescript.jpg Graphic file (type jpg)
+<use pictures/typescript.jpg>
+Package luatex.def Info: pictures/typescript.jpg  used on input line 1007.
+(luatex.def)             Requested size: 42.67163pt x 42.67912pt.
+File: pictures/Docker.png Graphic file (type png)
+<use pictures/Docker.png>
+Package luatex.def Info: pictures/Docker.png  used on input line 1008.
+(luatex.def)             Requested size: 75.86919pt x 42.67912pt.
+File: pictures/redis.jpg Graphic file (type jpg)
+<use pictures/redis.jpg>
+Package luatex.def Info: pictures/redis.jpg  used on input line 1009.
+(luatex.def)             Requested size: 42.67642pt x 42.67912pt.
+File: pictures/sql.png Graphic file (type png)
+<use pictures/sql.png>
+Package luatex.def Info: pictures/sql.png  used on input line 1010.
+(luatex.def)             Requested size: 82.15211pt x 42.67912pt.
 
-Overfull \hbox (5.65192pt too wide) in paragraph at lines 964--965
-[][]\TU/lmr/bx/n/12 Langages \TU/lmr/m/n/12 : Java 17 (Languages-Service, Leade
-rboard-Service) et Java 21 (Compilers-[]
+Overfull \hbox (5.65207pt too wide) in paragraph at lines 1017--1018
+[]\TU/lmr/bx/n/12 Lan-gages \TU/lmr/m/n/12 : Ja-va 17 (Languages-Service, Leader
+board-Service) et Ja-va 21 (Compilers-
  []
 
-File: screenshots/algo-welcome.png Graphic file (type bmp)
-<screenshots/algo-welcome.png>
-[27]
-File: screenshots/algo-avatar.png Graphic file (type bmp)
-<screenshots/algo-avatar.png>
-File: screenshots/algo-mode-selection.png Graphic file (type bmp)
-<screenshots/algo-mode-selection.png>
- [28]
-File: screenshots/algo-problem-list.png Graphic file (type bmp)
-<screenshots/algo-problem-list.png>
-File: screenshots/algo-code-editor.png Graphic file (type bmp)
-<screenshots/algo-code-editor.png>
- [29]
-File: screenshots/algo-leaderboard.png Graphic file (type bmp)
-<screenshots/algo-leaderboard.png>
-File: screenshots/algo-tiers.png Graphic file (type bmp)
-<screenshots/algo-tiers.png>
- [30]
-File: screenshots/algo-admin-languages.png Graphic file (type bmp)
-<screenshots/algo-admin-languages.png>
-File: screenshots/algo-chatbot.png Graphic file (type bmp)
-<screenshots/algo-chatbot.png>
- [31] [32] [33] [34]
+<screenshots/algo-welcome.png, id=630, 1150.2975pt x 551.05875pt>
+File: screenshots/algo-welcome.png Graphic file (type png)
+<use screenshots/algo-welcome.png>
+Package luatex.def Info: screenshots/algo-welcome.png  used on input line 1028.
+
+(luatex.def)             Requested size: 455.24411pt x 218.09044pt.
+[29<./pictures/java.jpg><./pictures/springboot.jpg>]
+<screenshots/algo-avatar.png, id=637, 1150.2975pt x 551.05875pt>
+File: screenshots/algo-avatar.png Graphic file (type png)
+<use screenshots/algo-avatar.png>
+Package luatex.def Info: screenshots/algo-avatar.png  used on input line 1035.
+(luatex.def)             Requested size: 455.24411pt x 218.09044pt.
+<screenshots/algo-mode-selection.png, id=638, 1150.2975pt x 551.05875pt>
+File: screenshots/algo-mode-selection.png Graphic file (type png)
+<use screenshots/algo-mode-selection.png>
+Package luatex.def Info: screenshots/algo-mode-selection.png  used on input lin
+e 1043.
+(luatex.def)             Requested size: 455.24411pt x 218.09044pt.
+ [30<./screenshots/algo-welcome.png><./screenshots/algo-avatar.png>]
+<screenshots/algo-problem-list.png, id=645, 1444.64719pt x 679.78969pt>
+File: screenshots/algo-problem-list.png Graphic file (type png)
+<use screenshots/algo-problem-list.png>
+Package luatex.def Info: screenshots/algo-problem-list.png  used on input line 
+1051.
+(luatex.def)             Requested size: 455.24411pt x 214.21786pt.
+<screenshots/algo-code-editor.png, id=646, 1444.64719pt x 685.05937pt>
+File: screenshots/algo-code-editor.png Graphic file (type png)
+<use screenshots/algo-code-editor.png>
+Package luatex.def Info: screenshots/algo-code-editor.png  used on input line 1
+058.
+(luatex.def)             Requested size: 455.24411pt x 215.87846pt.
+ [31<./screenshots/algo-mode-selection.png><./screenshots/algo-problem-list.png>
+]
+<screenshots/algo-leaderboard.png, id=653, 1150.2975pt x 551.05875pt>
+File: screenshots/algo-leaderboard.png Graphic file (type png)
+<use screenshots/algo-leaderboard.png>
+Package luatex.def Info: screenshots/algo-leaderboard.png  used on input line 1
+065.
+(luatex.def)             Requested size: 455.24411pt x 218.09044pt.
+<screenshots/algo-tiers.png, id=654, 1150.2975pt x 551.05875pt>
+File: screenshots/algo-tiers.png Graphic file (type png)
+<use screenshots/algo-tiers.png>
+Package luatex.def Info: screenshots/algo-tiers.png  used on input line 1073.
+(luatex.def)             Requested size: 455.24411pt x 218.09044pt.
+ [32<./screenshots/algo-code-editor.png><./screenshots/algo-leaderboard.png>]
+<screenshots/algo-admin-languages.png, id=661, 1150.2975pt x 551.05875pt>
+File: screenshots/algo-admin-languages.png Graphic file (type png)
+<use screenshots/algo-admin-languages.png>
+Package luatex.def Info: screenshots/algo-admin-languages.png  used on input li
+ne 1081.
+(luatex.def)             Requested size: 455.24411pt x 218.09044pt.
+<screenshots/algo-chatbot.png, id=662, 252.945pt x 272.81924pt>
+File: screenshots/algo-chatbot.png Graphic file (type png)
+<use screenshots/algo-chatbot.png>
+Package luatex.def Info: screenshots/algo-chatbot.png  used on input line 1089.
+
+(luatex.def)             Requested size: 263.80536pt x 284.52756pt.
+ [33<./screenshots/algo-tiers.png><./screenshots/algo-admin-languages.png>] [34
+<./screenshots/algo-chatbot.png>]
+[35] [36]
 Chapitre 3.
-File: screenshots/jira-backlog.png Graphic file (type bmp)
-<screenshots/jira-backlog.png>
-[35
+<screenshots/jira-backlog.png, id=682, 2854.665pt x 1678.27pt>
+File: screenshots/jira-backlog.png Graphic file (type png)
+<use screenshots/jira-backlog.png>
+Package luatex.def Info: screenshots/jira-backlog.png  used on input line 1213.
+
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
+[37
 
 ]
-File: screenshots/jira-sprint-board.png Graphic file (type bmp)
-<screenshots/jira-sprint-board.png>
-File: screenshots/jira-issue-details.png Graphic file (type bmp)
-<screenshots/jira-issue-details.png>
- [36]
-File: screenshots/jira-burndown.png Graphic file (type bmp)
-<screenshots/jira-burndown.png>
- [37] [38] [39
+<screenshots/jira-sprint-board.png, id=687, 2854.665pt x 1678.27pt>
+File: screenshots/jira-sprint-board.png Graphic file (type png)
+<use screenshots/jira-sprint-board.png>
+Package luatex.def Info: screenshots/jira-sprint-board.png  used on input line 
+1220.
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
+<screenshots/jira-issue-details.png, id=688, 2854.665pt x 1678.27pt>
+File: screenshots/jira-issue-details.png Graphic file (type png)
+<use screenshots/jira-issue-details.png>
+Package luatex.def Info: screenshots/jira-issue-details.png  used on input line
+ 1229.
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
+ [38<./screenshots/jira-backlog.png><./screenshots/jira-sprint-board.png>]
+<screenshots/jira-burndown.png, id=696, 2854.665pt x 1678.27pt>
+File: screenshots/jira-burndown.png Graphic file (type png)
+<use screenshots/jira-burndown.png>
+Package luatex.def Info: screenshots/jira-burndown.png  used on input line 1237
+.
+(luatex.def)             Requested size: 455.24411pt x 267.6324pt.
 
-] [40
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1234--1235
-[][]\TU/lmr/m/n/12 Microsoft Documentation. \TU/lmr/m/it/12 ASP.NET Core docume
-ntation\TU/lmr/m/n/12 .[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1240--1241
-[][]\TU/lmr/m/n/12 Apache Kafka. \TU/lmr/m/it/12 Apache Kafka Documentation\TU/
-lmr/m/n/12 . https ://kaf-[]
- []
-
-[41
+[39<./screenshots/jira-issue-details.png><./screenshots/jira-burndown.png>]
+[40] [41
 
 ] [42
 
-] [43] (rapport.aux)
+] [43
+
+] [44
+
+] [45] (./rapport.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 6A999B89924B8D57B5C7D49FF654575B;7026.
- ) 
-Here is how much of TeX's memory you used:
- 26820 strings out of 402983
- 568535 string characters out of 5448897
- 1014267 words of memory out of 5000000
- 55049 multiletter control sequences out of 15000+600000
- 631906 words of font info for 75 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 84i,11n,94p,1201b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on rapport.pdf (56 pages).
+
+Package rerunfilecheck Warning: File `rapport.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `rapport.out':
+(rerunfilecheck)             Before: 908B7965C6C9D12BDCB74AFBA2BB5D84;8027
+(rerunfilecheck)             After:  D62705759D5E19C809557D4B8C613CAC;8231.
+)
+
+Here is how much of LuaTeX's memory you used:
+ 25865 strings out of 476076
+ 156468,1144653 words of node,token memory allocated
+ 2828 words of node memory still in use:
+   3 hlist, 1 vlist, 1 rule, 165 glue, 4 kern, 1 penalty, 1 glyph, 363 attribute
+, 64 glue_spec, 183 attribute_list, 2 write, 19 pdf_action nodes
+   avail lists: 1:3,2:1154,3:355,4:249,5:494,6:88,7:6007,8:2,9:1256,10:19,11:666
+
+ 47361 multiletter control sequences out of 65536+600000
+ 51 fonts using 4137287 bytes
+ 84i,11n,91p,1133b,710s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'subsection.1.4.2'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.1.4.1'
+<c:/users/mani mohammed adil/appdata/local/programs/miktex/fonts/opentype/public
+/lm/lmromancaps10-regular.otf><c:/users/mani mohammed adil/appdata/local/program
+s/miktex/fonts/opentype/public/lm/lmmono12-regular.otf><c:/users/mani mohammed a
+dil/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman12-italic.otf>
+<c:/users/mani mohammed adil/appdata/local/programs/miktex/fonts/opentype/public
+/lm/lmroman10-regular.otf><c:/users/mani mohammed adil/appdata/local/programs/mi
+ktex/fonts/opentype/public/lm/lmroman8-regular.otf><c:/users/mani mohammed adil/
+appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman12-regular.otf><c:
+/users/mani mohammed adil/appdata/local/programs/miktex/fonts/opentype/public/lm
+/lmroman12-bold.otf><C:/Users/MANI Mohammed Adil/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on rapport.pdf (58 pages, 12072013 bytes).
+
+PDF statistics: 794 PDF objects out of 1000 (max. 8388607)
+ 171 named destinations out of 1000 (max. 131072)
+ 392 words of extra memory for PDF output out of 10000 (max. 100000000)
+
