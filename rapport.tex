@@ -1,3 +1,4 @@
+
 \documentclass[12pt,a4paper]{report}
 
 % ============================================================================
@@ -31,7 +32,7 @@
 % CONFIGURATION DES POLICES
 % ============================================================================
 \newcommand{\headingfont}{}
-\newfontfamily\arabicfont{Arabic Typesetting}
+
 
 % ============================================================================
 % CONFIGURATION DE LA PAGE
@@ -166,7 +167,7 @@
 			{\headingfont\LARGE \textbf{ECOLE DES HAUTES ETUDES}}\\[0.2cm]
 			{\headingfont\LARGE \textbf{D'INGENIERIE -- OUJDA}}\\[0.8cm]
 			
-			{\headingfont\Large \textbf{Mémoire de PFA}}\\[0.2cm]
+			{\headingfont\Large \textbf{Mémoire de Projet de Fin d'Année}}\\[0.2cm]
 			
 			
 			{\large FILIERE : GENIE INFORMATIQUE}\\[1cm]
@@ -343,12 +344,7 @@
 	% LISTES AUTOMATIQUES (FIN DU DOCUMENT)
 	% ============================================================================
 	
-	% ============================================================================
-	% TABLE DES MATIÈRES
-	% ============================================================================
-	\newpage
-	\renewcommand{\contentsname}{{\headingfont Table des matières}}
-	\tableofcontents
+
 	
 	% ============================================================================
 	% TABLE DES FIGURES
@@ -365,6 +361,13 @@
 	\addcontentsline{toc}{chapter}{Liste des tableaux}
 	\renewcommand{\listtablename}{{\headingfont Liste des tableaux}}
 	\listoftables
+	
+		% ============================================================================
+	% TABLE DES MATIÈRES
+	% ============================================================================
+	\newpage
+	\renewcommand{\contentsname}{{\headingfont Table des matières}}
+	\tableofcontents
 	% ============================================================================
 	% INTRODUCTION
 	% ============================================================================
@@ -409,31 +412,81 @@
 	\fancyhead[L]{Chapitre 1 : Contexte général du projet}
 	\thispagestyle{fancy}
 	
-	\section{Description des besoins}
-	Le domaine de l'ingénierie informatique connaît une transformation profonde, portée par l'essor des technologies numériques, de l'intelligence artificielle et des architectures logicielles distribuées. Dans ce contexte, les étudiants en génie informatique font face à un écosystème fragmenté de ressources dispersées et peu adaptées à leurs besoins spécifiques. Notre plateforme intégrée vise à centraliser plusieurs outils complémentaires au sein d'un même environnement, répondant aux besoins réels identifiés : la gestion efficace de projets collaboratifs, la construction d'un profil professionnel attractif, le perfectionnement des aptitudes en résolution de problèmes algorithmiques, et la préparation méthodique aux processus de recrutement.
+\section{Description des besoins}
+
+Le passage de la formation académique au monde professionnel impose aux étudiants en génie informatique des défis qui dépassent le simple cadre des connaissances théoriques. Actuellement, l'étudiant est confronté à une fragmentation numérique : il doit jongler entre de multiples plateformes (outils de gestion de tâches, sites d'entraînement algorithmique, plateformes de recherche d'emploi) sans synergie réelle entre elles. 
+
+Cette dispersion engendre une perte de temps significative et une difficulté à maintenir une vision cohérente de son parcours professionnel. Pour remédier à cela, notre plateforme propose une approche holistique, structurée autour de quatre axes de besoins prioritaires.
+
+\subsection{Gestion collaborative de projets}
+L'un des défis majeurs dans les projets de groupe est la synchronisation des membres. Les besoins identifiés incluent :
+\begin{itemize}
+	\item Une centralisation du suivi des tâches et des avancées technologiques.
+	\item La nécessité d'un outil de communication intégré pour réduire la dépendance à des messageries instantanées informelles.
+	\item Une gestion transparente des responsabilités, permettant à chaque membre de suivre sa contribution au projet global.
+\end{itemize}
+
+\subsection{Valorisation de l'identité professionnelle}
+La transition vers l'emploi nécessite de transformer un profil d'étudiant en un profil d'ingénieur. Les besoins ici sont :
+\begin{itemize}
+	\item Une assistance à la structuration de CV et de portfolios numériques, souvent complexes à réaliser pour un étudiant en début de carrière.
+	\item Un accès centralisé aux opportunités de stages et une veille sur les tendances du marché du travail, évitant la navigation sur des sites d'annonces génériques et peu ciblés.
+\end{itemize}
+
+\subsection{Perfectionnement technique et algorithmique}
+Le niveau technique requis par le marché dépasse souvent les acquis du cursus classique. L'étudiant a besoin de :
+\begin{itemize}
+	\item Un espace d'entraînement continu en résolution de problèmes algorithmiques, essentiel pour réussir les tests techniques lors des entretiens.
+	\item Une progression personnalisée, permettant de mesurer l'évolution de ses compétences techniques au fil du temps.
+\end{itemize}
+
+\subsection{Préparation aux entretiens}
+La dimension comportementale (soft skills) est tout aussi cruciale que la technique. Les besoins identifiés sont :
+\begin{itemize}
+	\item Une base de connaissances sur les questions types des entretiens RH et techniques.
+	\item Des conseils méthodologiques pour appréhender les mises en situation professionnelles et apprendre à valoriser ses expériences passées (Projets, stages).
+\end{itemize}
+
+\vspace{0.5cm}
+En répondant à ces besoins par une plateforme unique et intégrée, nous visons non seulement à optimiser l'organisation de l'étudiant, mais aussi à renforcer sa confiance en lui, en lui offrant un outil qui l'accompagne tout au long de sa montée en compétence.
 	
-	\section{Les besoins fonctionnels}
-	Les besoins fonctionnels de la plateforme couvrent l'ensemble des quatre modules :
-	\begin{itemize}
-		\item \textbf{Gestion de projets} : authentification sécurisée, gestion des utilisateurs, création d'environnements collaboratifs, gestion des équipes, création et suivi des tickets, notifications en temps réel, et journalisation complète des actions.
-		\item \textbf{CV Builder} : création de CV avec templates, génération de portfolio, analyse d'offres d'emploi, matching intelligent CV/offres, analyse linguistique et structurelle du CV, suggestions d'amélioration et calcul de score de qualité.
-		\item \textbf{Algorithmique} : catalogue de problèmes algorithmiques classés par difficulté, éditeur de code intégré, exécution et test de code, solutions optimales avec explications, suivi de progression, leaderboard et badges.
-		\item \textbf{Entretiens} : banque de questions d'entretien, simulations d'entretiens en temps réel, enregistrement et relecture vidéo, analyse de la performance, feedbacks détaillés, suggestions d'amélioration.
-	\end{itemize}
+\section{Les besoins fonctionnels}
+
+Notre plateforme repose sur une architecture logicielle de type \textbf{microservices}. Ce choix technologique structure l'application comme un ensemble de services indépendants et autonomes qui communiquent entre eux, favorisant ainsi la scalabilité, la maintenabilité et l'indépendance de développement pour chaque module. Dans cette section, nous présentons les besoins fonctionnels globaux de la plateforme. Les détails techniques, les choix d'implémentation et les spécificités de chaque microservice seront approfondis ultérieurement, dans les chapitres dédiés à chaque composante fonctionnelle.
+
+Les besoins fonctionnels de la plateforme couvrent l'ensemble des quatre modules :
+
+\begin{itemize}
+	\item \textbf{Gestion de projets} : authentification sécurisée, gestion des utilisateurs, création d'environnements collaboratifs, gestion des équipes, création et suivi des tickets, notifications en temps réel, et journalisation complète des actions.
 	
-	\section{Les besoins non fonctionnels}
-	La plateforme doit globalement assurer :
-	\begin{itemize}
-		\item \textbf{Performance} : temps de réponse optimaux via Apache Kafka et Redis pour le cache.
-		\item \textbf{Sécurité} : hachage cryptographique, gestion JWT, OAuth 2.0, sandboxing du code utilisateur, chiffrement des données sensibles.
-		\item \textbf{Scalabilité} : architecture microservices permettant la montée en charge indépendante de chaque module.
-		\item \textbf{Disponibilité} : redémarrage automatique, monitoring continu.
-		\item \textbf{Maintenabilité} : architecture en couches, pattern Repository, principes SOLID.
-		\item \textbf{Portabilité} : conteneurisation Docker.
-		\item \textbf{Interopérabilité} : APIs REST/JSON, WebSocket, intégration avec des services tiers.
-		\item \textbf{Observabilité} : journalisation avec Serilog et Seq, monitoring avec Prometheus.
-	\end{itemize}
+	\item \textbf{CV Builder} : création de CV avec templates, génération de portfolio, analyse d'offres d'emploi, matching intelligent CV/offres, analyse linguistique et structurelle du CV, suggestions d'amélioration et calcul de score de qualité.
 	
+	\item \textbf{Algorithmique} : catalogue de problèmes algorithmiques classés par difficulté, éditeur de code intégré, exécution et test de code, solutions optimales avec explications, suivi de progression, leaderboard et badges.
+	
+	\item \textbf{Entretiens} : banque de questions d'entretien, simulations d'entretiens en temps réel, enregistrement et relecture vidéo, analyse de la performance, feedbacks détaillés, suggestions d'amélioration.
+\end{itemize}
+	
+\section{Les besoins non fonctionnels}
+
+Contrairement aux besoins fonctionnels qui se concentrent sur la valeur ajoutée pour l'utilisateur final, les besoins non fonctionnels (BNF) représentent les attributs de qualité et les contraintes internes du système. Véritable marque d'une ingénierie logicielle rigoureuse, ces exigences sont principalement définies par l'équipe de développement pour garantir la pérennité, la robustesse et la stabilité de l'application. Si l'utilisateur final perçoit rarement ces contraintes de manière directe, elles constituent les piliers invisibles qui assurent la viabilité de la plateforme sur le long terme.
+
+\section{Les besoins non fonctionnels}
+
+Les besoins non fonctionnels (BNF) représentent les attributs de qualité et les contraintes internes du système. Contrairement aux besoins fonctionnels qui se concentrent sur la valeur ajoutée pour l'utilisateur final, ces exigences sont principalement définies par l'équipe de développement pour garantir la pérennité, la robustesse et la stabilité de l'application. Elles constituent la marque d'une ingénierie logicielle rigoureuse et les piliers invisibles qui assurent la viabilité de la plateforme sur le long terme.
+
+La plateforme doit globalement assurer :
+\begin{itemize}
+	\item \textbf{Performance} : temps de réponse optimaux via Apache Kafka et Redis pour le cache.
+	\item \textbf{Sécurité} : hachage cryptographique, gestion JWT, OAuth 2.0, sandboxing du code utilisateur, chiffrement des données sensibles.
+	\item \textbf{Scalabilité} : architecture microservices permettant la montée en charge indépendante de chaque module.
+	\item \textbf{Disponibilité} : redémarrage automatique, monitoring continu.
+	\item \textbf{Maintenabilité} : architecture en couches, pattern Repository, principes SOLID.
+	\item \textbf{Portabilité} : conteneurisation Docker.
+	\item \textbf{Interopérabilité} : APIs REST/JSON, WebSocket, intégration avec des services tiers.
+	\item \textbf{Observabilité} : journalisation avec Serilog et Seq, monitoring avec Prometheus.
+\end{itemize}
+
+Il est important de souligner que cette liste expose nos objectifs de qualité. Le présent rapport ne se limite pas à énoncer ces exigences ; dans les chapitres techniques dédiés, nous détaillerons les solutions logicielles, les choix technologiques et les stratégies d'implémentation adoptés pour garantir la pleine application de ces besoins non fonctionnels au sein de notre architecture.
 	\section{Définitions générales}
 	
 	\subsection{UML}
@@ -450,7 +503,7 @@
 	modélisation visuelle des diagrammes UML, offrant une collaboration en temps réel entre les cinq
 	membres de l'équipe.
 	
-	\subsection{Diagrammes}
+	\subsection{Les Diagrammes utilisés}
 	
 	\subsubsection{Diagramme de use case}
 	Le diagramme de use case, ou diagramme de cas d'utilisation, est un outil UML qui modélise les

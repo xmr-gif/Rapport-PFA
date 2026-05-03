@@ -1,0 +1,7 @@
+- Developpez lea partie Besoins fonctionnel au niveau de chaque MS 
+- Dans les diagrammes de use case, vous avez dessiner les acteur sous forme de rectagle, normalement ça doit être sous foem d'une personne 
+- N'oubliez pas le diagramme de classe pour le 1er MS 
+- Captures d'ecran pour MS1 avec description pour chaque capture.
+
+
+Un bon travail jusqu'à l'instant 
