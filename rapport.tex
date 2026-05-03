@@ -466,9 +466,6 @@ Les besoins fonctionnels de la plateforme couvrent l'ensemble des quatre modules
 	\item \textbf{Entretiens} : banque de questions d'entretien, simulations d'entretiens en temps réel, enregistrement et relecture vidéo, analyse de la performance, feedbacks détaillés, suggestions d'amélioration.
 \end{itemize}
 	
-\section{Les besoins non fonctionnels}
-
-Contrairement aux besoins fonctionnels qui se concentrent sur la valeur ajoutée pour l'utilisateur final, les besoins non fonctionnels (BNF) représentent les attributs de qualité et les contraintes internes du système. Véritable marque d'une ingénierie logicielle rigoureuse, ces exigences sont principalement définies par l'équipe de développement pour garantir la pérennité, la robustesse et la stabilité de l'application. Si l'utilisateur final perçoit rarement ces contraintes de manière directe, elles constituent les piliers invisibles qui assurent la viabilité de la plateforme sur le long terme.
 
 \section{Les besoins non fonctionnels}
 
@@ -483,7 +480,7 @@ La plateforme doit globalement assurer :
 	\item \textbf{Maintenabilité} : architecture en couches, pattern Repository, principes SOLID.
 	\item \textbf{Portabilité} : conteneurisation Docker.
 	\item \textbf{Interopérabilité} : APIs REST/JSON, WebSocket, intégration avec des services tiers.
-	\item \textbf{Observabilité} : journalisation avec Serilog et Seq, monitoring avec Prometheus.
+	\item \textbf{Observabilité} : journalisation avec Serilog et Seq.
 \end{itemize}
 
 Il est important de souligner que cette liste expose nos objectifs de qualité. Le présent rapport ne se limite pas à énoncer ces exigences ; dans les chapitres techniques dédiés, nous détaillerons les solutions logicielles, les choix technologiques et les stratégies d'implémentation adoptés pour garantir la pleine application de ces besoins non fonctionnels au sein de notre architecture.
@@ -556,9 +553,16 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	\section{Project Management App}
 	
 	\subsection{Description des besoins fonctionnels}
-	La plateforme de gestion de projets répond à un besoin essentiel : centraliser les outils de collaboration et de gestion de tâches pour les équipes d'étudiants. Les utilisateurs requièrent une solution intuitive permettant de gérer des projets complexes avec plusieurs membres, des workflows personnalisables et une communication en temps réel.
+	La plateforme de gestion de projets répond à un besoin essentiel : centraliser les outils de collaboration et de gestion de tâches pour les équipes d'étudiants. Les utilisateurs requièrent une solution intuitive permettant de gérer des projets complexes avec plusieurs membres, des workflows personnalisables et une communication en temps réel. Au total, 82 besoins fonctionnels ont été identifiés et documentés, articulés autour des axes suivants :
 	
-	Les besoins fonctionnels incluent : l'authentification sécurisée, la gestion des utilisateurs, la création d'environnements collaboratifs, la gestion des équipes, la création et suivi des tickets, les notifications en temps réel, et la journalisation complète des actions. Au total, 82 besoins fonctionnels ont été identifiés et documentés.
+	\begin{itemize}
+		\item \textbf{Authentification et Autorisation :} Le système doit fournir une connexion classique et une intégration OAuth (Google, GitHub) pour un accès fluide. L'amélioration réside dans la gestion fine des rôles (Membre, Chef de projet) via un système de permissions (RBAC) garantissant la sécurité des opérations sensibles.
+		\item \textbf{Gestion des Environnements et des Équipes :} Capacité de créer, modifier et isoler des espaces de travail par projet. Les chefs de projet peuvent structurer les équipes, inviter de nouveaux membres et déléguer des responsabilités de manière granulaire, favorisant une organisation agile.
+		\item \textbf{Gestion Avancée des Tickets (Kanban) :} Création et suivi de tickets avec personnalisation des statuts (À faire, En cours, Terminé). Chaque ticket intègre la définition de priorités, l'assignation multiple, la fixation de dates limites, et un fil de commentaires riche. Les améliorations incluent le filtrage dynamique et la réassignation rapide par glisser-déposer.
+		\item \textbf{Communication et Collaboration Temps Réel :} Intégration de canaux de discussion thématiques (WebSockets) évitant le recours à des messageries externes. Les utilisateurs peuvent échanger instantanément, mentionner d'autres membres pour des alertes directes et partager des fichiers au sein même du contexte du projet.
+		\item \textbf{Suivi, Reporting et Planification :} Mise à disposition d'un tableau de bord (Dashboard) interactif résumant les métriques clés (taux d'avancement, tickets bloquants). L'outil intègre un calendrier partagé pour la synchronisation des réunions, évitant ainsi les conflits d'agenda.
+		\item \textbf{Traçabilité et Notifications :} Système d'alerte en temps réel (in-app et push) pour toute activité pertinente. Un journal d'audit (Logs) exhaustif permet de retracer chaque action effectuée, offrant une transparence totale et facilitant la résolution de conflits ou d'erreurs de manipulation.
+	\end{itemize}
 	
 	\subsection{Analyse et modélisation}
 	
@@ -662,6 +666,13 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	
 	\subsubsection{Diagramme de classe}
 	Le modèle inclut les entités : User, Environment, Team, Ticket, Workflow, WorkflowStep, Notification, et Log, avec leurs relations d'association, d'héritage et de composition.
+		\begin{figure}[H]
+		\centering
+		 \includegraphics[width=1\textwidth]{pictures/pm-classes-diagram.png}
+		
+		\caption{Diagramme de classes -- Project Management App}
+		\label{fig:pm-classes}
+	\end{figure}
 	
 	\subsection{Environnement technologique}
 	
@@ -690,7 +701,10 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	\end{itemize}
 	
 	\subsection{Captures d'écran}
+
 	Les captures d'écran suivantes illustrent les principales interfaces du Project Management App.
+
+	\paragraph{Page des environnements:}Cette page permet à l’utilisateur de visualiser, sélectionner ou créer un nouvel environnement de travail. Elle centralise la gestion des espaces de projet, facilitant l’organisation des différents contextes de travail selon les besoins de l’équipe.
 	
 	\begin{figure}[H]
 		\centering
@@ -698,6 +712,8 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\caption{Page des environnements -- sélection et création d'un espace de travail}
 		\label{fig:pm-env}
 	\end{figure}
+
+	\paragraph{Tableau de bord:} Le tableau de bord offre une vue d’ensemble sur l’activité du projet : statistiques des tickets, accès rapide au Kanban personnel, et synthèse des réunions à venir. Il s’agit du point d’entrée principal pour suivre l’avancement global et les tâches prioritaires.
 	
 	\begin{figure}[H]
 		\centering
@@ -705,6 +721,8 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\caption{Tableau de bord -- vue d'ensemble avec statistiques des tickets, Kanban personnel et réunions}
 		\label{fig:pm-dashboard}
 	\end{figure}
+
+	\paragraph{Page des tickets:} Cette interface présente un tableau Kanban où les tickets sont organisés par colonne (À faire, En cours, Terminé). L’utilisateur peut filtrer les tickets par priorité, suivre leur progression et effectuer des actions de gestion (création, modification, déplacement).
 	
 	\begin{figure}[H]
 		\centering
@@ -712,6 +730,8 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\caption{Page des tickets -- tableau Kanban avec colonnes To Do, In Progress, Done et filtrage par priorité}
 		\label{fig:pm-tickets}
 	\end{figure}
+
+	\paragraph{Page des équipes:} La page des équipes permet de visualiser la composition des groupes de travail, d’ajouter ou de retirer des membres, et d’attribuer des rôles. Les avatars facilitent l’identification rapide des membres et la gestion collaborative.
 	
 	\begin{figure}[H]
 		\centering
@@ -719,6 +739,8 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\caption{Page des équipes -- visualisation et gestion des équipes avec avatars des membres}
 		\label{fig:pm-teams}
 	\end{figure}
+
+	\paragraph{Page des discussions:} Cette section intègre une messagerie en temps réel, structurée par canaux thématiques. Les utilisateurs peuvent échanger des messages, partager des fichiers et utiliser des mentions pour notifier des membres spécifiques, favorisant la communication instantanée.
 	
 	\begin{figure}[H]
 		\centering
@@ -726,6 +748,8 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\caption{Page des discussions -- messagerie en temps réel avec canaux, partage de fichiers et mentions}
 		\label{fig:pm-discussions}
 	\end{figure}
+
+	\paragraph{Calendrier:} Le calendrier hebdomadaire affiche l’ensemble des réunions planifiées, avec des fonctionnalités de navigation, de création et de modification de meetings. Il aide à coordonner les disponibilités et à éviter les conflits d’agenda.
 	
 	\begin{figure}[H]
 		\centering
@@ -733,6 +757,8 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\caption{Calendrier -- vue hebdomadaire des réunions avec navigation et création de meetings}
 		\label{fig:pm-calendar}
 	\end{figure}
+
+	\paragraph{Page des notifications:} Cette page centralise toutes les notifications reçues : changements de tickets, invitations à des réunions, messages importants, etc. Des filtres permettent de trier les notifications par type et de marquer celles déjà lues.
 	
 	\begin{figure}[H]
 		\centering
@@ -740,6 +766,8 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\caption{Page des notifications -- boîte de réception avec filtres par type et marquage de lecture}
 		\label{fig:pm-notifications}
 	\end{figure}
+
+	\paragraph{Journal d’activité:} Le journal d’activité assure la traçabilité complète des actions réalisées dans l’application. Il propose des filtres par date, service ou niveau d’importance, permettant d’auditer les opérations et de renforcer la sécurité.
 	
 	\begin{figure}[H]
 		\centering
@@ -752,26 +780,27 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	\section{CV Builder App}
 	
 	\subsection{Description des besoins fonctionnels}
-	La plateforme CV Builder répond à un besoin critique : aider les étudiants à construire un profil professionnel attractif et à identifier les opportunités d'emploi correspondant à leur profil. L'application adopte une architecture full-stack composée d'un backend API Symfony (PHP), d'un frontend Angular, d'un système de messagerie Kafka, d'un moteur de recherche Elasticsearch et d'un cache Redis.
+	La plateforme CV Builder répond à un besoin critique : aider les étudiants à construire un profil professionnel attractif et à identifier les opportunités d'emploi correspondant à leur profil. L'application adopte une architecture robuste intégrant Symfony, Angular, Kafka, Elasticsearch et Redis.
 	
-	Les besoins fonctionnels identifiés couvrent quatre modules complémentaires :
+	Les besoins fonctionnels identifiés couvrent plusieurs modules complémentaires, conçus pour offrir une expérience utilisateur optimale :
 	\begin{itemize}
-		\item \textbf{CV Builder} : création de CV avec plus de 12 templates prédéfinis (modern, classic, creative, minimal, tech, executive, sidebar-right, compact, etc.), personnalisation avancée des couleurs, polices et mise en page, concepteur de templates personnalisés avec configuration du layout (single, sidebar-left/right, two-column), style d'en-tête, formatage des sections et positionnement des éléments. Duplication de CV existants.
-		\item \textbf{CV Analyzer} : analyse grammaticale et de contenu du CV par intelligence artificielle, détection d'erreurs catégorisées, suggestions d'amélioration et calcul de score de qualité. Possibilité d'analyser un CV uploadé ou un CV existant en base.
-		\item \textbf{CV Compatibility Checker} : vérification de compatibilité entre un CV et une offre d'emploi LinkedIn, calcul d'un score de compatibilité avec suggestions d'amélioration ciblées.
-		\item \textbf{Portfolio Generator} : génération de sites portfolio professionnels à partir des données du CV, avec gestion des portfolios créés, formulaire d'édition et prévisualisation.
+		\item \textbf{Création et Gestion Intuitive de CV :} Interface d'édition riche en split-panel permettant la saisie structurée des données (expériences, compétences, projets) avec une prévisualisation en temps réel. L'amélioration majeure est la possibilité de dupliquer facilement un CV pour l'adapter rapidement à différentes offres, ainsi que l'export haute fidélité en PDF.
+		\item \textbf{Personnalisation Visuelle et Templates :} Accès à une bibliothèque de plus de 12 modèles de conception (moderne, exécutif, créatif, etc.). L'utilisateur bénéficie d'une liberté totale de personnalisation (couleurs primaires, typographies, layouts en colonnes), garantissant un rendu unique et professionnel adapté à son secteur.
+		\item \textbf{Analyse Intelligente (CV Analyzer) :} Intégration d'une intelligence artificielle évaluant le contenu du CV. Ce module ne se contente pas de vérifier la grammaire, mais détecte les faiblesses structurelles, attribue un score de qualité et fournit des suggestions d'amélioration actionnables pour maximiser l'impact du profil.
+		\item \textbf{Mise en Correspondance (CV Compatibility Checker) :} Outil d'analyse comparative entre un CV et une description de poste (ex: URL LinkedIn). Le système extrait sémantiquement les mots-clés de l'offre et évalue le niveau d'adéquation, recommandant à l'étudiant les compétences ou termes spécifiques à ajouter pour passer les filtres ATS.
+		\item \textbf{Génération Automatique de Portfolio :} Fonctionnalité innovante transformant instantanément les données du CV en un site web vitrine interactif. L'utilisateur peut ainsi générer, prévisualiser et partager son portfolio en ligne sans aucune compétence en développement web.
+		\item \textbf{Moteur de Recherche Avancé :} Utilisation d'Elasticsearch pour offrir une recherche full-text ultra-rapide. Cela permet aux utilisateurs (ou recruteurs potentiels) de filtrer les profils par compétences spécifiques, localisation ou mots-clés, avec une tolérance aux erreurs de frappe (fuzzy matching).
 	\end{itemize}
 	
-	Le modèle de données principal est l'entité \textbf{CV}, identifiée par UUID, contenant : un titre, un userId (référence externe), un templateId, une couleur primaire, un statut actif, et un champ JSON structuré regroupant les informations personnelles (nom, email, téléphone, adresse, résumé, photo, liens LinkedIn/GitHub), les expériences professionnelles (entreprise, poste, dates, description, lieu), les formations (institution, diplôme, domaine), les compétences (nom, niveau 1-5, catégorie), les langues (nom, niveau), les projets (nom, description, URL, technologies) et la configuration de style.
+	Le modèle de données principal est l'entité \textbf{CV}, identifiée par UUID, contenant : un titre, un userId (référence externe), un templateId, une couleur primaire, un statut actif, et un champ JSON structuré regroupant les informations personnelles, les expériences professionnelles, les formations, les compétences (avec niveaux), les langues, les projets et la configuration de style.
 
 	\subsection{Analyse et modélisation}
 	
 	\subsubsection{Diagramme de use case}
-	% TODO: Add diagram from pictures/cv-usecase-diagram.png
 	\begin{figure}[H]
 		\centering
-		% \includegraphics[width=0.8\textwidth]{pictures/cv-usecase-diagram.png}
-		\textit{[Diagramme de use case du CV Builder App]}
+		 \includegraphics[width=0.8\textwidth]{pictures/cv-usecase-diagram.png}
+		
 		\caption{Diagramme de use case -- CV Builder App}
 		\label{fig:cv-usecase}
 	\end{figure}
@@ -795,29 +824,59 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	\end{itemize}
 	
 	\subsubsection{Diagrammes de séquences}
-	% TODO: Add diagrams from pictures/cv-sequence-creation.png, pictures/cv-sequence-analysis.png, pictures/cv-sequence-compatibility.png
+	Nous avons modélisé cinq diagrammes de séquence couvrant les flux principaux du CV Builder App.
+
+	Le premier diagramme (figure \ref{fig:seq-cv-builder}) illustre le flux de \textbf{création de CV} : l'utilisateur remplit le formulaire dans le frontend, les données sont envoyées au backend via une requête \texttt{POST /api/cvs}, le backend valide le token JWT, enregistre le CV en base SQL Server et indexe le document dans Elasticsearch via un événement Kafka.
+
 	\begin{figure}[H]
 		\centering
-		% \includegraphics[width=0.8\textwidth]{pictures/cv-sequence-creation.png}
-		\textit{[Diagrammes de séquence du CV Builder App]}
-		\caption{Diagrammes de séquence -- CV Builder App (Création, Analyse, Compatibilité)}
-		\label{fig:cv-sequences}
+		\includegraphics[width=\textwidth]{pictures/seq-cv-builder.png}
+		\caption{Diagramme de séquence -- Création de CV}
+		\label{fig:seq-cv-builder}
+	\end{figure}
+
+	Le second diagramme (figure \ref{fig:seq-cv-analyser}) modélise le flux d'\textbf{analyse de CV} : l'utilisateur soumet son CV pour analyse, l'IA traite le contenu pour détecter les erreurs grammaticales et structurelles, et retourne un score de qualité accompagné de suggestions d'amélioration.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{pictures/seq-cv-analyser.png}
+		\caption{Diagramme de séquence -- Analyse de CV}
+		\label{fig:seq-cv-analyser}
+	\end{figure}
+
+	Le troisième diagramme (figure \ref{fig:seq-cv-compatibility}) représente la \textbf{vérification de compatibilité} entre un CV et une offre d'emploi : le système extrait les mots-clés de l'offre LinkedIn et les compare aux compétences du CV pour calculer un score de matching.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{pictures/seq-job-offer-compatibility.png}
+		\caption{Diagramme de séquence -- Compatibilité CV/offre d'emploi}
+		\label{fig:seq-cv-compatibility}
+	\end{figure}
+
+	Le quatrième diagramme (figure \ref{fig:seq-cv-jobs}) décrit la \textbf{recherche d'offres d'emploi} : l'utilisateur effectue une recherche via l'interface, le système interroge le moteur Elasticsearch pour retourner les offres les plus pertinentes correspondant au profil.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{pictures/seq-job-offers.png}
+		\caption{Diagramme de séquence -- Recherche d'offres d'emploi}
+		\label{fig:seq-cv-jobs}
+	\end{figure}
+
+	Le cinquième diagramme (figure \ref{fig:seq-cv-portfolio}) illustre la \textbf{génération de portfolio} : les données du CV sont utilisées pour générer automatiquement un site web portfolio professionnel, avec des options de personnalisation et de prévisualisation.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{pictures/seq-portfolio.png}
+		\caption{Diagramme de séquence -- Génération de portfolio}
+		\label{fig:seq-cv-portfolio}
 	\end{figure}
 	
-	Les diagrammes de séquence documentent les flux principaux :
-	\begin{itemize}
-		\item \textbf{Création de CV} : l'utilisateur remplit le formulaire dans le form-panel → le frontend envoie \texttt{POST /api/cvs} avec le token JWT → le backend valide le token via le JwtAuthenticator, consulte le cache Redis → le CvService crée l'entité CV en base SQL Server → un message \texttt{CvCreatedMessage} est dispatché vers Kafka → le CvEventHandler indexe le CV dans Elasticsearch → retour \texttt{201 Created}.
-		\item \textbf{Analyse de CV} : l'utilisateur upload un fichier ou sélectionne un CV existant → le frontend envoie les données au service d'analyse → l'IA analyse le contenu (grammaire, structure, mots-clés) → retour du score et des suggestions catégorisées.
-		\item \textbf{Compatibilité CV/offre} : l'utilisateur fournit son CV et l'URL LinkedIn de l'offre → le système compare les compétences, l'expérience et les mots-clés → retour du score de compatibilité et des recommandations.
-		\item \textbf{Recherche de CV} : l'utilisateur saisit une requête → le frontend appelle \texttt{GET /api/search/cvs} avec paramètres de filtrage → l'ElasticsearchService exécute une recherche full-text avec filtres (userId, templateId, skills, location) → retour des résultats paginés.
-	\end{itemize}
-	
 	\subsubsection{Diagramme de classe}
-	% TODO: Add diagram from pictures/cv-classes-diagram.png
+	
 	\begin{figure}[H]
 		\centering
-		% \includegraphics[width=0.8\textwidth]{pictures/cv-classes-diagram.png}
-		\textit{[Diagramme de classes du CV Builder App]}
+		 \includegraphics[width=0.8\textwidth]{pictures/cv-classes-diagram.png}
+		
 		\caption{Diagramme de classes -- CV Builder App}
 		\label{fig:cv-classes}
 	\end{figure}
@@ -859,57 +918,71 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	
 	\subsection{Captures d'écran}
 	Les captures d'écran suivantes illustrent les principales interfaces du CV Builder App.
-	
+		\paragraph{Mes CVs:} Cette page présente le tableau de bord où l’utilisateur retrouve la liste de tous ses CVs créés. Elle permet de rechercher, trier et accéder rapidement à l’édition ou à la duplication de chaque CV.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/cv-my-cvs.png}
+
+
 		
 		\caption{Mes CVs -- tableau de bord avec liste des CVs créés, recherche et tri}
 		\label{fig:cv-my-cvs}
 	\end{figure}
-	
+		\paragraph{CV Builder – éditeur:} L’éditeur CV Builder propose une interface en split-panel : à gauche, un formulaire pour saisir les informations ; à droite, une prévisualisation en temps réel du rendu final du CV, facilitant la personnalisation.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/cv-builder-editor.png}
+
+
 		\caption{CV Builder -- éditeur split-panel avec formulaire et prévisualisation en temps réel}
 		\label{fig:cv-builder-editor}
 	\end{figure}
-	
+		\paragraph{Templates:} La galerie de modèles offre un large choix de templates de CV. L’utilisateur peut sélectionner un modèle, ajuster les couleurs et personnaliser la mise en page pour obtenir un CV à son image.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/cv-templates.png}
+
+
 		\caption{Templates -- galerie de modèles avec sélecteur de couleur et personnalisation}
 		\label{fig:cv-templates}
 	\end{figure}
 	
-
+\paragraph{CV Analyzer:} Cet outil d’analyse par intelligence artificielle évalue la qualité du CV : il attribue un score, détecte les erreurs (par gravité) et propose des suggestions d’amélioration pour optimiser le document.
 	
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/cv-analyzer.png}
+
+	
 		\caption{CV Analyzer -- analyse IA avec score, erreurs par sévérité et suggestions}
 		\label{fig:cv-analyzer}
 	\end{figure}
-	
+	\paragraph{CV Compatibility:} La fonctionnalité de compatibilité permet de comparer un CV à une offre d’emploi LinkedIn. Elle calcule un score de correspondance et fournit des recommandations ciblées pour améliorer l’adéquation.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/cv-compatibility.png}
+
+	
 		\caption{CV Compatibility -- vérification de compatibilité CV/offre d'emploi LinkedIn}
 		\label{fig:cv-compatibility}
 	\end{figure}
-	
+		\paragraph{Portfolio – accueil:} La page d’accueil du générateur de portfolio propose d’importer un CV existant ou de démarrer la création d’un portfolio professionnel à partir de zéro, avec des options de personnalisation.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/cv-portfolio-home.png}
+
+
 		
 		\caption{Portfolio -- page d'accueil avec options d'upload CV ou création manuelle}
 		\label{fig:cv-portfolio-home}
 	\end{figure}
+	\paragraph{Portfolio Preview:} Cette page affiche un aperçu du portfolio généré à partir du CV. L’utilisateur peut vérifier le rendu final et exporter le portfolio au format HTML pour le partager en ligne.
 	
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/cv-portfolio-preview.png}
-		
+
+	
 		\caption{Portfolio Preview -- prévisualisation du portfolio généré avec export HTML}
 		\label{fig:cv-portfolio-preview}
 	\end{figure}
@@ -920,11 +993,14 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	\subsection{Description des besoins fonctionnels}
 	L'application Problem Solving répond au besoin fondamental de préparer les étudiants aux entretiens techniques des grandes entreprises à travers une plateforme de programmation compétitive. Le système repose sur une architecture microservices composée de trois services backend indépendants (Java/Spring Boot), d'un frontend Angular et d'un mécanisme d'exécution de code isolé via Docker.
 	
-	Les besoins fonctionnels identifiés couvrent trois axes principaux :
+	Les besoins fonctionnels ont été conçus pour maximiser l'apprentissage et l'engagement, s'articulant autour des axes suivants :
 	\begin{itemize}
-		\item \textbf{Gestion des langages} : administration des langages de programmation supportés par la plateforme (C, C++, Java, Python, JavaScript), incluant la gestion des versions disponibles et des icônes associées via un panneau d'administration CRUD complet.
-		\item \textbf{Soumission et exécution de code} : soumission de solutions par les utilisateurs, compilation et exécution dans des conteneurs Docker isolés avec sandboxing strict (pas d'accès réseau, mémoire limitée à 64 Mo, CPU limité à 0.5 cœur, limite de 50 processus, système de fichiers en lecture seule avec tmpfs de 10 Mo), retour de résultats avec statut (OK, COMPILATION\_ERROR, RUNTIME\_ERROR, TLE -- Time Limit Exceeded).
-		\item \textbf{Classement et gamification} : système de leaderboard avec points, niveaux et streaks (séries consécutives de soumissions réussies), progression à travers 6 tiers (Bronze → Silver → Gold → Platinum → Diamond → Legendary), personnalisation d'avatar et suivi de la progression quotidienne.
+		\item \textbf{Exploration et Sélection de Problèmes :} Catalogue riche d'exercices d'algorithmique classés par difficulté (Facile, Moyen, Difficile) et par thématique (graphes, structures de données, dynamique). L'interface offre des filtres avancés et une barre de recherche pour un accès rapide aux concepts ciblés.
+		\item \textbf{Édition et Exécution de Code Sécurisée :} Un éditeur de code complet (split-pane) supportant nativement 5 langages (C, C++, Java, Python, JavaScript). L'innovation repose sur un système d'exécution dans des conteneurs Docker ultra-isolés (sandboxing strict : sans réseau, CPU/mémoire limités), garantissant la sécurité de la plateforme face aux codes malveillants tout en offrant des temps de réponse rapides.
+		\item \textbf{Évaluation Automatisée des Solutions :} Validation du code soumis contre des jeux de tests unitaires exhaustifs (cas limites inclus). Le système fournit un feedback immédiat avec des statuts précis (Succès, Erreur de compilation, Erreur d'exécution, Dépassement du temps limite), orientant l'apprenant vers la correction de son algorithme.
+		\item \textbf{Progression, Compétition et Gamification :} Mise en place d'un système de Leaderboard dynamique. Les utilisateurs accumulent des points d'expérience, franchissent des niveaux et progressent à travers 6 ligues distinctes (de Bronze à Legendary). Le suivi des séries de connexions (streaks) agit comme un puissant levier motivationnel.
+		\item \textbf{Personnalisation de l'Identité Virtuelle :} Pour renforcer l'immersion, l'étudiant peut configurer son profil en personnalisant un avatar pixel-art et en définissant son identité de joueur, créant ainsi un sentiment d'appartenance à la communauté de la plateforme.
+		\item \textbf{Administration et Gestion Dynamique :} Interface Back-office dédiée permettant aux administrateurs de gérer les langages supportés (mise à jour des versions du compilateur), d'ajouter de nouveaux défis algorithmiques et de superviser les sessions compétitives sans interruption de service.
 	\end{itemize}
 
 	\subsection{Analyse et modélisation}
@@ -933,8 +1009,8 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	% TODO: Add diagram from pictures/algo-usecase-diagram.png
 	\begin{figure}[H]
 		\centering
-		% \includegraphics[width=0.8\textwidth]{pictures/algo-usecase-diagram.png}
-		\textit{[Diagramme de use case du Problem Solving App]}
+		 \includegraphics[width=0.8\textwidth]{pictures/algo-usecase-diagram.png}
+		
 		\caption{Diagramme de use case -- Problem Solving App}
 		\label{fig:algo-usecase}
 	\end{figure}
@@ -958,27 +1034,58 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	\end{itemize}
 	
 	\subsubsection{Diagrammes de séquences}
-	% TODO: Add diagrams from pictures/algo-sequence-languages.png, pictures/algo-sequence-submission.png, pictures/algo-sequence-leaderboard.png
+	Nous avons modélisé cinq diagrammes de séquence couvrant les flux principaux du Problem Solving App.
+
+	Le premier diagramme (figure \ref{fig:seq-algo-user-registration}) illustre le flux d'\textbf{inscription d'un utilisateur} : l'utilisateur soumet ses informations via le formulaire d'inscription, le système crée son compte, génère son profil de joueur avec un tier initial (Bronze) et retourne une confirmation avec son token d'accès.
+
 	\begin{figure}[H]
 		\centering
-		% \includegraphics[width=0.8\textwidth]{pictures/algo-sequence-languages.png}
-		\textit{[Diagrammes de séquence du Problem Solving App]}
-		\caption{Diagrammes de séquence -- Problem Solving App (Soumission, Leaderboard, Gestion des langages)}
-		\label{fig:algo-sequences}
+		\includegraphics[width=\textwidth]{pictures/seq-user-registration.png}
+		\caption{Diagramme de séquence -- Inscription d'un utilisateur}
+		\label{fig:seq-algo-user-registration}
 	\end{figure}
-	
-	Les diagrammes de séquence documentent les flux principaux :
-	\begin{itemize}
-		\item \textbf{Soumission de code} : l'utilisateur saisit son code dans l'éditeur et sélectionne le langage → le frontend envoie \texttt{POST /api/submissions} avec le code, l'input et le langage → le Compilers-Service reçoit la requête → l'ExecutionStrategyFactory sélectionne la stratégie appropriée selon le langage (pattern Strategy) → la stratégie écrit le code source dans un fichier temporaire → le DockerExecutor lance un conteneur Docker isolé avec les contraintes de sécurité (\texttt{-{}-network=none}, \texttt{-{}-memory=64m}, \texttt{-{}-cpus=0.5}, \texttt{-{}-cap-drop=ALL}, \texttt{-{}-read-only}) → le conteneur compile et exécute le code → le résultat (output/error/status) est retourné au frontend.
-		\item \textbf{Consultation du leaderboard} : le frontend appelle \texttt{GET /api/leaderboard/top/\{limit\}} → le Leaderboard-Service interroge la base SQL Server → retour des entrées triées par rang avec username, points, level, tier, streak et avatar.
-		\item \textbf{Gestion des langages (Admin)} : l'administrateur accède au panneau d'administration → opérations CRUD via \texttt{/api/languages} → le Languages-Service persiste les modifications en base SQL Server.
-	\end{itemize}
+
+	Le second diagramme (figure \ref{fig:seq-algo-lang-selection}) modélise le flux de \textbf{sélection du langage de programmation} : l'utilisateur accède au hub de sélection, le frontend charge la liste des langages disponibles depuis le Languages-Service, l'utilisateur choisit son langage et valide son choix qui est persisté dans son profil.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{pictures/seq-programing-lang-selection.png}
+		\caption{Diagramme de séquence -- Sélection du langage de programmation}
+		\label{fig:seq-algo-lang-selection}
+	\end{figure}
+
+	Le troisième diagramme (figure \ref{fig:seq-algo-ex-solving}) représente le flux de \textbf{résolution d'un exercice} : l'utilisateur saisit son code dans l'éditeur et le soumet via \texttt{POST /api/submissions} $\rightarrow$ le Compilers-Service reçoit la requête, l'ExecutionStrategyFactory sélectionne la stratégie appropriée selon le langage $\rightarrow$ le DockerExecutor lance un conteneur isolé avec les contraintes de sécurité (\texttt{--network=none}, \texttt{--memory=64m}, \texttt{--cpus=0.5}) $\rightarrow$ le conteneur compile et exécute le code $\rightarrow$ le résultat (output/error/statut) est retourné au frontend.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{pictures/seq-ex-solving.png}
+		\caption{Diagramme de séquence -- Résolution d'un exercice}
+		\label{fig:seq-algo-ex-solving}
+	\end{figure}
+
+	Le quatrième diagramme (figure \ref{fig:seq-algo-competition}) décrit le \textbf{cycle de vie d'une compétition} : la création d'une session compétitive, la participation des utilisateurs, la soumission de solutions en temps limité, et la clôture automatique de la compétition avec calcul des scores finaux.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{pictures/seq-competition-lifecycle.png}
+		\caption{Diagramme de séquence -- Cycle de vie d'une compétition}
+		\label{fig:seq-algo-competition}
+	\end{figure}
+
+	Le cinquième diagramme (figure \ref{fig:seq-algo-leaderboard}) illustre la \textbf{mise à jour du leaderboard} : suite à une soumission réussie, le Leaderboard-Service recalcule les points, le niveau et le tier de l'utilisateur (Bronze $\rightarrow$ Silver $\rightarrow$ Gold $\rightarrow$ Platinum $\rightarrow$ Diamond $\rightarrow$ Legendary), met à jour le streak, persiste les modifications et retourne l'entrée mise à jour.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{pictures/seq-Leaderboard-Update.png}
+		\caption{Diagramme de séquence -- Mise à jour du leaderboard}
+		\label{fig:seq-algo-leaderboard}
+	\end{figure}
 	
 	\subsubsection{Diagramme de classe}
 	% TODO: Add diagram from pictures/algo-classes-diagram.png
 	\begin{figure}[H]
 		\centering
-		\textit{[Diagramme de classes du Problem Solving App]}
+\includegraphics[width=0.8\textwidth]{pictures/algo-classes.png}
 		\caption{Diagramme de classes -- Problem Solving App}
 		\label{fig:algo-classes}
 	\end{figure}
@@ -1022,63 +1129,79 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	
 	\subsection{Captures d'écran}
 	Les captures d'écran suivantes illustrent les principales interfaces du Problem Solving App.
-	
+	\paragraph{Welcome:} Cette page d’accueil propose une cutscene animée mettant en scène la mascotte de l’application. Elle accueille l’utilisateur avec un dialogue immersif et pose le contexte ludique de la plateforme.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/algo-welcome.png}
+
+	
 		\caption{Welcome -- cutscene d'introduction animée avec mascotte et dialogue}
 		\label{fig:algo-welcome}
 	\end{figure}
-	
+		\paragraph{Avatar Customization:} L’utilisateur peut personnaliser son avatar pixelisé en choisissant les couleurs et le nom du personnage. Cette étape favorise l’engagement et l’identification dans l’univers de l’application.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/algo-avatar.png}
+
+
 		
 		\caption{Avatar Customization -- personnalisation du personnage pixel avec couleurs et nom}
 		\label{fig:algo-avatar}
 	\end{figure}
-	
+	\paragraph{Mode Selection:} Le hub principal permet de sélectionner le mode de jeu (entrainement, compétition, etc.) et de naviguer dans un carrousel pour choisir le langage de programmation souhaité.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/algo-mode-selection.png}
+
+	
 		
 		\caption{Mode Selection -- hub principal avec choix du mode de jeu et carousel des langages}
 		\label{fig:algo-mode-selection}
 	\end{figure}
-	
+		\paragraph{Problem List:} Cette interface affiche la liste des problèmes de programmation disponibles, avec des filtres par difficulté, type de problème et une barre de recherche pour un accès rapide.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/algo-problem-list.png}
+
+
 		\caption{Problem List -- liste des problèmes avec filtres par difficulté, type et recherche}
 		\label{fig:algo-problem-list}
 	\end{figure}
-	
+		\paragraph{Code Editor:} L’éditeur de code propose un split-pane : à gauche, l’énoncé du problème ; à droite, un éditeur avec compilation et exécution du code dans un environnement sécurisé.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/algo-code-editor.png}
+
+
 		\caption{Code Editor -- éditeur split-pane avec compilateur et énoncé du problème}
 		\label{fig:algo-code-editor}
 	\end{figure}
+	\paragraph{Leaderboard:} Le classement général présente le podium des trois meilleurs joueurs et un tableau détaillé des participants, favorisant la compétition et la motivation.
 	
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/algo-leaderboard.png}
-		
+
+	
 		\caption{Leaderboard -- classement avec podium top-3 et tableau des joueurs}
 		\label{fig:algo-leaderboard}
 	\end{figure}
-	
+		\paragraph{Tiers:} Le système de rangs (Bronze à Legendary) visualise la progression de l’utilisateur et les avantages associés à chaque niveau, stimulant l’amélioration continue.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/algo-tiers.png}
+
+
 		
 		\caption{Tiers -- système de rangs Bronze à Legendary avec progression et avantages}
 		\label{fig:algo-tiers}
 	\end{figure}
-	
+	\paragraph{Admin:} L’interface d’administration permet de gérer les langages, les problèmes et les événements de programmation via des fonctionnalités CRUD complètes.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/algo-admin-languages.png}
+
+	
 		
 		\caption{Admin  -- interface CRUD de gestion des langages, problemes et evenements de programmation}
 		\label{fig:algo-admin-languages}
@@ -1092,102 +1215,7 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\label{fig:algo-chatbot}
 	\end{figure}
 	
-	% --- 4. Entretien App ---
-	\section{Entretien App}
-	
-	\subsection{Description des besoins fonctionnels}
-
-	
-	\subsection{Analyse et modélisation}
-	
-	\subsubsection{Diagramme de use case}
-	% TODO: Add diagram from pictures/interview-usecase-diagram.png
-	\begin{figure}[H]
-		\centering
-		% \includegraphics[width=0.8\textwidth]{pictures/interview-usecase-diagram.png}
-		\textit{[Diagramme de use case du Interview Preparation App]}
-		\caption{Diagramme de use case -- Interview Preparation App}
-		\label{fig:interview-usecase}
-	\end{figure}
-	
-
-	
-	\subsubsection{Diagrammes de séquences}
-	% TODO: Add diagrams from pictures/interview-sequence-simulation.png, pictures/interview-sequence-feedback.png, pictures/interview-sequence-resources.png
-	\begin{figure}[H]
-		\centering
-		% \includegraphics[width=0.8\textwidth]{pictures/interview-sequence-simulation.png}
-		\textit{[Diagrammes de séquence du Interview Preparation App]}
-		\caption{Diagrammes de séquence -- Interview Preparation App (Simulation, Feedback, Ressources)}
-		\label{fig:interview-sequences}
-	\end{figure}
-	
-
-	\subsubsection{Diagramme de classe}
-	% TODO: Add diagram from pictures/interview-classes-diagram.png
-	\begin{figure}[H]
-		\centering
-		% \includegraphics[width=0.8\textwidth]{pictures/interview-classes-diagram.png}
-		\textit{[Diagramme de classes du Interview Preparation App]}
-		\caption{Diagramme de classes -- Interview Preparation App}
-		\label{fig:interview-classes}
-	\end{figure}
-	
-
-	
-	\subsection{Environnement technologique}
-	\begin{itemize}
-		\item \textbf{Outils} :
-		\item \textbf{Langages} : 
-		\item \textbf{Frameworks} :
-		\item \textbf{Bibliothèques} :
-		\item \textbf{Technologies} : 
-	\end{itemize}
-	
-	\subsection{Captures d'écran}
-	Les captures d'écran suivantes illustrent les principales interfaces de l'Interview Preparation App.
-	
-	\begin{figure}[H]
-		\centering
-		% \includegraphics[width=\textwidth]{screenshots/interview-question-bank.png}
-		\textit{[Capture d'écran à ajouter]}
-		\caption{Banque de questions -- catalogue de questions d'entretien filtrables par domaine}
-		\label{fig:interview-question-bank}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\centering
-		% \includegraphics[width=\textwidth]{screenshots/interview-simulation.png}
-		\textit{[Capture d'écran à ajouter]}
-		\caption{Simulation d'entretien -- interface d'enregistrement vidéo avec question affichée}
-		\label{fig:interview-simulation}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\centering
-		% \includegraphics[width=\textwidth]{screenshots/interview-feedback.png}
-		\textit{[Capture d'écran à ajouter]}
-		\caption{Feedback -- analyse détaillée de la performance avec score et suggestions}
-		\label{fig:interview-feedback}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\centering
-		% \includegraphics[width=\textwidth]{screenshots/interview-progress.png}
-		\textit{[Capture d'écran à ajouter]}
-		\caption{Progression -- suivi des statistiques et comparaison des performances}
-		\label{fig:interview-progress}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\centering
-		% \includegraphics[width=\textwidth]{screenshots/interview-resources.png}
-		\textit{[Capture d'écran à ajouter]}
-		\caption{Ressources -- guides et matériaux organisés par domaine technique et soft skills}
-		\label{fig:interview-resources}
-	\end{figure}
-	
-	% ============================================================================
+	 
 	% CHAPITRE III : MÉTHODOLOGIE DE GESTION ET BONNES PRATIQUES
 	% ============================================================================
 	\newpage
@@ -1271,25 +1299,48 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	
 	Nous remercions l'École des Hautes Études d'Ingénierie d'Oujda, notre encadrant pédagogique et technique, ainsi que tous nos camarades qui nous ont soutenus tout au long de ce projet. Cette plateforme est notre contribution à l'amélioration de la formation des futurs ingénieurs informatiques.
 	
+	\newpage
+	\chapter*{{\headingfont Perspectives}}
+	\addcontentsline{toc}{chapter}{Perspectives}
+	\markboth{Perspectives}{}
+	Bien que la version actuelle de notre plateforme réponde aux objectifs principaux fixés au début de ce projet, cette application a été pensée de manière évolutive. Plusieurs pistes d'amélioration et d'extension peuvent être envisagées pour enrichir l'écosystème et offrir une expérience encore plus complète aux étudiants. Nous avons structuré ces perspectives selon trois axes principaux : fonctionnel, technique et stratégique.
+	
+	\section*{Perspectives Fonctionnelles : Finalisation et Enrichissement}
+	
+	La priorité à court terme réside dans le développement du quatrième module fondamental de notre écosystème, ainsi que dans le renforcement de l'interconnectivité entre les modules :
+	
+	\begin{itemize}
+		\item \textbf{Développement du module d'entraînement aux entretiens (Assisté par l'IA) :} Bien que l'architecture globale soit prête à l'accueillir, ce quatrième module reste à concevoir. Il permettra aux étudiants de simuler des entretiens techniques et RH via des interactions vocales ou textuelles avec une Intelligence Artificielle. L'IA sera capable d'analyser le CV généré par le module "Miroir", de poser des questions ciblées sur les compétences de l'étudiant, et de fournir un feedback détaillé sur la pertinence technique des réponses et sur les \textit{soft-skills}.
+		\item \textbf{Interconnexion intelligente des modules :} Créer une synergie plus forte entre les applications. Par exemple, les lacunes identifiées lors de l'analyse du CV ou lors d'une simulation d'entretien pourraient générer automatiquement des recommandations de défis algorithmiques dans le module de \textit{Problem Solving} (Orbit).
+	\end{itemize}
+	
+	\section*{Perspectives Techniques : Scalabilité et Déploiement}
+	
+	Sur le plan de l'infrastructure et de l'architecture logicielle, les évolutions suivantes permettront de garantir la robustesse de l'application face à une montée en charge :
+	
+	\begin{itemize}
+		\item \textbf{Migration vers une infrastructure Cloud et orchestration :} Le projet étant actuellement conteneurisé avec Docker, la prochaine étape logique est un déploiement sur le Cloud (AWS, Azure ou GCP) en s'appuyant sur un orchestrateur comme Kubernetes. Cela permettra d'assurer la haute disponibilité des microservices et une scalabilité dynamique en fonction du nombre d'utilisateurs connectés.
+		\item \textbf{Mise en place d'une pipeline CI/CD complète :} Automatiser intégralement les tests (unitaires, d'intégration, et end-to-end) et les déploiements via GitHub Actions ou GitLab CI, afin de garantir une intégration continue fluide entre les différents dépôts du projet (Frontend Angular, Backend .NET, Spring Boot et Symfony).
+		\item \textbf{Amélioration des modèles d'IA :} Actuellement basés sur des appels API standard, nous pourrions envisager le \textit{fine-tuning} (ré-entraînement) de modèles Open-Source (comme Llama 3 ou Mistral) avec des données spécifiques au recrutement en ingénierie informatique, afin d'optimiser la précision de l'analyse des CV et des entretiens sans dépendre de services tiers payants.
+	\end{itemize}
+	
+	\section*{Perspectives Stratégiques et Élargissement de la Cible}
+	
+	À plus long terme, la plateforme pourrait dépasser le cadre strictement étudiant pour devenir un véritable pont entre le monde académique et le milieu professionnel :
+	
+	\begin{itemize}
+		\item \textbf{Développement d'une version Mobile (Cross-platform) :} La création d'une application mobile (en utilisant Flutter ou React Native) permettrait aux étudiants d'accéder à leurs notes, de réviser leurs algorithmes ou de recevoir des notifications de gestion de projet directement sur leurs smartphones.
+		\item \textbf{Création d'un portail "Recruteurs" (B2B) :} Offrir un accès dédié aux entreprises partenaires et aux chasseurs de têtes. Avec le consentement des étudiants, les recruteurs pourraient consulter les classements (\textit{Leaderboards}) du module de Problem Solving et visualiser les CV générés, facilitant ainsi la mise en relation entre les meilleurs talents et les offres de stage ou d'emploi.
+	\end{itemize}
+	
 	% ============================================================================
 	% WEBOGRAPHIE
 	% ============================================================================
 	\newpage
-	\chapter*{{\headingfont Webographie}}
-	\addcontentsline{toc}{chapter}{Webographie}
-	\markboth{Webographie}{}
-	
+
 	\begin{thebibliography}{99}
 		
 		\bibitem{microservices} Sam Newman. \textit{Building Microservices}. O'Reilly Media, 2015.
-		
-		\bibitem{aspnetcore} Microsoft Documentation. \textit{ASP.NET Core documentation}. https://docs.microsoft.com/en-us/aspnet/core
-		
-		\bibitem{angular} Angular Documentation. \textit{Angular official documentation}. https://angular.io/docs
-		
-		\bibitem{docker} Docker Documentation. \textit{Docker official documentation}. https://docs.docker.com
-		
-		\bibitem{kafka} Apache Kafka. \textit{Apache Kafka Documentation}. https://kafka.apache.org/documentation/
 		
 		\bibitem{uml} Grady Booch, Robert A. Maksimchuk. \textit{Object-Oriented Analysis and Design with Applications}. Addison-Wesley, 2007.
 		
@@ -1300,6 +1351,32 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\bibitem{security} Bruce Schneier. \textit{Cryptography Engineering}. Wiley, 2010.
 		
 		\bibitem{agile} Ken Beck. \textit{Extreme Programming Explained}. Addison-Wesley, 1999.
+		
+		\bibitem{solid} DigitalOcean. \textit{SOLID Principles}. https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+		
+		\bibitem{abstractfactory} Refactoring Guru. \textit{Abstract Factory}. https://refactoring.guru/design-patterns/abstract-factory
+		
+		\bibitem{factorymethod} Refactoring Guru. \textit{Factory Method}. https://refactoring.guru/design-patterns/factory-method
+		
+		\bibitem{strategy} Refactoring Guru. \textit{Strategy}. https://refactoring.guru/design-patterns/strategy
+		
+		\bibitem{facade} Refactoring Guru. \textit{Facade}. https://refactoring.guru/design-patterns/facade
+		
+		\bibitem{jwt} JWT.io. \textit{JSON Web Token}. https://www.jwt.io/introduction\#what-is-json-web-token
+		
+		\bibitem{aspnetcore} Microsoft Learn. \textit{Documentation ASP Core .NET}. https://learn.microsoft.com/en-us/aspnet/core/
+		
+		\bibitem{symfony} Symfony. \textit{Documentation Symfony PHP}. https://symfony.com/doc
+		
+		\bibitem{kafka} Apache Kafka. \textit{Documentation Apache kafka}. https://kafka.apache.org/42/getting-started/introduction/
+		
+		\bibitem{docker} Docker. \textit{Documentation Docker}. https://docs.docker.com/
+		
+		\bibitem{angular} Angular. \textit{Documentation Angular}. https://angular.dev/overview
+		
+		\bibitem{springboot} Spring Boot. \textit{Documentation Spring Boot}. https://docs.spring.io/spring-boot/index.html
+		
+		\bibitem{signalr} Microsoft Learn. \textit{Documentation SignalR}. https://learn.microsoft.com/en-us/aspnet/signalr/
 		
 	\end{thebibliography}
 	

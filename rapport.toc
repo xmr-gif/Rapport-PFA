@@ -7,7 +7,7 @@
 \xpg@aux {}{french}
 \contentsline {chapter}{Liste des abréviations}{v}{chapter*.5}%
 \contentsline {chapter}{Table des figures}{vi}{table.0.1}%
-\contentsline {chapter}{Liste des tableaux}{ix}{chapter*.6}%
+\contentsline {chapter}{Liste des tableaux}{viii}{chapter*.6}%
 \contentsline {chapter}{Introduction}{1}{chapter*.9}%
 \contentsline {chapter}{\numberline {1}Contexte général du projet}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Description des besoins}{4}{section.1.1}%
@@ -17,50 +17,64 @@
 \contentsline {subsection}{\numberline {1.1.4}Préparation aux entretiens}{5}{subsection.1.1.4}%
 \contentsline {section}{\numberline {1.2}Les besoins fonctionnels}{5}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Les besoins non fonctionnels}{6}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Les besoins non fonctionnels}{6}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Définitions générales}{7}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}UML}{7}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Les Diagrammes utilisés}{7}{subsection.1.5.2}%
-\contentsline {subsubsection}{Diagramme de use case}{7}{subsection.1.5.2}%
-\contentsline {subsubsection}{Diagramme de séquence}{8}{subsection.1.5.2}%
-\contentsline {subsubsection}{Diagramme de classes}{8}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.4}Définitions générales}{7}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}UML}{7}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Les Diagrammes utilisés}{7}{subsection.1.4.2}%
+\contentsline {subsubsection}{Diagramme de use case}{7}{subsection.1.4.2}%
+\contentsline {subsubsection}{Diagramme de séquence}{7}{subsection.1.4.2}%
+\contentsline {subsubsection}{Diagramme de classes}{8}{subsection.1.4.2}%
 \contentsline {chapter}{\numberline {2}Microservices}{10}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Project Management App}{10}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Description des besoins fonctionnels}{10}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Analyse et modélisation}{10}{subsection.2.1.2}%
-\contentsline {subsubsection}{Diagramme de use case}{10}{subsection.2.1.2}%
-\contentsline {subsubsection}{Diagrammes de séquences}{11}{figure.2.1}%
-\contentsline {subsubsection}{Diagramme de classe}{14}{figure.2.6}%
-\contentsline {subsection}{\numberline {2.1.3}Environnement technologique}{14}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Captures d'écran}{15}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}CV Builder App}{19}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Description des besoins fonctionnels}{19}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Analyse et modélisation}{20}{subsection.2.2.2}%
-\contentsline {subsubsection}{Diagramme de use case}{20}{subsection.2.2.2}%
-\contentsline {subsubsection}{Diagrammes de séquences}{21}{figure.2.16}%
-\contentsline {subsubsection}{Diagramme de classe}{21}{figure.2.17}%
-\contentsline {subsection}{\numberline {2.2.3}Environnement technologique}{22}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Captures d'écran}{23}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}Problem Solving App}{26}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Description des besoins fonctionnels}{26}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Analyse et modélisation}{27}{subsection.2.3.2}%
-\contentsline {subsubsection}{Diagramme de use case}{27}{subsection.2.3.2}%
-\contentsline {subsubsection}{Diagrammes de séquences}{27}{figure.2.27}%
-\contentsline {subsubsection}{Diagramme de classe}{28}{figure.2.28}%
-\contentsline {subsection}{\numberline {2.3.3}Environnement technologique}{29}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Captures d'écran}{30}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}Entretien App}{34}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Description des besoins fonctionnels}{34}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Analyse et modélisation}{34}{subsection.2.4.2}%
-\contentsline {subsubsection}{Diagramme de use case}{34}{subsection.2.4.2}%
-\contentsline {subsubsection}{Diagrammes de séquences}{34}{figure.2.40}%
-\contentsline {subsubsection}{Diagramme de classe}{34}{figure.2.41}%
-\contentsline {subsection}{\numberline {2.4.3}Environnement technologique}{35}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Captures d'écran}{35}{subsection.2.4.4}%
-\contentsline {chapter}{\numberline {3}Méthodologie de gestion et bonnes pratiques}{37}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Méthode de gestion de projet}{37}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Jira -- Outil de gestion}{37}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Bonnes pratiques de développement}{40}{section.3.2}%
-\contentsline {chapter}{Conclusion}{41}{chapter*.10}%
-\contentsline {chapter}{Webographie}{42}{chapter*.11}%
-\contentsline {chapter}{Annexe}{44}{chapter*.13}%
+\contentsline {subsection}{\numberline {2.1.2}Analyse et modélisation}{11}{subsection.2.1.2}%
+\contentsline {subsubsection}{Diagramme de use case}{11}{subsection.2.1.2}%
+\contentsline {subsubsection}{Diagrammes de séquences}{12}{figure.2.1}%
+\contentsline {subsubsection}{Diagramme de classe}{15}{figure.2.6}%
+\contentsline {subsection}{\numberline {2.1.3}Environnement technologique}{16}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Captures d'écran}{17}{subsection.2.1.4}%
+\contentsline {paragraph}{Page des environnements:}{17}{subsection.2.1.4}%
+\contentsline {paragraph}{Tableau de bord:}{17}{figure.2.9}%
+\contentsline {paragraph}{Page des tickets:}{18}{figure.2.10}%
+\contentsline {paragraph}{Page des équipes:}{19}{figure.2.11}%
+\contentsline {paragraph}{Page des discussions:}{20}{figure.2.12}%
+\contentsline {paragraph}{Calendrier:}{20}{figure.2.13}%
+\contentsline {paragraph}{Page des notifications:}{21}{figure.2.14}%
+\contentsline {paragraph}{Journal d’activité:}{22}{figure.2.15}%
+\contentsline {section}{\numberline {2.2}CV Builder App}{22}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Description des besoins fonctionnels}{22}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Analyse et modélisation}{24}{subsection.2.2.2}%
+\contentsline {subsubsection}{Diagramme de use case}{24}{subsection.2.2.2}%
+\contentsline {subsubsection}{Diagrammes de séquences}{25}{figure.2.17}%
+\contentsline {subsubsection}{Diagramme de classe}{28}{figure.2.22}%
+\contentsline {subsection}{\numberline {2.2.3}Environnement technologique}{29}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Captures d'écran}{29}{subsection.2.2.4}%
+\contentsline {paragraph}{Mes CVs:}{29}{subsection.2.2.4}%
+\contentsline {paragraph}{CV Builder – éditeur:}{30}{figure.2.25}%
+\contentsline {paragraph}{Templates:}{30}{figure.2.26}%
+\contentsline {paragraph}{CV Analyzer:}{31}{figure.2.27}%
+\contentsline {paragraph}{CV Compatibility:}{31}{figure.2.28}%
+\contentsline {paragraph}{Portfolio – accueil:}{32}{figure.2.29}%
+\contentsline {paragraph}{Portfolio Preview:}{32}{figure.2.30}%
+\contentsline {section}{\numberline {2.3}Problem Solving App}{33}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Description des besoins fonctionnels}{33}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Analyse et modélisation}{35}{subsection.2.3.2}%
+\contentsline {subsubsection}{Diagramme de use case}{35}{subsection.2.3.2}%
+\contentsline {subsubsection}{Diagrammes de séquences}{36}{figure.2.32}%
+\contentsline {subsubsection}{Diagramme de classe}{38}{figure.2.37}%
+\contentsline {subsection}{\numberline {2.3.3}Environnement technologique}{39}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Captures d'écran}{40}{subsection.2.3.4}%
+\contentsline {paragraph}{Welcome:}{40}{subsection.2.3.4}%
+\contentsline {paragraph}{Avatar Customization:}{40}{figure.2.40}%
+\contentsline {paragraph}{Mode Selection:}{41}{figure.2.41}%
+\contentsline {paragraph}{Problem List:}{41}{figure.2.42}%
+\contentsline {paragraph}{Code Editor:}{42}{figure.2.43}%
+\contentsline {paragraph}{Leaderboard:}{42}{figure.2.44}%
+\contentsline {paragraph}{Tiers:}{43}{figure.2.45}%
+\contentsline {paragraph}{Admin:}{43}{figure.2.46}%
+\contentsline {chapter}{\numberline {3}Méthodologie de gestion et bonnes pratiques}{46}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Méthode de gestion de projet}{46}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Jira -- Outil de gestion}{46}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Bonnes pratiques de développement}{49}{section.3.2}%
+\contentsline {chapter}{Conclusion}{50}{chapter*.10}%
+\contentsline {chapter}{Perspectives}{51}{chapter*.11}%
+\contentsline {chapter}{Annexe}{55}{chapter*.13}%

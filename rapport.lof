@@ -1,54 +1,55 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de use case du Project Management App}}{11}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Authentification classique}}{12}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Authentification OAuth}}{12}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Création d'un environnement de travail}}{13}{figure.2.4}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Création d'un ticket personnel}}{13}{figure.2.5}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Attribution d'un ticket}}{14}{figure.2.6}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces \xpg@aux {}{french}\ignorespaces Technologies et outils utilisés dans le Project Management App}}{14}{figure.2.7}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces \xpg@aux {}{french}\ignorespaces Page des environnements -- sélection et création d'un espace de travail}}{15}{figure.2.8}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tableau de bord -- vue d'ensemble avec statistiques des tickets, Kanban personnel et réunions}}{16}{figure.2.9}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces \xpg@aux {}{french}\ignorespaces Page des tickets -- tableau Kanban avec colonnes To Do, In Progress, Done et filtrage par priorité}}{16}{figure.2.10}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces \xpg@aux {}{french}\ignorespaces Page des équipes -- visualisation et gestion des équipes avec avatars des membres}}{17}{figure.2.11}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces \xpg@aux {}{french}\ignorespaces Page des discussions -- messagerie en temps réel avec canaux, partage de fichiers et mentions}}{17}{figure.2.12}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces \xpg@aux {}{french}\ignorespaces Calendrier -- vue hebdomadaire des réunions avec navigation et création de meetings}}{18}{figure.2.13}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces \xpg@aux {}{french}\ignorespaces Page des notifications -- boîte de réception avec filtres par type et marquage de lecture}}{18}{figure.2.14}%
-\contentsline {figure}{\numberline {2.15}{\ignorespaces \xpg@aux {}{french}\ignorespaces Journal d'activité -- traçabilité complète des actions avec filtres par date, service et niveau}}{19}{figure.2.15}%
-\contentsline {figure}{\numberline {2.16}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de use case -- CV Builder App}}{20}{figure.2.16}%
-\contentsline {figure}{\numberline {2.17}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagrammes de séquence -- CV Builder App (Création, Analyse, Compatibilité)}}{21}{figure.2.17}%
-\contentsline {figure}{\numberline {2.18}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de classes -- CV Builder App}}{21}{figure.2.18}%
-\contentsline {figure}{\numberline {2.19}{\ignorespaces \xpg@aux {}{french}\ignorespaces Technologies et outils utilisés dans le CV Builder App}}{22}{figure.2.19}%
-\contentsline {figure}{\numberline {2.20}{\ignorespaces \xpg@aux {}{french}\ignorespaces Mes CVs -- tableau de bord avec liste des CVs créés, recherche et tri}}{23}{figure.2.20}%
-\contentsline {figure}{\numberline {2.21}{\ignorespaces \xpg@aux {}{french}\ignorespaces CV Builder -- éditeur split-panel avec formulaire et prévisualisation en temps réel}}{23}{figure.2.21}%
-\contentsline {figure}{\numberline {2.22}{\ignorespaces \xpg@aux {}{french}\ignorespaces Templates -- galerie de modèles avec sélecteur de couleur et personnalisation}}{24}{figure.2.22}%
-\contentsline {figure}{\numberline {2.23}{\ignorespaces \xpg@aux {}{french}\ignorespaces CV Analyzer -- analyse IA avec score, erreurs par sévérité et suggestions}}{24}{figure.2.23}%
-\contentsline {figure}{\numberline {2.24}{\ignorespaces \xpg@aux {}{french}\ignorespaces CV Compatibility -- vérification de compatibilité CV/offre d'emploi LinkedIn}}{25}{figure.2.24}%
-\contentsline {figure}{\numberline {2.25}{\ignorespaces \xpg@aux {}{french}\ignorespaces Portfolio -- page d'accueil avec options d'upload CV ou création manuelle}}{25}{figure.2.25}%
-\contentsline {figure}{\numberline {2.26}{\ignorespaces \xpg@aux {}{french}\ignorespaces Portfolio Preview -- prévisualisation du portfolio généré avec export HTML}}{26}{figure.2.26}%
-\contentsline {figure}{\numberline {2.27}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de use case -- Problem Solving App}}{27}{figure.2.27}%
-\contentsline {figure}{\numberline {2.28}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagrammes de séquence -- Problem Solving App (Soumission, Leaderboard, Gestion des langages)}}{27}{figure.2.28}%
-\contentsline {figure}{\numberline {2.29}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de classes -- Problem Solving App}}{28}{figure.2.29}%
-\contentsline {figure}{\numberline {2.30}{\ignorespaces \xpg@aux {}{french}\ignorespaces Technologies et outils utilisés dans le Problem Solving App}}{29}{figure.2.30}%
-\contentsline {figure}{\numberline {2.31}{\ignorespaces \xpg@aux {}{french}\ignorespaces Welcome -- cutscene d'introduction animée avec mascotte et dialogue}}{30}{figure.2.31}%
-\contentsline {figure}{\numberline {2.32}{\ignorespaces \xpg@aux {}{french}\ignorespaces Avatar Customization -- personnalisation du personnage pixel avec couleurs et nom}}{30}{figure.2.32}%
-\contentsline {figure}{\numberline {2.33}{\ignorespaces \xpg@aux {}{french}\ignorespaces Mode Selection -- hub principal avec choix du mode de jeu et carousel des langages}}{31}{figure.2.33}%
-\contentsline {figure}{\numberline {2.34}{\ignorespaces \xpg@aux {}{french}\ignorespaces Problem List -- liste des problèmes avec filtres par difficulté, type et recherche}}{31}{figure.2.34}%
-\contentsline {figure}{\numberline {2.35}{\ignorespaces \xpg@aux {}{french}\ignorespaces Code Editor -- éditeur split-pane avec compilateur et énoncé du problème}}{32}{figure.2.35}%
-\contentsline {figure}{\numberline {2.36}{\ignorespaces \xpg@aux {}{french}\ignorespaces Leaderboard -- classement avec podium top-3 et tableau des joueurs}}{32}{figure.2.36}%
-\contentsline {figure}{\numberline {2.37}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tiers -- système de rangs Bronze à Legendary avec progression et avantages}}{33}{figure.2.37}%
-\contentsline {figure}{\numberline {2.38}{\ignorespaces \xpg@aux {}{french}\ignorespaces Admin -- interface CRUD de gestion des langages, problemes et evenements de programmation}}{33}{figure.2.38}%
-\contentsline {figure}{\numberline {2.39}{\ignorespaces \xpg@aux {}{french}\ignorespaces AI Chatbot -- assistant IA flottant avec messages et suggestions}}{34}{figure.2.39}%
-\contentsline {figure}{\numberline {2.40}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de use case -- Interview Preparation App}}{34}{figure.2.40}%
-\contentsline {figure}{\numberline {2.41}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagrammes de séquence -- Interview Preparation App (Simulation, Feedback, Ressources)}}{34}{figure.2.41}%
-\contentsline {figure}{\numberline {2.42}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de classes -- Interview Preparation App}}{34}{figure.2.42}%
-\contentsline {figure}{\numberline {2.43}{\ignorespaces \xpg@aux {}{french}\ignorespaces Banque de questions -- catalogue de questions d'entretien filtrables par domaine}}{35}{figure.2.43}%
-\contentsline {figure}{\numberline {2.44}{\ignorespaces \xpg@aux {}{french}\ignorespaces Simulation d'entretien -- interface d'enregistrement vidéo avec question affichée}}{35}{figure.2.44}%
-\contentsline {figure}{\numberline {2.45}{\ignorespaces \xpg@aux {}{french}\ignorespaces Feedback -- analyse détaillée de la performance avec score et suggestions}}{35}{figure.2.45}%
-\contentsline {figure}{\numberline {2.46}{\ignorespaces \xpg@aux {}{french}\ignorespaces Progression -- suivi des statistiques et comparaison des performances}}{35}{figure.2.46}%
-\contentsline {figure}{\numberline {2.47}{\ignorespaces \xpg@aux {}{french}\ignorespaces Ressources -- guides et matériaux organisés par domaine technique et soft skills}}{35}{figure.2.47}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de use case du Project Management App}}{12}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Authentification classique}}{13}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Authentification OAuth}}{13}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Création d'un environnement de travail}}{14}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Création d'un ticket personnel}}{14}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Attribution d'un ticket}}{15}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de classes -- Project Management App}}{16}{figure.2.7}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces \xpg@aux {}{french}\ignorespaces Technologies et outils utilisés dans le Project Management App}}{16}{figure.2.8}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces \xpg@aux {}{french}\ignorespaces Page des environnements -- sélection et création d'un espace de travail}}{17}{figure.2.9}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tableau de bord -- vue d'ensemble avec statistiques des tickets, Kanban personnel et réunions}}{18}{figure.2.10}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces \xpg@aux {}{french}\ignorespaces Page des tickets -- tableau Kanban avec colonnes To Do, In Progress, Done et filtrage par priorité}}{19}{figure.2.11}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces \xpg@aux {}{french}\ignorespaces Page des équipes -- visualisation et gestion des équipes avec avatars des membres}}{19}{figure.2.12}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces \xpg@aux {}{french}\ignorespaces Page des discussions -- messagerie en temps réel avec canaux, partage de fichiers et mentions}}{20}{figure.2.13}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces \xpg@aux {}{french}\ignorespaces Calendrier -- vue hebdomadaire des réunions avec navigation et création de meetings}}{21}{figure.2.14}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces \xpg@aux {}{french}\ignorespaces Page des notifications -- boîte de réception avec filtres par type et marquage de lecture}}{21}{figure.2.15}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces \xpg@aux {}{french}\ignorespaces Journal d'activité -- traçabilité complète des actions avec filtres par date, service et niveau}}{22}{figure.2.16}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de use case -- CV Builder App}}{24}{figure.2.17}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Création de CV}}{25}{figure.2.18}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Analyse de CV}}{26}{figure.2.19}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Compatibilité CV/offre d'emploi}}{26}{figure.2.20}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Recherche d'offres d'emploi}}{27}{figure.2.21}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Génération de portfolio}}{27}{figure.2.22}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de classes -- CV Builder App}}{28}{figure.2.23}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces \xpg@aux {}{french}\ignorespaces Technologies et outils utilisés dans le CV Builder App}}{29}{figure.2.24}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces \xpg@aux {}{french}\ignorespaces Mes CVs -- tableau de bord avec liste des CVs créés, recherche et tri}}{30}{figure.2.25}%
+\contentsline {figure}{\numberline {2.26}{\ignorespaces \xpg@aux {}{french}\ignorespaces CV Builder -- éditeur split-panel avec formulaire et prévisualisation en temps réel}}{30}{figure.2.26}%
+\contentsline {figure}{\numberline {2.27}{\ignorespaces \xpg@aux {}{french}\ignorespaces Templates -- galerie de modèles avec sélecteur de couleur et personnalisation}}{31}{figure.2.27}%
+\contentsline {figure}{\numberline {2.28}{\ignorespaces \xpg@aux {}{french}\ignorespaces CV Analyzer -- analyse IA avec score, erreurs par sévérité et suggestions}}{31}{figure.2.28}%
+\contentsline {figure}{\numberline {2.29}{\ignorespaces \xpg@aux {}{french}\ignorespaces CV Compatibility -- vérification de compatibilité CV/offre d'emploi LinkedIn}}{32}{figure.2.29}%
+\contentsline {figure}{\numberline {2.30}{\ignorespaces \xpg@aux {}{french}\ignorespaces Portfolio -- page d'accueil avec options d'upload CV ou création manuelle}}{32}{figure.2.30}%
+\contentsline {figure}{\numberline {2.31}{\ignorespaces \xpg@aux {}{french}\ignorespaces Portfolio Preview -- prévisualisation du portfolio généré avec export HTML}}{33}{figure.2.31}%
+\contentsline {figure}{\numberline {2.32}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de use case -- Problem Solving App}}{35}{figure.2.32}%
+\contentsline {figure}{\numberline {2.33}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Inscription d'un utilisateur}}{36}{figure.2.33}%
+\contentsline {figure}{\numberline {2.34}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Sélection du langage de programmation}}{36}{figure.2.34}%
+\contentsline {figure}{\numberline {2.35}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Résolution d'un exercice}}{37}{figure.2.35}%
+\contentsline {figure}{\numberline {2.36}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Cycle de vie d'une compétition}}{37}{figure.2.36}%
+\contentsline {figure}{\numberline {2.37}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence -- Mise à jour du leaderboard}}{38}{figure.2.37}%
+\contentsline {figure}{\numberline {2.38}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de classes -- Problem Solving App}}{38}{figure.2.38}%
+\contentsline {figure}{\numberline {2.39}{\ignorespaces \xpg@aux {}{french}\ignorespaces Technologies et outils utilisés dans le Problem Solving App}}{39}{figure.2.39}%
+\contentsline {figure}{\numberline {2.40}{\ignorespaces \xpg@aux {}{french}\ignorespaces Welcome -- cutscene d'introduction animée avec mascotte et dialogue}}{40}{figure.2.40}%
+\contentsline {figure}{\numberline {2.41}{\ignorespaces \xpg@aux {}{french}\ignorespaces Avatar Customization -- personnalisation du personnage pixel avec couleurs et nom}}{41}{figure.2.41}%
+\contentsline {figure}{\numberline {2.42}{\ignorespaces \xpg@aux {}{french}\ignorespaces Mode Selection -- hub principal avec choix du mode de jeu et carousel des langages}}{41}{figure.2.42}%
+\contentsline {figure}{\numberline {2.43}{\ignorespaces \xpg@aux {}{french}\ignorespaces Problem List -- liste des problèmes avec filtres par difficulté, type et recherche}}{42}{figure.2.43}%
+\contentsline {figure}{\numberline {2.44}{\ignorespaces \xpg@aux {}{french}\ignorespaces Code Editor -- éditeur split-pane avec compilateur et énoncé du problème}}{42}{figure.2.44}%
+\contentsline {figure}{\numberline {2.45}{\ignorespaces \xpg@aux {}{french}\ignorespaces Leaderboard -- classement avec podium top-3 et tableau des joueurs}}{43}{figure.2.45}%
+\contentsline {figure}{\numberline {2.46}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tiers -- système de rangs Bronze à Legendary avec progression et avantages}}{43}{figure.2.46}%
+\contentsline {figure}{\numberline {2.47}{\ignorespaces \xpg@aux {}{french}\ignorespaces Admin -- interface CRUD de gestion des langages, problemes et evenements de programmation}}{44}{figure.2.47}%
+\contentsline {figure}{\numberline {2.48}{\ignorespaces \xpg@aux {}{french}\ignorespaces AI Chatbot -- assistant IA flottant avec messages et suggestions}}{44}{figure.2.48}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Jira Backlog -- Product Backlog avec user stories, épics et priorités}}{38}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Jira Sprint Board -- tableau Kanban avec colonnes To Do, In Progress, In Review, Done}}{38}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Jira Issue Details -- détails d'une user story avec description, assignée, estimation et commentaires}}{39}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Jira Summary -- Resumé de progression du sprint}}{39}{figure.3.4}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Jira Backlog -- Product Backlog avec user stories, épics et priorités}}{47}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Jira Sprint Board -- tableau Kanban avec colonnes To Do, In Progress, In Review, Done}}{47}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Jira Issue Details -- détails d'une user story avec description, assignée, estimation et commentaires}}{48}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Jira Summary -- Resumé de progression du sprint}}{48}{figure.3.4}%
