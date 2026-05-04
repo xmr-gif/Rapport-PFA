@@ -1499,41 +1499,56 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	\end{thebibliography}
 	
 	% ============================================================================
-	% ANNEXE
-	% ============================================================================
-	\newpage
-	\chapter*{{\headingfont Annexe}}
-	\addcontentsline{toc}{chapter}{Annexe}
-	\markboth{Annexe}{}
-	
-	\section*{A. Architecture globale}
-	L'architecture de la plateforme repose sur une approche microservices avec 14 services indépendants, une base de données PostgreSQL partagée (avec schémas isolés), Redis pour le cache et la liste noire JWT, Apache Kafka pour la messagerie asynchrone, et un frontend Angular monolithique.
-	
-	\section*{B. Schémas de bases de données}
-	Chaque microservice possède son schéma logique contenant les tables essentielles. Les relations entre services sont gérées via Kafka et les APIs REST, éliminant les dépendances SQL directes.
-	
-	\section*{C. Diagrammes d'architecture}
-	Les diagrammes d'architecture système incluent la vue de déploiement Docker Compose, la vue logique des microservices, et la vue des flux de données via Kafka.
-	
-	\section*{D. Exemples de code source}
-	Des extraits de code significatifs illustrent : l'authentification JWT, le pattern Repository, la configuration Kafka, et les interceptors Angular.
-	
-	\section*{E. Documentation des APIs}
-	La documentation Swagger est disponible à \texttt{http://localhost:5000/swagger} une fois le projet déployé. Elle inclut toutes les routes, paramètres et schémas de réponse.
-	
-	\section*{F. Cas de test}
-	Les cas de test incluent : tests unitaires des services, tests d'intégration des APIs, tests de charge pour valider la performance, et tests de sécurité pour les vulnerabilités courantes.
-	
-	\section*{G. Manuel de déploiement}
-	Instructions complètes pour déployer la plateforme en environnement de développement (Docker Compose local), de staging et de production (Kubernetes ou cloud provider).
-	
-	\section*{H. Calendrier du projet}
-	Chronologie détaillée des sprints, jalons produits, et dates clés du développement sur les 6 mois du projet.
-	
-	\section*{I. Résumé des technologies utilisées}
-	Tableau récapitulatif de tous les langages, frameworks, bibliothèques et services utilisés dans la plateforme.
-	
-	\section*{J. Glossaire}
-	Définitions des termes techniques spécifiques au projet : microservices, Kafka, JWT, WebSocket, DAO, DTO, etc.
+    % ANNEXE
+    % ============================================================================
+    \newpage
+    \chapter*{{\headingfont Annexe}}
+    \addcontentsline{toc}{chapter}{Annexe}
+    \markboth{Annexe}{}
+
+    \section*{A. Architecture globale polyglotte}
+    L'architecture de la plateforme repose sur une approche microservices hybride utilisant plusieurs écosystèmes :
+    \begin{itemize}
+        \item \textbf{Backend .NET Core :} Services de gestion d'identité (Auth), utilisateurs, et gestion de projet.
+        \item \textbf{Backend Java Spring Boot :} Services de résolution de problèmes (Orbit), compilateurs isolés et classements.
+        \item \textbf{Backend PHP Symfony :} Services de création et d'analyse de CV (Miroir).
+        \item \textbf{Infrastructure :} Nginx comme Gateway unifiée, Redis pour le cache, Apache Kafka pour la communication asynchrone, et Docker pour l'orchestration.
+    \end{itemize}
+
+    \section*{B. Schémas de bases de données}
+    Le système utilise principalement \textbf{Microsoft SQL Server} pour la persistance des données métier, avec une isolation stricte par service (ex: \texttt{usersdb}, \texttt{cv\_db}, \texttt{leaderboarddb}). Les synchronisations entre les domaines (ex: profil utilisateur vers CV) sont gérées par des événements Kafka.
+
+    \section*{C. Diagrammes d'architecture système}
+    Les schémas annexés incluent :
+    \begin{itemize}
+        \item La vue de déploiement multi-conteneurs via \textbf{Docker Compose}.
+        \item Le diagramme de flux d'authentification centralisé (Single Sign-On) via le service \textbf{Shared-Identity}.
+        \item Le schéma de routage de la Gateway Nginx vers les différents ports applicatifs (4200, 4202, 4203).
+    \end{itemize}
+
+    \section*{D. Extraits de code source significatifs}
+    Les extraits de code fournis illustrent des implémentations critiques :
+    \begin{itemize}
+        \item \textbf{Strategy Pattern :} Implémentation des différents compilateurs en Java.
+        \item \textbf{JWT Interceptors :} Propagation automatique des jetons entre les frontends Angular.
+        \item \textbf{Validators :} Validation stricte avec FluentValidation (.NET).
+    \end{itemize}
+
+    \section*{E. Documentation des APIs (Swagger)}
+    Chaque microservice expose son interface Swagger. Une fois le réseau local (LAN) déployé sur l'IP hôte (ex: \texttt{192.168.0.4}), les documentations sont accessibles sur les ports respectifs (ex: port 8090 pour le CV-Builder, 8080 pour l'Identity).
+
+    \section*{F. Environnement de Test}
+    Les tests ont été réalisés en conditions réelles de réseau local pour simuler une utilisation collaborative par plusieurs étudiants simultanément, validant ainsi la gestion des sessions et la performance de la Gateway.
+
+    \section*{G. Manuel de déploiement rapide}
+    Le déploiement se fait via la commande unique \texttt{docker-compose up -d} à la racine du projet. Un script de pré-configuration automatique initialise les bases de données SQL Server et les topics Kafka nécessaires au premier lancement.
+
+    \section*{H. Glossaire technique}
+    \begin{description}
+        \item[Polyglotte :] Architecture utilisant plusieurs langages de programmation différents.
+        \item[SSO (Single Sign-On) :] Système permettant d'utiliser une seule authentification pour plusieurs applications.
+        \item[Sandboxing :] Exécution du code utilisateur dans un environnement Docker isolé pour la sécurité.
+        \item[Gateway :] Point d'entrée unique qui redirige les requêtes vers les bons microservices.
+    \end{description}
 	
 \end{document}
