@@ -311,32 +311,32 @@
 			\textbf{Abréviation} & \textbf{Désignation} \\ \hline
 			\endhead
 			
-			HTML  & Hyper Text Markup Language \\ \hline
-			CSS   & Cascading Style Sheets \\ \hline
+			AI    & Artificial Intelligence \\ \hline
 			API   & Application Programming Interface \\ \hline
-			REST  & Representational State Transfer \\ \hline
+			CRUD  & Create Read Update Delete \\ \hline
+			CSS   & Cascading Style Sheets \\ \hline
+			CV    & Curriculum Vitae \\ \hline
+			DRY   & Don't Repeat Yourself \\ \hline
+			DTO   & Data Transfer Object \\ \hline
+			HTML  & Hyper Text Markup Language \\ \hline
 			HTTP  & HyperText Transfer Protocol \\ \hline
 			HTTPS & HyperText Transfer Protocol Secure \\ \hline
 			JSON  & JavaScript Object Notation \\ \hline
 			JWT   & JSON Web Token \\ \hline
-			SQL   & Structured Query Language \\ \hline
-			ORM   & Object-Relational Mapping \\ \hline
+			KISS  & Keep It Simple Stupid \\ \hline
+			LLM   & Large Language Model \\ \hline
 			MVC   & Model View Controller \\ \hline
-			DTO   & Data Transfer Object \\ \hline
-			CRUD  & Create Read Update Delete \\ \hline
+			NLP   & Natural Language Processing \\ \hline
 			OAuth & Open Authorization \\ \hline
+			ORM   & Object-Relational Mapping \\ \hline
+			PFA   & Projet de Fin d'Année \\ \hline
+			REST  & Representational State Transfer \\ \hline
+			SOLID & Single Responsibility, Open/Closed , Liskov Substitution , Interface Segregation, and Dependency Inversion Principle \\ \hline
+			SQL   & Structured Query Language \\ \hline
+			UI    & User Interface \\ \hline
 			UML   & Unified Modeling Language \\ \hline
 			URL   & Uniform Resource Locator \\ \hline
-			UI    & User Interface \\ \hline
 			UX    & User Experience \\ \hline
-			AI    & Artificial Intelligence \\ \hline
-			NLP   & Natural Language Processing \\ \hline
-			LLM   & Large Language Model \\ \hline
-			CV    & Curriculum Vitae \\ \hline
-			PFA   & Projet de Fin d'Année \\ \hline
-			SOLID & Single Responsibility, Open/Closed , Liskov Substitution , Interface Segregation, and Dependency Inversion Principle \\ \hline
-			DRY   & Don't Repeat Yourself \\ \hline
-			KISS  & Keep It Simple Stupid \\ \hline
 		\end{longtable}
 	\end{center}
 	
@@ -350,8 +350,8 @@
 	% TABLE DES FIGURES
 	% ============================================================================
 	\newpage
-	\addcontentsline{toc}{chapter}{Table des figures}
-	\renewcommand{\listfigurename}{{\headingfont Table des figures}}
+	\addcontentsline{toc}{chapter}{Liste des figures}
+	\renewcommand{\listfigurename}{{\headingfont Liste des figures}}
 	\listoffigures
 	
 	% ============================================================================
@@ -541,12 +541,12 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	\thispagestyle{empty}
 	\begin{center}
 		\vspace*{\fill}
-		\chapterheader{Chapitre 2}{Microservices}
+		\chapterheader{Chapitre 2}{Nos Microservices}
 		\vspace*{\fill}
 	\end{center}
 	
-	\chapter{Microservices}
-	\fancyhead[L]{Chapitre 2 : Microservices}
+	\chapter{Nos Microservices}
+	\fancyhead[L]{Chapitre 2 : Nos Microservices}
 	\thispagestyle{fancy}
 	
 	% --- 1. Project Management App ---
@@ -1231,11 +1231,17 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 	\thispagestyle{fancy}
 	
 	\section{Méthode de gestion de projet}
-	La méthode de gestion de projet structure l'organisation du travail, les responsabilités et les livrables pour atteindre les objectifs métier. Nous avons adopté la méthodologie Scrum, avec des sprints de deux semaines, des daily standups, des cérémonies de sprint planning, de review et de retrospective. Cette approche agile nous a permis de maintenir un rythme de développement soutenu, de livrer des incréments fonctionnels régulièrement et de nous adapter rapidement aux changements de priorités et aux obstacles rencontrés.
+	La méthode de gestion de projet structure l'organisation du travail, les responsabilités et les livrables pour atteindre les objectifs métier. 
+	
+	\subsection{La méthodologie Scrum}
+	\textbf{Sur le plan théorique}, Scrum est un cadre de travail (\textit{framework}) agile conçu pour le développement, la livraison et la maintenance de produits complexes. Il repose sur l'empirisme et une approche itérative et incrémentale. Scrum structure le travail autour de trois piliers (transparence, inspection et adaptation), de rôles bien définis (Scrum Master, Product Owner, Développeurs), d'événements temporels (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective) et d'artefacts (Product Backlog, Sprint Backlog, Incrément).
+	
+	\textbf{Sur le plan pratique}, nous avons adapté cette méthodologie à notre projet académique. Le développement a été rythmé par des sprints de deux semaines. Chaque sprint démarrait par une réunion de planification (\textit{Sprint Planning}) où nous sélectionnions les fonctionnalités clés à implémenter. Des points quotidiens (\textit{Daily Standups}) étaient organisés pour coordonner les efforts et identifier rapidement les éventuels blocages. À l'issue de chaque sprint, nous tenions une revue pour valider le travail accompli suivie d'une rétrospective pour améliorer nos méthodes de collaboration lors de l'itération suivante. Cette approche nous a permis de maintenir une cadence soutenue tout en restant flexibles face aux changements de priorités.
 	
 	\subsection{Jira -- Outil de gestion}
 	Jira a été notre outil central pour la gestion des sprints, le suivi des tâches et la collaboration entre les équipes. Les captures d'écran suivantes illustrent l'organisation du projet.
 	
+	\paragraph{Backlog du projet:} Le backlog centralise l'ensemble des fonctionnalités à développer, organisées sous forme de user stories et d'épics. Il permet de prioriser les tâches en fonction de la valeur métier attendue avant chaque sprint.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/jira-backlog.png}
@@ -1243,6 +1249,7 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\label{fig:jira-backlog}
 	\end{figure}
 	
+	\paragraph{Tableau de Sprint (Board):} Le tableau Kanban du sprint en cours offre une visibilité en temps réel sur l'état d'avancement des tâches. Les tickets évoluent à travers les colonnes (To Do, In Progress, In Review, Done) pour garantir un suivi transparent.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/jira-sprint-board.png}
@@ -1251,7 +1258,7 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\label{fig:jira-sprint-board}
 	\end{figure}
 	
-	
+	\paragraph{Détails d'un ticket (Issue):} Chaque tâche fait l'objet d'une description détaillée incluant les critères d'acceptation, le membre assigné, l'estimation de l'effort et une section de commentaires favorisant la communication autour du ticket.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/jira-issue-details.png}
@@ -1260,26 +1267,137 @@ Il est important de souligner que cette liste expose nos objectifs de qualité. 
 		\label{fig:jira-issue-details}
 	\end{figure}
 	
+	\paragraph{Suivi du sprint (Summary):} Les outils de reporting de Jira permettent de suivre la progression globale du sprint, facilitant l'identification des potentiels retards et permettant à l'équipe d'ajuster son rythme de travail.
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[width=\textwidth]{screenshots/jira-burndown.png}
 		
-		\caption{Jira Summary -- Resumé	 de progression du sprint}
+		\caption{Jira Summary -- Resumé de progression du sprint}
 		\label{fig:jira-burndown}
 	\end{figure}
 	
 	\section{Bonnes pratiques de développement}
-	Nous avons implémenté les bonnes pratiques suivantes à travers l'ensemble des microservices :
+	Nous avons implémenté un ensemble de principes et de motifs de conception pour garantir la qualité, la maintenabilité et la robustesse de notre architecture microservices.
+
+	\subsection{Principes SOLID}
+
+	\subsubsection{Single Responsibility Principle (SRP)}
+	Dans le microservice \textbf{Users-Service}, nous avons séparé strictement les responsabilités pour éviter les « God Classes ».
+
 	\begin{itemize}
-		\item \textbf{Principes SOLID} : respect des cinq principes de conception orientée objet pour un code maintenable et extensible.
-		\item \textbf{Pattern Repository} : isolation de la couche d'accès aux données pour faciliter les tests et la maintenabilité.
-		\item \textbf{Injection de dépendances} : découplage des composants pour une meilleure testabilité.
-		\item \textbf{DTOs} : isolation des formats API pour protéger les modèles internes.
-		\item \textbf{Validation stricte} : validation des entrées à chaque frontière du système.
-		\item \textbf{Documentation API} : documentation Swagger complète pour chaque microservice.
-		\item \textbf{Sécurité} : chiffrement des données sensibles, sandboxing du code utilisateur, respect de la vie privée.
-		\item \textbf{Monitoring} : journalisation structurée avec Serilog, agrégation avec Seq, monitoring avec Prometheus.
+		\item \textbf{Exemple :} \texttt{UsersController} ne contient aucune logique métier. Il délègue tout au \texttt{UserService}.
 	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{pictures/1st.png}
+		\caption{UserController.cs -- Séparation des responsabilités}
+		\label{fig:user-controller-srp}
+	\end{figure}
+
+	\subsubsection{Open/Closed Principle (OCP) \& Strategy Pattern}
+	Le microservice \textbf{Compilers-Service} (Java) est le meilleur exemple d'extension sans modification. Pour ajouter un nouveau langage de programmation, nous n'avons pas besoin de modifier le moteur d'exécution principal.
+
+	\begin{itemize}
+		\item \textbf{Le Code (Interface Strategy) :}
+	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
+	\includegraphics[width=0.8\textwidth]{pictures/2nd.png}
+		\caption{ExecutionStrategy.java -- Interface de stratégie}
+		\label{fig:execution-strategy}
+	\end{figure}
+
+	\begin{itemize}
+		\item \textbf{L'implémentation (ex: Python) :}
+	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
+	\includegraphics[width=0.8\textwidth]{pictures/3rd.png}
+		\caption{PythonExecutionStrategy.java -- Implémentation spécifique}
+		\label{fig:python-strategy}
+	\end{figure}
+
+	\textbf{Schéma explicatif (OCP \& Strategy) :}
+
+	\begin{figure}[H]
+		\centering
+	\includegraphics[width=0.8\textwidth]{pictures/4th.png}
+		\caption{Diagramme OCP \& Strategy Pattern}
+		\label{fig:ocp-strategy-diagram}
+	\end{figure}
+
+	\subsubsection{Dependency Inversion Principle (DIP)}
+	Nos classes de haut niveau (Services) ne dépendent jamais des classes de bas niveau (Repositories), mais toujours d'abstractions (Interfaces).
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{pictures/5th.png}
+		\caption{Principe d'inversion de dépendance}
+		\label{fig:dip-diagram}
+	\end{figure}
+
+	\subsection{Injection de Dépendances}
+	Tous nos services sont « découplés ». Au lieu qu'une classe crée elle-même ses dépendances, elles lui sont injectées via son constructeur.
+
+	\begin{itemize}
+		\item \textbf{Impact :} Cela rend le code extrêmement facile à tester unitairement et permet une gestion centralisée du cycle de vie des objets par le framework.
+	\end{itemize}
+
+	\subsection{DTOs (Data Transfer Objects)}
+	Nous utilisons des DTOs pour chaque échange de données via l'API.
+
+	\begin{itemize}
+		\item \textbf{Rôle :} Ils servent de filtres de sécurité. Par exemple, lors de la mise à jour d'un profil, le DTO garantit que seuls les champs autorisés (nom, photo) sont modifiés, empêchant la modification accidentelle de champs sensibles comme le \texttt{UserId} ou le \texttt{Role}.
+	\end{itemize}
+
+	
+
+	\begin{figure}[H]
+		\centering
+	\includegraphics[width=0.8\textwidth]{pictures/6th.png}
+		\caption{Flux de données via DTO et Repository}
+		\label{fig:dto-flow-diagram}
+	\end{figure}
+
+	\subsection{Validation Stricte}
+	Chaque donnée entrante est validée avant d'être traitée. Nous utilisons \textbf{FluentValidation} pour définir des règles métier complexes (format d'email unique, taille des fichiers, caractères autorisés).
+
+	\begin{itemize}
+		\item \textbf{Résultat :} Une réduction drastique des erreurs en base de données et une meilleure expérience utilisateur grâce à des messages d'erreur précis.
+	\end{itemize}
+
+	\subsection{Documentation API (Swagger)}
+	Chaque microservice expose sa propre documentation \textbf{Swagger/OpenAPI}.
+
+	\begin{itemize}
+		\item \textbf{Utilité :} Elle sert de contrat technique entre le backend et le frontend. Les développeurs Angular peuvent tester les routes, consulter les formats de données et simuler des requêtes sans aucune intervention des développeurs backend.
+	\end{itemize}
+
+	\subsection{Sécurité}
+	La sécurité est appliquée à plusieurs niveaux :
+
+	\begin{itemize}
+		\item \textbf{Authentification :} Centralisée via des jetons \textbf{JWT} sécurisés.
+		\item \textbf{Protection des données :} Hachage des mots de passe avec \textbf{BCrypt}.
+		\item \textbf{Sandboxing :} L'exécution du code utilisateur (module Orbit) se fait dans des conteneurs Docker isolés pour éviter toute compromission de l'hôte.
+	\end{itemize}
+
+	\subsection{Monitoring et Observabilité}
+	Pour surveiller un système distribué, nous avons mis en place une stack d'observabilité complète :
+
+	\begin{itemize}
+		\item \textbf{Serilog \& Seq :} Pour la centralisation et l'analyse des logs structurés.
+	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=0.8\textwidth]{pictures/7th.png}
+		\caption{Architecture du Monitoring}
+		\label{fig:monitoring-architecture}
+	\end{figure}
 	
 	% ============================================================================
 	% CONCLUSION
