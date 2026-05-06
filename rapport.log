@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.4.5)  4 MAY 2026 16:38
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.4.5)  6 MAY 2026 22:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1040,9 +1040,9 @@ Package hyperref Info: Link coloring ON on input line 152.
 File: pictures/ehei.png Graphic file (type bmp)
 <pictures/ehei.png>
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 203.
+(Font)              <14.4> on input line 202.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 203.
+(Font)              <7> on input line 202.
  [1
 
 ] [1] [1
@@ -1051,11 +1051,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 265.
+(Font)              <12> on input line 263.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 265.
+(Font)              <8> on input line 263.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 265.
+(Font)              <6> on input line 263.
  [3
 
 ] [4
@@ -1069,19 +1069,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@lof=\write5
 \openout5 = `rapport.lof'.
 
- [8] (rapport.lot)
-\tf@lot=\write6
-\openout6 = `rapport.lot'.
-
- [9
-
-] (rapport.toc [10
+ [8] (rapport.toc [9
 
 ])
-\tf@toc=\write7
-\openout7 = `rapport.toc'.
+\tf@toc=\write6
+\openout6 = `rapport.toc'.
 
- [11] [1
+ [10] [1
 
 
 ] [2] [3]
@@ -1089,7 +1083,7 @@ Chapitre 1.
 [4
 
 ] [5]
-Overfull \hbox (9.01064pt too wide) in paragraph at lines 472--473
+Overfull \hbox (9.01064pt too wide) in paragraph at lines 462--463
 [][]\TU/lmr/m/n/12 Les besoins non fonctionnels (BNF) représentent les attribut
 s de qualité et les contraintes[]
  []
@@ -1113,7 +1107,7 @@ File: pictures/creation-d'envirenement.png Graphic file (type bmp)
 File: pictures/creation-ticket.png Graphic file (type bmp)
 <pictures/creation-ticket.png>
 
-Overfull \hbox (80.45195pt too wide) in paragraph at lines 655--659
+Overfull \hbox (80.45195pt too wide) in paragraph at lines 645--649
 []\TU/lmr/m/n/12 projet : ce dernier choisit le membre, la priorité et le deadl
 ine, déclenche \TU/lmtt/m/n/12 PUT /api/Tickets/{id}/assign\TU/lmr/m/n/12 ,[]
  []
@@ -1181,7 +1175,7 @@ File: pictures/seq-portfolio.png Graphic file (type bmp)
 File: pictures/cv-classes-diagram.png Graphic file (type bmp)
 <pictures/cv-classes-diagram.png>
  [27]
-Overfull \hbox (1.47993pt too wide) in paragraph at lines 891--892
+Overfull \hbox (1.47993pt too wide) in paragraph at lines 881--882
 [][]\TU/lmr/bx/n/12 CvEventHandler \TU/lmr/m/n/12 : consommateur des messages K
 afka (CvCreatedMessage, CvUp-[]
  []
@@ -1203,7 +1197,7 @@ File: pictures/kafka.jpg Graphic file (type bmp)
 File: pictures/elasticsearch.jpg Graphic file (type bmp)
 <pictures/elasticsearch.jpg>
 [28]
-Overfull \hbox (0.37463pt too wide) in paragraph at lines 915--916
+Overfull \hbox (0.37463pt too wide) in paragraph at lines 905--906
 [][]\TU/lmr/bx/n/12 Bibliothèques \TU/lmr/m/n/12 : Lexik JWT Bundle 3.1 pour l’
 authentification JWT, Nelmio CORS[]
  []
@@ -1244,7 +1238,7 @@ File: pictures/seq-Leaderboard-Update.png Graphic file (type bmp)
 File: pictures/algo-classes.png Graphic file (type bmp)
 <pictures/algo-classes.png>
  [38]
-Overfull \hbox (2.13193pt too wide) in paragraph at lines 1098--1099
+Overfull \hbox (2.13193pt too wide) in paragraph at lines 1088--1089
 [][]\TU/lmr/bx/n/12 ExecutionStatus \TU/lmr/m/n/12 (Enum) : OK, COMPILATION_ERR
 OR, RUNTIME_ERROR,[]
  []
@@ -1264,7 +1258,7 @@ File: pictures/redis.jpg Graphic file (type bmp)
 File: pictures/sql.png Graphic file (type bmp)
 <pictures/sql.png>
 
-Overfull \hbox (5.65192pt too wide) in paragraph at lines 1124--1125
+Overfull \hbox (5.65192pt too wide) in paragraph at lines 1114--1115
 [][]\TU/lmr/bx/n/12 Langages \TU/lmr/m/n/12 : Java 17 (Languages-Service, Leade
 rboard-Service) et Java 21 (Compilers-[]
  []
@@ -1330,25 +1324,25 @@ File: pictures/7th.png Graphic file (type bmp)
 ] [55
 
 ] [56]
-Overfull \hbox (24.6865pt too wide) in paragraph at lines 1473--1474
+Overfull \hbox (24.6865pt too wide) in paragraph at lines 1464--1465
 [][]\TU/lmr/m/n/12 DigitalOcean. \TU/lmr/m/it/12 SOLID Principles\TU/lmr/m/n/12
  . https ://www.digitalocean.com/community/conceptual-[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1475--1476
+Underfull \hbox (badness 10000) in paragraph at lines 1466--1467
 [][]\TU/lmr/m/n/12 Refactoring Guru. \TU/lmr/m/it/12 Abstract Factory\TU/lmr/m/
 n/12 . https ://refactoring.guru/design-[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1477--1478
+Underfull \hbox (badness 10000) in paragraph at lines 1468--1469
 [][]\TU/lmr/m/n/12 Refactoring Guru. \TU/lmr/m/it/12 Factory Method\TU/lmr/m/n/
 12 . https ://refactoring.guru/design-[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1495--1496
+Underfull \hbox (badness 10000) in paragraph at lines 1486--1487
 [][]\TU/lmr/m/n/12 Spring Boot. \TU/lmr/m/it/12 Documentation Spring Boot\TU/lm
 r/m/n/12 . https ://docs.spring.io/spring-[]
  []
@@ -1356,13 +1350,13 @@ r/m/n/12 . https ://docs.spring.io/spring-[]
 [57
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1497--1498
+Underfull \hbox (badness 10000) in paragraph at lines 1488--1489
 [][]\TU/lmr/m/n/12 Microsoft Learn. \TU/lmr/m/it/12 Documentation SignalR\TU/lm
 r/m/n/12 . https ://learn.microsoft.com/en-[]
  []
 
 [58]
-Overfull \hbox (7.29593pt too wide) in paragraph at lines 1519--1520
+Overfull \hbox (7.29593pt too wide) in paragraph at lines 1510--1511
 []\TU/lmr/m/n/12 données métier, avec une isolation stricte par service (ex : \
 TU/lmtt/m/n/12 usersdb\TU/lmr/m/n/12 , \TU/lmtt/m/n/12 cv_db\TU/lmr/m/n/12 , \T
 U/lmtt/m/n/12 leaderboarddb\TU/lmr/m/n/12 ).[]
@@ -1375,16 +1369,23 @@ U/lmtt/m/n/12 leaderboarddb\TU/lmr/m/n/12 ).[]
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 79858758FE8F33B054830311BCB074A0;8623.
+
+
+Package rerunfilecheck Warning: File `rapport.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `rapport.out':
+(rerunfilecheck)             Before: 79858758FE8F33B054830311BCB074A0;8623
+(rerunfilecheck)             After:  A5FEBA2EC84795899C5BB5C7C1D76860;8481.
  ) 
 Here is how much of TeX's memory you used:
- 27018 strings out of 402987
- 574815 string characters out of 5448525
+ 27011 strings out of 402987
+ 574725 string characters out of 5448525
  1017918 words of memory out of 5000000
- 55231 multiletter control sequences out of 15000+600000
+ 55227 multiletter control sequences out of 15000+600000
  631874 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,12n,94p,1201b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on rapport.pdf (73 pages).
+Output written on rapport.pdf (72 pages).
